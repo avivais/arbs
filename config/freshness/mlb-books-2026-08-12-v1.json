@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "policy_version": "mlb-books-2026-08-12-v1",
+  "max_pair_receipt_skew_ms": 800,
+  "max_local_receipt_age_ms": 2000,
+  "max_polymarket_source_age_ms": null,
+  "kalshi_source_time": "not_exposed",
+  "fail_closed_on": [
+    "semantic_decision_not_exact",
+    "partial_or_failed_pair",
+    "invalid_or_future_source_time",
+    "suspended_empty_or_crossed_book",
+    "pair_skew_exceeded",
+    "local_receipt_age_exceeded"
+  ]
+}

@@ -5,13 +5,13 @@
 
 ## Live status
 
-- **Progress:** 39/58 tasks source-verified complete (67%)
-- **Current focus:** P4-02 — finish paired-book timing evidence while continued samples accumulate; then derive freshness thresholds only from sufficient distributions.
-- **Next action:** `P4-02: extract explicit venue source timestamps/sequence/status where available, retain them with atomic pair failures, and continue the scheduled sample series.`
+- **Progress:** 46/58 tasks source-verified complete (79%)
+- **Current focus:** P5-07 — sustained read-only shadow validation: accumulate representative elapsed-window movement, resolution, false-positive, uptime and modeled-result evidence.
+- **Next action:** `P5-07: continue scheduled immutable collection, add subsequent-book movement and settled-resolution audit, and do not advance go/no-go until representative evidence exists.`
 
 | Done | In progress | Next | Blocked | Deferred |
 |---:|---:|---:|---:|---:|
-| 39 | 1 | 8 | 3 | 7 |
+| 46 | 1 | 1 | 3 | 7 |
 
 ## Mission
 
@@ -105,7 +105,7 @@ Turn initial ingestion into a complete, regression-safe evidence corpus for the 
 
 ### P2 — Canonical sports contracts
 
-**Status:** Next · **Progress:** 6/9
+**Status:** Next · **Progress:** 9/9
 
 Normalize source-specific payloads into typed, versioned, explainable contracts.
 
@@ -127,19 +127,19 @@ Normalize source-specific payloads into typed, versioned, explainable contracts.
 - [x] **P2-06 — Implement Polymarket MVP contract parser** `[Done]`
   - **Acceptance:** Same canonical and failure contract as Kalshi across the replay corpus.
   - **Evidence:** `Pinned replay parses all 99 Polymarket events, requiring one supported moneyline market and retaining exact source lineage; structured home/away roles are observed but cannot equal unknown Kalshi roles.`
-- [ ] **P2-07 — Build normalization evidence records** `[Next]`
+- [x] **P2-07 — Build normalization evidence records** `[Done]`
   - **Acceptance:** Every normalized value links to source snapshot hash, source field/excerpt, parser version, and transformations.
-  - **Evidence:** `SourceEvidence types exist, but normalized live decisions do not carry raw snapshot hashes, receipt lineage, per-value field paths/excerpts and transformations end to end.`
-- [ ] **P2-08 — Make equivalence cases executable** `[Next]`
+  - **Evidence:** `data/reports/replay-decision-evidence.json carries per-normalized-value payload hashes, source URLs, receipt times, source field paths, bounded excerpts, parser/version context and transformations for all 175 decisions.`
+- [x] **P2-08 — Make equivalence cases executable** `[Done]`
   - **Acceptance:** The labeled fixture corpus contains full structured inputs and tests every expected decision rather than descriptions only.
-  - **Evidence:** `Structured executable MVP engine cases exist in tests/test_engine.py; broad descriptive families remain to be converted.`
-- [ ] **P2-09 — Gate MVP parser quality** `[Next]`
+  - **Evidence:** `src/arbs/equivalence_cases.py executes structured full canonical contracts through candidate/equivalence logic for EXACT, REVIEW and NO_MATCH scenarios; tests assert every expected decision.`
+- [x] **P2-09 — Gate MVP parser quality** `[Done]`
   - **Acceptance:** All labeled MVP fixtures parse reproducibly; unknown fields never become equality; parsing coverage and failure reasons are reported.
-  - **Evidence:** Prototype parser tests pass, but no independently labeled raw replay corpus reports parse coverage and retained failure reasons.
+  - **Evidence:** `Pinned raw corpus parses reproducibly: 175 records produce 137 accepted event parses, 38 REVIEW event links and 61 retained unpaired events; unknown dimensions stay REVIEW and all outcomes are reason-coded.`
 
 ### P3 — Candidate generation and deterministic matching
 
-**Status:** Next · **Progress:** 5/8
+**Status:** Next · **Progress:** 7/8
 
 Produce high-precision, evidence-rich cross-venue equivalence decisions.
 
@@ -152,15 +152,15 @@ Produce high-precision, evidence-rich cross-venue equivalence decisions.
 - [x] **P3-03 — Implement complementary-outcome proof** `[Done]`
   - **Acceptance:** Paired legs guarantee intended combined payout across every resolution state; multiway/incomplete spaces fail closed.
   - **Evidence:** `complementary_binary proves complete two-outcome spaces and rejects multiway/incomplete spaces.`
-- [ ] **P3-04 — Emit machine-readable decision evidence** `[Next]`
+- [x] **P3-04 — Emit machine-readable decision evidence** `[Done]`
   - **Acceptance:** Every decision contains policy/parser versions, normalized comparisons, source hashes, excerpts, and stable reason codes.
-  - **Evidence:** `Published decisions retain links/checks/reasons but do not yet include end-to-end source snapshot hashes, excerpts, parser/schema versions and every rejected/unpaired decision.`
+  - **Evidence:** `Versioned machine-readable replay evidence retains all 137 parse decisions plus 38 cross-venue decisions with policy/parser/canonical/matcher versions, hashes, excerpts, comparisons, reason codes, scenario proof and explicit disabled pricing.`
 - [x] **P3-05 — Add ambiguity and uniqueness quarantine** `[Done]`
   - **Acceptance:** Multiple surviving events/contracts, reschedules, repeated fixtures, and unresolved aliases cannot become EXACT.
   - **Evidence:** Multiple surviving candidates and unresolved aliases return REVIEW or are rejected; adversarial tests pass.
-- [ ] **P3-06 — Add reviewer workflow and expiring overrides** `[Next]`
+- [x] **P3-06 — Add reviewer workflow and expiring overrides** `[Done]`
   - **Acceptance:** Review records capture identity, timestamp, snapshot hashes, scenario proof, differences, and expiry; overrides remain pricing-ineligible in this phase.
-  - **Evidence:** `Review table fields exist, but no migration/version framework or full differences field/override enforcement integration has been exercised.`
+  - **Evidence:** `src/arbs/reviews.py validates immutable sequenced review identity/evidence/expiry/differences/scenario proof; review_events are append-only and tests prove APPROVED_OVERRIDE cannot enable a REVIEW decision.`
 - [x] **P3-07 — Build adversarial and property-based matcher suite** `[Done]`
   - **Acceptance:** Tests cover reversed teams, consecutive games, regulation vs advance, postponement, DNP, pushes, neutral sites, exhibitions, unknowns, and deterministic replay.
   - **Evidence:** `Engine/live tests cover reversed ordering, consecutive games, ambiguity, unknowns, predicate/rule differences and deterministic replay.`
@@ -170,25 +170,25 @@ Produce high-precision, evidence-rich cross-venue equivalence decisions.
 
 ### P4 — Order books and conservative opportunity pricing
 
-**Status:** Next · **Progress:** 6/8
+**Status:** Next · **Progress:** 8/8
 
 Turn semantic matches into freshness- and depth-aware executable opportunity records without trading.
 
 - [x] **P4-01 — Normalize venue order books to a $1 payout model** `[Done]`
   - **Acceptance:** YES/NO sides, price, quantity, tick, sequence/source time, and venue semantics are represented consistently using Decimal.
   - **Evidence:** `src/arbs/pricing.py represents $1-payout Decimal books with outcome, levels, tick, sequence, source/receipt time and venue.`
-- [ ] **P4-02 — Capture matched books with timing evidence** `[In progress]`
+- [x] **P4-02 — Capture matched books with timing evidence** `[Done]`
   - **Acceptance:** Book pairs record source and local receipt times, retrieval skew, failures, and atomic comparison identity.
-  - **Evidence:** `Atomic pair sampler now records complete/failure states, comparison identity, hashes, local receipt times and skew; first 10-sample run had 0 failures, p50 skew 102.5ms and p95 209ms. Explicit venue source-time extraction remains.`
+  - **Evidence:** `Atomic collector records complete/failure pairs, shared identity, hashes, local receipt times/skew, Polymarket source timestamp/hash/age, and explicit Kalshi source_time_status=not_exposed; 220 samples retained.`
 - [x] **P4-03 — Implement depth walking and common-fill quantity** `[Done]`
   - **Acceptance:** VWAP and maximum common executable quantity are calculated across levels with deterministic rounding tests.
   - **Evidence:** Depth walking computes exact Decimal VWAP and maximum common quantity; multi-level tests pass.
 - [x] **P4-04 — Implement versioned venue fee models** `[Done]`
   - **Acceptance:** Fee schedules, rounding, settlement/withdrawal assumptions, and effective dates are configurable and evidenced.
   - **Evidence:** Versioned FeeModel includes effective date, rounding, minimum, settlement and withdrawal assumptions.
-- [ ] **P4-05 — Measure and set freshness thresholds** `[Next]`
+- [x] **P4-05 — Measure and set freshness thresholds** `[Done]`
   - **Acceptance:** Quote-age and pair-skew limits derive from observed latency/movement distributions; stale/suspended books are excluded.
-  - **Evidence:** First matched public book pair captured with 116ms receipt skew; scheduled shadow collection must accumulate distributions before thresholds are chosen.
+  - **Evidence:** `docs/freshness-policy.md and config/freshness/mlb-books-2026-08-12-v1.json derive an 800ms pair-skew limit from 220 observations (p99 786.02ms), reject the 20.34s outlier, cap local age at 2s and defer source-age release threshold pending more source-time samples.`
 - [x] **P4-06 — Implement conservative opportunity engine** `[Done]`
   - **Acceptance:** Both venue directions compute payout minus depth cost, fees, settlement assumptions, and configurable safety buffer; negative/uncertain cases do not signal.
   - **Evidence:** `Conservative engine gates semantic eligibility, age/skew/depth, fees and safety buffer; negative/uncertain cases do not qualify.`
@@ -223,9 +223,9 @@ Make every decision inspectable and measure real-world reliability before any ex
 - [ ] **P5-06 — Audit post-resolution agreement** `[Next]`
   - **Acceptance:** Both venue resolutions are compared to canonical outcomes; every divergence is investigated and feeds policy/fixture updates.
   - **Evidence:** Resolution storage and audit design implemented; current future-dated games have not resolved yet.
-- [ ] **P5-07 — Complete sustained shadow run** `[Next]`
+- [ ] **P5-07 — Complete sustained shadow run** `[In progress]`
   - **Acceptance:** At least several hundred reviewed events and a representative operating window record theoretical fills, subsequent movement, resolutions, false positives, uptime, and net results after modeled costs.
-  - **Evidence:** Read-only scanner job d0baed088b0b runs every 5 minutes; first forced run succeeded with 33 matches. Several hundred reviewed events and representative elapsed window remain empirical gates.
+  - **Evidence:** `Scheduled read-only matching/book collector is active; at least 220 paired-book observations and repeated 38-event raw replays exist. Representative elapsed window, subsequent movement, settled resolutions and modeled net-result audit remain.`
 - [ ] **P5-08 — Pass go/no-go review for execution design** `[Blocked]`
   - **Acceptance:** A signed evidence summary demonstrates matching precision, data reliability, modeled profitability, failure behavior, and unresolved risks; otherwise remain read-only.
   - **Evidence:** Blocked until matching release, freshness measurement, post-resolution audit and sustained shadow gates pass.

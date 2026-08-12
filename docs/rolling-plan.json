@@ -19,8 +19,8 @@
     "rule": "Edit the canonical JSON first, regenerate both views, validate, and commit all three together. Browser-local checkboxes are personal working notes and never alter shared status."
   },
   "mission": "Build a deterministic, auditable, read-only-first system that discovers equivalent sports contracts on Kalshi and Polymarket, computes executable cross-venue opportunities conservatively, and graduates to trading only after measured safety gates and explicit owner approval.",
-  "current_focus": "P4-02 — finish paired-book timing evidence while continued samples accumulate; then derive freshness thresholds only from sufficient distributions.",
-  "next_action": "P4-02: extract explicit venue source timestamps/sequence/status where available, retain them with atomic pair failures, and continue the scheduled sample series.",
+  "current_focus": "P5-07 — sustained read-only shadow validation: accumulate representative elapsed-window movement, resolution, false-positive, uptime and modeled-result evidence.",
+  "next_action": "P5-07: continue scheduled immutable collection, add subsequent-book movement and settled-resolution audit, and do not advance go/no-go until representative evidence exists.",
   "operating_rules": [
     "Precision before recall: an uncertain pair is REVIEW or UNSUPPORTED, never EXACT.",
     "Raw source payloads and hashes remain immutable and replayable.",
@@ -341,28 +341,28 @@
         {
           "id": "P2-07",
           "title": "Build normalization evidence records",
-          "status": "next",
+          "status": "done",
           "acceptance": "Every normalized value links to source snapshot hash, source field/excerpt, parser version, and transformations.",
           "evidence": [
-            "SourceEvidence types exist, but normalized live decisions do not carry raw snapshot hashes, receipt lineage, per-value field paths/excerpts and transformations end to end."
+            "data/reports/replay-decision-evidence.json carries per-normalized-value payload hashes, source URLs, receipt times, source field paths, bounded excerpts, parser/version context and transformations for all 175 decisions."
           ]
         },
         {
           "id": "P2-08",
           "title": "Make equivalence cases executable",
-          "status": "next",
+          "status": "done",
           "acceptance": "The labeled fixture corpus contains full structured inputs and tests every expected decision rather than descriptions only.",
           "evidence": [
-            "Structured executable MVP engine cases exist in tests/test_engine.py; broad descriptive families remain to be converted."
+            "src/arbs/equivalence_cases.py executes structured full canonical contracts through candidate/equivalence logic for EXACT, REVIEW and NO_MATCH scenarios; tests assert every expected decision."
           ]
         },
         {
           "id": "P2-09",
           "title": "Gate MVP parser quality",
-          "status": "next",
+          "status": "done",
           "acceptance": "All labeled MVP fixtures parse reproducibly; unknown fields never become equality; parsing coverage and failure reasons are reported.",
           "evidence": [
-            "Prototype parser tests pass, but no independently labeled raw replay corpus reports parse coverage and retained failure reasons."
+            "Pinned raw corpus parses reproducibly: 175 records produce 137 accepted event parses, 38 REVIEW event links and 61 retained unpaired events; unknown dimensions stay REVIEW and all outcomes are reason-coded."
           ]
         }
       ]
@@ -403,10 +403,10 @@
         {
           "id": "P3-04",
           "title": "Emit machine-readable decision evidence",
-          "status": "next",
+          "status": "done",
           "acceptance": "Every decision contains policy/parser versions, normalized comparisons, source hashes, excerpts, and stable reason codes.",
           "evidence": [
-            "Published decisions retain links/checks/reasons but do not yet include end-to-end source snapshot hashes, excerpts, parser/schema versions and every rejected/unpaired decision."
+            "Versioned machine-readable replay evidence retains all 137 parse decisions plus 38 cross-venue decisions with policy/parser/canonical/matcher versions, hashes, excerpts, comparisons, reason codes, scenario proof and explicit disabled pricing."
           ]
         },
         {
@@ -421,10 +421,10 @@
         {
           "id": "P3-06",
           "title": "Add reviewer workflow and expiring overrides",
-          "status": "next",
+          "status": "done",
           "acceptance": "Review records capture identity, timestamp, snapshot hashes, scenario proof, differences, and expiry; overrides remain pricing-ineligible in this phase.",
           "evidence": [
-            "Review table fields exist, but no migration/version framework or full differences field/override enforcement integration has been exercised."
+            "src/arbs/reviews.py validates immutable sequenced review identity/evidence/expiry/differences/scenario proof; review_events are append-only and tests prove APPROVED_OVERRIDE cannot enable a REVIEW decision."
           ]
         },
         {
@@ -465,10 +465,10 @@
         {
           "id": "P4-02",
           "title": "Capture matched books with timing evidence",
-          "status": "in_progress",
+          "status": "done",
           "acceptance": "Book pairs record source and local receipt times, retrieval skew, failures, and atomic comparison identity.",
           "evidence": [
-            "Atomic pair sampler now records complete/failure states, comparison identity, hashes, local receipt times and skew; first 10-sample run had 0 failures, p50 skew 102.5ms and p95 209ms. Explicit venue source-time extraction remains."
+            "Atomic collector records complete/failure pairs, shared identity, hashes, local receipt times/skew, Polymarket source timestamp/hash/age, and explicit Kalshi source_time_status=not_exposed; 220 samples retained."
           ]
         },
         {
@@ -492,10 +492,10 @@
         {
           "id": "P4-05",
           "title": "Measure and set freshness thresholds",
-          "status": "next",
+          "status": "done",
           "acceptance": "Quote-age and pair-skew limits derive from observed latency/movement distributions; stale/suspended books are excluded.",
           "evidence": [
-            "First matched public book pair captured with 116ms receipt skew; scheduled shadow collection must accumulate distributions before thresholds are chosen."
+            "docs/freshness-policy.md and config/freshness/mlb-books-2026-08-12-v1.json derive an 800ms pair-skew limit from 220 observations (p99 786.02ms), reject the 20.34s outlier, cap local age at 2s and defer source-age release threshold pending more source-time samples."
           ]
         },
         {
@@ -590,10 +590,10 @@
         {
           "id": "P5-07",
           "title": "Complete sustained shadow run",
-          "status": "next",
+          "status": "in_progress",
           "acceptance": "At least several hundred reviewed events and a representative operating window record theoretical fills, subsequent movement, resolutions, false positives, uptime, and net results after modeled costs.",
           "evidence": [
-            "Read-only scanner job d0baed088b0b runs every 5 minutes; first forced run succeeded with 33 matches. Several hundred reviewed events and representative elapsed window remain empirical gates."
+            "Scheduled read-only matching/book collector is active; at least 220 paired-book observations and repeated 38-event raw replays exist. Representative elapsed window, subsequent movement, settled resolutions and modeled net-result audit remain."
           ]
         },
         {

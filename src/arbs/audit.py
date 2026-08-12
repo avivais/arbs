@@ -18,9 +18,10 @@ CREATE TABLE decisions(id TEXT PRIMARY KEY,run_id TEXT NOT NULL REFERENCES runs(
 CREATE TABLE reviews(id TEXT PRIMARY KEY,decision_id TEXT NOT NULL REFERENCES decisions(id),reviewer TEXT NOT NULL,reviewed_at TEXT NOT NULL,expires_at TEXT NOT NULL,scenario_proof TEXT NOT NULL,differences_json TEXT NOT NULL,snapshot_hashes_json TEXT NOT NULL,outcome TEXT NOT NULL CHECK(outcome IN('APPROVED_OVERRIDE','REJECTED','NEEDS_MORE_EVIDENCE')));
 CREATE TABLE opportunities(id TEXT PRIMARY KEY,decision_id TEXT NOT NULL REFERENCES decisions(id),created_at TEXT NOT NULL,eligible INTEGER NOT NULL CHECK(eligible IN(0,1)),reason TEXT NOT NULL,evidence_json TEXT NOT NULL);
 CREATE TABLE resolutions(id TEXT PRIMARY KEY,decision_id TEXT NOT NULL REFERENCES decisions(id),venue TEXT NOT NULL,resolved_at TEXT NOT NULL,outcome TEXT NOT NULL,evidence_json TEXT NOT NULL,UNIQUE(decision_id,venue));
+CREATE TABLE review_events(id TEXT PRIMARY KEY,case_id TEXT NOT NULL,decision_id TEXT NOT NULL REFERENCES decisions(id),decision_evidence_sha256 TEXT NOT NULL,event_seq INTEGER NOT NULL,event_type TEXT NOT NULL,reviewer_id TEXT NOT NULL,recorded_at TEXT NOT NULL,expires_at TEXT,differences_json TEXT NOT NULL,scenario_proof_json TEXT NOT NULL,snapshot_hashes_json TEXT NOT NULL,rationale TEXT NOT NULL,UNIQUE(case_id,event_seq));
 CREATE INDEX raw_run ON raw_references(run_id); CREATE INDEX contracts_run ON normalized_contracts(run_id); CREATE INDEX books_run ON books(run_id); CREATE INDEX decisions_run ON decisions(run_id); CREATE INDEX opportunities_decision ON opportunities(decision_id); CREATE INDEX resolutions_decision ON resolutions(decision_id);
 """),)
-IMMUTABLE_TABLES=("raw_references","normalized_contracts","books","decisions","reviews","opportunities","resolutions")
+IMMUTABLE_TABLES=("raw_references","normalized_contracts","books","decisions","reviews","review_events","opportunities","resolutions")
 
 
 def connect(path:Path)->sqlite3.Connection:

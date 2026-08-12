@@ -16,8 +16,24 @@ def _fetch(client: Any, identifier: str) -> dict[str, Any]:
     received = datetime.now(timezone.utc).isoformat().replace("+00:00", "Z")
     payload = response.data
     canonical = json.dumps(payload, sort_keys=True, separators=(",", ":")).encode()
+    source_at = None
+    source_time_status = "not_exposed"
+    source_age_at_receipt_ms = None
+    source_sequence = payload.get("hash") if isinstance(payload, dict) else None
+    if not isinstance(client, KalshiPublicClient) and isinstance(payload, dict) and payload.get("timestamp") is not None:
+        try:
+            raw = int(payload["timestamp"])
+            source_dt = datetime.fromtimestamp(raw / 1000, timezone.utc)
+            received_dt = datetime.fromisoformat(received.replace("Z", "+00:00"))
+            source_at = source_dt.isoformat().replace("+00:00", "Z")
+            source_age_at_receipt_ms = round((received_dt - source_dt).total_seconds() * 1000, 3)
+            source_time_status = "future" if source_age_at_receipt_ms < 0 else "available"
+        except (TypeError, ValueError, OverflowError):
+            source_time_status = "invalid"
     return {"identifier": identifier, "source_url": response.url, "http_status": response.status,
-            "received_at": received, "request_elapsed_ms": round((monotonic() - before) * 1000, 3),
+            "received_at": received, "source_at": source_at, "source_time_status": source_time_status,
+            "source_age_at_receipt_ms": source_age_at_receipt_ms, "source_sequence": source_sequence,
+            "request_elapsed_ms": round((monotonic() - before) * 1000, 3),
             "payload_sha256": hashlib.sha256(canonical).hexdigest(), "payload": payload}
 
 
