@@ -1,110 +1,53 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Arbs Live Cross-Venue Matches</title><style>
-:root{--bg:#09111f;--card:#111c2e;--text:#e8eef9;--muted:#9fb0c9;--line:#263650;--cyan:#5de4c7;--amber:#ffca6b}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.5 system-ui,sans-serif}main{max-width:1250px;margin:auto;padding:32px 18px}
-h1{margin-bottom:4px}.muted{color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:24px 0}.stat,.notice{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px}.number{font-size:28px;font-weight:800;color:var(--cyan)}
-.notice{border-left:4px solid var(--amber);margin:18px 0}.wrap{overflow-x:auto;border:1px solid var(--line);border-radius:12px}table{width:100%;border-collapse:collapse;background:var(--card)}th,td{padding:12px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}th{position:sticky;top:0;background:#16243a}a{color:var(--cyan)}.review{color:#17120a;background:var(--amber);font-weight:800;padding:3px 8px;border-radius:999px}code{color:var(--cyan);overflow-wrap:anywhere}
-</style></head><body><main><h1>Live matched markets across venues</h1><p class="muted">Arbs read-only MLB checkpoint · captured 2026-08-12T13:02:20.225485Z</p>
-<div class="stats"><div class="stat"><div class="number">33</div>matched events</div><div class="stat"><div class="number">33</div>Kalshi events</div><div class="stat"><div class="number">84</div>Polymarket events</div></div>
-<div class="notice"><strong>Safety status: event identity matched, pricing disabled.</strong><br>Every row is <b>REVIEW</b>, not EXACT, because cancellation/postponement payout equivalence is not yet proven. No order or account action was performed.</div>
-<div class="wrap"><table><thead><tr><th>Scheduled UTC</th><th>Participants</th><th>Kalshi event</th><th>Polymarket event</th><th>Start delta</th><th>Decision</th></tr></thead><tbody><tr><td>2026-08-12T17:40:00Z</td><td><strong>BAL ↔ MIN</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug121340balmin">KXMLBGAME-26AUG121340BALMIN</a></td>
-<td><a href="https://polymarket.com/event/mlb-bal-min-2026-08-12">805955</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-12T18:15:00Z</td><td><strong>PHI ↔ STL</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug121415phistl">KXMLBGAME-26AUG121415PHISTL</a></td>
-<td><a href="https://polymarket.com/event/mlb-phi-stl-2026-08-12">805958</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-12T19:40:00Z</td><td><strong>ARI ↔ COL</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug121540colaz">KXMLBGAME-26AUG121540COLAZ</a></td>
-<td><a href="https://polymarket.com/event/mlb-col-ari-2026-08-12">805961</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-12T19:45:00Z</td><td><strong>HOU ↔ SF</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug121545housf">KXMLBGAME-26AUG121545HOUSF</a></td>
-<td><a href="https://polymarket.com/event/mlb-hou-sf-2026-08-12">805962</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-12T20:10:00Z</td><td><strong>MIL ↔ SD</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug121610milsd">KXMLBGAME-26AUG121610MILSD</a></td>
-<td><a href="https://polymarket.com/event/mlb-mil-sd-2026-08-12">805963</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-12T22:40:00Z</td><td><strong>CLE ↔ DET</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug121840cledet">KXMLBGAME-26AUG121840CLEDET</a></td>
-<td><a href="https://polymarket.com/event/mlb-cle-det-2026-08-12">805964</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-12T22:40:00Z</td><td><strong>MIA ↔ PIT</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug121840pitmia">KXMLBGAME-26AUG121840PITMIA</a></td>
-<td><a href="https://polymarket.com/event/mlb-pit-mia-2026-08-12">805965</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-12T22:45:00Z</td><td><strong>CHC ↔ WSH</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug121845chcwsh">KXMLBGAME-26AUG121845CHCWSH</a></td>
-<td><a href="https://polymarket.com/event/mlb-chc-wsh-2026-08-12">805966</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-12T23:05:00Z</td><td><strong>NYY ↔ SEA</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug121905seanyy">KXMLBGAME-26AUG121905SEANYY</a></td>
-<td><a href="https://polymarket.com/event/mlb-sea-nyy-2026-08-12">805967</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-12T23:07:00Z</td><td><strong>BOS ↔ TOR</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug121907bostor">KXMLBGAME-26AUG121907BOSTOR</a></td>
-<td><a href="https://polymarket.com/event/mlb-bos-tor-2026-08-12">805968</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-12T23:15:00Z</td><td><strong>ATL ↔ NYM</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug121915nymatl">KXMLBGAME-26AUG121915NYMATL</a></td>
-<td><a href="https://polymarket.com/event/mlb-nym-atl-2026-08-12">805969</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-13T02:10:00Z</td><td><strong>KC ↔ LAD</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug122210kclad">KXMLBGAME-26AUG122210KCLAD</a></td>
-<td><a href="https://polymarket.com/event/mlb-kc-lad-2026-08-12">805972</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-13T02:10:00Z</td><td><strong>LAA ↔ TEX</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug122210texlaa">KXMLBGAME-26AUG122210TEXLAA</a></td>
-<td><a href="https://polymarket.com/event/mlb-tex-laa-2026-08-12">805971</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-13T17:10:00Z</td><td><strong>CLE ↔ DET</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug131310cledet">KXMLBGAME-26AUG131310CLEDET</a></td>
-<td><a href="https://polymarket.com/event/mlb-cle-det-2026-08-13">810748</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-13T17:10:00Z</td><td><strong>MIA ↔ PIT</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug131310pitmia">KXMLBGAME-26AUG131310PITMIA</a></td>
-<td><a href="https://polymarket.com/event/mlb-pit-mia-2026-08-13">810750</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-13T17:35:00Z</td><td><strong>NYY ↔ SEA</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug131335seanyy">KXMLBGAME-26AUG131335SEANYY</a></td>
-<td><a href="https://polymarket.com/event/mlb-sea-nyy-2026-08-13">810751</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-13T19:07:00Z</td><td><strong>BOS ↔ TOR</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug131507bostor">KXMLBGAME-26AUG131507BOSTOR</a></td>
-<td><a href="https://polymarket.com/event/mlb-bos-tor-2026-08-13">810753</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-13T20:05:00Z</td><td><strong>CHC ↔ WSH</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug131605chcwsh">KXMLBGAME-26AUG131605CHCWSH</a></td>
-<td><a href="https://polymarket.com/event/mlb-chc-wsh-2026-08-13">810755</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-13T23:30:00Z</td><td><strong>MIN ↔ PHI</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug131930phimin">KXMLBGAME-26AUG131930PHIMIN</a></td>
-<td><a href="https://polymarket.com/event/mlb-phi-min-2026-08-13">810756</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-14T02:07:00Z</td><td><strong>LAA ↔ TEX</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug132207texlaa">KXMLBGAME-26AUG132207TEXLAA</a></td>
-<td><a href="https://polymarket.com/event/mlb-tex-laa-2026-08-13">810757</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-14T02:10:00Z</td><td><strong>LAD ↔ MIL</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug132210millad">KXMLBGAME-26AUG132210MILLAD</a></td>
-<td><a href="https://polymarket.com/event/mlb-mil-lad-2026-08-13">810758</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-14T18:20:00Z</td><td><strong>CHC ↔ STL</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug141420stlchc">KXMLBGAME-26AUG141420STLCHC</a></td>
-<td><a href="https://polymarket.com/event/mlb-stl-chc-2026-08-14">815578</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-14T22:10:00Z</td><td><strong>CIN ↔ MIA</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug141810miacin">KXMLBGAME-26AUG141810MIACIN</a></td>
-<td><a href="https://polymarket.com/event/mlb-mia-cin-2026-08-14">815581</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-14T22:40:00Z</td><td><strong>BOS ↔ PIT</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug141840bospit">KXMLBGAME-26AUG141840BOSPIT</a></td>
-<td><a href="https://polymarket.com/event/mlb-bos-pit-2026-08-14">815583</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-14T23:10:00Z</td><td><strong>BAL ↔ TB</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug141910baltb">KXMLBGAME-26AUG141910BALTB</a></td>
-<td><a href="https://polymarket.com/event/mlb-bal-tb-2026-08-14">815586</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-14T23:10:00Z</td><td><strong>CLE ↔ SD</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug141910sdcle">KXMLBGAME-26AUG141910SDCLE</a></td>
-<td><a href="https://polymarket.com/event/mlb-sd-cle-2026-08-14">815584</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-14T23:10:00Z</td><td><strong>NYM ↔ WSH</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug141910wshnym">KXMLBGAME-26AUG141910WSHNYM</a></td>
-<td><a href="https://polymarket.com/event/mlb-wsh-nym-2026-08-14">815585</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-14T23:15:00Z</td><td><strong>ARI ↔ ATL</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug141915azatl">KXMLBGAME-26AUG141915AZATL</a></td>
-<td><a href="https://polymarket.com/event/mlb-ari-atl-2026-08-14">815587</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-14T23:15:00Z</td><td><strong>NYY ↔ TOR</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug141915nyytor">KXMLBGAME-26AUG141915NYYTOR</a></td>
-<td><a href="https://polymarket.com/event/mlb-nyy-tor-2026-08-14">815588</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-15T00:10:00Z</td><td><strong>HOU ↔ SEA</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug142010seahou">KXMLBGAME-26AUG142010SEAHOU</a></td>
-<td><a href="https://polymarket.com/event/mlb-sea-hou-2026-08-14">815589</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-15T01:38:00Z</td><td><strong>KC ↔ LAA</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug142138kclaa">KXMLBGAME-26AUG142138KCLAA</a></td>
-<td><a href="https://polymarket.com/event/mlb-kc-laa-2026-08-14">815590</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-15T02:10:00Z</td><td><strong>LAD ↔ MIL</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug142210millad">KXMLBGAME-26AUG142210MILLAD</a></td>
-<td><a href="https://polymarket.com/event/mlb-mil-lad-2026-08-14">815592</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr><tr><td>2026-08-15T02:15:00Z</td><td><strong>COL ↔ SF</strong></td>
-<td><a href="https://kalshi.com/markets/kxmlbgame-26aug142215colsf">KXMLBGAME-26AUG142215COLSF</a></td>
-<td><a href="https://polymarket.com/event/mlb-col-sf-2026-08-14">815593</a></td>
-<td>0s</td><td><span class="review">REVIEW</span></td></tr></tbody></table></div>
-<p class="muted">Audit report SHA-256: <code>10f44d107d8b61b4c5fdd0d74c98c2dedad7ee9b51e65a71101b6dde2c1d4024</code></p></main></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Arbs — Live matched-market dashboard</title>
+<style>
+:root{--bg:#07101d;--panel:#0e1b2d;--panel2:#13243a;--line:#29415e;--text:#edf5ff;--muted:#9eb1c9;--cyan:#5de4c7;--amber:#ffca6b;--red:#ff7a90;--green:#78e6a3}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 90% 0,#123052 0,transparent 34rem),var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,sans-serif}main{max-width:1500px;margin:auto;padding:28px 18px 60px}h1{font-size:clamp(25px,4vw,42px);line-height:1.05;margin:0 0 8px}.top,.toolbar,.stats,.event-head,.meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.top{justify-content:space-between}.muted{color:var(--muted)}a{color:var(--cyan)}button,input,select{font:inherit;color:var(--text);background:#0c1a2c;border:1px solid var(--line);border-radius:9px;padding:9px 12px}button{cursor:pointer}button:hover{border-color:var(--cyan)}.notice{margin:20px 0;padding:14px 16px;border:1px solid #705b2d;border-left:4px solid var(--amber);background:#2a2418;border-radius:10px}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));margin:18px 0}.stat{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:12px;padding:14px}.stat b{font-size:25px;color:var(--cyan);display:block}.toolbar{position:sticky;top:0;z-index:4;background:rgba(7,16,29,.92);backdrop-filter:blur(9px);padding:12px 0}.toolbar input{flex:1;min-width:210px}.status{display:inline-flex;align-items:center;gap:7px}.dot{width:9px;height:9px;border-radius:50%;background:var(--amber)}.dot.ok{background:var(--green);box-shadow:0 0 0 4px rgba(120,230,163,.12)}.dot.error{background:var(--red)}#events{display:grid;gap:15px}.event{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;overflow:hidden}.event-head{justify-content:space-between;padding:15px 17px;border-bottom:1px solid var(--line)}.event-title{font-size:19px;font-weight:750}.pill{display:inline-block;padding:3px 8px;border-radius:999px;background:var(--amber);color:#1c1608;font-size:11px;font-weight:850;letter-spacing:.05em}.links a{margin-left:12px}.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:850px}th,td{padding:10px 13px;border-bottom:1px solid #203751;text-align:right;font-variant-numeric:tabular-nums}th:first-child,td:first-child{text-align:left}th{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:#0d1a2b}.venue{font-weight:700;text-align:left!important}.price{font-weight:720}.ask{color:var(--amber)}.bid{color:var(--green)}.na{color:#63758b}.meta{padding:10px 16px;color:var(--muted);font-size:12px}.empty{padding:45px;text-align:center;border:1px dashed var(--line);border-radius:12px}.foot{margin-top:20px}.hidden{display:none!important}@media(max-width:650px){main{padding:20px 10px}.links{width:100%}.links a{margin:0 12px 0 0}.event-head{align-items:flex-start}.toolbar{top:0}}
+</style>
+</head>
+<body><main>
+<div class="top"><div><h1>Live matched markets</h1><div class="muted">Kalshi ↔ Polymarket · read-only MLB event links</div></div><div class="status"><span id="dot" class="dot"></span><span id="connection">Loading…</span></div></div>
+<div class="notice"><b>Safety:</b> these are event-identity links classified <b>REVIEW</b>. Material cancellation/postponement rules differ, so pricing eligibility, alerts, account actions and trading are disabled.</div>
+<div class="stats"><div class="stat"><b id="matched">—</b>matched events</div><div class="stat"><b id="upcoming">—</b>not started</div><div class="stat"><b id="options">—</b>venue options</div><div class="stat"><b id="age">—</b>data age</div></div>
+<div class="toolbar"><input id="search" type="search" placeholder="Filter participant or event ID" aria-label="Filter events"><select id="window" aria-label="Time filter"><option value="all">All matches</option><option value="upcoming">Not started</option><option value="24h">Next 24 hours</option></select><button id="refresh" type="button">Refresh now</button></div>
+<div id="events" aria-live="polite"></div>
+<div class="foot muted">Dashboard checks for a newer immutable snapshot every 30 seconds; the collector refreshes approximately every five minutes. Prices are public indicative/top-of-book fields from the discovery payload, not executable quotes. Last snapshot: <span id="captured">—</span> · <a href="../data/shadow/latest.json">raw evidence</a> · <a href="rolling-plan.html">rolling plan</a>.</div>
+</main>
+<script>
+'use strict';
+const DATA='../data/shadow/latest.json';
+const $=id=>document.getElementById(id);let report=null,timer=null;
+const text=(el,value)=>{el.textContent=value};
+const price=value=>value===null||value===undefined||value===''?'—':(Number(value)*100).toFixed(1)+'¢';
+const when=value=>new Date(value).toLocaleString(undefined,{year:'numeric',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',timeZoneName:'short'});
+const escId=value=>String(value||'').toLowerCase();
+function cell(row,value,cls=''){const td=document.createElement('td');td.textContent=value;cls&&td.classList.add(cls);row.append(td)}
+function optionRows(match){
+ const teams=match.participants||[];const rows=[];
+ for(const team of teams){
+  const k=(match.kalshi.contracts||[]).find(x=>x.selected_team===team)||{};
+  const p=(match.polymarket.contracts||[]).find(x=>x.selected_team===team)||{};
+  rows.push({team,venue:'Kalshi YES',id:k.id,bid:k.yes_bid,ask:k.yes_ask,otherBid:k.no_bid,otherAsk:k.no_ask,indicative:null});
+  rows.push({team,venue:'Polymarket',id:p.token_id,bid:p.best_bid,ask:p.best_ask,otherBid:null,otherAsk:null,indicative:p.indicative_price});
+ }
+ return rows;
+}
+function makeEvent(match){
+ const card=document.createElement('article');card.className='event';card.dataset.search=[...(match.participants||[]),match.kalshi.event_id,match.polymarket.event_id].join(' ').toLowerCase();card.dataset.start=match.start_utc;
+ const head=document.createElement('div');head.className='event-head';
+ const left=document.createElement('div');const title=document.createElement('div');title.className='event-title';title.textContent=(match.participants||[]).join(' ↔ ');const sub=document.createElement('div');sub.className='muted';sub.textContent=when(match.start_utc)+' · '+match.start_utc;left.append(title,sub);
+ const right=document.createElement('div');right.className='links';const pill=document.createElement('span');pill.className='pill';pill.textContent=match.decision||'REVIEW';const ka=document.createElement('a');ka.href=match.kalshi.source_url;ka.target='_blank';ka.rel='noopener';ka.textContent='Kalshi ↗';const pa=document.createElement('a');pa.href=match.polymarket.source_url;pa.target='_blank';pa.rel='noopener';pa.textContent='Polymarket ↗';right.append(pill,ka,pa);head.append(left,right);card.append(head);
+ const wrap=document.createElement('div');wrap.className='scroll';const table=document.createElement('table');const thead=document.createElement('thead');thead.innerHTML='<tr><th>Option / venue</th><th>Best bid</th><th>Best ask</th><th>NO bid</th><th>NO ask</th><th>Indicative</th><th>Contract / token</th></tr>';const body=document.createElement('tbody');
+ for(const item of optionRows(match)){const tr=document.createElement('tr');cell(tr,item.team+' · '+item.venue,'venue');cell(tr,price(item.bid),item.bid==null?'na':'bid');cell(tr,price(item.ask),item.ask==null?'na':'ask');cell(tr,price(item.otherBid),item.otherBid==null?'na':'bid');cell(tr,price(item.otherAsk),item.otherAsk==null?'na':'ask');cell(tr,price(item.indicative),item.indicative==null?'na':'price');cell(tr,item.id||'—',item.id?'':'na');body.append(tr)}
+ table.append(thead,body);wrap.append(table);card.append(wrap);const meta=document.createElement('div');meta.className='meta';meta.textContent='Kalshi '+match.kalshi.event_id+' · Polymarket '+match.polymarket.event_id+' · start delta '+match.start_delta_seconds+'s · pricing disabled';card.append(meta);return card;
+}
+function applyFilter(){const q=$('search').value.trim().toLowerCase(),mode=$('window').value,now=Date.now(),day=86400000;let visible=0;document.querySelectorAll('.event').forEach(card=>{const start=new Date(card.dataset.start).getTime();const timeOk=mode==='all'||(mode==='upcoming'&&start>=now)||(mode==='24h'&&start>=now&&start<=now+day);const show=timeOk&&(!q||card.dataset.search.includes(q));card.classList.toggle('hidden',!show);if(show)visible++});const empty=$('empty');if(empty)empty.classList.toggle('hidden',visible!==0)}
+function render(data){report=data;const matches=data.matches||[],now=Date.now();text($('matched'),matches.length);text($('upcoming'),matches.filter(m=>new Date(m.start_utc).getTime()>=now).length);text($('options'),matches.reduce((n,m)=>n+(m.kalshi.contracts||[]).length+(m.polymarket.contracts||[]).length,0));text($('captured'),data.generated_at?when(data.generated_at):'unknown');const age=Math.max(0,now-new Date(data.generated_at).getTime());text($('age'),age<60000?'<1m':Math.floor(age/60000)+'m');const box=$('events');box.replaceChildren();matches.slice().sort((a,b)=>new Date(a.start_utc)-new Date(b.start_utc)).forEach(m=>box.append(makeEvent(m)));const empty=document.createElement('div');empty.id='empty';empty.className='empty hidden';empty.textContent='No matches meet this filter.';box.append(empty);applyFilter()}
+async function load(){text($('connection'),'Refreshing…');$('dot').className='dot';try{const response=await fetch(DATA+'?t='+Date.now(),{cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);const data=await response.json();if(!Array.isArray(data.matches))throw new Error('invalid report');render(data);$('dot').className='dot ok';text($('connection'),'Live snapshot loaded')}catch(error){console.error('dashboard refresh failed',error);$('dot').className='dot error';text($('connection'),'Snapshot unavailable');if(!report){const empty=document.createElement('div');empty.className='empty';empty.textContent='Live evidence could not be loaded. The dashboard will retry automatically.';$('events').replaceChildren(empty)}}}
+$('search').addEventListener('input',applyFilter);$('window').addEventListener('change',applyFilter);$('refresh').addEventListener('click',load);load();timer=setInterval(load,30000);
+</script></body></html>
