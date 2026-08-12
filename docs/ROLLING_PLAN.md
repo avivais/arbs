@@ -5,13 +5,13 @@
 
 ## Live status
 
-- **Progress:** 8/58 tasks source-verified complete (13%)
-- **Current focus:** Phase 1 — build a representative, replayable production evidence corpus for field auditing and normalization.
-- **Next action:** `P1-02: capture a bounded representative production corpus.`
+- **Progress:** 11/58 tasks source-verified complete (18%)
+- **Current focus:** Phase 1 — convert the verified live MLB corpus into pinned offline replay fixtures with complete lineage.
+- **Next action:** `P1-05: add a deterministic replay fixture loader.`
 
 | Done | In progress | Next | Blocked | Deferred |
 |---:|---:|---:|---:|---:|
-| 8 | 1 | 40 | 1 | 8 |
+| 11 | 1 | 37 | 1 | 8 |
 
 ## Mission
 
@@ -71,20 +71,23 @@ Establish the safety contract, public venue boundaries, and replayable raw evide
 
 ### P1 — Reliable raw discovery and field audit
 
-**Status:** In progress · **Progress:** 1/9
+**Status:** In progress · **Progress:** 4/9
 
 Turn initial ingestion into a complete, regression-safe evidence corpus for the MVP.
 
 - [x] **P1-01 — Restore a green test baseline** `[Done]`
   - **Acceptance:** All declared unit tests pass; request counting behavior is asserted correctly.
   - **Evidence:** `tests/test_ingestion.py:43 corrected to the seven actual adapter requests`; `Verified 2026-08-12: 8/8 unittest cases pass`
-- [ ] **P1-02 — Capture a bounded representative production corpus** `[In progress]`
+- [x] **P1-02 — Capture a bounded representative production corpus** `[Done]`
   - **Acceptance:** Sanitized or ignored replay corpus covers at least 20 representative markets per venue for the initial league/family, plus malformed and edge cases.
-- [ ] **P1-03 — Audit venue field coverage against equivalence requirements** `[Next]`
+  - **Evidence:** `data/reports/live-mlb-matches.json: bounded 2026-08-12 report includes 76 Kalshi markets, 173 Polymarket events, and 33 normalized pairs`; `tests/test_live_matching.py: malformed/unknown, ambiguity, variant, and time-window edge cases`
+- [x] **P1-03 — Audit venue field coverage against equivalence requirements** `[Done]`
   - **Acceptance:** A checked matrix maps every canonical/material field to endpoint, source field, availability, and fallback; gaps have explicit REVIEW/UNSUPPORTED behavior.
-- [ ] **P1-04 — Capture complete market rules and lifecycle evidence** `[Next]`
+  - **Evidence:** `docs/live-mlb-field-audit.md`
+- [x] **P1-04 — Capture complete market rules and lifecycle evidence** `[Done]`
   - **Acceptance:** Adapters fetch the most authoritative exposed rule text/source and lifecycle fields, or record a typed unavailability reason.
-- [ ] **P1-05 — Add deterministic replay fixture loader** `[Next]`
+  - **Evidence:** `src/arbs/matching/live.py retains venue rule/lifecycle evidence`; `docs/live-mlb-field-audit.md documents authoritative fields and typed fail-closed behavior`
+- [ ] **P1-05 — Add deterministic replay fixture loader** `[In progress]`
   - **Acceptance:** Tests run offline from pinned sanitized payloads with source metadata and hashes.
 - [ ] **P1-06 — Harden pagination, rate-limit, malformed payload, and partial-capture behavior** `[Next]`
   - **Acceptance:** Adversarial tests prove bounded termination, explicit partial/failure manifests, retry limits, and no silent record loss.
@@ -224,6 +227,7 @@ Design trading as an isolated, explicitly approved subsystem after shadow gates 
 | `D-002` | 2026-08-12 | Implement a narrow pre-game head-to-head vertical slice first while preserving the all-sports taxonomy. | Produces measurable precision sooner without discarding the broader equivalence design. |
 | `D-003` | 2026-08-12 | Keep all work read-only through shadow validation; trading is a separately approved phase. | No real-account or money risk is needed to validate ingestion, matching, and pricing. |
 | `D-004` | 2026-08-12 | Treat exact material-rule evidence as mandatory for EXACT. | Similar titles or missing rule fields cannot prove payout equivalence. |
+| `D-005` | 2026-08-12 | Treat deterministic event-identity matches as REVIEW until cancellation and postponement payout equivalence is proven. | Live MLB payloads expose materially different fair-price versus 50-50/carry-forward behavior; matched titles and starts alone are not trade-safe. |
 
 ## Risk register
 
@@ -241,6 +245,7 @@ Design trading as an isolated, explicitly approved subsystem after shadow gates 
 
 - **2026-08-12** — Created evidence-backed rolling plan; marked repository foundation complete, raw discovery in progress, and execution deferred.
 - **2026-08-12** — Corrected the stale union-capture request assertion; all eight baseline tests now pass; advanced active work to representative production corpus capture.
+- **2026-08-12** — Captured and published a bounded live MLB checkpoint: 33 unique cross-venue event-identity matches from 76 Kalshi markets and 173 Polymarket events; all remain REVIEW and pricing-ineligible due to material rule differences.
 
 ---
 

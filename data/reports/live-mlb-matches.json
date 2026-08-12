@@ -1,0 +1,3713 @@
+{
+  "counts": {
+    "kalshi_normalized_events": 33,
+    "kalshi_raw_markets": 76,
+    "matched_events": 33,
+    "polymarket_normalized_events": 84,
+    "polymarket_raw_events": 173
+  },
+  "eligibility_notice": "Event identity only; REVIEW matches are not pricing or trading eligible.",
+  "generated_at": "2026-08-12T13:02:20.225485Z",
+  "matches": [
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "BAL",
+            "MIN"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG121340BALMIN-BAL",
+            "no_ask": "0.5100",
+            "no_bid": "0.5000",
+            "selected_team": "BAL",
+            "yes_ask": "0.5000",
+            "yes_bid": "0.4900"
+          },
+          {
+            "id": "KXMLBGAME-26AUG121340BALMIN-MIN",
+            "no_ask": "0.5000",
+            "no_bid": "0.4900",
+            "selected_team": "MIN",
+            "yes_ask": "0.5100",
+            "yes_bid": "0.5000"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG121340BALMIN",
+        "participants": [
+          "BAL",
+          "MIN"
+        ],
+        "rules": "If Minnesota wins the Baltimore vs Minnesota professional baseball game originally scheduled for Aug 12, 2026 at 1:40 PM EDT, then the market resolves to Yes.\nThe following market refers to the Baltimore vs Minnesota professional baseball game originally scheduled for Aug 12, 2026 at 1:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug121340balmin",
+        "start_utc": "2026-08-12T17:40:00Z",
+        "title": "Baltimore vs Minnesota Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "BAL",
+        "MIN"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.5,
+            "best_bid": 0.49,
+            "indicative_price": "0.495",
+            "selected_team": "BAL",
+            "token_id": "96349800306534975115100816012356033633253862563176396856150336262950208285680"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.505",
+            "selected_team": "MIN",
+            "token_id": "47662954576901687983337899942560033567485112427568018322199961739401904587418"
+          }
+        ],
+        "event_id": "805955",
+        "participants": [
+          "BAL",
+          "MIN"
+        ],
+        "rules": "In the upcoming MLB game between the Baltimore Orioles and Minnesota Twins, scheduled for August 12 at 1:40PM ET:\n\nThis market will resolve to \"Baltimore Orioles\" if the Baltimore Orioles win the game.\n\nThis market will resolve to \"Minnesota Twins\" if the Minnesota Twins win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-bal-min-2026-08-12",
+        "start_utc": "2026-08-12T17:40:00Z",
+        "title": "Baltimore Orioles vs. Minnesota Twins",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-12T17:40:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "PHI",
+            "STL"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG121415PHISTL-PHI",
+            "no_ask": "0.4000",
+            "no_bid": "0.3900",
+            "selected_team": "PHI",
+            "yes_ask": "0.6100",
+            "yes_bid": "0.6000"
+          },
+          {
+            "id": "KXMLBGAME-26AUG121415PHISTL-STL",
+            "no_ask": "0.6000",
+            "no_bid": "0.5900",
+            "selected_team": "STL",
+            "yes_ask": "0.4100",
+            "yes_bid": "0.4000"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG121415PHISTL",
+        "participants": [
+          "PHI",
+          "STL"
+        ],
+        "rules": "If St. Louis wins the Philadelphia vs St. Louis professional baseball game originally scheduled for Aug 12, 2026 at 2:15 PM EDT, then the market resolves to Yes.\nThe following market refers to the Philadelphia vs St. Louis professional baseball game originally scheduled for Aug 12, 2026 at 2:15 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug121415phistl",
+        "start_utc": "2026-08-12T18:15:00Z",
+        "title": "Philadelphia vs St. Louis Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "PHI",
+        "STL"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.6,
+            "best_bid": 0.59,
+            "indicative_price": "0.595",
+            "selected_team": "PHI",
+            "token_id": "23360050337504318804424821089321947502574513506537580391881298054522755083964"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.405",
+            "selected_team": "STL",
+            "token_id": "81204742590900869831144431839660025696569270829378330127379092902911015988186"
+          }
+        ],
+        "event_id": "805958",
+        "participants": [
+          "PHI",
+          "STL"
+        ],
+        "rules": "In the upcoming MLB game between the Philadelphia Phillies and St. Louis Cardinals, scheduled for August 12 at 2:15PM ET:\n\nThis market will resolve to \"Philadelphia Phillies\" if the Philadelphia Phillies win the game.\n\nThis market will resolve to \"St. Louis Cardinals\" if the St. Louis Cardinals win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-phi-stl-2026-08-12",
+        "start_utc": "2026-08-12T18:15:00Z",
+        "title": "Philadelphia Phillies vs. St. Louis Cardinals",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-12T18:15:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "ARI",
+            "COL"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG121540COLAZ-AZ",
+            "no_ask": "0.3800",
+            "no_bid": "0.3700",
+            "selected_team": "ARI",
+            "yes_ask": "0.6300",
+            "yes_bid": "0.6200"
+          },
+          {
+            "id": "KXMLBGAME-26AUG121540COLAZ-COL",
+            "no_ask": "0.6300",
+            "no_bid": "0.6100",
+            "selected_team": "COL",
+            "yes_ask": "0.3900",
+            "yes_bid": "0.3700"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG121540COLAZ",
+        "participants": [
+          "ARI",
+          "COL"
+        ],
+        "rules": "If Colorado wins the Colorado vs Arizona professional baseball game originally scheduled for Aug 12, 2026 at 3:40 PM EDT, then the market resolves to Yes.\nThe following market refers to the Colorado vs Arizona professional baseball game originally scheduled for Aug 12, 2026 at 3:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug121540colaz",
+        "start_utc": "2026-08-12T19:40:00Z",
+        "title": "Colorado vs Arizona Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "ARI",
+        "COL"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.38,
+            "best_bid": 0.37,
+            "indicative_price": "0.375",
+            "selected_team": "COL",
+            "token_id": "48859579535700426845197617698245975767722525579394741359695852422001730338013"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.625",
+            "selected_team": "ARI",
+            "token_id": "62344364419605285697224740443661825717192523982281115083856643791469210182455"
+          }
+        ],
+        "event_id": "805961",
+        "participants": [
+          "ARI",
+          "COL"
+        ],
+        "rules": "In the upcoming MLB game between the Colorado Rockies and Arizona Diamondbacks, scheduled for August 12 at 3:40PM ET:\n\nThis market will resolve to \"Colorado Rockies\" if the Colorado Rockies win the game.\n\nThis market will resolve to \"Arizona Diamondbacks\" if the Arizona Diamondbacks win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-col-ari-2026-08-12",
+        "start_utc": "2026-08-12T19:40:00Z",
+        "title": "Colorado Rockies vs. Arizona Diamondbacks",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-12T19:40:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "HOU",
+            "SF"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG121545HOUSF-HOU",
+            "no_ask": "0.4400",
+            "no_bid": "0.4300",
+            "selected_team": "HOU",
+            "yes_ask": "0.5700",
+            "yes_bid": "0.5600"
+          },
+          {
+            "id": "KXMLBGAME-26AUG121545HOUSF-SF",
+            "no_ask": "0.5700",
+            "no_bid": "0.5600",
+            "selected_team": "SF",
+            "yes_ask": "0.4400",
+            "yes_bid": "0.4300"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG121545HOUSF",
+        "participants": [
+          "HOU",
+          "SF"
+        ],
+        "rules": "If San Francisco wins the Houston vs San Francisco professional baseball game originally scheduled for Aug 12, 2026 at 3:45 PM EDT, then the market resolves to Yes.\nThe following market refers to the Houston vs San Francisco professional baseball game originally scheduled for Aug 12, 2026 at 3:45 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug121545housf",
+        "start_utc": "2026-08-12T19:45:00Z",
+        "title": "Houston vs San Francisco Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "HOU",
+        "SF"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.57,
+            "best_bid": 0.56,
+            "indicative_price": "0.565",
+            "selected_team": "HOU",
+            "token_id": "22125471739722857304927526171827028120524271750790919490793619052022960466300"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.435",
+            "selected_team": "SF",
+            "token_id": "80578393863352607432366892505809806765872792659855475830618600794480576570807"
+          }
+        ],
+        "event_id": "805962",
+        "participants": [
+          "HOU",
+          "SF"
+        ],
+        "rules": "In the upcoming MLB game between the Houston Astros and San Francisco Giants, scheduled for August 12 at 3:45PM ET:\n\nThis market will resolve to \"Houston Astros\" if the Houston Astros win the game.\n\nThis market will resolve to \"San Francisco Giants\" if the San Francisco Giants win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-hou-sf-2026-08-12",
+        "start_utc": "2026-08-12T19:45:00Z",
+        "title": "Houston Astros vs. San Francisco Giants",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-12T19:45:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "MIL",
+            "SD"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG121610MILSD-MIL",
+            "no_ask": "0.4800",
+            "no_bid": "0.4700",
+            "selected_team": "MIL",
+            "yes_ask": "0.5300",
+            "yes_bid": "0.5200"
+          },
+          {
+            "id": "KXMLBGAME-26AUG121610MILSD-SD",
+            "no_ask": "0.5200",
+            "no_bid": "0.5100",
+            "selected_team": "SD",
+            "yes_ask": "0.4900",
+            "yes_bid": "0.4800"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG121610MILSD",
+        "participants": [
+          "MIL",
+          "SD"
+        ],
+        "rules": "If San Diego wins the Milwaukee vs San Diego professional baseball game originally scheduled for Aug 12, 2026 at 4:10 PM EDT, then the market resolves to Yes.\nThe following market refers to the Milwaukee vs San Diego professional baseball game originally scheduled for Aug 12, 2026 at 4:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug121610milsd",
+        "start_utc": "2026-08-12T20:10:00Z",
+        "title": "Milwaukee vs San Diego Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "MIL",
+        "SD"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.52,
+            "best_bid": 0.51,
+            "indicative_price": "0.515",
+            "selected_team": "MIL",
+            "token_id": "75862684450182122983877172158247977489760160180596517197470007988284084481047"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.485",
+            "selected_team": "SD",
+            "token_id": "44809233393169634599008592722079073194132824453055958232210947925408573506009"
+          }
+        ],
+        "event_id": "805963",
+        "participants": [
+          "MIL",
+          "SD"
+        ],
+        "rules": "In the upcoming MLB game between the Milwaukee Brewers and San Diego Padres, scheduled for August 12 at 4:10PM ET:\n\nThis market will resolve to \"Milwaukee Brewers\" if the Milwaukee Brewers win the game.\n\nThis market will resolve to \"San Diego Padres\" if the San Diego Padres win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-mil-sd-2026-08-12",
+        "start_utc": "2026-08-12T20:10:00Z",
+        "title": "Milwaukee Brewers vs. San Diego Padres",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-12T20:10:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "CLE",
+            "DET"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG121840CLEDET-CLE",
+            "no_ask": "0.5500",
+            "no_bid": "0.5400",
+            "selected_team": "CLE",
+            "yes_ask": "0.4600",
+            "yes_bid": "0.4500"
+          },
+          {
+            "id": "KXMLBGAME-26AUG121840CLEDET-DET",
+            "no_ask": "0.4600",
+            "no_bid": "0.4500",
+            "selected_team": "DET",
+            "yes_ask": "0.5500",
+            "yes_bid": "0.5400"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG121840CLEDET",
+        "participants": [
+          "CLE",
+          "DET"
+        ],
+        "rules": "If Detroit wins the Cleveland vs Detroit professional baseball game originally scheduled for Aug 12, 2026 at 6:40 PM EDT, then the market resolves to Yes.\nThe following market refers to the Cleveland vs Detroit professional baseball game originally scheduled for Aug 12, 2026 at 6:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug121840cledet",
+        "start_utc": "2026-08-12T22:40:00Z",
+        "title": "Cleveland vs Detroit Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "CLE",
+        "DET"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.46,
+            "best_bid": 0.45,
+            "indicative_price": "0.455",
+            "selected_team": "CLE",
+            "token_id": "59914162985691316573542464946049689385563207036524144551538953199078869400353"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.545",
+            "selected_team": "DET",
+            "token_id": "111380403829154353554410685118635682247653791786066735027943247149257049991610"
+          }
+        ],
+        "event_id": "805964",
+        "participants": [
+          "CLE",
+          "DET"
+        ],
+        "rules": "In the upcoming MLB game between the Cleveland Guardians and Detroit Tigers, scheduled for August 12 at 6:40PM ET:\n\nThis market will resolve to \"Cleveland Guardians\" if the Cleveland Guardians win the game.\n\nThis market will resolve to \"Detroit Tigers\" if the Detroit Tigers win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-cle-det-2026-08-12",
+        "start_utc": "2026-08-12T22:40:00Z",
+        "title": "Cleveland Guardians vs. Detroit Tigers",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-12T22:40:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "MIA",
+            "PIT"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG121840PITMIA-MIA",
+            "no_ask": "0.4900",
+            "no_bid": "0.4700",
+            "selected_team": "MIA",
+            "yes_ask": "0.5300",
+            "yes_bid": "0.5100"
+          },
+          {
+            "id": "KXMLBGAME-26AUG121840PITMIA-PIT",
+            "no_ask": "0.5200",
+            "no_bid": "0.5100",
+            "selected_team": "PIT",
+            "yes_ask": "0.4900",
+            "yes_bid": "0.4800"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG121840PITMIA",
+        "participants": [
+          "MIA",
+          "PIT"
+        ],
+        "rules": "If Pittsburgh wins the Pittsburgh vs Miami professional baseball game originally scheduled for Aug 12, 2026 at 6:40 PM EDT, then the market resolves to Yes.\nThe following market refers to the Pittsburgh vs Miami professional baseball game originally scheduled for Aug 12, 2026 at 6:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug121840pitmia",
+        "start_utc": "2026-08-12T22:40:00Z",
+        "title": "Pittsburgh vs Miami Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "MIA",
+        "PIT"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.49,
+            "best_bid": 0.48,
+            "indicative_price": "0.485",
+            "selected_team": "PIT",
+            "token_id": "5687928207735085590674942326984212603510186497773084248614802560064433393303"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.515",
+            "selected_team": "MIA",
+            "token_id": "16931562729552635550081507322527984442881515728590439044641122876920470239489"
+          }
+        ],
+        "event_id": "805965",
+        "participants": [
+          "MIA",
+          "PIT"
+        ],
+        "rules": "In the upcoming MLB game between the Pittsburgh Pirates and Miami Marlins, scheduled for August 12 at 6:40PM ET:\n\nThis market will resolve to \"Pittsburgh Pirates\" if the Pittsburgh Pirates win the game.\n\nThis market will resolve to \"Miami Marlins\" if the Miami Marlins win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-pit-mia-2026-08-12",
+        "start_utc": "2026-08-12T22:40:00Z",
+        "title": "Pittsburgh Pirates vs. Miami Marlins",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-12T22:40:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "CHC",
+            "WSH"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG121845CHCWSH-CHC",
+            "no_ask": "0.4000",
+            "no_bid": "0.3900",
+            "selected_team": "CHC",
+            "yes_ask": "0.6100",
+            "yes_bid": "0.6000"
+          },
+          {
+            "id": "KXMLBGAME-26AUG121845CHCWSH-WSH",
+            "no_ask": "0.6100",
+            "no_bid": "0.6000",
+            "selected_team": "WSH",
+            "yes_ask": "0.4000",
+            "yes_bid": "0.3900"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG121845CHCWSH",
+        "participants": [
+          "CHC",
+          "WSH"
+        ],
+        "rules": "If Washington wins the Chicago C vs Washington professional baseball game originally scheduled for Aug 12, 2026 at 6:45 PM EDT, then the market resolves to Yes.\nThe following market refers to the Chicago C vs Washington professional baseball game originally scheduled for Aug 12, 2026 at 6:45 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug121845chcwsh",
+        "start_utc": "2026-08-12T22:45:00Z",
+        "title": "Chicago C vs Washington Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "CHC",
+        "WSH"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.6,
+            "best_bid": 0.59,
+            "indicative_price": "0.595",
+            "selected_team": "CHC",
+            "token_id": "6674482346929159410469283213857638152367408226662454628900152794701191968736"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.405",
+            "selected_team": "WSH",
+            "token_id": "80718582558769193886927635115146809876945682013449529867719849189758420789424"
+          }
+        ],
+        "event_id": "805966",
+        "participants": [
+          "CHC",
+          "WSH"
+        ],
+        "rules": "In the upcoming MLB game between the Chicago Cubs and Washington Nationals, scheduled for August 12 at 6:45PM ET:\n\nThis market will resolve to \"Chicago Cubs\" if the Chicago Cubs win the game.\n\nThis market will resolve to \"Washington Nationals\" if the Washington Nationals win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-chc-wsh-2026-08-12",
+        "start_utc": "2026-08-12T22:45:00Z",
+        "title": "Chicago Cubs vs. Washington Nationals",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-12T22:45:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "NYY",
+            "SEA"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG121905SEANYY-NYY",
+            "no_ask": "0.4600",
+            "no_bid": "0.4500",
+            "selected_team": "NYY",
+            "yes_ask": "0.5500",
+            "yes_bid": "0.5400"
+          },
+          {
+            "id": "KXMLBGAME-26AUG121905SEANYY-SEA",
+            "no_ask": "0.5500",
+            "no_bid": "0.5400",
+            "selected_team": "SEA",
+            "yes_ask": "0.4600",
+            "yes_bid": "0.4500"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG121905SEANYY",
+        "participants": [
+          "NYY",
+          "SEA"
+        ],
+        "rules": "If Seattle wins the Seattle vs New York Y professional baseball game originally scheduled for Aug 12, 2026 at 7:05 PM EDT, then the market resolves to Yes.\nThe following market refers to the Seattle vs New York Y professional baseball game originally scheduled for Aug 12, 2026 at 7:05 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug121905seanyy",
+        "start_utc": "2026-08-12T23:05:00Z",
+        "title": "Seattle vs New York Y Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "NYY",
+        "SEA"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.46,
+            "best_bid": 0.45,
+            "indicative_price": "0.455",
+            "selected_team": "SEA",
+            "token_id": "13151304974123651837418828157493921399028545997729849212268231470941581072058"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.545",
+            "selected_team": "NYY",
+            "token_id": "50259310755037477376914343726775896566138422782678668869623936870224025722424"
+          }
+        ],
+        "event_id": "805967",
+        "participants": [
+          "NYY",
+          "SEA"
+        ],
+        "rules": "In the upcoming MLB game between the Seattle Mariners and New York Yankees, scheduled for August 12 at 7:05PM ET:\n\nThis market will resolve to \"Seattle Mariners\" if the Seattle Mariners win the game.\n\nThis market will resolve to \"New York Yankees\" if the New York Yankees win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-sea-nyy-2026-08-12",
+        "start_utc": "2026-08-12T23:05:00Z",
+        "title": "Seattle Mariners vs. New York Yankees",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-12T23:05:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "BOS",
+            "TOR"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG121907BOSTOR-BOS",
+            "no_ask": "0.4700",
+            "no_bid": "0.4500",
+            "selected_team": "BOS",
+            "yes_ask": "0.5500",
+            "yes_bid": "0.5300"
+          },
+          {
+            "id": "KXMLBGAME-26AUG121907BOSTOR-TOR",
+            "no_ask": "0.5400",
+            "no_bid": "0.5300",
+            "selected_team": "TOR",
+            "yes_ask": "0.4700",
+            "yes_bid": "0.4600"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG121907BOSTOR",
+        "participants": [
+          "BOS",
+          "TOR"
+        ],
+        "rules": "If Toronto wins the Boston vs Toronto professional baseball game originally scheduled for Aug 12, 2026 at 7:07 PM EDT, then the market resolves to Yes.\nThe following market refers to the Boston vs Toronto professional baseball game originally scheduled for Aug 12, 2026 at 7:07 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug121907bostor",
+        "start_utc": "2026-08-12T23:07:00Z",
+        "title": "Boston vs Toronto Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "BOS",
+        "TOR"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.54,
+            "best_bid": 0.53,
+            "indicative_price": "0.535",
+            "selected_team": "BOS",
+            "token_id": "26671903695843927103018526266319429885792063218306051654733432439832778573417"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.465",
+            "selected_team": "TOR",
+            "token_id": "78319936371423670930299440623571223305434207212989251337377415680355562063662"
+          }
+        ],
+        "event_id": "805968",
+        "participants": [
+          "BOS",
+          "TOR"
+        ],
+        "rules": "In the upcoming MLB game between the Boston Red Sox and Toronto Blue Jays, scheduled for August 12 at 7:07PM ET:\n\nThis market will resolve to \"Boston Red Sox\" if the Boston Red Sox win the game.\n\nThis market will resolve to \"Toronto Blue Jays\" if the Toronto Blue Jays win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-bos-tor-2026-08-12",
+        "start_utc": "2026-08-12T23:07:00Z",
+        "title": "Boston Red Sox vs. Toronto Blue Jays",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-12T23:07:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "ATL",
+            "NYM"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG121915NYMATL-ATL",
+            "no_ask": "0.4100",
+            "no_bid": "0.4000",
+            "selected_team": "ATL",
+            "yes_ask": "0.6000",
+            "yes_bid": "0.5900"
+          },
+          {
+            "id": "KXMLBGAME-26AUG121915NYMATL-NYM",
+            "no_ask": "0.6000",
+            "no_bid": "0.5900",
+            "selected_team": "NYM",
+            "yes_ask": "0.4100",
+            "yes_bid": "0.4000"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG121915NYMATL",
+        "participants": [
+          "ATL",
+          "NYM"
+        ],
+        "rules": "If New York M wins the New York M vs Atlanta professional baseball game originally scheduled for Aug 12, 2026 at 7:15 PM EDT, then the market resolves to Yes.\nThe following market refers to the New York M vs Atlanta professional baseball game originally scheduled for Aug 12, 2026 at 7:15 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug121915nymatl",
+        "start_utc": "2026-08-12T23:15:00Z",
+        "title": "New York M vs Atlanta Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "ATL",
+        "NYM"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.4,
+            "best_bid": 0.39,
+            "indicative_price": "0.395",
+            "selected_team": "NYM",
+            "token_id": "27540939384741594231335837862643890333326505509207711702516567177132885758822"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.605",
+            "selected_team": "ATL",
+            "token_id": "91440172210343652780976204586595372727664831076120416864729338642760392544401"
+          }
+        ],
+        "event_id": "805969",
+        "participants": [
+          "ATL",
+          "NYM"
+        ],
+        "rules": "In the upcoming MLB game between the New York Mets and Atlanta Braves, scheduled for August 12 at 7:15PM ET:\n\nThis market will resolve to \"New York Mets\" if the New York Mets win the game.\n\nThis market will resolve to \"Atlanta Braves\" if the Atlanta Braves win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-nym-atl-2026-08-12",
+        "start_utc": "2026-08-12T23:15:00Z",
+        "title": "New York Mets vs. Atlanta Braves",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-12T23:15:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "KC",
+            "LAD"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG122210KCLAD-KC",
+            "no_ask": "0.6700",
+            "no_bid": "0.6600",
+            "selected_team": "KC",
+            "yes_ask": "0.3400",
+            "yes_bid": "0.3300"
+          },
+          {
+            "id": "KXMLBGAME-26AUG122210KCLAD-LAD",
+            "no_ask": "0.3400",
+            "no_bid": "0.3300",
+            "selected_team": "LAD",
+            "yes_ask": "0.6700",
+            "yes_bid": "0.6600"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG122210KCLAD",
+        "participants": [
+          "KC",
+          "LAD"
+        ],
+        "rules": "If Los Angeles D wins the Kansas City vs Los Angeles D professional baseball game originally scheduled for Aug 12, 2026 at 10:10 PM EDT, then the market resolves to Yes.\nThe following market refers to the Kansas City vs Los Angeles D professional baseball game originally scheduled for Aug 12, 2026 at 10:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug122210kclad",
+        "start_utc": "2026-08-13T02:10:00Z",
+        "title": "Kansas City vs Los Angeles D Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "KC",
+        "LAD"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.34,
+            "best_bid": 0.33,
+            "indicative_price": "0.335",
+            "selected_team": "KC",
+            "token_id": "37705296241892350469356550182025378450835922534699553478109345506197920398505"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.665",
+            "selected_team": "LAD",
+            "token_id": "61952378832591287009275468047973566732237477490236987441962046415260643741864"
+          }
+        ],
+        "event_id": "805972",
+        "participants": [
+          "KC",
+          "LAD"
+        ],
+        "rules": "In the upcoming MLB game between the Kansas City Royals and Los Angeles Dodgers, scheduled for August 12 at 10:10PM ET:\n\nThis market will resolve to \"Kansas City Royals\" if the Kansas City Royals win the game.\n\nThis market will resolve to \"Los Angeles Dodgers\" if the Los Angeles Dodgers win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-kc-lad-2026-08-12",
+        "start_utc": "2026-08-13T02:10:00Z",
+        "title": "Kansas City Royals vs. Los Angeles Dodgers",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-13T02:10:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "LAA",
+            "TEX"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG122210TEXLAA-LAA",
+            "no_ask": "0.5600",
+            "no_bid": "0.5500",
+            "selected_team": "LAA",
+            "yes_ask": "0.4500",
+            "yes_bid": "0.4400"
+          },
+          {
+            "id": "KXMLBGAME-26AUG122210TEXLAA-TEX",
+            "no_ask": "0.4500",
+            "no_bid": "0.4400",
+            "selected_team": "TEX",
+            "yes_ask": "0.5600",
+            "yes_bid": "0.5500"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG122210TEXLAA",
+        "participants": [
+          "LAA",
+          "TEX"
+        ],
+        "rules": "If Texas wins the Texas vs Los Angeles A professional baseball game originally scheduled for Aug 12, 2026 at 10:10 PM EDT, then the market resolves to Yes.\nThe following market refers to the Texas vs Los Angeles A professional baseball game originally scheduled for Aug 12, 2026 at 10:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug122210texlaa",
+        "start_utc": "2026-08-13T02:10:00Z",
+        "title": "Texas vs Los Angeles A Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "LAA",
+        "TEX"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.56,
+            "best_bid": 0.55,
+            "indicative_price": "0.555",
+            "selected_team": "TEX",
+            "token_id": "110265291106898749139045227213803408022589125052145148607672703127175057391689"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.445",
+            "selected_team": "LAA",
+            "token_id": "60636938433765585100930471939225192632143657677286683007326921162877394644388"
+          }
+        ],
+        "event_id": "805971",
+        "participants": [
+          "LAA",
+          "TEX"
+        ],
+        "rules": "In the upcoming MLB game between the Texas Rangers and Los Angeles Angels, scheduled for August 12 at 10:10PM ET:\n\nThis market will resolve to \"Texas Rangers\" if the Texas Rangers win the game.\n\nThis market will resolve to \"Los Angeles Angels\" if the Los Angeles Angels win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-tex-laa-2026-08-12",
+        "start_utc": "2026-08-13T02:10:00Z",
+        "title": "Texas Rangers vs. Los Angeles Angels",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-13T02:10:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "CLE",
+            "DET"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG131310CLEDET-CLE",
+            "no_ask": "0.5300",
+            "no_bid": "0.5200",
+            "selected_team": "CLE",
+            "yes_ask": "0.4800",
+            "yes_bid": "0.4700"
+          },
+          {
+            "id": "KXMLBGAME-26AUG131310CLEDET-DET",
+            "no_ask": "0.4900",
+            "no_bid": "0.4800",
+            "selected_team": "DET",
+            "yes_ask": "0.5200",
+            "yes_bid": "0.5100"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG131310CLEDET",
+        "participants": [
+          "CLE",
+          "DET"
+        ],
+        "rules": "If Detroit wins the Cleveland vs Detroit professional baseball game originally scheduled for Aug 13, 2026 at 1:10 PM EDT, then the market resolves to Yes.\nThe following market refers to the Cleveland vs Detroit professional baseball game originally scheduled for Aug 13, 2026 at 1:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug131310cledet",
+        "start_utc": "2026-08-13T17:10:00Z",
+        "title": "Cleveland vs Detroit Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "CLE",
+        "DET"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.49,
+            "best_bid": 0.48,
+            "indicative_price": "0.485",
+            "selected_team": "CLE",
+            "token_id": "68313662378990285273463070302855374422885934108497827796977761535971064564308"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.515",
+            "selected_team": "DET",
+            "token_id": "13346285961156424496588388127879009113728546664821333492157988683839957340723"
+          }
+        ],
+        "event_id": "810748",
+        "participants": [
+          "CLE",
+          "DET"
+        ],
+        "rules": "In the upcoming MLB game between the Cleveland Guardians and Detroit Tigers, scheduled for August 13 at 1:10PM ET:\n\nThis market will resolve to \"Cleveland Guardians\" if the Cleveland Guardians win the game.\n\nThis market will resolve to \"Detroit Tigers\" if the Detroit Tigers win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-cle-det-2026-08-13",
+        "start_utc": "2026-08-13T17:10:00Z",
+        "title": "Cleveland Guardians vs. Detroit Tigers",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-13T17:10:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "MIA",
+            "PIT"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG131310PITMIA-MIA",
+            "no_ask": "0.5200",
+            "no_bid": "0.5100",
+            "selected_team": "MIA",
+            "yes_ask": "0.4900",
+            "yes_bid": "0.4800"
+          },
+          {
+            "id": "KXMLBGAME-26AUG131310PITMIA-PIT",
+            "no_ask": "0.5000",
+            "no_bid": "0.4800",
+            "selected_team": "PIT",
+            "yes_ask": "0.5200",
+            "yes_bid": "0.5000"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG131310PITMIA",
+        "participants": [
+          "MIA",
+          "PIT"
+        ],
+        "rules": "If Pittsburgh wins the Pittsburgh vs Miami professional baseball game originally scheduled for Aug 13, 2026 at 1:10 PM EDT, then the market resolves to Yes.\nThe following market refers to the Pittsburgh vs Miami professional baseball game originally scheduled for Aug 13, 2026 at 1:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug131310pitmia",
+        "start_utc": "2026-08-13T17:10:00Z",
+        "title": "Pittsburgh vs Miami Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "MIA",
+        "PIT"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.51,
+            "best_bid": 0.5,
+            "indicative_price": "0.505",
+            "selected_team": "PIT",
+            "token_id": "34683251324452133801453104005493610400397325035961490813854527497252487306318"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.495",
+            "selected_team": "MIA",
+            "token_id": "88955911529448774852955750890665684077911344055155282170072901665305182782189"
+          }
+        ],
+        "event_id": "810750",
+        "participants": [
+          "MIA",
+          "PIT"
+        ],
+        "rules": "In the upcoming MLB game between the Pittsburgh Pirates and Miami Marlins, scheduled for August 13 at 1:10PM ET:\n\nThis market will resolve to \"Pittsburgh Pirates\" if the Pittsburgh Pirates win the game.\n\nThis market will resolve to \"Miami Marlins\" if the Miami Marlins win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-pit-mia-2026-08-13",
+        "start_utc": "2026-08-13T17:10:00Z",
+        "title": "Pittsburgh Pirates vs. Miami Marlins",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-13T17:10:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "NYY",
+            "SEA"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG131335SEANYY-NYY",
+            "no_ask": "0.4400",
+            "no_bid": "0.4300",
+            "selected_team": "NYY",
+            "yes_ask": "0.5700",
+            "yes_bid": "0.5600"
+          },
+          {
+            "id": "KXMLBGAME-26AUG131335SEANYY-SEA",
+            "no_ask": "0.5600",
+            "no_bid": "0.5500",
+            "selected_team": "SEA",
+            "yes_ask": "0.4500",
+            "yes_bid": "0.4400"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG131335SEANYY",
+        "participants": [
+          "NYY",
+          "SEA"
+        ],
+        "rules": "If Seattle wins the Seattle vs New York Y professional baseball game originally scheduled for Aug 13, 2026 at 1:35 PM EDT, then the market resolves to Yes.\nThe following market refers to the Seattle vs New York Y professional baseball game originally scheduled for Aug 13, 2026 at 1:35 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug131335seanyy",
+        "start_utc": "2026-08-13T17:35:00Z",
+        "title": "Seattle vs New York Y Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "NYY",
+        "SEA"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.46,
+            "best_bid": 0.45,
+            "indicative_price": "0.455",
+            "selected_team": "SEA",
+            "token_id": "70989656699109885047524851047592092216720523554255496915051502363337920234934"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.545",
+            "selected_team": "NYY",
+            "token_id": "31388406218160812192429041208736626834902561507888669380581155648454865027961"
+          }
+        ],
+        "event_id": "810751",
+        "participants": [
+          "NYY",
+          "SEA"
+        ],
+        "rules": "In the upcoming MLB game between the Seattle Mariners and New York Yankees, scheduled for August 13 at 1:35PM ET:\n\nThis market will resolve to \"Seattle Mariners\" if the Seattle Mariners win the game.\n\nThis market will resolve to \"New York Yankees\" if the New York Yankees win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-sea-nyy-2026-08-13",
+        "start_utc": "2026-08-13T17:35:00Z",
+        "title": "Seattle Mariners vs. New York Yankees",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-13T17:35:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "BOS",
+            "TOR"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG131507BOSTOR-BOS",
+            "no_ask": "0.4200",
+            "no_bid": "0.4100",
+            "selected_team": "BOS",
+            "yes_ask": "0.5900",
+            "yes_bid": "0.5800"
+          },
+          {
+            "id": "KXMLBGAME-26AUG131507BOSTOR-TOR",
+            "no_ask": "0.6000",
+            "no_bid": "0.5900",
+            "selected_team": "TOR",
+            "yes_ask": "0.4100",
+            "yes_bid": "0.4000"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG131507BOSTOR",
+        "participants": [
+          "BOS",
+          "TOR"
+        ],
+        "rules": "If Toronto wins the Boston vs Toronto professional baseball game originally scheduled for Aug 13, 2026 at 3:07 PM EDT, then the market resolves to Yes.\nThe following market refers to the Boston vs Toronto professional baseball game originally scheduled for Aug 13, 2026 at 3:07 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug131507bostor",
+        "start_utc": "2026-08-13T19:07:00Z",
+        "title": "Boston vs Toronto Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "BOS",
+        "TOR"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.59,
+            "best_bid": 0.58,
+            "indicative_price": "0.585",
+            "selected_team": "BOS",
+            "token_id": "17715921548814177708507966866485221056661467593973006540848109348323280305439"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.415",
+            "selected_team": "TOR",
+            "token_id": "53493162232350107848759721937121776135095932904625052716026154390006517780626"
+          }
+        ],
+        "event_id": "810753",
+        "participants": [
+          "BOS",
+          "TOR"
+        ],
+        "rules": "In the upcoming MLB game between the Boston Red Sox and Toronto Blue Jays, scheduled for August 13 at 3:07PM ET:\n\nThis market will resolve to \"Boston Red Sox\" if the Boston Red Sox win the game.\n\nThis market will resolve to \"Toronto Blue Jays\" if the Toronto Blue Jays win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-bos-tor-2026-08-13",
+        "start_utc": "2026-08-13T19:07:00Z",
+        "title": "Boston Red Sox vs. Toronto Blue Jays",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-13T19:07:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "CHC",
+            "WSH"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG131605CHCWSH-CHC",
+            "no_ask": "0.4700",
+            "no_bid": "0.4600",
+            "selected_team": "CHC",
+            "yes_ask": "0.5400",
+            "yes_bid": "0.5300"
+          },
+          {
+            "id": "KXMLBGAME-26AUG131605CHCWSH-WSH",
+            "no_ask": "0.5500",
+            "no_bid": "0.5400",
+            "selected_team": "WSH",
+            "yes_ask": "0.4600",
+            "yes_bid": "0.4500"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG131605CHCWSH",
+        "participants": [
+          "CHC",
+          "WSH"
+        ],
+        "rules": "If Washington wins the Chicago C vs Washington professional baseball game originally scheduled for Aug 13, 2026 at 4:05 PM EDT, then the market resolves to Yes.\nThe following market refers to the Chicago C vs Washington professional baseball game originally scheduled for Aug 13, 2026 at 4:05 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug131605chcwsh",
+        "start_utc": "2026-08-13T20:05:00Z",
+        "title": "Chicago C vs Washington Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "CHC",
+        "WSH"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.55,
+            "best_bid": 0.54,
+            "indicative_price": "0.545",
+            "selected_team": "CHC",
+            "token_id": "115530484241323313448972110186488721039245286311370925257471995600540792844180"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.455",
+            "selected_team": "WSH",
+            "token_id": "45747651718675895010375476340478486474236462516352135554695218080876762569104"
+          }
+        ],
+        "event_id": "810755",
+        "participants": [
+          "CHC",
+          "WSH"
+        ],
+        "rules": "In the upcoming MLB game between the Chicago Cubs and Washington Nationals, scheduled for August 13 at 4:05PM ET:\n\nThis market will resolve to \"Chicago Cubs\" if the Chicago Cubs win the game.\n\nThis market will resolve to \"Washington Nationals\" if the Washington Nationals win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-chc-wsh-2026-08-13",
+        "start_utc": "2026-08-13T20:05:00Z",
+        "title": "Chicago Cubs vs. Washington Nationals",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-13T20:05:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "MIN",
+            "PHI"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG131930PHIMIN-MIN",
+            "no_ask": "0.5000",
+            "no_bid": "0.4900",
+            "selected_team": "MIN",
+            "yes_ask": "0.5100",
+            "yes_bid": "0.5000"
+          },
+          {
+            "id": "KXMLBGAME-26AUG131930PHIMIN-PHI",
+            "no_ask": "0.5200",
+            "no_bid": "0.5100",
+            "selected_team": "PHI",
+            "yes_ask": "0.4900",
+            "yes_bid": "0.4800"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG131930PHIMIN",
+        "participants": [
+          "MIN",
+          "PHI"
+        ],
+        "rules": "If Philadelphia wins the Philadelphia vs Minnesota professional baseball game originally scheduled for Aug 13, 2026 at 7:30 PM EDT, then the market resolves to Yes.\nThe following market refers to the Philadelphia vs Minnesota professional baseball game originally scheduled for Aug 13, 2026 at 7:30 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug131930phimin",
+        "start_utc": "2026-08-13T23:30:00Z",
+        "title": "Philadelphia vs Minnesota Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "MIN",
+        "PHI"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.5,
+            "best_bid": 0.49,
+            "indicative_price": "0.495",
+            "selected_team": "PHI",
+            "token_id": "27291278729005401914183672715765235478411209686287741898583604439126327330412"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.505",
+            "selected_team": "MIN",
+            "token_id": "105069551923629879483883443481257228155171947058379367614589272021352700212036"
+          }
+        ],
+        "event_id": "810756",
+        "participants": [
+          "MIN",
+          "PHI"
+        ],
+        "rules": "In the upcoming MLB game between the Philadelphia Phillies and Minnesota Twins, scheduled for August 13 at 7:30PM ET:\n\nThis market will resolve to \"Philadelphia Phillies\" if the Philadelphia Phillies win the game.\n\nThis market will resolve to \"Minnesota Twins\" if the Minnesota Twins win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-phi-min-2026-08-13",
+        "start_utc": "2026-08-13T23:30:00Z",
+        "title": "Philadelphia Phillies vs. Minnesota Twins",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-13T23:30:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "LAA",
+            "TEX"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG132207TEXLAA-LAA",
+            "no_ask": "0.5800",
+            "no_bid": "0.5700",
+            "selected_team": "LAA",
+            "yes_ask": "0.4300",
+            "yes_bid": "0.4200"
+          },
+          {
+            "id": "KXMLBGAME-26AUG132207TEXLAA-TEX",
+            "no_ask": "0.4500",
+            "no_bid": "0.4300",
+            "selected_team": "TEX",
+            "yes_ask": "0.5700",
+            "yes_bid": "0.5500"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG132207TEXLAA",
+        "participants": [
+          "LAA",
+          "TEX"
+        ],
+        "rules": "If Texas wins the Texas vs Los Angeles A professional baseball game originally scheduled for Aug 13, 2026 at 10:07 PM EDT, then the market resolves to Yes.\nThe following market refers to the Texas vs Los Angeles A professional baseball game originally scheduled for Aug 13, 2026 at 10:07 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug132207texlaa",
+        "start_utc": "2026-08-14T02:07:00Z",
+        "title": "Texas vs Los Angeles A Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "LAA",
+        "TEX"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.55,
+            "best_bid": 0.54,
+            "indicative_price": "0.545",
+            "selected_team": "TEX",
+            "token_id": "66095726078826070779951513320640335230765858493608638152239377205946337299353"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.455",
+            "selected_team": "LAA",
+            "token_id": "74513272071695563989809472191040646594393919785147859385583269822162884354527"
+          }
+        ],
+        "event_id": "810757",
+        "participants": [
+          "LAA",
+          "TEX"
+        ],
+        "rules": "In the upcoming MLB game between the Texas Rangers and Los Angeles Angels, scheduled for August 13 at 10:07PM ET:\n\nThis market will resolve to \"Texas Rangers\" if the Texas Rangers win the game.\n\nThis market will resolve to \"Los Angeles Angels\" if the Los Angeles Angels win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-tex-laa-2026-08-13",
+        "start_utc": "2026-08-14T02:07:00Z",
+        "title": "Texas Rangers vs. Los Angeles Angels",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-14T02:07:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "LAD",
+            "MIL"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG132210MILLAD-LAD",
+            "no_ask": "0.4600",
+            "no_bid": "0.4400",
+            "selected_team": "LAD",
+            "yes_ask": "0.5600",
+            "yes_bid": "0.5400"
+          },
+          {
+            "id": "KXMLBGAME-26AUG132210MILLAD-MIL",
+            "no_ask": "0.5600",
+            "no_bid": "0.5400",
+            "selected_team": "MIL",
+            "yes_ask": "0.4600",
+            "yes_bid": "0.4400"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG132210MILLAD",
+        "participants": [
+          "LAD",
+          "MIL"
+        ],
+        "rules": "If Milwaukee wins the Milwaukee vs Los Angeles D professional baseball game originally scheduled for Aug 13, 2026 at 10:10 PM EDT, then the market resolves to Yes.\nThe following market refers to the Milwaukee vs Los Angeles D professional baseball game originally scheduled for Aug 13, 2026 at 10:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug132210millad",
+        "start_utc": "2026-08-14T02:10:00Z",
+        "title": "Milwaukee vs Los Angeles D Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "LAD",
+        "MIL"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.47,
+            "best_bid": 0.45,
+            "indicative_price": "0.46",
+            "selected_team": "MIL",
+            "token_id": "51892976152353351001749157649424781550806818520411068113662371142204025376888"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.54",
+            "selected_team": "LAD",
+            "token_id": "114178686581208253396110562053170559925401740960469100216203899638146206337054"
+          }
+        ],
+        "event_id": "810758",
+        "participants": [
+          "LAD",
+          "MIL"
+        ],
+        "rules": "In the upcoming MLB game between the Milwaukee Brewers and Los Angeles Dodgers, scheduled for August 13 at 10:10PM ET:\n\nThis market will resolve to \"Milwaukee Brewers\" if the Milwaukee Brewers win the game.\n\nThis market will resolve to \"Los Angeles Dodgers\" if the Los Angeles Dodgers win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-mil-lad-2026-08-13",
+        "start_utc": "2026-08-14T02:10:00Z",
+        "title": "Milwaukee Brewers vs. Los Angeles Dodgers",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-14T02:10:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "CHC",
+            "STL"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG141420STLCHC-CHC",
+            "no_ask": "0.3700",
+            "no_bid": "0.3600",
+            "selected_team": "CHC",
+            "yes_ask": "0.6400",
+            "yes_bid": "0.6300"
+          },
+          {
+            "id": "KXMLBGAME-26AUG141420STLCHC-STL",
+            "no_ask": "0.6500",
+            "no_bid": "0.6400",
+            "selected_team": "STL",
+            "yes_ask": "0.3600",
+            "yes_bid": "0.3500"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG141420STLCHC",
+        "participants": [
+          "CHC",
+          "STL"
+        ],
+        "rules": "If St. Louis wins the St. Louis vs Chicago C professional baseball game originally scheduled for Aug 14, 2026 at 2:20 PM EDT, then the market resolves to Yes.\nThe following market refers to the St. Louis vs Chicago C professional baseball game originally scheduled for Aug 14, 2026 at 2:20 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug141420stlchc",
+        "start_utc": "2026-08-14T18:20:00Z",
+        "title": "St. Louis vs Chicago C Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "CHC",
+        "STL"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.37,
+            "best_bid": 0.36,
+            "indicative_price": "0.365",
+            "selected_team": "STL",
+            "token_id": "408924504666387815984368512649846474491303246104832125598659303956469621803"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.635",
+            "selected_team": "CHC",
+            "token_id": "75738062883400810256487822780556350331004071398270961081359095414594345304460"
+          }
+        ],
+        "event_id": "815578",
+        "participants": [
+          "CHC",
+          "STL"
+        ],
+        "rules": "In the upcoming MLB game between the St. Louis Cardinals and Chicago Cubs, scheduled for August 14 at 2:20PM ET:\n\nThis market will resolve to \"St. Louis Cardinals\" if the St. Louis Cardinals win the game.\n\nThis market will resolve to \"Chicago Cubs\" if the Chicago Cubs win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-stl-chc-2026-08-14",
+        "start_utc": "2026-08-14T18:20:00Z",
+        "title": "St. Louis Cardinals vs. Chicago Cubs",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-14T18:20:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "CIN",
+            "MIA"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG141810MIACIN-CIN",
+            "no_ask": "0.4800",
+            "no_bid": "0.4500",
+            "selected_team": "CIN",
+            "yes_ask": "0.5500",
+            "yes_bid": "0.5200"
+          },
+          {
+            "id": "KXMLBGAME-26AUG141810MIACIN-MIA",
+            "no_ask": "0.5500",
+            "no_bid": "0.5200",
+            "selected_team": "MIA",
+            "yes_ask": "0.4800",
+            "yes_bid": "0.4500"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG141810MIACIN",
+        "participants": [
+          "CIN",
+          "MIA"
+        ],
+        "rules": "If Miami wins the Miami vs Cincinnati professional baseball game originally scheduled for Aug 14, 2026 at 6:10 PM EDT, then the market resolves to Yes.\nThe following market refers to the Miami vs Cincinnati professional baseball game originally scheduled for Aug 14, 2026 at 6:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug141810miacin",
+        "start_utc": "2026-08-14T22:10:00Z",
+        "title": "Miami vs Cincinnati Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "CIN",
+        "MIA"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.49,
+            "best_bid": 0.45,
+            "indicative_price": "0.47",
+            "selected_team": "MIA",
+            "token_id": "7785695135686067116058668735494770697775867291812291852086239397282381320949"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.53",
+            "selected_team": "CIN",
+            "token_id": "60270685998887452966697761864901115689124125658069871499251727940489663620386"
+          }
+        ],
+        "event_id": "815581",
+        "participants": [
+          "CIN",
+          "MIA"
+        ],
+        "rules": "In the upcoming MLB game between the Miami Marlins and Cincinnati Reds, scheduled for August 14 at 6:10PM ET:\n\nThis market will resolve to \"Miami Marlins\" if the Miami Marlins win the game.\n\nThis market will resolve to \"Cincinnati Reds\" if the Cincinnati Reds win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-mia-cin-2026-08-14",
+        "start_utc": "2026-08-14T22:10:00Z",
+        "title": "Miami Marlins vs. Cincinnati Reds",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-14T22:10:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "BOS",
+            "PIT"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG141840BOSPIT-BOS",
+            "no_ask": "0.4800",
+            "no_bid": "0.4400",
+            "selected_team": "BOS",
+            "yes_ask": "0.5600",
+            "yes_bid": "0.5200"
+          },
+          {
+            "id": "KXMLBGAME-26AUG141840BOSPIT-PIT",
+            "no_ask": "0.5700",
+            "no_bid": "0.5300",
+            "selected_team": "PIT",
+            "yes_ask": "0.4700",
+            "yes_bid": "0.4300"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG141840BOSPIT",
+        "participants": [
+          "BOS",
+          "PIT"
+        ],
+        "rules": "If Pittsburgh wins the Boston vs Pittsburgh professional baseball game originally scheduled for Aug 14, 2026 at 6:40 PM EDT, then the market resolves to Yes.\nThe following market refers to the Boston vs Pittsburgh professional baseball game originally scheduled for Aug 14, 2026 at 6:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug141840bospit",
+        "start_utc": "2026-08-14T22:40:00Z",
+        "title": "Boston vs Pittsburgh Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "BOS",
+        "PIT"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.55,
+            "best_bid": 0.51,
+            "indicative_price": "0.53",
+            "selected_team": "BOS",
+            "token_id": "15408465813165813174424631695227972540210109077686695750877308075017283842794"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.47",
+            "selected_team": "PIT",
+            "token_id": "105254664838156046887888926956585152004938864629386356186218692641025385525902"
+          }
+        ],
+        "event_id": "815583",
+        "participants": [
+          "BOS",
+          "PIT"
+        ],
+        "rules": "In the upcoming MLB game between the Boston Red Sox and Pittsburgh Pirates, scheduled for August 14 at 6:40PM ET:\n\nThis market will resolve to \"Boston Red Sox\" if the Boston Red Sox win the game.\n\nThis market will resolve to \"Pittsburgh Pirates\" if the Pittsburgh Pirates win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-bos-pit-2026-08-14",
+        "start_utc": "2026-08-14T22:40:00Z",
+        "title": "Boston Red Sox vs. Pittsburgh Pirates",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-14T22:40:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "BAL",
+            "TB"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG141910BALTB-BAL",
+            "no_ask": "0.6100",
+            "no_bid": "0.5700",
+            "selected_team": "BAL",
+            "yes_ask": "0.4300",
+            "yes_bid": "0.3900"
+          },
+          {
+            "id": "KXMLBGAME-26AUG141910BALTB-TB",
+            "no_ask": "0.4300",
+            "no_bid": "0.3900",
+            "selected_team": "TB",
+            "yes_ask": "0.6100",
+            "yes_bid": "0.5700"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG141910BALTB",
+        "participants": [
+          "BAL",
+          "TB"
+        ],
+        "rules": "If Tampa Bay wins the Baltimore vs Tampa Bay professional baseball game originally scheduled for Aug 14, 2026 at 7:10 PM EDT, then the market resolves to Yes.\nThe following market refers to the Baltimore vs Tampa Bay professional baseball game originally scheduled for Aug 14, 2026 at 7:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug141910baltb",
+        "start_utc": "2026-08-14T23:10:00Z",
+        "title": "Baltimore vs Tampa Bay Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "BAL",
+        "TB"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.45,
+            "best_bid": 0.35,
+            "indicative_price": "0.4",
+            "selected_team": "BAL",
+            "token_id": "13383558771340946373701753553828482847828493743710630233618844965480011165437"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.6",
+            "selected_team": "TB",
+            "token_id": "88645756060156114731963139084888659728676272458309436518317453748424917915411"
+          }
+        ],
+        "event_id": "815586",
+        "participants": [
+          "BAL",
+          "TB"
+        ],
+        "rules": "In the upcoming MLB game between the Baltimore Orioles and Tampa Bay Rays, scheduled for August 14 at 7:10PM ET:\n\nThis market will resolve to \"Baltimore Orioles\" if the Baltimore Orioles win the game.\n\nThis market will resolve to \"Tampa Bay Rays\" if the Tampa Bay Rays win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-bal-tb-2026-08-14",
+        "start_utc": "2026-08-14T23:10:00Z",
+        "title": "Baltimore Orioles vs. Tampa Bay Rays",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-14T23:10:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "CLE",
+            "SD"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG141910SDCLE-CLE",
+            "no_ask": "0.4800",
+            "no_bid": "0.4500",
+            "selected_team": "CLE",
+            "yes_ask": "0.5500",
+            "yes_bid": "0.5200"
+          },
+          {
+            "id": "KXMLBGAME-26AUG141910SDCLE-SD",
+            "no_ask": "0.5600",
+            "no_bid": "0.5100",
+            "selected_team": "SD",
+            "yes_ask": "0.4900",
+            "yes_bid": "0.4400"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG141910SDCLE",
+        "participants": [
+          "CLE",
+          "SD"
+        ],
+        "rules": "If San Diego wins the San Diego vs Cleveland professional baseball game originally scheduled for Aug 14, 2026 at 7:10 PM EDT, then the market resolves to Yes.\nThe following market refers to the San Diego vs Cleveland professional baseball game originally scheduled for Aug 14, 2026 at 7:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug141910sdcle",
+        "start_utc": "2026-08-14T23:10:00Z",
+        "title": "San Diego vs Cleveland Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "CLE",
+        "SD"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.48,
+            "best_bid": 0.45,
+            "indicative_price": "0.465",
+            "selected_team": "SD",
+            "token_id": "69468487052242964066678633257314343298427353587934640139363685245510191561324"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.535",
+            "selected_team": "CLE",
+            "token_id": "34460398257848741598278382576497604758338896004447123493259478315833342208038"
+          }
+        ],
+        "event_id": "815584",
+        "participants": [
+          "CLE",
+          "SD"
+        ],
+        "rules": "In the upcoming MLB game between the San Diego Padres and Cleveland Guardians, scheduled for August 14 at 7:10PM ET:\n\nThis market will resolve to \"San Diego Padres\" if the San Diego Padres win the game.\n\nThis market will resolve to \"Cleveland Guardians\" if the Cleveland Guardians win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-sd-cle-2026-08-14",
+        "start_utc": "2026-08-14T23:10:00Z",
+        "title": "San Diego Padres vs. Cleveland Guardians",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-14T23:10:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "NYM",
+            "WSH"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG141910WSHNYM-NYM",
+            "no_ask": "0.4300",
+            "no_bid": "0.4100",
+            "selected_team": "NYM",
+            "yes_ask": "0.5900",
+            "yes_bid": "0.5700"
+          },
+          {
+            "id": "KXMLBGAME-26AUG141910WSHNYM-WSH",
+            "no_ask": "0.5900",
+            "no_bid": "0.5700",
+            "selected_team": "WSH",
+            "yes_ask": "0.4300",
+            "yes_bid": "0.4100"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG141910WSHNYM",
+        "participants": [
+          "NYM",
+          "WSH"
+        ],
+        "rules": "If Washington wins the Washington vs New York M professional baseball game originally scheduled for Aug 14, 2026 at 7:10 PM EDT, then the market resolves to Yes.\nThe following market refers to the Washington vs New York M professional baseball game originally scheduled for Aug 14, 2026 at 7:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug141910wshnym",
+        "start_utc": "2026-08-14T23:10:00Z",
+        "title": "Washington vs New York M Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "NYM",
+        "WSH"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.46,
+            "best_bid": 0.43,
+            "indicative_price": "0.445",
+            "selected_team": "WSH",
+            "token_id": "76323552902708052904233443441216991525244927273899381869298321106869084525702"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.555",
+            "selected_team": "NYM",
+            "token_id": "77782156887185401951986005316951107607978249350769546857251058065470691143355"
+          }
+        ],
+        "event_id": "815585",
+        "participants": [
+          "NYM",
+          "WSH"
+        ],
+        "rules": "In the upcoming MLB game between the Washington Nationals and New York Mets, scheduled for August 14 at 7:10PM ET:\n\nThis market will resolve to \"Washington Nationals\" if the Washington Nationals win the game.\n\nThis market will resolve to \"New York Mets\" if the New York Mets win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-wsh-nym-2026-08-14",
+        "start_utc": "2026-08-14T23:10:00Z",
+        "title": "Washington Nationals vs. New York Mets",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-14T23:10:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "ARI",
+            "ATL"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG141915AZATL-ATL",
+            "no_ask": "0.3400",
+            "no_bid": "0.3200",
+            "selected_team": "ATL",
+            "yes_ask": "0.6800",
+            "yes_bid": "0.6600"
+          },
+          {
+            "id": "KXMLBGAME-26AUG141915AZATL-AZ",
+            "no_ask": "0.6900",
+            "no_bid": "0.6700",
+            "selected_team": "ARI",
+            "yes_ask": "0.3300",
+            "yes_bid": "0.3100"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG141915AZATL",
+        "participants": [
+          "ARI",
+          "ATL"
+        ],
+        "rules": "If Arizona wins the Arizona vs Atlanta professional baseball game originally scheduled for Aug 14, 2026 at 7:15 PM EDT, then the market resolves to Yes.\nThe following market refers to the Arizona vs Atlanta professional baseball game originally scheduled for Aug 14, 2026 at 7:15 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug141915azatl",
+        "start_utc": "2026-08-14T23:15:00Z",
+        "title": "Arizona vs Atlanta Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "ARI",
+        "ATL"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.35,
+            "best_bid": 0.33,
+            "indicative_price": "0.34",
+            "selected_team": "ARI",
+            "token_id": "43982148075754471844975777742003231449299626173914084210347131129597411901026"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.66",
+            "selected_team": "ATL",
+            "token_id": "45903688188977713491592613826626135963595753938806645080327595432371099909666"
+          }
+        ],
+        "event_id": "815587",
+        "participants": [
+          "ARI",
+          "ATL"
+        ],
+        "rules": "In the upcoming MLB game between the Arizona Diamondbacks and Atlanta Braves, scheduled for August 14 at 7:15PM ET:\n\nThis market will resolve to \"Arizona Diamondbacks\" if the Arizona Diamondbacks win the game.\n\nThis market will resolve to \"Atlanta Braves\" if the Atlanta Braves win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-ari-atl-2026-08-14",
+        "start_utc": "2026-08-14T23:15:00Z",
+        "title": "Arizona Diamondbacks vs. Atlanta Braves",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-14T23:15:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "NYY",
+            "TOR"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG141915NYYTOR-NYY",
+            "no_ask": "0.4700",
+            "no_bid": "0.4400",
+            "selected_team": "NYY",
+            "yes_ask": "0.5600",
+            "yes_bid": "0.5300"
+          },
+          {
+            "id": "KXMLBGAME-26AUG141915NYYTOR-TOR",
+            "no_ask": "0.5800",
+            "no_bid": "0.5500",
+            "selected_team": "TOR",
+            "yes_ask": "0.4500",
+            "yes_bid": "0.4200"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG141915NYYTOR",
+        "participants": [
+          "NYY",
+          "TOR"
+        ],
+        "rules": "If Toronto wins the New York Y vs Toronto professional baseball game originally scheduled for Aug 14, 2026 at 7:15 PM EDT, then the market resolves to Yes.\nThe following market refers to the New York Y vs Toronto professional baseball game originally scheduled for Aug 14, 2026 at 7:15 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug141915nyytor",
+        "start_utc": "2026-08-14T23:15:00Z",
+        "title": "New York Y vs Toronto Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "NYY",
+        "TOR"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.55,
+            "best_bid": 0.51,
+            "indicative_price": "0.53",
+            "selected_team": "NYY",
+            "token_id": "52414950132514872820075240045404225114611316214890675392558683654169961059976"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.47",
+            "selected_team": "TOR",
+            "token_id": "21895726683051061655260980456015393764501256971650412144216643094460909691280"
+          }
+        ],
+        "event_id": "815588",
+        "participants": [
+          "NYY",
+          "TOR"
+        ],
+        "rules": "In the upcoming MLB game between the New York Yankees and Toronto Blue Jays, scheduled for August 14 at 7:15PM ET:\n\nThis market will resolve to \"New York Yankees\" if the New York Yankees win the game.\n\nThis market will resolve to \"Toronto Blue Jays\" if the Toronto Blue Jays win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-nyy-tor-2026-08-14",
+        "start_utc": "2026-08-14T23:15:00Z",
+        "title": "New York Yankees vs. Toronto Blue Jays",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-14T23:15:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "HOU",
+            "SEA"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG142010SEAHOU-HOU",
+            "no_ask": "0.5000",
+            "no_bid": "0.4700",
+            "selected_team": "HOU",
+            "yes_ask": "0.5300",
+            "yes_bid": "0.5000"
+          },
+          {
+            "id": "KXMLBGAME-26AUG142010SEAHOU-SEA",
+            "no_ask": "0.5600",
+            "no_bid": "0.5200",
+            "selected_team": "SEA",
+            "yes_ask": "0.4800",
+            "yes_bid": "0.4400"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG142010SEAHOU",
+        "participants": [
+          "HOU",
+          "SEA"
+        ],
+        "rules": "If Seattle wins the Seattle vs Houston professional baseball game originally scheduled for Aug 14, 2026 at 8:10 PM EDT, then the market resolves to Yes.\nThe following market refers to the Seattle vs Houston professional baseball game originally scheduled for Aug 14, 2026 at 8:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug142010seahou",
+        "start_utc": "2026-08-15T00:10:00Z",
+        "title": "Seattle vs Houston Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "HOU",
+        "SEA"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.52,
+            "best_bid": 0.47,
+            "indicative_price": "0.495",
+            "selected_team": "SEA",
+            "token_id": "11860064267753005636165605459087433437417601804596764757106664060538702142169"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.505",
+            "selected_team": "HOU",
+            "token_id": "72426926148914312043749314525179635437550842872496849046137913336138434991754"
+          }
+        ],
+        "event_id": "815589",
+        "participants": [
+          "HOU",
+          "SEA"
+        ],
+        "rules": "In the upcoming MLB game between the Seattle Mariners and Houston Astros, scheduled for August 14 at 8:10PM ET:\n\nThis market will resolve to \"Seattle Mariners\" if the Seattle Mariners win the game.\n\nThis market will resolve to \"Houston Astros\" if the Houston Astros win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-sea-hou-2026-08-14",
+        "start_utc": "2026-08-15T00:10:00Z",
+        "title": "Seattle Mariners vs. Houston Astros",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-15T00:10:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "KC",
+            "LAA"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG142138KCLAA-KC",
+            "no_ask": "0.5500",
+            "no_bid": "0.5200",
+            "selected_team": "KC",
+            "yes_ask": "0.4800",
+            "yes_bid": "0.4500"
+          },
+          {
+            "id": "KXMLBGAME-26AUG142138KCLAA-LAA",
+            "no_ask": "0.4900",
+            "no_bid": "0.4500",
+            "selected_team": "LAA",
+            "yes_ask": "0.5500",
+            "yes_bid": "0.5100"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG142138KCLAA",
+        "participants": [
+          "KC",
+          "LAA"
+        ],
+        "rules": "If Los Angeles A wins the Kansas City vs Los Angeles A professional baseball game originally scheduled for Aug 14, 2026 at 9:38 PM EDT, then the market resolves to Yes.\nThe following market refers to the Kansas City vs Los Angeles A professional baseball game originally scheduled for Aug 14, 2026 at 9:38 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug142138kclaa",
+        "start_utc": "2026-08-15T01:38:00Z",
+        "title": "Kansas City vs Los Angeles A Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "KC",
+        "LAA"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.49,
+            "best_bid": 0.45,
+            "indicative_price": "0.47",
+            "selected_team": "KC",
+            "token_id": "76987267593071781186101537082757281529257404884136944829354454902870007738562"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.53",
+            "selected_team": "LAA",
+            "token_id": "87820061639511030560411666915046240234138065343352965326997017906670226139073"
+          }
+        ],
+        "event_id": "815590",
+        "participants": [
+          "KC",
+          "LAA"
+        ],
+        "rules": "In the upcoming MLB game between the Kansas City Royals and Los Angeles Angels, scheduled for August 14 at 9:38PM ET:\n\nThis market will resolve to \"Kansas City Royals\" if the Kansas City Royals win the game.\n\nThis market will resolve to \"Los Angeles Angels\" if the Los Angeles Angels win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-kc-laa-2026-08-14",
+        "start_utc": "2026-08-15T01:38:00Z",
+        "title": "Kansas City Royals vs. Los Angeles Angels",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-15T01:38:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "LAD",
+            "MIL"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG142210MILLAD-LAD",
+            "no_ask": "0.4000",
+            "no_bid": "0.3900",
+            "selected_team": "LAD",
+            "yes_ask": "0.6100",
+            "yes_bid": "0.6000"
+          },
+          {
+            "id": "KXMLBGAME-26AUG142210MILLAD-MIL",
+            "no_ask": "0.6200",
+            "no_bid": "0.6000",
+            "selected_team": "MIL",
+            "yes_ask": "0.4000",
+            "yes_bid": "0.3800"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG142210MILLAD",
+        "participants": [
+          "LAD",
+          "MIL"
+        ],
+        "rules": "If Milwaukee wins the Milwaukee vs Los Angeles D professional baseball game originally scheduled for Aug 14, 2026 at 10:10 PM EDT, then the market resolves to Yes.\nThe following market refers to the Milwaukee vs Los Angeles D professional baseball game originally scheduled for Aug 14, 2026 at 10:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug142210millad",
+        "start_utc": "2026-08-15T02:10:00Z",
+        "title": "Milwaukee vs Los Angeles D Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "LAD",
+        "MIL"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.4,
+            "best_bid": 0.39,
+            "indicative_price": "0.395",
+            "selected_team": "MIL",
+            "token_id": "53192324459201821973018815548812641624194915654799793172407935131823662513535"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.605",
+            "selected_team": "LAD",
+            "token_id": "111150067527465999234836193046919428982110926243264951585367217801216157674525"
+          }
+        ],
+        "event_id": "815592",
+        "participants": [
+          "LAD",
+          "MIL"
+        ],
+        "rules": "In the upcoming MLB game between the Milwaukee Brewers and Los Angeles Dodgers, scheduled for August 14 at 10:10PM ET:\n\nThis market will resolve to \"Milwaukee Brewers\" if the Milwaukee Brewers win the game.\n\nThis market will resolve to \"Los Angeles Dodgers\" if the Los Angeles Dodgers win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-mil-lad-2026-08-14",
+        "start_utc": "2026-08-15T02:10:00Z",
+        "title": "Milwaukee Brewers vs. Los Angeles Dodgers",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-15T02:10:00Z"
+    },
+    {
+      "checks": [
+        {
+          "code": "SPORT_EQUAL",
+          "passed": true,
+          "value": "baseball"
+        },
+        {
+          "code": "COMPETITION_EQUAL",
+          "passed": true,
+          "value": "mlb"
+        },
+        {
+          "code": "PARTICIPANTS_EQUAL",
+          "passed": true,
+          "value": [
+            "COL",
+            "SF"
+          ]
+        },
+        {
+          "code": "START_DELTA_WITHIN_15_MINUTES",
+          "passed": true,
+          "value": 0
+        },
+        {
+          "code": "UNIQUE_CANDIDATE",
+          "passed": true,
+          "value": 1
+        },
+        {
+          "code": "MATERIAL_RULES_EQUAL",
+          "passed": false,
+          "value": [
+            "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+            "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+          ]
+        }
+      ],
+      "competition": "mlb",
+      "decision": "REVIEW",
+      "kalshi": {
+        "contracts": [
+          {
+            "id": "KXMLBGAME-26AUG142215COLSF-COL",
+            "no_ask": "0.5600",
+            "no_bid": "0.5300",
+            "selected_team": "COL",
+            "yes_ask": "0.4700",
+            "yes_bid": "0.4400"
+          },
+          {
+            "id": "KXMLBGAME-26AUG142215COLSF-SF",
+            "no_ask": "0.4500",
+            "no_bid": "0.4400",
+            "selected_team": "SF",
+            "yes_ask": "0.5600",
+            "yes_bid": "0.5500"
+          }
+        ],
+        "event_id": "KXMLBGAME-26AUG142215COLSF",
+        "participants": [
+          "COL",
+          "SF"
+        ],
+        "rules": "If San Francisco wins the Colorado vs San Francisco professional baseball game originally scheduled for Aug 14, 2026 at 10:15 PM EDT, then the market resolves to Yes.\nThe following market refers to the Colorado vs San Francisco professional baseball game originally scheduled for Aug 14, 2026 at 10:15 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+        "source_url": "https://kalshi.com/markets/kxmlbgame-26aug142215colsf",
+        "start_utc": "2026-08-15T02:15:00Z",
+        "title": "Colorado vs San Francisco Winner?",
+        "venue": "kalshi"
+      },
+      "participants": [
+        "COL",
+        "SF"
+      ],
+      "polymarket": {
+        "contracts": [
+          {
+            "best_ask": 0.47,
+            "best_bid": 0.44,
+            "indicative_price": "0.455",
+            "selected_team": "COL",
+            "token_id": "64283142497559304613057807527939317187648903703306382671869882769280948185672"
+          },
+          {
+            "best_ask": null,
+            "best_bid": null,
+            "indicative_price": "0.545",
+            "selected_team": "SF",
+            "token_id": "53421791151642470770005013609863822319652560178700667445070287563057964221686"
+          }
+        ],
+        "event_id": "815593",
+        "participants": [
+          "COL",
+          "SF"
+        ],
+        "rules": "In the upcoming MLB game between the Colorado Rockies and San Francisco Giants, scheduled for August 14 at 10:15PM ET:\n\nThis market will resolve to \"Colorado Rockies\" if the Colorado Rockies win the game.\n\nThis market will resolve to \"San Francisco Giants\" if the San Francisco Giants win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+        "source_url": "https://polymarket.com/event/mlb-col-sf-2026-08-14",
+        "start_utc": "2026-08-15T02:15:00Z",
+        "title": "Colorado Rockies vs. San Francisco Giants",
+        "venue": "polymarket"
+      },
+      "pricing_eligible": false,
+      "review_reasons": [
+        "MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN",
+        "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER"
+      ],
+      "sport": "baseball",
+      "start_delta_seconds": 0,
+      "start_utc": "2026-08-15T02:15:00Z"
+    }
+  ],
+  "mode": "read_only",
+  "report_sha256": "10f44d107d8b61b4c5fdd0d74c98c2dedad7ee9b51e65a71101b6dde2c1d4024",
+  "schema_version": "1.0.0",
+  "scope": "live MLB pre-game event-winner markets"
+}
