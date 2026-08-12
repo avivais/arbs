@@ -8,6 +8,7 @@ dependencies = ["certifi>=2024.7.4"]
 [project.scripts]
 arbs-connectivity = "arbs.connectivity:main"
 arbs-ingest = "arbs.ingest:main"
+arbs-normalize = "arbs.normalization:main"
 
 [build-system]
 requires = ["setuptools>=68"]

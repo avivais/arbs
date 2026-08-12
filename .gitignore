@@ -4,4 +4,4 @@ __pycache__/
 .venv/
 data/raw/*.jsonl
 !data/raw/.gitkeep
-
+data/raw/*-normalized.jsonl

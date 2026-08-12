@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>arbs — Rolling Project Walkthrough</title>
+  <style>
+    :root { --ink:#152019; --muted:#657068; --paper:#f3f0e7; --card:#fffdf8; --green:#176b4d; --soft:#dcece4; --line:#d7d4ca; --amber:#a55a13; }
+    * { box-sizing:border-box } html { scroll-behavior:smooth } body { margin:0; color:var(--ink); background:var(--paper); font:16px/1.62 Inter,system-ui,sans-serif }
+    header { padding:64px 24px 52px; color:#fff; background:linear-gradient(125deg,#102d24,#176b4d 65%,#328665) }
+    .wrap { max-width:1080px; margin:auto } h1,h2 { font-family:Georgia,serif } h1 { max-width:800px; margin:8px 0 14px; font-size:clamp(38px,6vw,66px); line-height:1.03 }
+    h2 { margin:52px 0 17px; font-size:30px } h3 { margin:0 0 8px; font-size:19px } p { max-width:850px }
+    .eyebrow { opacity:.75; font-size:12px; font-weight:800; letter-spacing:.14em; text-transform:uppercase }
+    header p { font-size:19px; opacity:.87 } nav { position:sticky; top:0; z-index:2; overflow:auto; border-bottom:1px solid var(--line); background:rgba(255,253,248,.96); backdrop-filter:blur(8px) }
+    nav div { display:flex; gap:22px; padding:13px 24px; white-space:nowrap } nav a { color:var(--green); font-size:14px; font-weight:750; text-decoration:none }
+    main { padding:0 24px 76px } .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(245px,1fr)); gap:15px }
+    .card,.entry { padding:20px; border:1px solid var(--line); border-radius:12px; background:var(--card); box-shadow:0 4px 18px rgba(20,40,28,.04) }
+    .metric { font:700 31px/1 Georgia,serif; color:var(--green) } .label { margin-top:7px; color:var(--muted); font-size:13px }
+    .flow { display:flex; align-items:stretch; gap:8px; overflow:auto } .flow div { min-width:140px; flex:1; padding:14px; text-align:center; border-radius:8px; background:var(--soft); font-weight:750 }
+    .flow span { align-self:center; color:var(--green); font-weight:900 } .timeline { border-left:3px solid var(--green); padding-left:24px }
+    .entry { position:relative; margin:16px 0 } .entry:before { content:""; position:absolute; width:13px; height:13px; left:-32px; top:23px; border:3px solid var(--paper); border-radius:50%; background:var(--green) }
+    .date { color:var(--green); font-size:13px; font-weight:800 } .status { display:inline-block; padding:3px 9px; border-radius:99px; color:var(--green); background:var(--soft); font-size:12px; font-weight:800 }
+    table { width:100%; border-collapse:collapse; background:var(--card); font-size:14px } th,td { padding:11px; border:1px solid var(--line); text-align:left; vertical-align:top } th { background:var(--soft) }
+    code { padding:2px 5px; border-radius:4px; color:#114e39; background:#e5ece7 } pre { overflow:auto; padding:18px; border-radius:10px; color:#e5f2ea; background:#14241d; font-size:13px }
+    .note { padding:15px 18px; border-left:4px solid var(--amber); border-radius:5px; background:#fff5e6 } footer { padding:28px; color:var(--muted); text-align:center; background:#e7e4da }
+    @media(max-width:650px){ header{padding-top:44px}.flow{display:grid}.flow span{display:none} }
+    @media print{ nav{display:none}.card,.entry{break-inside:avoid} body{background:#fff} }
+  </style>
+</head>
+<body>
+  <header><div class="wrap">
+    <div class="eyebrow">Living engineering record · Updated 12 August 2026</div>
+    <h1>Building the sports-market arbitrage matcher</h1>
+    <p>A rolling walkthrough of what exists, why it was built, what production data taught us, and what comes next.</p>
+  </div></header>
+  <nav><div class="wrap"><a href="#goal">Goal</a><a href="#system">System</a><a href="#run">Run it</a><a href="#timeline">Timeline</a><a href="#findings">Findings</a><a href="#next">Next</a></div></nav>
+  <main class="wrap">
+    <section id="goal"><h2>Project goal and safety boundary</h2>
+      <p>Discover sports contracts on Kalshi and Polymarket, normalize them into a shared representation, and eventually identify pairs whose payouts are genuinely complementary. The current system is deliberately read-only: it uses public production data, stores no credentials, and cannot place trades.</p>
+      <div class="grid"><div class="card"><h3>Scope</h3><p>Union of every sports league and market family found on either venue, including live markets and unusual propositions.</p></div><div class="card"><h3>Matching standard</h3><p>Resolution rules govern. Similar titles are not enough; missing or differing material rules require review.</p></div><div class="card"><h3>Current phase</h3><p>Reliable acquisition and conservative canonical projection. Automated matching and execution are not enabled.</p></div></div>
+    </section>
+    <section id="system"><h2>Current data path</h2>
+      <div class="flow"><div>Public venue APIs</div><span>→</span><div>Sports discovery</div><span>→</span><div>Immutable JSONL</div><span>→</span><div>Canonical records</div><span>→</span><div>Coverage audit</div></div>
+      <h3 style="margin-top:24px">Key modules</h3>
+      <table><thead><tr><th>Area</th><th>Responsibility</th></tr></thead><tbody>
+        <tr><td><code>adapters/</code></td><td>Public Kalshi and Polymarket REST access, TLS verification, retries, timeouts, and response timing.</td></tr>
+        <tr><td><code>ingestion/snapshots.py</code></td><td>Union discovery, pagination, deduplication, bounded concurrency, partial failure capture, resume, and targeted retries.</td></tr>
+        <tr><td><code>ingest.py</code></td><td>CLI entry point for bounded or complete production captures.</td></tr>
+        <tr><td><code>normalization.py</code></td><td>Streaming projection into common market fields plus coverage and missing-field reports.</td></tr>
+        <tr><td><code>config/rules/</code></td><td>Machine-readable equivalence policy and safety gates.</td></tr>
+      </tbody></table>
+    </section>
+    <section id="run"><h2>Run the system</h2>
+      <p>The project targets Python 3.12+. No API credentials are needed for these commands.</p>
+      <pre># Verify public connectivity
+PYTHONPATH=src python3 -m arbs.connectivity
+
+# Small production capture
+PYTHONPATH=src python3 -m arbs.ingest \
+  --max-kalshi-series 3 --max-polymarket-sports 3
+
+# Complete union capture
+PYTHONPATH=src python3 -m arbs.ingest
+
+# Normalize and report coverage
+PYTHONPATH=src python3 -m arbs.normalization data/raw/sports-&lt;timestamp&gt;.jsonl
+
+# Retry only failed containers from a partial capture
+PYTHONPATH=src python3 -m arbs.ingest \
+  --resume data/raw/sports-&lt;timestamp&gt;.jsonl --retry-errors
+
+# Test
+PYTHONPATH=src python3 -m unittest discover -s tests -v</pre>
+      <p class="note">Raw and normalized production snapshots are intentionally ignored by Git. They are large, volatile runtime artifacts—not source code.</p>
+    </section>
+    <section id="timeline"><h2>Rolling implementation timeline</h2><div class="timeline">
+      <article class="entry"><div class="date">Milestone 1</div><h3>Equivalence rules defined <span class="status">Complete</span></h3><p>Specified exact, review, no-match, unsupported, and unpaired decisions. Added market-family taxonomy, live-market gates, machine policy, and adversarial fixtures.</p></article>
+      <article class="entry"><div class="date">Milestone 2</div><h3>Production connectivity established <span class="status">Complete</span></h3><p>Connected to public Kalshi market/order-book endpoints and Polymarket Gamma/CLOB endpoints. Added verified TLS, bounded retries, request timing, and smoke checks.</p></article>
+      <article class="entry"><div class="date">Milestone 3</div><h3>Sports union ingestion built <span class="status">Complete</span></h3><p>Implemented Kalshi Sports-series discovery and Polymarket sports-tag discovery, full pagination, immutable payload hashes, and atomic JSONL snapshots.</p></article>
+      <article class="entry"><div class="date">Milestone 4</div><h3>Full catalog captured and recovered <span class="status">Complete</span></h3><p>The first exhaustive pass exposed Kalshi rate limiting. Partial results were preserved, only failed series were retried at lower concurrency, and the recovered snapshot completed with zero errors.</p></article>
+      <article class="entry"><div class="date">Milestone 5</div><h3>Canonical streaming normalization <span class="status">Complete</span></h3><p>Added bounded-memory normalization for venue IDs, taxonomy, time, status, outcomes, prices, rules, resolution sources, and source hashes.</p></article>
+    </div></section>
+    <section id="findings"><h2>Measured production results</h2>
+      <div class="grid"><div class="card"><div class="metric">180,717</div><div class="label">raw records</div></div><div class="card"><div class="metric">167,091</div><div class="label">canonical markets</div></div><div class="card"><div class="metric">3,670</div><div class="label">public API requests</div></div><div class="card"><div class="metric">0</div><div class="label">errors after targeted recovery</div></div></div>
+      <table style="margin-top:18px"><thead><tr><th>Venue object</th><th>Count</th></tr></thead><tbody><tr><td>Kalshi sports series</td><td>3,193</td></tr><tr><td>Kalshi markets</td><td>42,667</td></tr><tr><td>Polymarket sports definitions</td><td>438</td></tr><tr><td>Polymarket events</td><td>9,995</td></tr><tr><td>Polymarket markets</td><td>124,424</td></tr></tbody></table>
+      <h3 style="margin-top:24px">What the data taught us</h3><ul><li>Global market feeds are not adequate sports discovery mechanisms; venue-specific taxonomies are required.</li><li>Kalshi uses broad labels such as basketball and soccer, while Polymarket frequently uses league codes such as NBA and EPL. Canonical mapping must precede overlap analysis.</li><li>Large Polymarket events embed child markets, so future captures store that information once to reduce snapshot size.</li><li>Some records lack start or close times. Missing timing data must block deterministic event matching unless corroborated elsewhere.</li><li>Market-type coverage is much broader than basic moneylines; classification must be explicit and extensible.</li></ul>
+    </section>
+    <section id="next"><h2>Next milestone</h2>
+      <p>Build canonical sport, league, participant, and event identity. The immediate work is to map venue taxonomy into shared IDs, extract participants and time anchors, produce candidate event groups, and measure how many records remain ambiguous. Only then should deterministic contract matching begin.</p>
+      <ol><li>Create versioned sport and league aliases.</li><li>Extract participants without substring guessing.</li><li>Normalize home/away and event-stage identity.</li><li>Generate candidates using league, participant set, and the agreed ±15-minute window.</li><li>Emit evidence and rejection reasons for every candidate.</li></ol>
+      <p>This page is intentionally rolling: each completed milestone should append evidence, commands, measured results, design changes, and the next safe boundary.</p>
+    </section>
+  </main>
+  <footer>arbs rolling walkthrough · public read-only data · no trading or credential use</footer>
+</body>
+</html>

@@ -4,7 +4,7 @@ import unittest
 from pathlib import Path
 
 from arbs.adapters.http import JsonResponse
-from arbs.ingestion.snapshots import Capture, IngestionError, capture_kalshi, capture_polymarket, write_capture
+from arbs.ingestion.snapshots import Capture, IngestionError, capture_kalshi, capture_polymarket, load_capture, write_capture
 
 
 def response(data, url="https://example.test"):
@@ -39,8 +39,8 @@ class IngestionTests(unittest.TestCase):
             or record["payload"].get("sport")
             for record in capture.records
         ]
-        self.assertEqual(ids, ["S1", "S1-M", "S2", "S2-M", "nba", "E1", "M1", "nfl", "E2", "M2"])
-        self.assertEqual(capture.request_count, 6)
+        self.assertEqual(ids, ["S1", "S2", "S1-M", "S2-M", "nba", "nfl", "E1", "M1", "E2", "M2"])
+        self.assertEqual(capture.request_count, 7)
 
     def test_bounded_capture(self):
         capture = Capture()
@@ -54,6 +54,30 @@ class IngestionTests(unittest.TestCase):
             lines = [json.loads(line) for line in target.read_text().splitlines()]
             self.assertEqual(lines[0]["type"], "manifest")
             self.assertEqual(lines[1]["payload"]["id"], 1)
+            resumed = load_capture(target)
+            self.assertEqual(len(resumed.records), 1)
+
+    def test_duplicate_polymarket_tags_are_not_refetched(self):
+        class DuplicateTags(FakePoly):
+            def __init__(self): self.calls = 0
+            def list_sports(self):
+                return response([{"sport": "a", "primaryTagId": 1}, {"sport": "b", "primaryTagId": 1}])
+            def list_sports_events(self, tag_id, **kwargs):
+                self.calls += 1
+                return response({"events": [], "next_cursor": ""})
+        client = DuplicateTags()
+        capture_polymarket(client, Capture())
+        self.assertEqual(client.calls, 1)
+
+    def test_child_failure_is_recorded_and_capture_continues(self):
+        class Partial(FakeKalshi):
+            def list_series_markets(self, ticker, **kwargs):
+                if ticker == "S1": raise RuntimeError("boom")
+                return super().list_series_markets(ticker, **kwargs)
+        capture = Capture()
+        capture_kalshi(Partial(), capture)
+        self.assertEqual(len(capture.errors), 1)
+        self.assertTrue(any(r["payload"].get("ticker") == "S2-M" for r in capture.records))
 
     def test_repeated_cursor_fails(self):
         class LoopingKalshi:
