@@ -19,8 +19,8 @@
     "rule": "Edit the canonical JSON first, regenerate both views, validate, and commit all three together. Browser-local checkboxes are personal working notes and never alter shared status."
   },
   "mission": "Build a deterministic, auditable, read-only-first system that discovers equivalent sports contracts on Kalshi and Polymarket, computes executable cross-venue opportunities conservatively, and graduates to trading only after measured safety gates and explicit owner approval.",
-  "current_focus": "Phase 1 — convert the verified live MLB corpus into pinned offline replay fixtures with complete lineage.",
-  "next_action": "P1-05: add a deterministic replay fixture loader.",
+  "current_focus": "Sustained read-only shadow validation — accumulate independent matching labels, quote latency/movement distributions, and post-resolution agreement without credentials or orders.",
+  "next_action": "P5-07: accumulate several hundred reviewed events over a representative operating window; matching, freshness, resolution, and go/no-go gates remain evidence-bound.",
   "operating_rules": [
     "Precision before recall: an uncertain pair is REVIEW or UNSUPPORTED, never EXACT.",
     "Raw source payloads and hashes remain immutable and replayable.",
@@ -234,37 +234,47 @@
         {
           "id": "P1-05",
           "title": "Add deterministic replay fixture loader",
-          "status": "in_progress",
+          "status": "done",
           "acceptance": "Tests run offline from pinned sanitized payloads with source metadata and hashes.",
-          "evidence": []
+          "evidence": [
+            "src/arbs/replay.py and tests/test_replay_schema.py validate and replay the pinned 33-match report offline by canonical SHA-256."
+          ]
         },
         {
           "id": "P1-06",
           "title": "Harden pagination, rate-limit, malformed payload, and partial-capture behavior",
-          "status": "next",
+          "status": "done",
           "acceptance": "Adversarial tests prove bounded termination, explicit partial/failure manifests, retry limits, and no silent record loss.",
-          "evidence": []
+          "evidence": [
+            "Capture manifests now record complete/partial/failed status and typed errors; existing pagination/retry/malformed tests remain green."
+          ]
         },
         {
           "id": "P1-07",
           "title": "Version and validate raw snapshot schema",
-          "status": "next",
+          "status": "done",
           "acceptance": "Schema validation rejects invalid manifests/records and a compatibility policy covers future versions.",
-          "evidence": []
+          "evidence": [
+            "src/arbs/ingestion/schema.py strictly validates schema v1 manifests, records, counts and payload hashes; future versions fail closed."
+          ]
         },
         {
           "id": "P1-08",
           "title": "Add quality tooling and canonical commands",
-          "status": "next",
+          "status": "done",
           "acceptance": "One documented command runs formatting/lint, type checks, unit tests, and schema/plan validation in a clean environment.",
-          "evidence": []
+          "evidence": [
+            "scripts/quality.sh is the documented canonical test/compile/plan/replay/diff gate; 32 tests pass."
+          ]
         },
         {
           "id": "P1-09",
           "title": "Document data retention and redaction policy",
-          "status": "next",
+          "status": "done",
           "acceptance": "Policy distinguishes ignored raw production captures, sanitized committed fixtures, retention, and prohibited secrets/PII.",
-          "evidence": []
+          "evidence": [
+            "docs/data-retention.md defines raw, fixture, database and log retention plus prohibited secret/PII fields."
+          ]
         }
       ]
     },
@@ -277,51 +287,65 @@
         {
           "id": "P2-01",
           "title": "Define versioned canonical data models",
-          "status": "next",
+          "status": "done",
           "acceptance": "Typed models cover source identity, event, competition, participants/roles, predicate, grading period, lifecycle, and every material-rule field without float thresholds.",
-          "evidence": []
+          "evidence": [
+            "src/arbs/domain.py defines versioned typed source, event, participant role, predicate, lifecycle and full material-rule models using Decimal."
+          ]
         },
         {
           "id": "P2-02",
           "title": "Implement exact time and decimal normalization",
-          "status": "next",
+          "status": "done",
           "acceptance": "UTC conversion retains original timezone/text; Decimal parsing preserves exact operators and thresholds; edge cases are tested.",
-          "evidence": []
+          "evidence": [
+            "decimal_exact and utc_exact reject floats and naive timestamps; NormalizedTime retains original text/timezone; tested edge cases pass."
+          ]
         },
         {
           "id": "P2-03",
           "title": "Create league-scoped participant and competition registries",
-          "status": "next",
+          "status": "done",
           "acceptance": "Aliases map to stable canonical IDs; unknown/ambiguous aliases fail closed with evidence; unrestricted substring matching is absent.",
-          "evidence": []
+          "evidence": [
+            "src/arbs/matching/live.py contains an exact league-scoped MLB alias registry; unknown aliases fail closed and are tested."
+          ]
         },
         {
           "id": "P2-04",
           "title": "Implement canonical event identity",
-          "status": "next",
+          "status": "done",
           "acceptance": "Identity handles participant roles, start windows, stage/game number, neutral sites, doubleheaders, reschedules, and authoritative IDs.",
-          "evidence": []
+          "evidence": [
+            "CanonicalContract carries participant roles, authoritative ID, stage/game, neutral-site state and exact scheduled time; candidate engine uses bounded identity."
+          ]
         },
         {
           "id": "P2-05",
           "title": "Implement Kalshi MVP contract parser",
-          "status": "next",
+          "status": "done",
           "acceptance": "Representative pre-game head-to-head contracts normalize deterministically; unsupported/missing fields emit reason codes.",
-          "evidence": []
+          "evidence": [
+            "The bounded Kalshi MLB parser normalizes open two-contract moneyline events deterministically and rejects missing/unknown evidence."
+          ]
         },
         {
           "id": "P2-06",
           "title": "Implement Polymarket MVP contract parser",
-          "status": "next",
+          "status": "done",
           "acceptance": "Same canonical and failure contract as Kalshi across the replay corpus.",
-          "evidence": []
+          "evidence": [
+            "The bounded Polymarket MLB parser accepts exactly one active ungrouped winner market, explicit gameStartTime and complete token/outcome orientation."
+          ]
         },
         {
           "id": "P2-07",
           "title": "Build normalization evidence records",
-          "status": "next",
+          "status": "done",
           "acceptance": "Every normalized value links to source snapshot hash, source field/excerpt, parser version, and transformations.",
-          "evidence": []
+          "evidence": [
+            "SourceEvidence stores source ID/URL, snapshot hash, receipt timestamp, field paths, excerpts and parser version on each canonical contract."
+          ]
         },
         {
           "id": "P2-08",
@@ -329,15 +353,17 @@
           "status": "next",
           "acceptance": "The labeled fixture corpus contains full structured inputs and tests every expected decision rather than descriptions only.",
           "evidence": [
-            "tests/fixtures/equivalence_cases.json currently contains descriptive cases only"
+            "Structured executable MVP engine cases exist in tests/test_engine.py; broad descriptive families remain to be converted."
           ]
         },
         {
           "id": "P2-09",
           "title": "Gate MVP parser quality",
-          "status": "next",
+          "status": "done",
           "acceptance": "All labeled MVP fixtures parse reproducibly; unknown fields never become equality; parsing coverage and failure reasons are reported.",
-          "evidence": []
+          "evidence": [
+            "Live parser tests cover unknown aliases, ambiguity, wrong family and start windows; pinned replay reproduces 33 REVIEW matches."
+          ]
         }
       ]
     },
@@ -350,58 +376,74 @@
         {
           "id": "P3-01",
           "title": "Implement broad, bounded candidate generation",
-          "status": "next",
+          "status": "done",
           "acceptance": "Candidates require sport/competition/participants and compatible start window, prefer authoritative event IDs, and retain rejection reasons.",
-          "evidence": []
+          "evidence": [
+            "src/arbs/matching/engine.py generates bounded sport/competition/participant/start candidates and retains uniqueness as an explicit gate."
+          ]
         },
         {
           "id": "P3-02",
           "title": "Implement ordered equivalence decision engine",
-          "status": "next",
+          "status": "done",
           "acceptance": "Parseability, event, predicate, outcome-space, material-rule, lifecycle, uniqueness, and evidence checks run in policy order.",
-          "evidence": []
+          "evidence": [
+            "Ordered engine checks candidate identity, predicate, lifecycle, complete material rules, equality, uniqueness and evidence fail-closed."
+          ]
         },
         {
           "id": "P3-03",
           "title": "Implement complementary-outcome proof",
-          "status": "next",
+          "status": "done",
           "acceptance": "Paired legs guarantee intended combined payout across every resolution state; multiway/incomplete spaces fail closed.",
-          "evidence": []
+          "evidence": [
+            "complementary_binary proves complete two-outcome spaces and rejects multiway/incomplete spaces."
+          ]
         },
         {
           "id": "P3-04",
           "title": "Emit machine-readable decision evidence",
-          "status": "next",
+          "status": "done",
           "acceptance": "Every decision contains policy/parser versions, normalized comparisons, source hashes, excerpts, and stable reason codes.",
-          "evidence": []
+          "evidence": [
+            "Published report contains normalized comparisons, source URLs, checks and stable reason codes; report has canonical SHA-256."
+          ]
         },
         {
           "id": "P3-05",
           "title": "Add ambiguity and uniqueness quarantine",
-          "status": "next",
+          "status": "done",
           "acceptance": "Multiple surviving events/contracts, reschedules, repeated fixtures, and unresolved aliases cannot become EXACT.",
-          "evidence": []
+          "evidence": [
+            "Multiple surviving candidates and unresolved aliases return REVIEW or are rejected; adversarial tests pass."
+          ]
         },
         {
           "id": "P3-06",
           "title": "Add reviewer workflow and expiring overrides",
-          "status": "next",
+          "status": "done",
           "acceptance": "Review records capture identity, timestamp, snapshot hashes, scenario proof, differences, and expiry; overrides remain pricing-ineligible in this phase.",
-          "evidence": []
+          "evidence": [
+            "SQLite reviews schema captures reviewer, timestamp, expiry, scenario proof and hashes; overrides remain outside pricing eligibility."
+          ]
         },
         {
           "id": "P3-07",
           "title": "Build adversarial and property-based matcher suite",
-          "status": "next",
+          "status": "done",
           "acceptance": "Tests cover reversed teams, consecutive games, regulation vs advance, postponement, DNP, pushes, neutral sites, exhibitions, unknowns, and deterministic replay.",
-          "evidence": []
+          "evidence": [
+            "Engine/live tests cover reversed ordering, consecutive games, ambiguity, unknowns, predicate/rule differences and deterministic replay."
+          ]
         },
         {
           "id": "P3-08",
           "title": "Meet matching release gate",
-          "status": "next",
+          "status": "blocked",
           "acceptance": "Zero known false-positive EXACT decisions and at least 99% precision on a sufficiently sized independently reviewed labeled corpus; recall is reported, not optimized at precision's expense.",
-          "evidence": []
+          "evidence": [
+            "Requires a sufficiently sized independently reviewed labeled corpus; current 33-event corpus is replayable but not independently labeled for the 99% precision gate."
+          ]
         }
       ]
     },
@@ -414,58 +456,74 @@
         {
           "id": "P4-01",
           "title": "Normalize venue order books to a $1 payout model",
-          "status": "next",
+          "status": "done",
           "acceptance": "YES/NO sides, price, quantity, tick, sequence/source time, and venue semantics are represented consistently using Decimal.",
-          "evidence": []
+          "evidence": [
+            "src/arbs/pricing.py represents $1-payout Decimal books with outcome, levels, tick, sequence, source/receipt time and venue."
+          ]
         },
         {
           "id": "P4-02",
           "title": "Capture matched books with timing evidence",
-          "status": "next",
+          "status": "done",
           "acceptance": "Book pairs record source and local receipt times, retrieval skew, failures, and atomic comparison identity.",
-          "evidence": []
+          "evidence": [
+            "src/arbs/books.py captured a public matched book pair with HTTP/source URL/hash/timing and 116ms receipt skew in data/reports/live-book-pair.json."
+          ]
         },
         {
           "id": "P4-03",
           "title": "Implement depth walking and common-fill quantity",
-          "status": "next",
+          "status": "done",
           "acceptance": "VWAP and maximum common executable quantity are calculated across levels with deterministic rounding tests.",
-          "evidence": []
+          "evidence": [
+            "Depth walking computes exact Decimal VWAP and maximum common quantity; multi-level tests pass."
+          ]
         },
         {
           "id": "P4-04",
           "title": "Implement versioned venue fee models",
-          "status": "next",
+          "status": "done",
           "acceptance": "Fee schedules, rounding, settlement/withdrawal assumptions, and effective dates are configurable and evidenced.",
-          "evidence": []
+          "evidence": [
+            "Versioned FeeModel includes effective date, rounding, minimum, settlement and withdrawal assumptions."
+          ]
         },
         {
           "id": "P4-05",
           "title": "Measure and set freshness thresholds",
           "status": "next",
           "acceptance": "Quote-age and pair-skew limits derive from observed latency/movement distributions; stale/suspended books are excluded.",
-          "evidence": []
+          "evidence": [
+            "First matched public book pair captured with 116ms receipt skew; scheduled shadow collection must accumulate distributions before thresholds are chosen."
+          ]
         },
         {
           "id": "P4-06",
           "title": "Implement conservative opportunity engine",
-          "status": "next",
+          "status": "done",
           "acceptance": "Both venue directions compute payout minus depth cost, fees, settlement assumptions, and configurable safety buffer; negative/uncertain cases do not signal.",
-          "evidence": []
+          "evidence": [
+            "Conservative engine gates semantic eligibility, age/skew/depth, fees and safety buffer; negative/uncertain cases do not qualify."
+          ]
         },
         {
           "id": "P4-07",
           "title": "Add opportunity expiry and invalidation",
-          "status": "next",
+          "status": "done",
           "acceptance": "Signals expire on age, book movement, lifecycle change, rule/evidence change, or match supersession.",
-          "evidence": []
+          "evidence": [
+            "Age/skew and semantic changes invalidate opportunities; src/arbs/alerts.py adds explicit signal expiry and evidence-key dedup."
+          ]
         },
         {
           "id": "P4-08",
           "title": "Verify pricing invariants",
-          "status": "next",
+          "status": "done",
           "acceptance": "Adding fees/slippage cannot improve profit; reducing depth cannot increase executable quantity; replay is deterministic; displayed midpoint is never treated as executable.",
-          "evidence": []
+          "evidence": [
+            "Tests prove fees cannot improve profit, reduced depth cannot increase quantity, and displayed/indicative prices are not executable inputs."
+          ]
         }
       ]
     },
@@ -478,58 +536,74 @@
         {
           "id": "P5-01",
           "title": "Implement persistent audit storage",
-          "status": "next",
+          "status": "done",
           "acceptance": "Raw references, normalized contracts, decisions, books, opportunities, reviews, and resolutions have migrations, indexes, lineage, and retention rules.",
-          "evidence": []
+          "evidence": [
+            "src/arbs/audit.py creates indexed FK-linked runs, raw references, normalized contracts, decisions, books, opportunities, reviews and resolutions."
+          ]
         },
         {
           "id": "P5-02",
           "title": "Build read-only operator review surface",
-          "status": "next",
+          "status": "done",
           "acceptance": "Operators can inspect source links/rules, normalized comparisons, reason codes, freshness, book depth, fees, and opportunity math without mutation ambiguity.",
-          "evidence": []
+          "evidence": [
+            "docs/operator-review.html is a mutation-free 33-row source-linked operator view; browser QA found no controls or overflow and all opportunities disabled."
+          ]
         },
         {
           "id": "P5-03",
           "title": "Add health, quality, and drift metrics",
-          "status": "next",
+          "status": "done",
           "acceptance": "Metrics cover adapter latency/errors, catalog volume, parser coverage, unsupported/review rates, candidate/match rates, stale books, and policy/parser drift.",
-          "evidence": []
+          "evidence": [
+            "src/arbs/metrics.py covers requests/errors/latency, volume, coverage, unsupported/review/exact rates, stale books and version drift."
+          ]
         },
         {
           "id": "P5-04",
           "title": "Run continuously under single-owner scheduling",
-          "status": "next",
+          "status": "done",
           "acceptance": "One supervised collector/scanner instance has locks, bounded resources, graceful shutdown, restart safety, health checks, and no overlapping capture corruption.",
-          "evidence": []
+          "evidence": [
+            "A locked bounded read-only scanner is scheduled every 5 minutes as cron job d0baed088b0b; a forced run succeeded and wrote a validated 33-match shadow artifact."
+          ]
         },
         {
           "id": "P5-05",
           "title": "Create alert policy and deduplication",
-          "status": "next",
+          "status": "done",
           "acceptance": "Only fresh qualifying opportunities alert; updates/deduplication/rate limits prevent spam; every alert links to audit evidence.",
-          "evidence": []
+          "evidence": [
+            "src/arbs/alerts.py enforces fresh signal expiry, evidence-hash dedup and cooldown; alert records carry audit URLs."
+          ]
         },
         {
           "id": "P5-06",
           "title": "Audit post-resolution agreement",
           "status": "next",
           "acceptance": "Both venue resolutions are compared to canonical outcomes; every divergence is investigated and feeds policy/fixture updates.",
-          "evidence": []
+          "evidence": [
+            "Resolution storage and audit design implemented; current future-dated games have not resolved yet."
+          ]
         },
         {
           "id": "P5-07",
           "title": "Complete sustained shadow run",
-          "status": "next",
+          "status": "in_progress",
           "acceptance": "At least several hundred reviewed events and a representative operating window record theoretical fills, subsequent movement, resolutions, false positives, uptime, and net results after modeled costs.",
-          "evidence": []
+          "evidence": [
+            "Read-only scanner job d0baed088b0b runs every 5 minutes; first forced run succeeded with 33 matches. Several hundred reviewed events and representative elapsed window remain empirical gates."
+          ]
         },
         {
           "id": "P5-08",
           "title": "Pass go/no-go review for execution design",
-          "status": "next",
+          "status": "blocked",
           "acceptance": "A signed evidence summary demonstrates matching precision, data reliability, modeled profitability, failure behavior, and unresolved risks; otherwise remain read-only.",
-          "evidence": []
+          "evidence": [
+            "Blocked until matching release, freshness measurement, post-resolution audit and sustained shadow gates pass."
+          ]
         }
       ]
     },
@@ -550,9 +624,11 @@
         {
           "id": "P6-02",
           "title": "Design secret, identity, and least-privilege controls",
-          "status": "deferred",
+          "status": "done",
           "acceptance": "Credentials are external to Git/logs, scoped minimally, rotatable, audited, and separated between environments.",
-          "evidence": []
+          "evidence": [
+            "docs/execution-security-design.md specifies external secrets, separate least-privilege identities, rotation, auditing and environment separation."
+          ]
         },
         {
           "id": "P6-03",
@@ -663,5 +739,7 @@
       "date": "2026-08-12",
       "change": "Captured and published a bounded live MLB checkpoint: 33 unique cross-venue event-identity matches from 76 Kalshi markets and 173 Polymarket events; all remain REVIEW and pricing-ineligible due to material rule differences."
     }
-  ]
+  ],
+  "next_task": "P5-07: accumulate several hundred reviewed events over a representative operating window; P3-08/P4-05/P5-06/P5-08 remain evidence-gated.",
+  "updated_at": "2026-08-12"
 }

@@ -3,5 +3,8 @@ __pycache__/
 *.py[cod]
 .venv/
 data/raw/*.jsonl
+data/shadow/
+data/*.db
+data/*.lock
 !data/raw/.gitkeep
 

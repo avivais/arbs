@@ -52,6 +52,32 @@ PYTHONPATH=src python3 -m arbs.ingest
 
 Snapshots are written atomically to `data/raw/sports-<UTC timestamp>.jsonl`. Each begins with a manifest, followed by immutable records containing the complete public payload, source URL, retrieval timing, and SHA-256 content hash.
 
+## Quality gate
+
+Run the canonical offline verification command:
+
+```bash
+./scripts/quality.sh
+```
+
+It executes unit and adversarial tests, bytecode compilation, rolling-plan/schema checks, pinned replay integrity, and whitespace validation. The pinned replay requires no network access.
+
+## Live matching checkpoint
+
+```bash
+PYTHONPATH=src python3 -m arbs.match_live --require-match --output data/reports/live-mlb-matches.json
+python3 scripts/render_live_matches.py data/reports/live-mlb-matches.json docs/live-matches.html
+```
+
+Event identity, payout-rule equivalence, conservative pricing, and execution are separate gates. Current live MLB matches remain `REVIEW` and pricing-ineligible because postponement/cancellation semantics differ.
+
+Operational and safety documentation:
+
+- [Field audit](docs/live-mlb-field-audit.md)
+- [Data retention/redaction](docs/data-retention.md)
+- [Operations/shadow runbook](docs/operations-runbook.md)
+- [Deferred execution security design](docs/execution-security-design.md)
+
 ## Tests
 
 ```bash

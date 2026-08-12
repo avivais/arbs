@@ -24,6 +24,12 @@ class Capture:
     records: List[Dict[str, Any]] = field(default_factory=list)
     request_count: int = 0
     duplicate_count: int = 0
+    status: str = "complete"
+    errors: List[Dict[str, str]] = field(default_factory=list)
+
+    def fail(self, stage: str, error: BaseException) -> None:
+        self.status = "partial" if self.records else "failed"
+        self.errors.append({"stage": stage, "error_type": type(error).__name__, "message": str(error)})
 
     def add(self, *, venue: str, kind: str, response: JsonResponse, payload: Any, parent_id: Optional[str] = None) -> None:
         canonical = json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
@@ -205,6 +211,8 @@ def write_capture(capture: Capture, root: Path) -> Path:
     manifest = {
         "schema_version": 1,
         "created_at": datetime.now(timezone.utc).isoformat(),
+        "status": capture.status,
+        "errors": capture.errors,
         "request_count": capture.request_count,
         "record_count": len(capture.records),
         "duplicate_count": capture.duplicate_count,

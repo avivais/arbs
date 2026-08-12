@@ -1,0 +1,22 @@
+[Unit]
+Description=Arbs bounded read-only shadow scan
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=exec
+User=arbs
+Group=arbs
+WorkingDirectory=/opt/arbs
+ExecStart=/opt/arbs/scripts/shadow_scan.sh
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/arbs/data
+MemoryMax=256M
+CPUQuota=50%
+RuntimeMaxSec=180
+
+[Install]
+WantedBy=multi-user.target
