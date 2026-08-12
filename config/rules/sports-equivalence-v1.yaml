@@ -1,0 +1,107 @@
+policy_id: sports-equivalence-v1
+version: 0.1.0
+catalog_scope: union
+include_live: true
+include_event_variants:
+  postseason: true
+  tournament: true
+  neutral_site: true
+  exhibition: true
+
+decisions:
+  exact:
+    pricing_eligible: true
+  approved_override:
+    pricing_eligible: false
+    requires_human: true
+    note: Manual approval is evidence-only in this phase; pricing/trading eligibility is deferred.
+  review:
+    pricing_eligible: false
+  no_match:
+    pricing_eligible: false
+  unsupported:
+    pricing_eligible: false
+  unpaired:
+    pricing_eligible: false
+
+candidate_generation:
+  scheduled_start_tolerance_seconds: 900
+  require_same_sport: true
+  require_same_competition: true
+  require_canonical_participants: true
+  prefer_authoritative_event_id: true
+  ambiguous_candidate_decision: review
+
+market_families:
+  - HEAD_TO_HEAD
+  - MULTIWAY_WINNER
+  - HANDICAP
+  - TOTAL
+  - BOTH_OR_EITHER
+  - MARGIN
+  - EXACT_RESULT
+  - PLAYER_PROP
+  - TEAM_PROP
+  - MILESTONE
+  - STAGE_ADVANCEMENT
+  - SEASON_FUTURE
+  - AWARD
+  - COMBINATION
+  - LIVE_STATE
+  - OTHER
+
+required_event_fields:
+  - sport_id
+  - competition_id
+  - participant_ids
+  - scheduled_start_utc
+  - stage_or_game_number
+
+required_predicate_fields:
+  - market_family
+  - metric
+  - subject
+  - event_scope
+  - grading_period
+  - operator
+  - threshold
+  - selected_outcome
+
+material_rule_fields:
+  - official_source
+  - correction_window
+  - overtime_extra_time_shootout
+  - postponement
+  - cancellation_abandonment
+  - venue_opponent_change
+  - participation
+  - dnp_withdrawal
+  - tie_push_dead_heat
+  - format_change
+  - statistic_definition
+  - deadline_timezone
+  - exceptional_settlement
+
+unknown_field_decision: review
+material_difference_decision: review
+predicate_difference_decision: no_match
+unrepresentable_market_decision: unsupported
+
+live:
+  enabled: true
+  pricing_eligible_without_thresholds: false
+  require_phase_alignment: true
+  require_state_anchor_alignment: true
+  require_source_and_receipt_timestamps: true
+  stale_state_decision: no_match_for_pricing
+  quote_max_age_ms: null
+  state_max_age_ms: null
+  safety_buffer_bps: null
+  note: Collect and match live markets, but do not report opportunities until thresholds are chosen from measured latency and price-movement data.
+
+manual_review:
+  requires_reviewer_identity: true
+  requires_scenario_proof: true
+  requires_snapshot_hashes: true
+  default_expiry: earlier_market_close
+  override_scope: exact_contract_pair_and_snapshots

@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kalshi ↔ Polymarket Arbitrage Matcher — Project Plan</title>
+  <style>
+    :root {
+      --ink: #17211b; --muted: #667169; --paper: #f4f1e8; --card: #fffdf7;
+      --green: #176b4d; --green-soft: #dcece4; --amber: #a85d16; --line: #d8d5ca;
+      --red: #9b3c36; --blue: #255f85;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font: 16px/1.62 Inter, ui-sans-serif, system-ui, sans-serif; }
+    header { color: white; background: linear-gradient(125deg, #0e3328, #176b4d 60%, #2f8a66); padding: 72px 24px 58px; }
+    .wrap { max-width: 1120px; margin: auto; }
+    .eyebrow { font-size: 12px; font-weight: 800; letter-spacing: .15em; text-transform: uppercase; opacity: .75; }
+    h1 { max-width: 850px; margin: 10px 0 14px; font: 700 clamp(36px, 6vw, 68px)/1.04 Georgia, serif; }
+    h2 { margin: 56px 0 18px; font: 700 32px/1.15 Georgia, serif; }
+    h3 { margin: 25px 0 8px; font-size: 19px; }
+    header p { max-width: 790px; margin: 0; font-size: 19px; opacity: .88; }
+    nav { position: sticky; top: 0; z-index: 2; overflow-x: auto; background: rgba(255,253,247,.96); border-bottom: 1px solid var(--line); backdrop-filter: blur(8px); }
+    nav .wrap { display: flex; gap: 22px; padding: 13px 24px; white-space: nowrap; }
+    nav a { color: var(--green); font-size: 14px; font-weight: 750; text-decoration: none; }
+    main { padding: 0 24px 80px; }
+    .lead { max-width: 850px; font-size: 18px; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 21px; box-shadow: 0 4px 18px rgba(20,40,28,.04); }
+    .card h3 { margin-top: 0; }
+    .phase { display: grid; grid-template-columns: 76px 1fr; gap: 18px; margin: 16px 0; padding: 22px; background: var(--card); border: 1px solid var(--line); border-radius: 12px; }
+    .num { display: grid; width: 52px; height: 52px; place-items: center; color: white; background: var(--green); border-radius: 50%; font-size: 20px; font-weight: 850; }
+    .phase h3 { margin-top: 0; }
+    .done { display: inline-block; margin-top: 6px; color: var(--green); background: var(--green-soft); border-radius: 99px; padding: 4px 10px; font-size: 13px; font-weight: 750; }
+    .warning { border-left: 4px solid var(--amber); background: #fff6e8; padding: 15px 18px; border-radius: 5px; }
+    table { width: 100%; border-collapse: collapse; background: var(--card); font-size: 14px; }
+    th, td { padding: 12px; border: 1px solid var(--line); text-align: left; vertical-align: top; }
+    th { background: var(--green-soft); }
+    code { color: #114f3a; background: #e8eee9; border-radius: 4px; padding: 2px 5px; }
+    pre { overflow: auto; padding: 18px; color: #e6f4ec; background: #13241d; border-radius: 10px; font-size: 13px; line-height: 1.5; }
+    .flow { display: flex; align-items: stretch; gap: 8px; overflow-x: auto; padding: 6px 0; }
+    .flow div { min-width: 145px; flex: 1; padding: 14px 10px; text-align: center; background: var(--green-soft); border-radius: 8px; font-weight: 700; }
+    .flow span { align-self: center; color: var(--green); font-weight: 900; }
+    .checklist li { margin: 8px 0; }
+    .tag { color: white; background: var(--blue); border-radius: 4px; padding: 2px 7px; font-size: 12px; }
+    footer { padding: 30px 24px; color: var(--muted); background: #e8e5db; text-align: center; }
+    @media (max-width: 620px) { .phase { grid-template-columns: 1fr; } header { padding-top: 48px; } }
+    @media print { nav { display: none; } body { background: white; } .card, .phase { break-inside: avoid; } }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="eyebrow">Implementation blueprint · MVP</div>
+      <h1>Kalshi ↔ Polymarket Arbitrage Matcher</h1>
+      <p>A deterministic, auditable path from raw sports markets to verified cross-venue matches and executable arbitrage signals.</p>
+    </div>
+  </header>
+  <nav><div class="wrap">
+    <a href="#scope">Scope</a><a href="#architecture">Architecture</a><a href="#phases">Steps</a>
+    <a href="#matching">Matching logic</a><a href="#arbitrage">Pricing</a><a href="#schema">Data</a>
+    <a href="#testing">Testing</a><a href="#roadmap">Roadmap</a>
+  </div></nav>
+
+  <main class="wrap">
+    <section id="scope">
+      <h2>1. Start with a deliberately narrow MVP</h2>
+      <p class="lead">The first release should match only unambiguous, head-to-head, pre-game sports winner markets. It should produce opportunities for human review—not place trades. This gives us exact inputs, explainable decisions, and a clean way to measure false positives.</p>
+      <div class="grid">
+        <article class="card"><h3>In scope</h3><ul><li>One sport and league initially (for example, NBA)</li><li>Moneyline / game-winner binary outcomes</li><li>Scheduled, pre-game markets</li><li>Two named teams, a known start time, and no draw</li><li>Read-only market and order-book ingestion</li></ul></article>
+        <article class="card"><h3>Out of scope</h3><ul><li>Props, spreads, totals, futures, parlays</li><li>Markets with overtime-rule differences</li><li>Live or already-started games</li><li>Automated order submission</li><li>Fuzzy or LLM-only matching</li></ul></article>
+        <article class="card"><h3>MVP success</h3><ul><li>≥99% precision on accepted matches</li><li>Every match has a reason trail</li><li>Zero stale opportunities shown as executable</li><li>Fees, depth, and slippage included</li><li>Resolution-rule mismatches are rejected</li></ul></article>
+      </div>
+      <p class="warning"><strong>Core principle:</strong> matching titles is insufficient. Two markets are equivalent only when the outcome predicate, event, cutoff, cancellation policy, and resolution rules align.</p>
+    </section>
+
+    <section id="architecture">
+      <h2>2. Target architecture</h2>
+      <div class="flow" aria-label="Data processing flow">
+        <div>Venue adapters</div><span>→</span><div>Raw snapshots</div><span>→</span><div>Normalization</div><span>→</span><div>Deterministic matcher</div><span>→</span><div>Price engine</div><span>→</span><div>Alerts / review UI</div>
+      </div>
+      <p>Keep venue-specific behavior at the edges. Store original payloads alongside normalized records so every decision can be replayed. A sensible initial stack is Python 3.12, Pydantic, SQLAlchemy, PostgreSQL, and pytest; use a CLI before adding an API or dashboard.</p>
+      <pre>src/
+  adapters/       # kalshi.py, polymarket.py
+  normalize/      # teams.py, times.py, contracts.py
+  matching/       # sports.py, rules.py, evidence.py
+  pricing/        # books.py, fees.py, opportunities.py
+  storage/        # models.py, repositories.py
+  cli/            # ingest.py, match.py, scan.py
+tests/
+  fixtures/       # recorded, sanitized venue responses
+  unit/            # normalization and price math
+  integration/     # full snapshot-to-opportunity tests
+config/
+  teams/           # league aliases and canonical IDs
+  rules/           # venue and league resolution policy</pre>
+    </section>
+
+    <section id="phases">
+      <h2>3. Step-by-step implementation</h2>
+      <article class="phase"><div class="num">1</div><div><h3>Write the contract-equivalence specification</h3><p>Before coding, define the exact predicate being compared: “Team A wins Game G under rule set R.” Document treatment of overtime, postponement, cancellation, venue changes, stat corrections, and listed pitchers/players if applicable.</p><ul><li>Create an acceptance checklist.</li><li>Define hard rejects versus review-required cases.</li><li>Record venue terms and API usage constraints.</li></ul><span class="done">Deliverable: docs/equivalence.md</span></div></article>
+      <article class="phase"><div class="num">2</div><div><h3>Build read-only venue adapters</h3><p>Fetch active markets and best available order-book levels through official endpoints. Preserve the complete response, retrieval timestamp, endpoint/version, and request parameters. Add retries, rate-limit handling, pagination, and strict timeouts.</p><ul><li>Expose the same adapter interface for both venues.</li><li>Never infer executable price from a displayed midpoint.</li><li>Use decimal arithmetic, not binary floating point.</li></ul><span class="done">Deliverable: replayable raw snapshots</span></div></article>
+      <article class="phase"><div class="num">3</div><div><h3>Create a canonical sports event model</h3><p>Normalize both venues into league, participants, scheduled start, market type, outcome side, and resolution metadata. Keep normalized values separate from source values.</p><ul><li>Convert timestamps to UTC; retain source timezone.</li><li>Map teams using maintained league-scoped aliases.</li><li>Represent home/away separately from outcome ordering.</li></ul><span class="done">Deliverable: validated normalized contracts</span></div></article>
+      <article class="phase"><div class="num">4</div><div><h3>Add authoritative event identity</h3><p>Where possible, map each venue market to a canonical event supplied by a trusted sports schedule feed. This avoids relying on titles and resolves abbreviations, start-time drift, and home/away ordering.</p><ul><li>Key candidates by league + participant set + time window.</li><li>Use external event IDs as corroboration, not resolution authority.</li><li>Quarantine doubleheaders and ambiguous reschedules.</li></ul><span class="done">Deliverable: canonical_event_id mapping</span></div></article>
+      <article class="phase"><div class="num">5</div><div><h3>Implement deterministic matching</h3><p>Generate candidates only inside the same league and nearby start-time window. Apply hard equality checks, then explicit resolution-policy checks. Return <code>MATCH</code>, <code>NO_MATCH</code>, or <code>REVIEW</code> with structured reason codes.</p><span class="done">Deliverable: auditable match records</span></div></article>
+      <article class="phase"><div class="num">6</div><div><h3>Normalize order books and fees</h3><p>Convert contracts into a common $1 payout representation. Model asks for YES and NO by quantity, fee schedule, minimum tick, and venue-specific rounding. Store snapshots atomically so prices compared together were observed together.</p><span class="done">Deliverable: executable cost by quantity</span></div></article>
+      <article class="phase"><div class="num">7</div><div><h3>Calculate opportunities conservatively</h3><p>Evaluate both directions: Kalshi YES + Polymarket NO, and Polymarket YES + Kalshi NO. Walk each order book to a common fill quantity. Subtract all known fees and a configurable safety buffer.</p><span class="done">Deliverable: ranked opportunity records</span></div></article>
+      <article class="phase"><div class="num">8</div><div><h3>Build review and observability tools</h3><p>Start with CLI tables or a small read-only web page showing source links, rules, timestamps, book depth, calculation details, and rejection reasons. Log latency, adapter failures, unmatched-market counts, and match-rate changes.</p><span class="done">Deliverable: human-verifiable scanner</span></div></article>
+      <article class="phase"><div class="num">9</div><div><h3>Shadow-run before execution</h3><p>Run continuously without trading. Save every signal, subsequent price movement, theoretical fill, and final resolution. Manually review all accepted matches and a sample of rejects for at least several hundred events.</p><span class="done">Gate: measured precision, recall, and net profitability</span></div></article>
+      <article class="phase"><div class="num">10</div><div><h3>Add trading only as a separate subsystem</h3><p>After validation, design execution around partial-fill and legging risk, position limits, kill switches, balance checks, idempotency, reconciliation, and venue access requirements. Cross-venue trades are not atomic; “locked profit” is only locked after both legs fill.</p><span class="done">Later phase—not part of MVP</span></div></article>
+    </section>
+
+    <section id="matching">
+      <h2>4. Deterministic sports matching</h2>
+      <h3>Canonical identity</h3>
+      <pre>event_key = (
+  sport, league,
+  sorted([canonical_participant_a, canonical_participant_b]),
+  scheduled_start_utc_bucket,
+  event_stage_or_game_number
+)
+
+contract_key = (
+  event_key,
+  market_type,           # GAME_WINNER
+  selected_participant,
+  includes_overtime,
+  void_policy_version
+)</pre>
+      <h3>Decision sequence</h3>
+      <table>
+        <thead><tr><th>Order</th><th>Check</th><th>Result on failure</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Both contracts parsed as supported <code>GAME_WINNER</code></td><td>Reject</td></tr>
+          <tr><td>2</td><td>Sport and league are identical</td><td>Reject</td></tr>
+          <tr><td>3</td><td>Canonical participant sets are identical</td><td>Reject</td></tr>
+          <tr><td>4</td><td>Start times are within tolerance (initially ±15 minutes)</td><td>Review; reject if another candidate exists</td></tr>
+          <tr><td>5</td><td>Game number, stage, and home/away details do not conflict</td><td>Reject</td></tr>
+          <tr><td>6</td><td>Selected outcome maps to the same canonical team</td><td>Reject</td></tr>
+          <tr><td>7</td><td>Overtime, postponement, cancellation, and rescheduling rules align</td><td>Reject or review</td></tr>
+          <tr><td>8</td><td>Both are open, pre-game, and sufficiently fresh</td><td>Do not price</td></tr>
+          <tr><td>9</td><td>Exactly one candidate survives all checks</td><td>Accept; otherwise review</td></tr>
+        </tbody>
+      </table>
+      <h3>Alias registry</h3>
+      <p>Aliases must be league-scoped and version-controlled. For example, <code>NBA:LAL</code>, “LA Lakers,” and “Los Angeles Lakers” may map to one canonical ID. Never use unrestricted substring matching: “New York” is not a team identity. Unknown aliases go to review rather than being guessed.</p>
+      <h3>Structured evidence</h3>
+      <pre>{
+  "decision": "MATCH",
+  "matcher_version": "sports-v1",
+  "confidence": "DETERMINISTIC",
+  "checks": [
+    {"code": "LEAGUE_EQUAL", "passed": true, "value": "NBA"},
+    {"code": "PARTICIPANTS_EQUAL", "passed": true},
+    {"code": "START_DELTA_SECONDS", "passed": true, "value": 0},
+    {"code": "RESOLUTION_POLICY_EQUAL", "passed": true}
+  ]
+}</pre>
+    </section>
+
+    <section id="arbitrage">
+      <h2>5. Executable arbitrage calculation</h2>
+      <p>For a common quantity <em>q</em>, one YES and one NO pay exactly <em>q × $1</em> only if the contracts are truly complementary. Calculate using executable asks at each depth level:</p>
+      <pre>gross_payout(q) = q
+total_cost(q)   = cost_to_buy_yes(q) + cost_to_buy_no(q)
+net_profit(q)   = gross_payout(q) - total_cost(q)
+                  - venue_fees(q) - settlement_costs(q)
+                  - safety_buffer(q)
+net_roi(q)      = net_profit(q) / total_cost(q)</pre>
+      <div class="grid">
+        <article class="card"><h3>Example</h3><p>Buy 100 YES at $0.43 and 100 NO at $0.52. Gross cost is $95; payout is $100. The apparent $5 edge is valid only after fees, rounding, sufficient depth, fresh quotes, and both fills.</p></article>
+        <article class="card"><h3>Signal gates</h3><ul><li>Quote age below threshold</li><li>Minimum net profit and ROI</li><li>Minimum common depth</li><li>Settlement horizon limit</li><li>Rules verified and match not under review</li></ul></article>
+        <article class="card"><h3>Risk labels</h3><ul><li><span class="tag">PRICE</span> book may move</li><li><span class="tag">FILL</span> one leg may fail</li><li><span class="tag">RULE</span> resolution divergence</li><li><span class="tag">CAPITAL</span> funds locked until settlement</li></ul></article>
+      </div>
+    </section>
+
+    <section id="schema">
+      <h2>6. Minimum data model</h2>
+      <table>
+        <thead><tr><th>Entity</th><th>Important fields</th></tr></thead>
+        <tbody>
+          <tr><td><code>raw_market_snapshot</code></td><td>venue, external ID, fetched_at, payload, payload hash</td></tr>
+          <tr><td><code>canonical_event</code></td><td>sport, league, participant IDs, home/away, start UTC, game number, status</td></tr>
+          <tr><td><code>normalized_contract</code></td><td>venue market ID, event ID, market type, outcome team, close time, rule attributes, parser version</td></tr>
+          <tr><td><code>match_decision</code></td><td>contract IDs, decision, evidence JSON, matcher version, reviewed_by, reviewed_at</td></tr>
+          <tr><td><code>order_book_snapshot</code></td><td>contract ID, observed_at, bids/asks, sequence/version, source timestamp</td></tr>
+          <tr><td><code>opportunity</code></td><td>match ID, direction, quantity, VWAPs, fees, buffer, net profit, ROI, expiry</td></tr>
+          <tr><td><code>resolution_audit</code></td><td>venue resolutions, timestamps, canonical result, discrepancy reason</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="testing">
+      <h2>7. Verification strategy</h2>
+      <ul class="checklist">
+        <li><strong>Golden fixtures:</strong> hand-label known matches, non-matches, and ambiguous cases.</li>
+        <li><strong>Unit tests:</strong> aliases, timezones, order reversal, decimal rounding, fee tiers, and depth walking.</li>
+        <li><strong>Adversarial tests:</strong> same teams on consecutive days, doubleheaders, postponed games, neutral sites, women’s/men’s teams, tournaments, and ambiguous city names.</li>
+        <li><strong>Property tests:</strong> participant ordering must not change event identity; adding fees must never improve profit.</li>
+        <li><strong>Replay tests:</strong> recorded snapshots must yield identical decisions for a pinned matcher version.</li>
+        <li><strong>Resolution audit:</strong> compare both venues after settlement and investigate every divergence.</li>
+      </ul>
+      <p class="warning"><strong>Release gate:</strong> optimize precision before recall. Missing an opportunity costs nothing; accepting a non-equivalent pair can create an unhedged loss.</p>
+    </section>
+
+    <section id="roadmap">
+      <h2>8. Suggested four-week kickoff</h2>
+      <div class="grid">
+        <article class="card"><h3>Week 1 · Foundations</h3><p>Equivalence spec, repository scaffold, schemas, recorded fixtures, one adapter, canonical team registry.</p></article>
+        <article class="card"><h3>Week 2 · Matching</h3><p>Second adapter, schedule mapping, deterministic rules, evidence records, golden tests.</p></article>
+        <article class="card"><h3>Week 3 · Pricing</h3><p>Order-book snapshots, fee models, depth-aware calculations, staleness gates, scan CLI.</p></article>
+        <article class="card"><h3>Week 4 · Shadow run</h3><p>Continuous read-only collection, review screen, metrics, resolution audit, error analysis.</p></article>
+      </div>
+      <h3>First engineering tickets</h3>
+      <ol>
+        <li>Initialize Python package, linting, type checking, and tests.</li>
+        <li>Define <code>RawMarket</code>, <code>CanonicalEvent</code>, <code>Contract</code>, and <code>OrderBook</code> types.</li>
+        <li>Capture and sanitize 20 representative market payloads per venue.</li>
+        <li>Create NBA team IDs and explicit alias mappings.</li>
+        <li>Implement title-to-structured-contract parsers with failure reason codes.</li>
+        <li>Write 50 labeled match/non-match fixture pairs before matcher implementation.</li>
+        <li>Implement the strict matcher and decision evidence.</li>
+        <li>Implement depth-aware decimal price math and fee interfaces.</li>
+        <li>Add <code>ingest</code>, <code>match</code>, and <code>scan</code> CLI commands.</li>
+        <li>Start the read-only shadow run and review every accepted pair.</li>
+      </ol>
+      <p><strong>Expansion order:</strong> additional no-draw leagues → draw-capable sports with three-way modeling → spreads/totals → futures and propositions. Each new market family needs its own equivalence specification and fixture corpus.</p>
+    </section>
+  </main>
+  <footer>Working blueprint · Begin read-only, preserve evidence, and treat resolution equivalence as the primary safety boundary.</footer>
+</body>
+</html>

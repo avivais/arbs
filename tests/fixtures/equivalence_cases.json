@@ -1,0 +1,104 @@
+[
+  {
+    "id": "head_to_head_exact",
+    "family": "HEAD_TO_HEAD",
+    "description": "Same teams, game, full-game period, overtime treatment, and void rules",
+    "expected": "EXACT"
+  },
+  {
+    "id": "soccer_regulation_vs_advance",
+    "family": "HEAD_TO_HEAD",
+    "description": "One contract grades the 90-minute winner; the other grades which team advances after extra time or penalties",
+    "expected": "NO_MATCH"
+  },
+  {
+    "id": "same_teams_next_day",
+    "family": "HEAD_TO_HEAD",
+    "description": "Same participants and league but a different scheduled game",
+    "expected": "NO_MATCH"
+  },
+  {
+    "id": "postponement_window_differs",
+    "family": "HEAD_TO_HEAD",
+    "description": "One venue keeps action for 24 hours and the other for seven days",
+    "expected": "REVIEW"
+  },
+  {
+    "id": "spread_exact",
+    "family": "HANDICAP",
+    "description": "Same team, line, period, push handling, and overtime rule",
+    "expected": "EXACT"
+  },
+  {
+    "id": "spread_threshold_differs",
+    "family": "HANDICAP",
+    "description": "Minus 3.5 is compared with minus 4.0",
+    "expected": "NO_MATCH"
+  },
+  {
+    "id": "total_push_rule_differs",
+    "family": "TOTAL",
+    "description": "Same total line but one pays 0.5 on a push and the other resolves No",
+    "expected": "REVIEW"
+  },
+  {
+    "id": "player_prop_dnp_differs",
+    "family": "PLAYER_PROP",
+    "description": "Same player and threshold but DNP is void on one venue and No on the other",
+    "expected": "REVIEW"
+  },
+  {
+    "id": "tournament_winner_field_exact",
+    "family": "MULTIWAY_WINNER",
+    "description": "Same entrant, tournament, dead-heat and withdrawal rules",
+    "expected": "EXACT"
+  },
+  {
+    "id": "award_source_differs",
+    "family": "AWARD",
+    "description": "Same award title but different awarding authority",
+    "expected": "NO_MATCH"
+  },
+  {
+    "id": "combination_component_unknown",
+    "family": "COMBINATION",
+    "description": "One component cannot be normalized",
+    "expected": "UNSUPPORTED"
+  },
+  {
+    "id": "live_state_anchor_differs",
+    "family": "LIVE_STATE",
+    "description": "Next-score markets were created from different game-clock states",
+    "expected": "NO_MATCH"
+  },
+  {
+    "id": "live_state_stale",
+    "family": "LIVE_STATE",
+    "description": "Semantically identical contracts, but one state snapshot exceeds the configured freshness limit",
+    "expected": "NO_MATCH_FOR_PRICING"
+  },
+  {
+    "id": "neutral_site_exact",
+    "family": "HEAD_TO_HEAD",
+    "description": "Both contracts identify the same neutral-site event despite reversed participant display order",
+    "expected": "EXACT"
+  },
+  {
+    "id": "exhibition_vs_regular_season",
+    "family": "HEAD_TO_HEAD",
+    "description": "Same teams but one contract is an exhibition and the other is a regular-season game",
+    "expected": "NO_MATCH"
+  },
+  {
+    "id": "single_venue_market",
+    "family": "SEASON_FUTURE",
+    "description": "Contract exists on only one venue under union ingestion",
+    "expected": "UNPAIRED"
+  },
+  {
+    "id": "new_market_family",
+    "family": "OTHER",
+    "description": "Discovered market cannot be represented by the current canonical taxonomy",
+    "expected": "UNSUPPORTED"
+  }
+]
