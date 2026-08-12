@@ -216,8 +216,10 @@ def fetch_all_polymarket_events(client: PolymarketPublicClient, *, max_pages: in
     events: list[dict[str, Any]] = []
     cursor: Optional[str] = None
     seen: set[str] = set()
+    # Keep each public response comfortably below the bounded HTTP client's 10 MB cap.
+    # Gamma event payloads grew beyond that bound at limit=100 as nested markets expanded.
     for _ in range(max_pages):
-        response = client.list_sports_events(MLB_POLYMARKET_TAG, limit=100, after_cursor=cursor)
+        response = client.list_sports_events(MLB_POLYMARKET_TAG, limit=50, after_cursor=cursor)
         payload = response.data
         page = payload.get("events", []) if isinstance(payload, dict) else []
         events.extend(page)
