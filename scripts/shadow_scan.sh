@@ -17,4 +17,5 @@ load_match_report(Path(sys.argv[1]))
 PY
 mv "$tmp" "data/shadow/${stamp}.json"
 cp "data/shadow/${stamp}.json" data/shadow/latest.json
+PYTHONPATH=src python3 scripts/shadow_books.py
 find data/shadow -type f -name '*.json' ! -name latest.json -mtime +30 -delete

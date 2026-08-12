@@ -25,16 +25,24 @@ class Capture:
     request_count: int = 0
     duplicate_count: int = 0
     status: str = "complete"
-    errors: List[Dict[str, str]] = field(default_factory=list)
+    started_at: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
+    completed_at: Optional[str] = None
+    bounds: Dict[str, Any] = field(default_factory=dict)
+    errors: List[Dict[str, Any]] = field(default_factory=list)
 
-    def fail(self, stage: str, error: BaseException) -> None:
+    def fail(self, stage: str, error: BaseException, *, venue: Optional[str] = None,
+             operation: Optional[str] = None, cursor: Optional[str] = None,
+             reason_code: str = "CAPTURE_FAILED") -> None:
         self.status = "partial" if self.records else "failed"
-        self.errors.append({"stage": stage, "error_type": type(error).__name__, "message": str(error)})
+        self.errors.append({"stage": stage, "venue": venue, "operation": operation, "cursor": cursor,
+                            "reason_code": reason_code, "error_type": type(error).__name__,
+                            "message": str(error)[:500]})
 
     def add(self, *, venue: str, kind: str, response: JsonResponse, payload: Any, parent_id: Optional[str] = None) -> None:
         canonical = json.dumps(payload, ensure_ascii=False, sort_keys=True, separators=(",", ":")).encode("utf-8")
         self.records.append(
             {
+                "record_schema_version": 1,
                 "venue": venue,
                 "kind": kind,
                 "parent_id": parent_id,
@@ -206,11 +214,15 @@ def _capture_polymarket_sport_events(
 
 def write_capture(capture: Capture, root: Path) -> Path:
     root.mkdir(parents=True, exist_ok=True)
+    capture.completed_at = datetime.now(timezone.utc).isoformat()
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%S.%fZ")
     target = root / f"sports-{stamp}.jsonl"
     manifest = {
         "schema_version": 1,
         "created_at": datetime.now(timezone.utc).isoformat(),
+        "started_at": capture.started_at,
+        "completed_at": capture.completed_at,
+        "bounds": capture.bounds,
         "status": capture.status,
         "errors": capture.errors,
         "request_count": capture.request_count,

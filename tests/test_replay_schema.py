@@ -27,7 +27,7 @@ class ReplayAndSchemaTests(unittest.TestCase):
 
     def test_partial_manifest_and_schema(self):
         capture = Capture()
-        capture.fail("kalshi", RuntimeError("bounded failure"))
+        capture.fail("kalshi", RuntimeError("bounded failure"), venue="kalshi", operation="capture")
         with tempfile.TemporaryDirectory() as temp:
             path = write_capture(capture, Path(temp))
             result = validate_snapshot(path)

@@ -48,7 +48,8 @@ class IngestionTests(unittest.TestCase):
         self.assertEqual([r["payload"]["ticker"] for r in capture.records], ["S1", "S1-M"])
 
     def test_atomic_jsonl_write(self):
-        capture = Capture(records=[{"venue": "x", "kind": "market", "payload": {"id": 1}}])
+        capture = Capture()
+        capture.add(venue="kalshi", kind="market", response=response({"id": 1}), payload={"id": 1})
         with tempfile.TemporaryDirectory() as directory:
             target = write_capture(capture, Path(directory))
             lines = [json.loads(line) for line in target.read_text().splitlines()]

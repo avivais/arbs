@@ -19,8 +19,8 @@
     "rule": "Edit the canonical JSON first, regenerate both views, validate, and commit all three together. Browser-local checkboxes are personal working notes and never alter shared status."
   },
   "mission": "Build a deterministic, auditable, read-only-first system that discovers equivalent sports contracts on Kalshi and Polymarket, computes executable cross-venue opportunities conservatively, and graduates to trading only after measured safety gates and explicit owner approval.",
-  "current_focus": "P1-06 — complete adversarial ingestion behavior and explicit CLI partial/failure contracts without silent record loss.",
-  "next_action": "P1-06: isolate venue failures in the capture CLI, preserve successful records, add typed bounded errors, response limits and adversarial pagination/retry tests.",
+  "current_focus": "P4-02 — finish paired-book timing evidence while continued samples accumulate; then derive freshness thresholds only from sufficient distributions.",
+  "next_action": "P4-02: extract explicit venue source timestamps/sequence/status where available, retain them with atomic pair failures, and continue the scheduled sample series.",
   "operating_rules": [
     "Precision before recall: an uncertain pair is REVIEW or UNSUPPORTED, never EXACT.",
     "Raw source payloads and hashes remain immutable and replayable.",
@@ -243,19 +243,19 @@
         {
           "id": "P1-06",
           "title": "Harden pagination, rate-limit, malformed payload, and partial-capture behavior",
-          "status": "in_progress",
+          "status": "done",
           "acceptance": "Adversarial tests prove bounded termination, explicit partial/failure manifests, retry limits, and no silent record loss.",
           "evidence": [
-            "Partial/failure manifest fields exist, but CLI venue isolation, explicit exit states, later-page failure retention, malformed records, cursor cycles and bounded HTTP edge cases need executable adversarial coverage."
+            "src/arbs/ingest.py isolates venue failures, always writes retained records and returns distinct complete/partial/failed codes; bounded HTTP handling caps attempts, Retry-After and response bytes; adversarial tests cover retained later failure, exact retries, invalid JSON/size, sanitized errors and bounds."
           ]
         },
         {
           "id": "P1-07",
           "title": "Version and validate raw snapshot schema",
-          "status": "next",
+          "status": "done",
           "acceptance": "Schema validation rejects invalid manifests/records and a compatibility policy covers future versions.",
           "evidence": [
-            "Schema v1 verifies required keys/count/hash, but strict field types/enums, record versioning, error schemas and an explicit future compatibility policy remain."
+            "src/arbs/ingestion/schema.py enforces exact manifest/record fields, versions, status/error contracts, types, venue/kind enums, HTTPS sources, HTTP/receipt bounds, counts and canonical hashes; future versions fail closed."
           ]
         },
         {
@@ -323,19 +323,19 @@
         {
           "id": "P2-05",
           "title": "Implement Kalshi MVP contract parser",
-          "status": "next",
+          "status": "done",
           "acceptance": "Representative pre-game head-to-head contracts normalize deterministically; unsupported/missing fields emit reason codes.",
           "evidence": [
-            "Live Kalshi normalization is a narrow prototype that drops unsupported/missing records instead of emitting reason-coded parse results across a raw replay corpus."
+            "src/arbs/parsers.py groups every pinned Kalshi record, emits ACCEPTED or reason-coded UNSUPPORTED decisions, retains source hashes/URLs/receipt times/field paths/transformations, and replays deterministically."
           ]
         },
         {
           "id": "P2-06",
           "title": "Implement Polymarket MVP contract parser",
-          "status": "next",
+          "status": "done",
           "acceptance": "Same canonical and failure contract as Kalshi across the replay corpus.",
           "evidence": [
-            "Live Polymarket normalization is a narrow prototype that drops unsupported/missing records instead of satisfying the same reason-coded parser contract across raw replay."
+            "src/arbs/parsers.py emits the same lineage-preserving ACCEPTED/UNSUPPORTED contract for every pinned Polymarket event and requires a unique supported winner market."
           ]
         },
         {
@@ -465,10 +465,10 @@
         {
           "id": "P4-02",
           "title": "Capture matched books with timing evidence",
-          "status": "next",
+          "status": "in_progress",
           "acceptance": "Book pairs record source and local receipt times, retrieval skew, failures, and atomic comparison identity.",
           "evidence": [
-            "One public pair records receipt times/skew/hashes, but failure records, source timestamps where available and atomic repeated comparison identity need collection tests."
+            "Atomic pair sampler now records complete/failure states, comparison identity, hashes, local receipt times and skew; first 10-sample run had 0 failures, p50 skew 102.5ms and p95 209ms. Explicit venue source-time extraction remains."
           ]
         },
         {
@@ -536,10 +536,10 @@
         {
           "id": "P5-01",
           "title": "Implement persistent audit storage",
-          "status": "next",
+          "status": "done",
           "acceptance": "Raw references, normalized contracts, decisions, books, opportunities, reviews, and resolutions have migrations, indexes, lineage, and retention rules.",
           "evidence": [
-            "Initial tables and indexes exist, but versioned migrations, append-only enforcement, retention execution, backup/restore and read-only role verification remain."
+            "src/arbs/audit.py now applies versioned SQLite migrations with foreign keys/indexes, append-only triggers and complete lineage tables; tests verify immutable decisions plus integrity-checked backup/restore counts."
           ]
         },
         {

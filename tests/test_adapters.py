@@ -19,8 +19,8 @@ class FakeResponse:
     def __exit__(self, *_):
         return None
 
-    def read(self):
-        return self.payload
+    def read(self, amount=-1):
+        return self.payload if amount < 0 else self.payload[:amount]
 
 
 class AdapterTests(unittest.TestCase):

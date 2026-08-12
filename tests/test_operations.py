@@ -4,7 +4,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 
 from arbs.alerts import AlertGate, Signal
-from arbs.audit import connect, insert_decision, insert_run
+from arbs.audit import backup, connect, insert_decision, insert_review, insert_run, verify_backup
 from arbs.metrics import ScanMetrics
 
 
@@ -18,6 +18,11 @@ class OperationsTests(unittest.TestCase):
                                  "decision":"REVIEW", "pricing_eligible":False, "participants":["A","B"],
                                  "start_utc":"2026-08-12T01:00:00Z", "evidence":{"code":"RULE_UNKNOWN"}})
             self.assertEqual(db.execute("select count(*) from decisions").fetchone()[0], 1)
+            with self.assertRaises(Exception): db.execute("UPDATE decisions SET decision='EXACT'")
+            insert_review(db,{"id":"v1","decision_id":"d1","reviewer":"reviewer-a","reviewed_at":"2026-08-12T00:01:00Z","expires_at":"2026-08-13T00:01:00Z","scenario_proof":"full comparison","differences":["postponement"],"snapshot_hashes":["a"*64,"b"*64],"outcome":"NEEDS_MORE_EVIDENCE"})
+            db.commit(); target=Path(temp)/"backup.db"; backup(db,target)
+            self.assertEqual(verify_backup(target)["reviews"],1)
+            self.assertEqual(db.execute("PRAGMA user_version").fetchone()[0],1)
             with self.assertRaises(Exception):
                 insert_decision(db, {"id":"d2", "run_id":"missing", "created_at":"x", "decision":"REVIEW",
                                      "pricing_eligible":False, "participants":["A","B"], "start_utc":"y", "evidence":{}})

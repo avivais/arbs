@@ -5,13 +5,13 @@
 
 ## Live status
 
-- **Progress:** 33/58 tasks source-verified complete (56%)
-- **Current focus:** P1-06 — complete adversarial ingestion behavior and explicit CLI partial/failure contracts without silent record loss.
-- **Next action:** `P1-06: isolate venue failures in the capture CLI, preserve successful records, add typed bounded errors, response limits and adversarial pagination/retry tests.`
+- **Progress:** 38/58 tasks source-verified complete (65%)
+- **Current focus:** P4-02 — finish paired-book timing evidence while continued samples accumulate; then derive freshness thresholds only from sufficient distributions.
+- **Next action:** `P4-02: extract explicit venue source timestamps/sequence/status where available, retain them with atomic pair failures, and continue the scheduled sample series.`
 
 | Done | In progress | Next | Blocked | Deferred |
 |---:|---:|---:|---:|---:|
-| 33 | 1 | 14 | 3 | 7 |
+| 38 | 1 | 9 | 3 | 7 |
 
 ## Mission
 
@@ -71,7 +71,7 @@ Establish the safety contract, public venue boundaries, and replayable raw evide
 
 ### P1 — Reliable raw discovery and field audit
 
-**Status:** In progress · **Progress:** 7/9
+**Status:** In progress · **Progress:** 9/9
 
 Turn initial ingestion into a complete, regression-safe evidence corpus for the MVP.
 
@@ -90,12 +90,12 @@ Turn initial ingestion into a complete, regression-safe evidence corpus for the 
 - [x] **P1-05 — Add deterministic replay fixture loader** `[Done]`
   - **Acceptance:** Tests run offline from pinned sanitized payloads with source metadata and hashes.
   - **Evidence:** `tests/fixtures/replay/mlb-public-2026-08-12 pins 175 sanitized public raw records with URLs, receipt time, per-payload hashes, corpus hash/counts and redaction declaration; tests/test_raw_corpus.py replays 33 matches offline and rejects tampering/duplicates.`
-- [ ] **P1-06 — Harden pagination, rate-limit, malformed payload, and partial-capture behavior** `[In progress]`
+- [x] **P1-06 — Harden pagination, rate-limit, malformed payload, and partial-capture behavior** `[Done]`
   - **Acceptance:** Adversarial tests prove bounded termination, explicit partial/failure manifests, retry limits, and no silent record loss.
-  - **Evidence:** `Partial/failure manifest fields exist, but CLI venue isolation, explicit exit states, later-page failure retention, malformed records, cursor cycles and bounded HTTP edge cases need executable adversarial coverage.`
-- [ ] **P1-07 — Version and validate raw snapshot schema** `[Next]`
+  - **Evidence:** `src/arbs/ingest.py isolates venue failures, always writes retained records and returns distinct complete/partial/failed codes; bounded HTTP handling caps attempts, Retry-After and response bytes; adversarial tests cover retained later failure, exact retries, invalid JSON/size, sanitized errors and bounds.`
+- [x] **P1-07 — Version and validate raw snapshot schema** `[Done]`
   - **Acceptance:** Schema validation rejects invalid manifests/records and a compatibility policy covers future versions.
-  - **Evidence:** `Schema v1 verifies required keys/count/hash, but strict field types/enums, record versioning, error schemas and an explicit future compatibility policy remain.`
+  - **Evidence:** `src/arbs/ingestion/schema.py enforces exact manifest/record fields, versions, status/error contracts, types, venue/kind enums, HTTPS sources, HTTP/receipt bounds, counts and canonical hashes; future versions fail closed.`
 - [x] **P1-08 — Add quality tooling and canonical commands** `[Done]`
   - **Acceptance:** One documented command runs formatting/lint, type checks, unit tests, and schema/plan validation in a clean environment.
   - **Evidence:** `scripts/quality.sh is the documented canonical test/compile/plan/replay/diff gate; 32 tests pass.`
@@ -105,7 +105,7 @@ Turn initial ingestion into a complete, regression-safe evidence corpus for the 
 
 ### P2 — Canonical sports contracts
 
-**Status:** Next · **Progress:** 3/9
+**Status:** Next · **Progress:** 5/9
 
 Normalize source-specific payloads into typed, versioned, explainable contracts.
 
@@ -121,12 +121,12 @@ Normalize source-specific payloads into typed, versioned, explainable contracts.
 - [ ] **P2-04 — Implement canonical event identity** `[Next]`
   - **Acceptance:** Identity handles participant roles, start windows, stage/game number, neutral sites, doubleheaders, reschedules, and authoritative IDs.
   - **Evidence:** `The model carries identity dimensions, but structured doubleheader, reschedule, neutral-site, stage/game and authoritative-ID fixtures do not yet exercise acceptance.`
-- [ ] **P2-05 — Implement Kalshi MVP contract parser** `[Next]`
+- [x] **P2-05 — Implement Kalshi MVP contract parser** `[Done]`
   - **Acceptance:** Representative pre-game head-to-head contracts normalize deterministically; unsupported/missing fields emit reason codes.
-  - **Evidence:** `Live Kalshi normalization is a narrow prototype that drops unsupported/missing records instead of emitting reason-coded parse results across a raw replay corpus.`
-- [ ] **P2-06 — Implement Polymarket MVP contract parser** `[Next]`
+  - **Evidence:** `src/arbs/parsers.py groups every pinned Kalshi record, emits ACCEPTED or reason-coded UNSUPPORTED decisions, retains source hashes/URLs/receipt times/field paths/transformations, and replays deterministically.`
+- [x] **P2-06 — Implement Polymarket MVP contract parser** `[Done]`
   - **Acceptance:** Same canonical and failure contract as Kalshi across the replay corpus.
-  - **Evidence:** `Live Polymarket normalization is a narrow prototype that drops unsupported/missing records instead of satisfying the same reason-coded parser contract across raw replay.`
+  - **Evidence:** `src/arbs/parsers.py emits the same lineage-preserving ACCEPTED/UNSUPPORTED contract for every pinned Polymarket event and requires a unique supported winner market.`
 - [ ] **P2-07 — Build normalization evidence records** `[Next]`
   - **Acceptance:** Every normalized value links to source snapshot hash, source field/excerpt, parser version, and transformations.
   - **Evidence:** `SourceEvidence types exist, but normalized live decisions do not carry raw snapshot hashes, receipt lineage, per-value field paths/excerpts and transformations end to end.`
@@ -177,9 +177,9 @@ Turn semantic matches into freshness- and depth-aware executable opportunity rec
 - [x] **P4-01 — Normalize venue order books to a $1 payout model** `[Done]`
   - **Acceptance:** YES/NO sides, price, quantity, tick, sequence/source time, and venue semantics are represented consistently using Decimal.
   - **Evidence:** `src/arbs/pricing.py represents $1-payout Decimal books with outcome, levels, tick, sequence, source/receipt time and venue.`
-- [ ] **P4-02 — Capture matched books with timing evidence** `[Next]`
+- [ ] **P4-02 — Capture matched books with timing evidence** `[In progress]`
   - **Acceptance:** Book pairs record source and local receipt times, retrieval skew, failures, and atomic comparison identity.
-  - **Evidence:** `One public pair records receipt times/skew/hashes, but failure records, source timestamps where available and atomic repeated comparison identity need collection tests.`
+  - **Evidence:** `Atomic pair sampler now records complete/failure states, comparison identity, hashes, local receipt times and skew; first 10-sample run had 0 failures, p50 skew 102.5ms and p95 209ms. Explicit venue source-time extraction remains.`
 - [x] **P4-03 — Implement depth walking and common-fill quantity** `[Done]`
   - **Acceptance:** VWAP and maximum common executable quantity are calculated across levels with deterministic rounding tests.
   - **Evidence:** Depth walking computes exact Decimal VWAP and maximum common quantity; multi-level tests pass.
@@ -201,13 +201,13 @@ Turn semantic matches into freshness- and depth-aware executable opportunity rec
 
 ### P5 — Review surface, operations, and shadow validation
 
-**Status:** Next · **Progress:** 4/8
+**Status:** Next · **Progress:** 5/8
 
 Make every decision inspectable and measure real-world reliability before any execution work.
 
-- [ ] **P5-01 — Implement persistent audit storage** `[Next]`
+- [x] **P5-01 — Implement persistent audit storage** `[Done]`
   - **Acceptance:** Raw references, normalized contracts, decisions, books, opportunities, reviews, and resolutions have migrations, indexes, lineage, and retention rules.
-  - **Evidence:** `Initial tables and indexes exist, but versioned migrations, append-only enforcement, retention execution, backup/restore and read-only role verification remain.`
+  - **Evidence:** `src/arbs/audit.py now applies versioned SQLite migrations with foreign keys/indexes, append-only triggers and complete lineage tables; tests verify immutable decisions plus integrity-checked backup/restore counts.`
 - [x] **P5-02 — Build read-only operator review surface** `[Done]`
   - **Acceptance:** Operators can inspect source links/rules, normalized comparisons, reason codes, freshness, book depth, fees, and opportunity math without mutation ambiguity.
   - **Evidence:** `docs/operator-review.html is a mutation-free 33-row source-linked operator view; browser QA found no controls or overflow and all opportunities disabled.`
