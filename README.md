@@ -35,6 +35,14 @@ PYTHONPATH=src python3 -m arbs.ingest
 
 Snapshots are written atomically to `data/raw/sports-<UTC timestamp>.jsonl`. Each begins with a manifest, followed by immutable records containing the complete public payload, source URL, retrieval timing, and SHA-256 content hash.
 
+Failed individual sports/series are recorded in a partial manifest while successful records are retained. Resume from such a capture with `--resume PATH`.
+
+Normalize a capture and print its coverage report:
+
+```bash
+PYTHONPATH=src python3 -m arbs.normalization data/raw/sports-<timestamp>.jsonl
+```
+
 ## Tests
 
 ```bash
