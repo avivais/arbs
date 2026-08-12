@@ -1,28 +1,7 @@
-# Python
+.DS_Store
 __pycache__/
 *.py[cod]
-*$py.class
-*.egg-info/
-.eggs/
-dist/
-build/
 .venv/
-venv/
-.env
-.env.*
+data/raw/*.jsonl
+!data/raw/.gitkeep
 
-# Testing / tooling
-.pytest_cache/
-.mypy_cache/
-.ruff_cache/
-.coverage
-htmlcov/
-
-# OS / editor
-.DS_Store
-.idea/
-.vscode/
-
-# Local data
-*.sqlite
-*.db

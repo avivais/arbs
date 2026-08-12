@@ -14,13 +14,43 @@ class PolymarketPublicClient:
     def __init__(self, http: Optional[JsonHttpClient] = None) -> None:
         self.http = http or JsonHttpClient()
 
-    def list_markets(self, *, limit: int = 10, active: bool = True, closed: bool = False) -> JsonResponse:
+    def list_markets(
+        self, *, limit: int = 10, active: bool = True, closed: bool = False, after_cursor: Optional[str] = None
+    ) -> JsonResponse:
         if not 1 <= limit <= 100:
             raise ValueError("Polymarket limit must be between 1 and 100")
         return self.http.get(
             self.GAMMA_URL,
             "/markets/keyset",
-            {"limit": limit, "active": str(active).lower(), "closed": str(closed).lower()},
+            {
+                "limit": limit,
+                "active": str(active).lower(),
+                "closed": str(closed).lower(),
+                "after_cursor": after_cursor,
+            },
+        )
+
+    def list_sports_events(
+        self,
+        tag_id: int,
+        *,
+        limit: int = 100,
+        active: bool = True,
+        closed: bool = False,
+        after_cursor: Optional[str] = None,
+    ) -> JsonResponse:
+        if not 1 <= limit <= 100:
+            raise ValueError("Polymarket limit must be between 1 and 100")
+        return self.http.get(
+            self.GAMMA_URL,
+            "/events/keyset",
+            {
+                "tag_id": tag_id,
+                "limit": limit,
+                "active": str(active).lower(),
+                "closed": str(closed).lower(),
+                "after_cursor": after_cursor,
+            },
         )
 
     def list_sports(self) -> JsonResponse:
@@ -34,4 +64,3 @@ class PolymarketPublicClient:
 
     def get_orderbook(self, token_id: str) -> JsonResponse:
         return self.http.get(self.CLOB_URL, "/book", {"token_id": token_id})
-
