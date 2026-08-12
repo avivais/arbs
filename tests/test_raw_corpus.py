@@ -19,7 +19,7 @@ class RawCorpusTests(unittest.TestCase):
         first = match_events(normalize_kalshi(kalshi), normalize_polymarket(poly))
         second = match_events(normalize_kalshi(kalshi), normalize_polymarket(poly))
         self.assertEqual(first, second)
-        self.assertEqual(len(first), 33)
+        self.assertEqual(len(first), 38)
         self.assertTrue(all(not item.pricing_eligible for item in first))
 
     def test_corpus_tampering_fails(self):

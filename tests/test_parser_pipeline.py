@@ -23,7 +23,7 @@ class ParserPipelineTests(unittest.TestCase):
 
     def test_replay_emits_matches_unpaired_and_parse_decisions(self):
         result=replay_decisions(self.records)
-        self.assertEqual(len(result['matches']),33)
+        self.assertEqual(len(result['matches']),38)
         self.assertTrue(result['unpaired'])
         self.assertTrue(all(not x['pricing_eligible'] for x in result['matches']))
         self.assertEqual(result,replay_decisions(self.records))

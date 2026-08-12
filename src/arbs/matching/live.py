@@ -21,12 +21,12 @@ START_TOLERANCE_SECONDS = 15 * 60
 # Canonical MLB identity, with source display variants observed in production.
 _TEAM_ALIASES = {
     "arizona": "ARI", "arizona diamondbacks": "ARI",
-    "athletics": "ATH", "oakland": "ATH", "oakland athletics": "ATH",
+    "athletics": "ATH", "oakland": "ATH", "oakland athletics": "ATH", "a's": "ATH",
     "atlanta": "ATL", "atlanta braves": "ATL",
     "baltimore": "BAL", "baltimore orioles": "BAL",
     "boston": "BOS", "boston red sox": "BOS",
     "chicago c": "CHC", "chicago cubs": "CHC",
-    "chicago w": "CWS", "chicago white sox": "CWS",
+    "chicago w": "CWS", "chicago ws": "CWS", "chicago white sox": "CWS",
     "cincinnati": "CIN", "cincinnati reds": "CIN",
     "cleveland": "CLE", "cleveland guardians": "CLE",
     "colorado": "COL", "colorado rockies": "COL",

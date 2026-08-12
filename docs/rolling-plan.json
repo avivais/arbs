@@ -314,10 +314,10 @@
         {
           "id": "P2-04",
           "title": "Implement canonical event identity",
-          "status": "next",
+          "status": "done",
           "acceptance": "Identity handles participant roles, start windows, stage/game number, neutral sites, doubleheaders, reschedules, and authoritative IDs.",
           "evidence": [
-            "The model carries identity dimensions, but structured doubleheader, reschedule, neutral-site, stage/game and authoritative-ID fixtures do not yet exercise acceptance."
+            "src/arbs/event_identity.py compares role-aware participants, bounded starts, stage/game number, neutral-site state, reschedule evidence and shared authoritative-ID namespaces; adversarial tests prove explicit conflicts fail and unknown cross-venue dimensions remain REVIEW."
           ]
         },
         {
@@ -326,7 +326,7 @@
           "status": "done",
           "acceptance": "Representative pre-game head-to-head contracts normalize deterministically; unsupported/missing fields emit reason codes.",
           "evidence": [
-            "src/arbs/parsers.py groups every pinned Kalshi record, emits ACCEPTED or reason-coded UNSUPPORTED decisions, retains source hashes/URLs/receipt times/field paths/transformations, and replays deterministically."
+            "Pinned replay now parses all 76 Kalshi market records into 38 events after adding exact corpus-observed A's→ATH and Chicago WS→CWS aliases; every input is retained with lineage and no fuzzy matching."
           ]
         },
         {
@@ -335,7 +335,7 @@
           "status": "done",
           "acceptance": "Same canonical and failure contract as Kalshi across the replay corpus.",
           "evidence": [
-            "src/arbs/parsers.py emits the same lineage-preserving ACCEPTED/UNSUPPORTED contract for every pinned Polymarket event and requires a unique supported winner market."
+            "Pinned replay parses all 99 Polymarket events, requiring one supported moneyline market and retaining exact source lineage; structured home/away roles are observed but cannot equal unknown Kalshi roles."
           ]
         },
         {

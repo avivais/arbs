@@ -5,13 +5,13 @@
 
 ## Live status
 
-- **Progress:** 38/58 tasks source-verified complete (65%)
+- **Progress:** 39/58 tasks source-verified complete (67%)
 - **Current focus:** P4-02 — finish paired-book timing evidence while continued samples accumulate; then derive freshness thresholds only from sufficient distributions.
 - **Next action:** `P4-02: extract explicit venue source timestamps/sequence/status where available, retain them with atomic pair failures, and continue the scheduled sample series.`
 
 | Done | In progress | Next | Blocked | Deferred |
 |---:|---:|---:|---:|---:|
-| 38 | 1 | 9 | 3 | 7 |
+| 39 | 1 | 8 | 3 | 7 |
 
 ## Mission
 
@@ -105,7 +105,7 @@ Turn initial ingestion into a complete, regression-safe evidence corpus for the 
 
 ### P2 — Canonical sports contracts
 
-**Status:** Next · **Progress:** 5/9
+**Status:** Next · **Progress:** 6/9
 
 Normalize source-specific payloads into typed, versioned, explainable contracts.
 
@@ -118,15 +118,15 @@ Normalize source-specific payloads into typed, versioned, explainable contracts.
 - [x] **P2-03 — Create league-scoped participant and competition registries** `[Done]`
   - **Acceptance:** Aliases map to stable canonical IDs; unknown/ambiguous aliases fail closed with evidence; unrestricted substring matching is absent.
   - **Evidence:** `src/arbs/matching/live.py contains an exact league-scoped MLB alias registry; unknown aliases fail closed and are tested.`
-- [ ] **P2-04 — Implement canonical event identity** `[Next]`
+- [x] **P2-04 — Implement canonical event identity** `[Done]`
   - **Acceptance:** Identity handles participant roles, start windows, stage/game number, neutral sites, doubleheaders, reschedules, and authoritative IDs.
-  - **Evidence:** `The model carries identity dimensions, but structured doubleheader, reschedule, neutral-site, stage/game and authoritative-ID fixtures do not yet exercise acceptance.`
+  - **Evidence:** `src/arbs/event_identity.py compares role-aware participants, bounded starts, stage/game number, neutral-site state, reschedule evidence and shared authoritative-ID namespaces; adversarial tests prove explicit conflicts fail and unknown cross-venue dimensions remain REVIEW.`
 - [x] **P2-05 — Implement Kalshi MVP contract parser** `[Done]`
   - **Acceptance:** Representative pre-game head-to-head contracts normalize deterministically; unsupported/missing fields emit reason codes.
-  - **Evidence:** `src/arbs/parsers.py groups every pinned Kalshi record, emits ACCEPTED or reason-coded UNSUPPORTED decisions, retains source hashes/URLs/receipt times/field paths/transformations, and replays deterministically.`
+  - **Evidence:** Pinned replay now parses all 76 Kalshi market records into 38 events after adding exact corpus-observed A's→ATH and Chicago WS→CWS aliases; every input is retained with lineage and no fuzzy matching.
 - [x] **P2-06 — Implement Polymarket MVP contract parser** `[Done]`
   - **Acceptance:** Same canonical and failure contract as Kalshi across the replay corpus.
-  - **Evidence:** `src/arbs/parsers.py emits the same lineage-preserving ACCEPTED/UNSUPPORTED contract for every pinned Polymarket event and requires a unique supported winner market.`
+  - **Evidence:** `Pinned replay parses all 99 Polymarket events, requiring one supported moneyline market and retaining exact source lineage; structured home/away roles are observed but cannot equal unknown Kalshi roles.`
 - [ ] **P2-07 — Build normalization evidence records** `[Next]`
   - **Acceptance:** Every normalized value links to source snapshot hash, source field/excerpt, parser version, and transformations.
   - **Evidence:** `SourceEvidence types exist, but normalized live decisions do not carry raw snapshot hashes, receipt lineage, per-value field paths/excerpts and transformations end to end.`
