@@ -8,6 +8,7 @@ The live project plan is maintained from one canonical source and published in t
 
 - [Human-readable rolling plan](docs/ROLLING_PLAN.md)
 - [Interactive rolling plan](docs/rolling-plan.html)
+- [Live matched-market dashboard](docs/live-dashboard.html) — read-only venue links and periodically refreshed public price fields
 - Canonical implementation source: [`docs/rolling-plan.json`](docs/rolling-plan.json)
 
 Update `docs/rolling-plan.json` first, then regenerate and validate both views:

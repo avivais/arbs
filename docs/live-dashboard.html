@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Arbs — Live matched-market dashboard</title>
+<style>
+:root{--bg:#07101d;--panel:#0e1b2d;--panel2:#13243a;--line:#29415e;--text:#edf5ff;--muted:#9eb1c9;--cyan:#5de4c7;--amber:#ffca6b;--red:#ff7a90;--green:#78e6a3}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 90% 0,#123052 0,transparent 34rem),var(--bg);color:var(--text);font:14px/1.45 system-ui,-apple-system,sans-serif}main{max-width:1500px;margin:auto;padding:28px 18px 60px}h1{font-size:clamp(25px,4vw,42px);line-height:1.05;margin:0 0 8px}.top,.toolbar,.stats,.event-head,.meta{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.top{justify-content:space-between}.muted{color:var(--muted)}a{color:var(--cyan)}button,input,select{font:inherit;color:var(--text);background:#0c1a2c;border:1px solid var(--line);border-radius:9px;padding:9px 12px}button{cursor:pointer}button:hover{border-color:var(--cyan)}.notice{margin:20px 0;padding:14px 16px;border:1px solid #705b2d;border-left:4px solid var(--amber);background:#2a2418;border-radius:10px}.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));margin:18px 0}.stat{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:12px;padding:14px}.stat b{font-size:25px;color:var(--cyan);display:block}.toolbar{position:sticky;top:0;z-index:4;background:rgba(7,16,29,.92);backdrop-filter:blur(9px);padding:12px 0}.toolbar input{flex:1;min-width:210px}.status{display:inline-flex;align-items:center;gap:7px}.dot{width:9px;height:9px;border-radius:50%;background:var(--amber)}.dot.ok{background:var(--green);box-shadow:0 0 0 4px rgba(120,230,163,.12)}.dot.error{background:var(--red)}#events{display:grid;gap:15px}.event{background:linear-gradient(145deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:14px;overflow:hidden}.event-head{justify-content:space-between;padding:15px 17px;border-bottom:1px solid var(--line)}.event-title{font-size:19px;font-weight:750}.pill{display:inline-block;padding:3px 8px;border-radius:999px;background:var(--amber);color:#1c1608;font-size:11px;font-weight:850;letter-spacing:.05em}.links a{margin-left:12px}.scroll{overflow-x:auto}table{width:100%;border-collapse:collapse;min-width:850px}th,td{padding:10px 13px;border-bottom:1px solid #203751;text-align:right;font-variant-numeric:tabular-nums}th:first-child,td:first-child{text-align:left}th{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:#0d1a2b}.venue{font-weight:700;text-align:left!important}.price{font-weight:720}.ask{color:var(--amber)}.bid{color:var(--green)}.na{color:#63758b}.meta{padding:10px 16px;color:var(--muted);font-size:12px}.empty{padding:45px;text-align:center;border:1px dashed var(--line);border-radius:12px}.foot{margin-top:20px}.hidden{display:none!important}@media(max-width:650px){main{padding:20px 10px}.links{width:100%}.links a{margin:0 12px 0 0}.event-head{align-items:flex-start}.toolbar{top:0}}
+</style>
+</head>
+<body><main>
+<div class="top"><div><h1>Live matched markets</h1><div class="muted">Kalshi ↔ Polymarket · read-only MLB event links</div></div><div class="status"><span id="dot" class="dot"></span><span id="connection">Loading…</span></div></div>
+<div class="notice"><b>Safety:</b> these are event-identity links classified <b>REVIEW</b>. Material cancellation/postponement rules differ, so pricing eligibility, alerts, account actions and trading are disabled.</div>
+<div class="stats"><div class="stat"><b id="matched">—</b>matched events</div><div class="stat"><b id="upcoming">—</b>not started</div><div class="stat"><b id="options">—</b>venue options</div><div class="stat"><b id="age">—</b>data age</div></div>
+<div class="toolbar"><input id="search" type="search" placeholder="Filter participant or event ID" aria-label="Filter events"><select id="window" aria-label="Time filter"><option value="all">All matches</option><option value="upcoming">Not started</option><option value="24h">Next 24 hours</option></select><button id="refresh" type="button">Refresh now</button></div>
+<div id="events" aria-live="polite"></div>
+<div class="foot muted">Dashboard checks for a newer immutable snapshot every 30 seconds; the collector refreshes approximately every five minutes. Prices are public indicative/top-of-book fields from the discovery payload, not executable quotes. Last snapshot: <span id="captured">—</span> · <a href="../data/shadow/latest.json">raw evidence</a> · <a href="rolling-plan.html">rolling plan</a>.</div>
+</main>
+<script>
+'use strict';
+const DATA='../data/shadow/latest.json';
+const $=id=>document.getElementById(id);let report=null,timer=null;
+const text=(el,value)=>{el.textContent=value};
+const price=value=>value===null||value===undefined||value===''?'—':(Number(value)*100).toFixed(1)+'¢';
+const when=value=>new Date(value).toLocaleString(undefined,{year:'numeric',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',timeZoneName:'short'});
+const escId=value=>String(value||'').toLowerCase();
+function cell(row,value,cls=''){const td=document.createElement('td');td.textContent=value;cls&&td.classList.add(cls);row.append(td)}
+function optionRows(match){
+ const teams=match.participants||[];const rows=[];
+ for(const team of teams){
+  const k=(match.kalshi.contracts||[]).find(x=>x.selected_team===team)||{};
+  const p=(match.polymarket.contracts||[]).find(x=>x.selected_team===team)||{};
+  rows.push({team,venue:'Kalshi YES',id:k.id,bid:k.yes_bid,ask:k.yes_ask,otherBid:k.no_bid,otherAsk:k.no_ask,indicative:null});
+  rows.push({team,venue:'Polymarket',id:p.token_id,bid:p.best_bid,ask:p.best_ask,otherBid:null,otherAsk:null,indicative:p.indicative_price});
+ }
+ return rows;
+}
+function makeEvent(match){
+ const card=document.createElement('article');card.className='event';card.dataset.search=[...(match.participants||[]),match.kalshi.event_id,match.polymarket.event_id].join(' ').toLowerCase();card.dataset.start=match.start_utc;
+ const head=document.createElement('div');head.className='event-head';
+ const left=document.createElement('div');const title=document.createElement('div');title.className='event-title';title.textContent=(match.participants||[]).join(' ↔ ');const sub=document.createElement('div');sub.className='muted';sub.textContent=when(match.start_utc)+' · '+match.start_utc;left.append(title,sub);
+ const right=document.createElement('div');right.className='links';const pill=document.createElement('span');pill.className='pill';pill.textContent=match.decision||'REVIEW';const ka=document.createElement('a');ka.href=match.kalshi.source_url;ka.target='_blank';ka.rel='noopener';ka.textContent='Kalshi ↗';const pa=document.createElement('a');pa.href=match.polymarket.source_url;pa.target='_blank';pa.rel='noopener';pa.textContent='Polymarket ↗';right.append(pill,ka,pa);head.append(left,right);card.append(head);
+ const wrap=document.createElement('div');wrap.className='scroll';const table=document.createElement('table');const thead=document.createElement('thead');thead.innerHTML='<tr><th>Option / venue</th><th>Best bid</th><th>Best ask</th><th>NO bid</th><th>NO ask</th><th>Indicative</th><th>Contract / token</th></tr>';const body=document.createElement('tbody');
+ for(const item of optionRows(match)){const tr=document.createElement('tr');cell(tr,item.team+' · '+item.venue,'venue');cell(tr,price(item.bid),item.bid==null?'na':'bid');cell(tr,price(item.ask),item.ask==null?'na':'ask');cell(tr,price(item.otherBid),item.otherBid==null?'na':'bid');cell(tr,price(item.otherAsk),item.otherAsk==null?'na':'ask');cell(tr,price(item.indicative),item.indicative==null?'na':'price');cell(tr,item.id||'—',item.id?'':'na');body.append(tr)}
+ table.append(thead,body);wrap.append(table);card.append(wrap);const meta=document.createElement('div');meta.className='meta';meta.textContent='Kalshi '+match.kalshi.event_id+' · Polymarket '+match.polymarket.event_id+' · start delta '+match.start_delta_seconds+'s · pricing disabled';card.append(meta);return card;
+}
+function applyFilter(){const q=$('search').value.trim().toLowerCase(),mode=$('window').value,now=Date.now(),day=86400000;let visible=0;document.querySelectorAll('.event').forEach(card=>{const start=new Date(card.dataset.start).getTime();const timeOk=mode==='all'||(mode==='upcoming'&&start>=now)||(mode==='24h'&&start>=now&&start<=now+day);const show=timeOk&&(!q||card.dataset.search.includes(q));card.classList.toggle('hidden',!show);if(show)visible++});const empty=$('empty');if(empty)empty.classList.toggle('hidden',visible!==0)}
+function render(data){report=data;const matches=data.matches||[],now=Date.now();text($('matched'),matches.length);text($('upcoming'),matches.filter(m=>new Date(m.start_utc).getTime()>=now).length);text($('options'),matches.reduce((n,m)=>n+(m.kalshi.contracts||[]).length+(m.polymarket.contracts||[]).length,0));text($('captured'),data.generated_at?when(data.generated_at):'unknown');const age=Math.max(0,now-new Date(data.generated_at).getTime());text($('age'),age<60000?'<1m':Math.floor(age/60000)+'m');const box=$('events');box.replaceChildren();matches.slice().sort((a,b)=>new Date(a.start_utc)-new Date(b.start_utc)).forEach(m=>box.append(makeEvent(m)));const empty=document.createElement('div');empty.id='empty';empty.className='empty hidden';empty.textContent='No matches meet this filter.';box.append(empty);applyFilter()}
+async function load(){text($('connection'),'Refreshing…');$('dot').className='dot';try{const response=await fetch(DATA+'?t='+Date.now(),{cache:'no-store'});if(!response.ok)throw new Error('HTTP '+response.status);const data=await response.json();if(!Array.isArray(data.matches))throw new Error('invalid report');render(data);$('dot').className='dot ok';text($('connection'),'Live snapshot loaded')}catch(error){console.error('dashboard refresh failed',error);$('dot').className='dot error';text($('connection'),'Snapshot unavailable');if(!report){const empty=document.createElement('div');empty.className='empty';empty.textContent='Live evidence could not be loaded. The dashboard will retry automatically.';$('events').replaceChildren(empty)}}}
+$('search').addEventListener('input',applyFilter);$('window').addEventListener('change',applyFilter);$('refresh').addEventListener('click',load);load();timer=setInterval(load,30000);
+</script></body></html>
