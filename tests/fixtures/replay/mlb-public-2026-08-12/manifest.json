@@ -1,0 +1,17 @@
+{
+  "captured_at": "2026-08-12T13:46:05.743404Z",
+  "corpus_id": "mlb-public-2026-08-12",
+  "counts": {
+    "kalshi.market": 76,
+    "polymarket.event": 99
+  },
+  "record_count": 175,
+  "records_file": "records.jsonl",
+  "records_sha256": "6d6ade81fd5ed8623c6ac4568695e18bf2fa63b6e3e1e83bcc2225a6fdecd860",
+  "redaction": {
+    "prohibited_fields_present": false,
+    "removed": [],
+    "status": "reviewed"
+  },
+  "schema_version": "1.0.0"
+}

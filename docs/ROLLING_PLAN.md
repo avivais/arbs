@@ -5,13 +5,13 @@
 
 ## Live status
 
-- **Progress:** 44/58 tasks source-verified complete (75%)
-- **Current focus:** Sustained read-only shadow validation — accumulate independent matching labels, quote latency/movement distributions, and post-resolution agreement without credentials or orders.
-- **Next action:** `P5-07: accumulate several hundred reviewed events over a representative operating window; matching, freshness, resolution, and go/no-go gates remain evidence-bound.`
+- **Progress:** 33/58 tasks source-verified complete (56%)
+- **Current focus:** P1-06 — complete adversarial ingestion behavior and explicit CLI partial/failure contracts without silent record loss.
+- **Next action:** `P1-06: isolate venue failures in the capture CLI, preserve successful records, add typed bounded errors, response limits and adversarial pagination/retry tests.`
 
 | Done | In progress | Next | Blocked | Deferred |
 |---:|---:|---:|---:|---:|
-| 44 | 1 | 3 | 3 | 7 |
+| 33 | 1 | 14 | 3 | 7 |
 
 ## Mission
 
@@ -71,7 +71,7 @@ Establish the safety contract, public venue boundaries, and replayable raw evide
 
 ### P1 — Reliable raw discovery and field audit
 
-**Status:** In progress · **Progress:** 9/9
+**Status:** In progress · **Progress:** 7/9
 
 Turn initial ingestion into a complete, regression-safe evidence corpus for the MVP.
 
@@ -89,13 +89,13 @@ Turn initial ingestion into a complete, regression-safe evidence corpus for the 
   - **Evidence:** `src/arbs/matching/live.py retains venue rule/lifecycle evidence`; `docs/live-mlb-field-audit.md documents authoritative fields and typed fail-closed behavior`
 - [x] **P1-05 — Add deterministic replay fixture loader** `[Done]`
   - **Acceptance:** Tests run offline from pinned sanitized payloads with source metadata and hashes.
-  - **Evidence:** `src/arbs/replay.py and tests/test_replay_schema.py validate and replay the pinned 33-match report offline by canonical SHA-256.`
-- [x] **P1-06 — Harden pagination, rate-limit, malformed payload, and partial-capture behavior** `[Done]`
+  - **Evidence:** `tests/fixtures/replay/mlb-public-2026-08-12 pins 175 sanitized public raw records with URLs, receipt time, per-payload hashes, corpus hash/counts and redaction declaration; tests/test_raw_corpus.py replays 33 matches offline and rejects tampering/duplicates.`
+- [ ] **P1-06 — Harden pagination, rate-limit, malformed payload, and partial-capture behavior** `[In progress]`
   - **Acceptance:** Adversarial tests prove bounded termination, explicit partial/failure manifests, retry limits, and no silent record loss.
-  - **Evidence:** `Capture manifests now record complete/partial/failed status and typed errors; existing pagination/retry/malformed tests remain green.`
-- [x] **P1-07 — Version and validate raw snapshot schema** `[Done]`
+  - **Evidence:** `Partial/failure manifest fields exist, but CLI venue isolation, explicit exit states, later-page failure retention, malformed records, cursor cycles and bounded HTTP edge cases need executable adversarial coverage.`
+- [ ] **P1-07 — Version and validate raw snapshot schema** `[Next]`
   - **Acceptance:** Schema validation rejects invalid manifests/records and a compatibility policy covers future versions.
-  - **Evidence:** `src/arbs/ingestion/schema.py strictly validates schema v1 manifests, records, counts and payload hashes; future versions fail closed.`
+  - **Evidence:** `Schema v1 verifies required keys/count/hash, but strict field types/enums, record versioning, error schemas and an explicit future compatibility policy remain.`
 - [x] **P1-08 — Add quality tooling and canonical commands** `[Done]`
   - **Acceptance:** One documented command runs formatting/lint, type checks, unit tests, and schema/plan validation in a clean environment.
   - **Evidence:** `scripts/quality.sh is the documented canonical test/compile/plan/replay/diff gate; 32 tests pass.`
@@ -105,7 +105,7 @@ Turn initial ingestion into a complete, regression-safe evidence corpus for the 
 
 ### P2 — Canonical sports contracts
 
-**Status:** Next · **Progress:** 8/9
+**Status:** Next · **Progress:** 3/9
 
 Normalize source-specific payloads into typed, versioned, explainable contracts.
 
@@ -118,28 +118,28 @@ Normalize source-specific payloads into typed, versioned, explainable contracts.
 - [x] **P2-03 — Create league-scoped participant and competition registries** `[Done]`
   - **Acceptance:** Aliases map to stable canonical IDs; unknown/ambiguous aliases fail closed with evidence; unrestricted substring matching is absent.
   - **Evidence:** `src/arbs/matching/live.py contains an exact league-scoped MLB alias registry; unknown aliases fail closed and are tested.`
-- [x] **P2-04 — Implement canonical event identity** `[Done]`
+- [ ] **P2-04 — Implement canonical event identity** `[Next]`
   - **Acceptance:** Identity handles participant roles, start windows, stage/game number, neutral sites, doubleheaders, reschedules, and authoritative IDs.
-  - **Evidence:** `CanonicalContract carries participant roles, authoritative ID, stage/game, neutral-site state and exact scheduled time; candidate engine uses bounded identity.`
-- [x] **P2-05 — Implement Kalshi MVP contract parser** `[Done]`
+  - **Evidence:** `The model carries identity dimensions, but structured doubleheader, reschedule, neutral-site, stage/game and authoritative-ID fixtures do not yet exercise acceptance.`
+- [ ] **P2-05 — Implement Kalshi MVP contract parser** `[Next]`
   - **Acceptance:** Representative pre-game head-to-head contracts normalize deterministically; unsupported/missing fields emit reason codes.
-  - **Evidence:** `The bounded Kalshi MLB parser normalizes open two-contract moneyline events deterministically and rejects missing/unknown evidence.`
-- [x] **P2-06 — Implement Polymarket MVP contract parser** `[Done]`
+  - **Evidence:** `Live Kalshi normalization is a narrow prototype that drops unsupported/missing records instead of emitting reason-coded parse results across a raw replay corpus.`
+- [ ] **P2-06 — Implement Polymarket MVP contract parser** `[Next]`
   - **Acceptance:** Same canonical and failure contract as Kalshi across the replay corpus.
-  - **Evidence:** `The bounded Polymarket MLB parser accepts exactly one active ungrouped winner market, explicit gameStartTime and complete token/outcome orientation.`
-- [x] **P2-07 — Build normalization evidence records** `[Done]`
+  - **Evidence:** `Live Polymarket normalization is a narrow prototype that drops unsupported/missing records instead of satisfying the same reason-coded parser contract across raw replay.`
+- [ ] **P2-07 — Build normalization evidence records** `[Next]`
   - **Acceptance:** Every normalized value links to source snapshot hash, source field/excerpt, parser version, and transformations.
-  - **Evidence:** `SourceEvidence stores source ID/URL, snapshot hash, receipt timestamp, field paths, excerpts and parser version on each canonical contract.`
+  - **Evidence:** `SourceEvidence types exist, but normalized live decisions do not carry raw snapshot hashes, receipt lineage, per-value field paths/excerpts and transformations end to end.`
 - [ ] **P2-08 — Make equivalence cases executable** `[Next]`
   - **Acceptance:** The labeled fixture corpus contains full structured inputs and tests every expected decision rather than descriptions only.
   - **Evidence:** `Structured executable MVP engine cases exist in tests/test_engine.py; broad descriptive families remain to be converted.`
-- [x] **P2-09 — Gate MVP parser quality** `[Done]`
+- [ ] **P2-09 — Gate MVP parser quality** `[Next]`
   - **Acceptance:** All labeled MVP fixtures parse reproducibly; unknown fields never become equality; parsing coverage and failure reasons are reported.
-  - **Evidence:** Live parser tests cover unknown aliases, ambiguity, wrong family and start windows; pinned replay reproduces 33 REVIEW matches.
+  - **Evidence:** Prototype parser tests pass, but no independently labeled raw replay corpus reports parse coverage and retained failure reasons.
 
 ### P3 — Candidate generation and deterministic matching
 
-**Status:** Next · **Progress:** 7/8
+**Status:** Next · **Progress:** 5/8
 
 Produce high-precision, evidence-rich cross-venue equivalence decisions.
 
@@ -152,15 +152,15 @@ Produce high-precision, evidence-rich cross-venue equivalence decisions.
 - [x] **P3-03 — Implement complementary-outcome proof** `[Done]`
   - **Acceptance:** Paired legs guarantee intended combined payout across every resolution state; multiway/incomplete spaces fail closed.
   - **Evidence:** `complementary_binary proves complete two-outcome spaces and rejects multiway/incomplete spaces.`
-- [x] **P3-04 — Emit machine-readable decision evidence** `[Done]`
+- [ ] **P3-04 — Emit machine-readable decision evidence** `[Next]`
   - **Acceptance:** Every decision contains policy/parser versions, normalized comparisons, source hashes, excerpts, and stable reason codes.
-  - **Evidence:** Published report contains normalized comparisons, source URLs, checks and stable reason codes; report has canonical SHA-256.
+  - **Evidence:** `Published decisions retain links/checks/reasons but do not yet include end-to-end source snapshot hashes, excerpts, parser/schema versions and every rejected/unpaired decision.`
 - [x] **P3-05 — Add ambiguity and uniqueness quarantine** `[Done]`
   - **Acceptance:** Multiple surviving events/contracts, reschedules, repeated fixtures, and unresolved aliases cannot become EXACT.
   - **Evidence:** Multiple surviving candidates and unresolved aliases return REVIEW or are rejected; adversarial tests pass.
-- [x] **P3-06 — Add reviewer workflow and expiring overrides** `[Done]`
+- [ ] **P3-06 — Add reviewer workflow and expiring overrides** `[Next]`
   - **Acceptance:** Review records capture identity, timestamp, snapshot hashes, scenario proof, differences, and expiry; overrides remain pricing-ineligible in this phase.
-  - **Evidence:** SQLite reviews schema captures reviewer, timestamp, expiry, scenario proof and hashes; overrides remain outside pricing eligibility.
+  - **Evidence:** `Review table fields exist, but no migration/version framework or full differences field/override enforcement integration has been exercised.`
 - [x] **P3-07 — Build adversarial and property-based matcher suite** `[Done]`
   - **Acceptance:** Tests cover reversed teams, consecutive games, regulation vs advance, postponement, DNP, pushes, neutral sites, exhibitions, unknowns, and deterministic replay.
   - **Evidence:** `Engine/live tests cover reversed ordering, consecutive games, ambiguity, unknowns, predicate/rule differences and deterministic replay.`
@@ -170,16 +170,16 @@ Produce high-precision, evidence-rich cross-venue equivalence decisions.
 
 ### P4 — Order books and conservative opportunity pricing
 
-**Status:** Next · **Progress:** 7/8
+**Status:** Next · **Progress:** 6/8
 
 Turn semantic matches into freshness- and depth-aware executable opportunity records without trading.
 
 - [x] **P4-01 — Normalize venue order books to a $1 payout model** `[Done]`
   - **Acceptance:** YES/NO sides, price, quantity, tick, sequence/source time, and venue semantics are represented consistently using Decimal.
   - **Evidence:** `src/arbs/pricing.py represents $1-payout Decimal books with outcome, levels, tick, sequence, source/receipt time and venue.`
-- [x] **P4-02 — Capture matched books with timing evidence** `[Done]`
+- [ ] **P4-02 — Capture matched books with timing evidence** `[Next]`
   - **Acceptance:** Book pairs record source and local receipt times, retrieval skew, failures, and atomic comparison identity.
-  - **Evidence:** `src/arbs/books.py captured a public matched book pair with HTTP/source URL/hash/timing and 116ms receipt skew in data/reports/live-book-pair.json.`
+  - **Evidence:** `One public pair records receipt times/skew/hashes, but failure records, source timestamps where available and atomic repeated comparison identity need collection tests.`
 - [x] **P4-03 — Implement depth walking and common-fill quantity** `[Done]`
   - **Acceptance:** VWAP and maximum common executable quantity are calculated across levels with deterministic rounding tests.
   - **Evidence:** Depth walking computes exact Decimal VWAP and maximum common quantity; multi-level tests pass.
@@ -201,13 +201,13 @@ Turn semantic matches into freshness- and depth-aware executable opportunity rec
 
 ### P5 — Review surface, operations, and shadow validation
 
-**Status:** Next · **Progress:** 5/8
+**Status:** Next · **Progress:** 4/8
 
 Make every decision inspectable and measure real-world reliability before any execution work.
 
-- [x] **P5-01 — Implement persistent audit storage** `[Done]`
+- [ ] **P5-01 — Implement persistent audit storage** `[Next]`
   - **Acceptance:** Raw references, normalized contracts, decisions, books, opportunities, reviews, and resolutions have migrations, indexes, lineage, and retention rules.
-  - **Evidence:** `src/arbs/audit.py creates indexed FK-linked runs, raw references, normalized contracts, decisions, books, opportunities, reviews and resolutions.`
+  - **Evidence:** `Initial tables and indexes exist, but versioned migrations, append-only enforcement, retention execution, backup/restore and read-only role verification remain.`
 - [x] **P5-02 — Build read-only operator review surface** `[Done]`
   - **Acceptance:** Operators can inspect source links/rules, normalized comparisons, reason codes, freshness, book depth, fees, and opportunity math without mutation ambiguity.
   - **Evidence:** `docs/operator-review.html is a mutation-free 33-row source-linked operator view; browser QA found no controls or overflow and all opportunities disabled.`
@@ -223,7 +223,7 @@ Make every decision inspectable and measure real-world reliability before any ex
 - [ ] **P5-06 — Audit post-resolution agreement** `[Next]`
   - **Acceptance:** Both venue resolutions are compared to canonical outcomes; every divergence is investigated and feeds policy/fixture updates.
   - **Evidence:** Resolution storage and audit design implemented; current future-dated games have not resolved yet.
-- [ ] **P5-07 — Complete sustained shadow run** `[In progress]`
+- [ ] **P5-07 — Complete sustained shadow run** `[Next]`
   - **Acceptance:** At least several hundred reviewed events and a representative operating window record theoretical fills, subsequent movement, resolutions, false positives, uptime, and net results after modeled costs.
   - **Evidence:** Read-only scanner job d0baed088b0b runs every 5 minutes; first forced run succeeded with 33 matches. Several hundred reviewed events and representative elapsed window remain empirical gates.
 - [ ] **P5-08 — Pass go/no-go review for execution design** `[Blocked]`

@@ -19,8 +19,8 @@
     "rule": "Edit the canonical JSON first, regenerate both views, validate, and commit all three together. Browser-local checkboxes are personal working notes and never alter shared status."
   },
   "mission": "Build a deterministic, auditable, read-only-first system that discovers equivalent sports contracts on Kalshi and Polymarket, computes executable cross-venue opportunities conservatively, and graduates to trading only after measured safety gates and explicit owner approval.",
-  "current_focus": "Sustained read-only shadow validation — accumulate independent matching labels, quote latency/movement distributions, and post-resolution agreement without credentials or orders.",
-  "next_action": "P5-07: accumulate several hundred reviewed events over a representative operating window; matching, freshness, resolution, and go/no-go gates remain evidence-bound.",
+  "current_focus": "P1-06 — complete adversarial ingestion behavior and explicit CLI partial/failure contracts without silent record loss.",
+  "next_action": "P1-06: isolate venue failures in the capture CLI, preserve successful records, add typed bounded errors, response limits and adversarial pagination/retry tests.",
   "operating_rules": [
     "Precision before recall: an uncertain pair is REVIEW or UNSUPPORTED, never EXACT.",
     "Raw source payloads and hashes remain immutable and replayable.",
@@ -237,25 +237,25 @@
           "status": "done",
           "acceptance": "Tests run offline from pinned sanitized payloads with source metadata and hashes.",
           "evidence": [
-            "src/arbs/replay.py and tests/test_replay_schema.py validate and replay the pinned 33-match report offline by canonical SHA-256."
+            "tests/fixtures/replay/mlb-public-2026-08-12 pins 175 sanitized public raw records with URLs, receipt time, per-payload hashes, corpus hash/counts and redaction declaration; tests/test_raw_corpus.py replays 33 matches offline and rejects tampering/duplicates."
           ]
         },
         {
           "id": "P1-06",
           "title": "Harden pagination, rate-limit, malformed payload, and partial-capture behavior",
-          "status": "done",
+          "status": "in_progress",
           "acceptance": "Adversarial tests prove bounded termination, explicit partial/failure manifests, retry limits, and no silent record loss.",
           "evidence": [
-            "Capture manifests now record complete/partial/failed status and typed errors; existing pagination/retry/malformed tests remain green."
+            "Partial/failure manifest fields exist, but CLI venue isolation, explicit exit states, later-page failure retention, malformed records, cursor cycles and bounded HTTP edge cases need executable adversarial coverage."
           ]
         },
         {
           "id": "P1-07",
           "title": "Version and validate raw snapshot schema",
-          "status": "done",
+          "status": "next",
           "acceptance": "Schema validation rejects invalid manifests/records and a compatibility policy covers future versions.",
           "evidence": [
-            "src/arbs/ingestion/schema.py strictly validates schema v1 manifests, records, counts and payload hashes; future versions fail closed."
+            "Schema v1 verifies required keys/count/hash, but strict field types/enums, record versioning, error schemas and an explicit future compatibility policy remain."
           ]
         },
         {
@@ -314,37 +314,37 @@
         {
           "id": "P2-04",
           "title": "Implement canonical event identity",
-          "status": "done",
+          "status": "next",
           "acceptance": "Identity handles participant roles, start windows, stage/game number, neutral sites, doubleheaders, reschedules, and authoritative IDs.",
           "evidence": [
-            "CanonicalContract carries participant roles, authoritative ID, stage/game, neutral-site state and exact scheduled time; candidate engine uses bounded identity."
+            "The model carries identity dimensions, but structured doubleheader, reschedule, neutral-site, stage/game and authoritative-ID fixtures do not yet exercise acceptance."
           ]
         },
         {
           "id": "P2-05",
           "title": "Implement Kalshi MVP contract parser",
-          "status": "done",
+          "status": "next",
           "acceptance": "Representative pre-game head-to-head contracts normalize deterministically; unsupported/missing fields emit reason codes.",
           "evidence": [
-            "The bounded Kalshi MLB parser normalizes open two-contract moneyline events deterministically and rejects missing/unknown evidence."
+            "Live Kalshi normalization is a narrow prototype that drops unsupported/missing records instead of emitting reason-coded parse results across a raw replay corpus."
           ]
         },
         {
           "id": "P2-06",
           "title": "Implement Polymarket MVP contract parser",
-          "status": "done",
+          "status": "next",
           "acceptance": "Same canonical and failure contract as Kalshi across the replay corpus.",
           "evidence": [
-            "The bounded Polymarket MLB parser accepts exactly one active ungrouped winner market, explicit gameStartTime and complete token/outcome orientation."
+            "Live Polymarket normalization is a narrow prototype that drops unsupported/missing records instead of satisfying the same reason-coded parser contract across raw replay."
           ]
         },
         {
           "id": "P2-07",
           "title": "Build normalization evidence records",
-          "status": "done",
+          "status": "next",
           "acceptance": "Every normalized value links to source snapshot hash, source field/excerpt, parser version, and transformations.",
           "evidence": [
-            "SourceEvidence stores source ID/URL, snapshot hash, receipt timestamp, field paths, excerpts and parser version on each canonical contract."
+            "SourceEvidence types exist, but normalized live decisions do not carry raw snapshot hashes, receipt lineage, per-value field paths/excerpts and transformations end to end."
           ]
         },
         {
@@ -359,10 +359,10 @@
         {
           "id": "P2-09",
           "title": "Gate MVP parser quality",
-          "status": "done",
+          "status": "next",
           "acceptance": "All labeled MVP fixtures parse reproducibly; unknown fields never become equality; parsing coverage and failure reasons are reported.",
           "evidence": [
-            "Live parser tests cover unknown aliases, ambiguity, wrong family and start windows; pinned replay reproduces 33 REVIEW matches."
+            "Prototype parser tests pass, but no independently labeled raw replay corpus reports parse coverage and retained failure reasons."
           ]
         }
       ]
@@ -403,10 +403,10 @@
         {
           "id": "P3-04",
           "title": "Emit machine-readable decision evidence",
-          "status": "done",
+          "status": "next",
           "acceptance": "Every decision contains policy/parser versions, normalized comparisons, source hashes, excerpts, and stable reason codes.",
           "evidence": [
-            "Published report contains normalized comparisons, source URLs, checks and stable reason codes; report has canonical SHA-256."
+            "Published decisions retain links/checks/reasons but do not yet include end-to-end source snapshot hashes, excerpts, parser/schema versions and every rejected/unpaired decision."
           ]
         },
         {
@@ -421,10 +421,10 @@
         {
           "id": "P3-06",
           "title": "Add reviewer workflow and expiring overrides",
-          "status": "done",
+          "status": "next",
           "acceptance": "Review records capture identity, timestamp, snapshot hashes, scenario proof, differences, and expiry; overrides remain pricing-ineligible in this phase.",
           "evidence": [
-            "SQLite reviews schema captures reviewer, timestamp, expiry, scenario proof and hashes; overrides remain outside pricing eligibility."
+            "Review table fields exist, but no migration/version framework or full differences field/override enforcement integration has been exercised."
           ]
         },
         {
@@ -465,10 +465,10 @@
         {
           "id": "P4-02",
           "title": "Capture matched books with timing evidence",
-          "status": "done",
+          "status": "next",
           "acceptance": "Book pairs record source and local receipt times, retrieval skew, failures, and atomic comparison identity.",
           "evidence": [
-            "src/arbs/books.py captured a public matched book pair with HTTP/source URL/hash/timing and 116ms receipt skew in data/reports/live-book-pair.json."
+            "One public pair records receipt times/skew/hashes, but failure records, source timestamps where available and atomic repeated comparison identity need collection tests."
           ]
         },
         {
@@ -536,10 +536,10 @@
         {
           "id": "P5-01",
           "title": "Implement persistent audit storage",
-          "status": "done",
+          "status": "next",
           "acceptance": "Raw references, normalized contracts, decisions, books, opportunities, reviews, and resolutions have migrations, indexes, lineage, and retention rules.",
           "evidence": [
-            "src/arbs/audit.py creates indexed FK-linked runs, raw references, normalized contracts, decisions, books, opportunities, reviews and resolutions."
+            "Initial tables and indexes exist, but versioned migrations, append-only enforcement, retention execution, backup/restore and read-only role verification remain."
           ]
         },
         {
@@ -590,7 +590,7 @@
         {
           "id": "P5-07",
           "title": "Complete sustained shadow run",
-          "status": "in_progress",
+          "status": "next",
           "acceptance": "At least several hundred reviewed events and a representative operating window record theoretical fills, subsequent movement, resolutions, false positives, uptime, and net results after modeled costs.",
           "evidence": [
             "Read-only scanner job d0baed088b0b runs every 5 minutes; first forced run succeeded with 33 matches. Several hundred reviewed events and representative elapsed window remain empirical gates."
