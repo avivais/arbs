@@ -40,7 +40,7 @@ class IngestionTests(unittest.TestCase):
             for record in capture.records
         ]
         self.assertEqual(ids, ["S1", "S1-M", "S2", "S2-M", "nba", "E1", "M1", "nfl", "E2", "M2"])
-        self.assertEqual(capture.request_count, 6)
+        self.assertEqual(capture.request_count, 7)
 
     def test_bounded_capture(self):
         capture = Capture()

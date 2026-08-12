@@ -2,6 +2,23 @@
 
 Read-only market discovery and eventual deterministic sports-contract matching between Kalshi and Polymarket.
 
+## Rolling delivery plan
+
+The live project plan is maintained from one canonical source and published in two generated views:
+
+- [Human-readable rolling plan](docs/ROLLING_PLAN.md)
+- [Interactive rolling plan](docs/rolling-plan.html)
+- Canonical implementation source: [`docs/rolling-plan.json`](docs/rolling-plan.json)
+
+Update `docs/rolling-plan.json` first, then regenerate and validate both views:
+
+```bash
+python3 scripts/render_rolling_plan.py
+python3 scripts/render_rolling_plan.py --check
+```
+
+Browser-local checks in the interactive view are personal working notes; committed JSON status and evidence remain authoritative.
+
 ## Requirements
 
 - Python 3.12+
