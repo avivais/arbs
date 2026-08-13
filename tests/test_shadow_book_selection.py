@@ -66,6 +66,17 @@ class ShadowBookSelectionTests(unittest.TestCase):
         self.assertEqual(len(MODULE.selected_pairs(report, limit=1)), 1)
         self.assertEqual(MODULE.selected_pairs(report, limit=1)[0]["team"], "A")
 
+    def test_extracts_top_prices_without_trusting_payload_order(self):
+        sample = {
+            "polymarket": {
+                "payload": {
+                    "bids": [{"price": "0.31"}, {"price": "0.33"}, {"price": "0.32"}],
+                    "asks": [{"price": "0.38"}, {"price": "0.35"}, {"price": "0.36"}],
+                }
+            }
+        }
+        self.assertEqual(MODULE.polymarket_top(sample), {"best_bid": "0.33", "best_ask": "0.35"})
+
 
 if __name__ == "__main__":
     unittest.main()

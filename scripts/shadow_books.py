@@ -43,6 +43,17 @@ def selected_pairs(report: dict, limit: int = 10) -> list[dict[str, str]]:
     return selected
 
 
+def polymarket_top(sample: dict) -> dict[str, str | None]:
+    """Extract executable top-of-book prices without trusting payload ordering."""
+    payload = sample.get("polymarket", {}).get("payload", {})
+    bids = [float(level["price"]) for level in payload.get("bids", []) if level.get("price") is not None]
+    asks = [float(level["price"]) for level in payload.get("asks", []) if level.get("price") is not None]
+    return {
+        "best_bid": str(max(bids)) if bids else None,
+        "best_ask": str(min(asks)) if asks else None,
+    }
+
+
 def main() -> None:
     root = Path("data/shadow/books")
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
@@ -58,6 +69,7 @@ def main() -> None:
             {
                 **pair,
                 "status": sample["status"],
+                "polymarket_top": polymarket_top(sample),
                 "receipt_skew_ms": sample.get("receipt_skew_ms"),
                 "sample_url": f"books/{output.name}",
                 "sampled_at": sample.get("started_at", stamp),
