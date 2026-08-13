@@ -1,6 +1,6 @@
 # Arbs — Kalshi ↔ Polymarket Sports Arbitrage — Rolling Plan
 
-> **Canonical source:** [`docs/rolling-plan.json`](rolling-plan.json) · **Last verified:** 2026-08-12
+> **Canonical source:** [`docs/rolling-plan.json`](rolling-plan.json) · **Last verified:** 2026-08-13
 > Edit the JSON first, run `python3 scripts/render_rolling_plan.py`, validate, and commit all generated views together.
 
 ## Live status
@@ -166,7 +166,7 @@ Produce high-precision, evidence-rich cross-venue equivalence decisions.
   - **Evidence:** `Engine/live tests cover reversed ordering, consecutive games, ambiguity, unknowns, predicate/rule differences and deterministic replay.`
 - [ ] **P3-08 — Meet matching release gate** `[Blocked]`
   - **Acceptance:** Zero known false-positive EXACT decisions and at least 99% precision on a sufficiently sized independently reviewed labeled corpus; recall is reported, not optimized at precision's expense.
-  - **Evidence:** Requires a sufficiently sized independently reviewed labeled corpus; current 33-event corpus is replayable but not independently labeled for the 99% precision gate.
+  - **Evidence:** Requires a sufficiently sized independently reviewed labeled corpus; executable cases and the replay corpus verify deterministic decisions, but no independent reviewer has labeled a sufficiently sized corpus for the 99% precision gate.
 
 ### P4 — Order books and conservative opportunity pricing
 
@@ -188,7 +188,7 @@ Turn semantic matches into freshness- and depth-aware executable opportunity rec
   - **Evidence:** Versioned FeeModel includes effective date, rounding, minimum, settlement and withdrawal assumptions.
 - [x] **P4-05 — Measure and set freshness thresholds** `[Done]`
   - **Acceptance:** Quote-age and pair-skew limits derive from observed latency/movement distributions; stale/suspended books are excluded.
-  - **Evidence:** `docs/freshness-policy.md and config/freshness/mlb-books-2026-08-12-v1.json derive an 800ms pair-skew limit from 220 observations (p99 786.02ms), reject the 20.34s outlier, cap local age at 2s and defer source-age release threshold pending more source-time samples.`
+  - **Evidence:** `docs/freshness-policy.md and config/freshness/mlb-books-2026-08-12-v1.json derive a conservative 800ms pair-skew limit from the original 220-observation checkpoint; the 2026-08-13 checkpoint has 740 successful samples, p99 859.74ms and the same 20.34s fail-closed outlier, so the stricter existing limit remains unchanged pending a new reviewed policy version.`
 - [x] **P4-06 — Implement conservative opportunity engine** `[Done]`
   - **Acceptance:** Both venue directions compute payout minus depth cost, fees, settlement assumptions, and configurable safety buffer; negative/uncertain cases do not signal.
   - **Evidence:** `Conservative engine gates semantic eligibility, age/skew/depth, fees and safety buffer; negative/uncertain cases do not qualify.`
@@ -222,13 +222,13 @@ Make every decision inspectable and measure real-world reliability before any ex
   - **Evidence:** `src/arbs/alerts.py enforces fresh signal expiry, evidence-hash dedup and cooldown; alert records carry audit URLs.`
 - [ ] **P5-06 — Audit post-resolution agreement** `[Next]`
   - **Acceptance:** Both venue resolutions are compared to canonical outcomes; every divergence is investigated and feeds policy/fixture updates.
-  - **Evidence:** Resolution storage and audit design implemented; current future-dated games have not resolved yet.
+  - **Evidence:** `src/arbs/resolution_audit.py and scripts/audit_resolutions.py now fetch and hash public venue evidence, select one moneyline, require final status plus an unambiguous winner, and fail closed. Live verification of 45 matched events found 0 comparable final pairs, 0 divergences, and no fetch failures; data/reports/resolution-audit.json remains AWAITING_BOTH_VENUE_FINALS.`
 - [ ] **P5-07 — Complete sustained shadow run** `[In progress]`
   - **Acceptance:** At least several hundred reviewed events and a representative operating window record theoretical fills, subsequent movement, resolutions, false positives, uptime, and net results after modeled costs.
-  - **Evidence:** `Scheduled read-only matching/book collector is active; at least 220 paired-book observations and repeated 38-event raw replays exist. Representative elapsed window, subsequent movement, settled resolutions and modeled net-result audit remain.`
+  - **Evidence:** `data/reports/shadow-validation-checkpoint.json records 740 successful paired-book observations across 16 pairs over 34,716 seconds (9.64h), with 724 subsequent transitions and 185 top-quote changes; all 45 current semantic matches remain REVIEW/pricing-disabled. This is durable partial movement/latency evidence, but not yet a representative operating window or several hundred reviewed events; settled resolutions, false-positive review, uptime, and modeled net results remain.`
 - [ ] **P5-08 — Pass go/no-go review for execution design** `[Blocked]`
   - **Acceptance:** A signed evidence summary demonstrates matching precision, data reliability, modeled profitability, failure behavior, and unresolved risks; otherwise remain read-only.
-  - **Evidence:** Blocked until matching release, freshness measurement, post-resolution audit and sustained shadow gates pass.
+  - **Evidence:** `Blocked: P3-08 lacks independent labels, P5-06 has no comparable final pairs, and P5-07 lacks a representative window, several hundred reviewed events, uptime/false-positive review and modeled net results. No signed go/no-go summary exists.`
 
 ### P6 — Execution and controlled rollout
 

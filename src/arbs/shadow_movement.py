@@ -36,4 +36,5 @@ def report(paths:list[Path])->dict[str,Any]:
    transitions.append(row)
  return {'schema_version':1,'pair_count':len(series),'successful_samples':sum(len(x) for x in series.values()),'failure_count':failures,
          'transition_count':len(transitions),'changed_transition_count':sum(any(v['payload_changed'] for v in x['venues'].values()) for x in transitions),
+         'top_quote_changed_transition_count':sum(any(v['bid_before']!=v['bid_after'] or v['ask_before']!=v['ask_after'] for v in x['venues'].values()) for x in transitions),
          'transitions':transitions}

@@ -1,0 +1,49 @@
+{
+  "evidence_window": {
+    "elapsed_seconds": 34715.655785,
+    "first": "2026-08-12T14:27:31.787143+00:00",
+    "last": "2026-08-13T00:06:07.442928+00:00"
+  },
+  "gate_status": "PARTIAL_EVIDENCE_ONLY",
+  "generated_at": "2026-08-13T03:06:16.234912+03:00",
+  "movement": {
+    "changed_transition_count": 724,
+    "failure_count": 0,
+    "pair_count": 16,
+    "schema_version": 1,
+    "successful_samples": 740,
+    "top_quote_changed_transition_count": 185,
+    "transition_count": 724
+  },
+  "schema_version": 1,
+  "semantic_eligibility": "ALL_REVIEW_PRICING_DISABLED",
+  "timing": {
+    "failure_count": 0,
+    "receipt_skew_ms": {
+      "max": 20340.0,
+      "p50": 129.0,
+      "p95": 452.2999999999997,
+      "p99": 859.7400000000005
+    },
+    "request_elapsed_ms": {
+      "max": 20295.054,
+      "p50": 323.505,
+      "p95": 488.8331999999999,
+      "p99": 731.1614900000001
+    },
+    "sample_count": 740,
+    "schema_version": 1,
+    "source_age_ms": {
+      "max": 100350.264,
+      "p50": 1658.5745,
+      "p95": 18433.405,
+      "p99": 54951.83996000008,
+      "sample_count": 540
+    },
+    "suggested_limits": {
+      "pair_skew_ms": 900,
+      "source_age_ms": 55000
+    },
+    "threshold_status": "READY_FOR_REVIEW"
+  }
+}

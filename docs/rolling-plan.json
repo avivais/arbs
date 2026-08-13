@@ -3,7 +3,7 @@
   "plan_id": "arbs-rolling-plan",
   "project": "Arbs — Kalshi ↔ Polymarket Sports Arbitrage",
   "status": "active",
-  "last_verified": "2026-08-12",
+  "last_verified": "2026-08-13",
   "status_values": [
     "done",
     "in_progress",
@@ -442,7 +442,7 @@
           "status": "blocked",
           "acceptance": "Zero known false-positive EXACT decisions and at least 99% precision on a sufficiently sized independently reviewed labeled corpus; recall is reported, not optimized at precision's expense.",
           "evidence": [
-            "Requires a sufficiently sized independently reviewed labeled corpus; current 33-event corpus is replayable but not independently labeled for the 99% precision gate."
+            "Requires a sufficiently sized independently reviewed labeled corpus; executable cases and the replay corpus verify deterministic decisions, but no independent reviewer has labeled a sufficiently sized corpus for the 99% precision gate."
           ]
         }
       ]
@@ -495,7 +495,7 @@
           "status": "done",
           "acceptance": "Quote-age and pair-skew limits derive from observed latency/movement distributions; stale/suspended books are excluded.",
           "evidence": [
-            "docs/freshness-policy.md and config/freshness/mlb-books-2026-08-12-v1.json derive an 800ms pair-skew limit from 220 observations (p99 786.02ms), reject the 20.34s outlier, cap local age at 2s and defer source-age release threshold pending more source-time samples."
+            "docs/freshness-policy.md and config/freshness/mlb-books-2026-08-12-v1.json derive a conservative 800ms pair-skew limit from the original 220-observation checkpoint; the 2026-08-13 checkpoint has 740 successful samples, p99 859.74ms and the same 20.34s fail-closed outlier, so the stricter existing limit remains unchanged pending a new reviewed policy version."
           ]
         },
         {
@@ -584,7 +584,7 @@
           "status": "next",
           "acceptance": "Both venue resolutions are compared to canonical outcomes; every divergence is investigated and feeds policy/fixture updates.",
           "evidence": [
-            "Resolution storage and audit design implemented; current future-dated games have not resolved yet."
+            "src/arbs/resolution_audit.py and scripts/audit_resolutions.py now fetch and hash public venue evidence, select one moneyline, require final status plus an unambiguous winner, and fail closed. Live verification of 45 matched events found 0 comparable final pairs, 0 divergences, and no fetch failures; data/reports/resolution-audit.json remains AWAITING_BOTH_VENUE_FINALS."
           ]
         },
         {
@@ -593,7 +593,7 @@
           "status": "in_progress",
           "acceptance": "At least several hundred reviewed events and a representative operating window record theoretical fills, subsequent movement, resolutions, false positives, uptime, and net results after modeled costs.",
           "evidence": [
-            "Scheduled read-only matching/book collector is active; at least 220 paired-book observations and repeated 38-event raw replays exist. Representative elapsed window, subsequent movement, settled resolutions and modeled net-result audit remain."
+            "data/reports/shadow-validation-checkpoint.json records 740 successful paired-book observations across 16 pairs over 34,716 seconds (9.64h), with 724 subsequent transitions and 185 top-quote changes; all 45 current semantic matches remain REVIEW/pricing-disabled. This is durable partial movement/latency evidence, but not yet a representative operating window or several hundred reviewed events; settled resolutions, false-positive review, uptime, and modeled net results remain."
           ]
         },
         {
@@ -602,7 +602,7 @@
           "status": "blocked",
           "acceptance": "A signed evidence summary demonstrates matching precision, data reliability, modeled profitability, failure behavior, and unresolved risks; otherwise remain read-only.",
           "evidence": [
-            "Blocked until matching release, freshness measurement, post-resolution audit and sustained shadow gates pass."
+            "Blocked: P3-08 lacks independent labels, P5-06 has no comparable final pairs, and P5-07 lacks a representative window, several hundred reviewed events, uptime/false-positive review and modeled net results. No signed go/no-go summary exists."
           ]
         }
       ]
@@ -740,6 +740,6 @@
       "change": "Captured and published a bounded live MLB checkpoint: 33 unique cross-venue event-identity matches from 76 Kalshi markets and 173 Polymarket events; all remain REVIEW and pricing-ineligible due to material rule differences."
     }
   ],
-  "next_task": "P5-07: accumulate several hundred reviewed events over a representative operating window; P3-08/P4-05/P5-06/P5-08 remain evidence-gated.",
-  "updated_at": "2026-08-12"
+  "next_task": "P5-07: continue immutable collection beyond the initial 9.64-hour/740-sample checkpoint and rerun fail-closed resolution audit; P3-08, P5-06 and P5-08 remain evidence-gated.",
+  "updated_at": "2026-08-13"
 }

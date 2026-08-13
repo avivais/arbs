@@ -62,5 +62,10 @@ class PolymarketPublicClient:
     def list_teams(self, *, limit: int = 100, offset: int = 0) -> JsonResponse:
         return self.http.get(self.GAMMA_URL, "/teams", {"limit": limit, "offset": offset})
 
+    def get_event(self, event_id: str) -> JsonResponse:
+        if not event_id:
+            raise ValueError("event_id is required")
+        return self.http.get(self.GAMMA_URL, f"/events/{event_id}")
+
     def get_orderbook(self, token_id: str) -> JsonResponse:
         return self.http.get(self.CLOB_URL, "/book", {"token_id": token_id})
