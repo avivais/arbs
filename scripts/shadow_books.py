@@ -3,8 +3,11 @@ from __future__ import annotations
 
 import json
 from datetime import datetime, timezone
+from decimal import Decimal
 from pathlib import Path
+from typing import Any
 
+from arbs.indicators import candidate_record, evaluate_candidate, leg_from_sample
 from arbs.replay import load_match_report
 from arbs.shadow_books import sample_pair, summarize
 
@@ -54,17 +57,61 @@ def polymarket_top(sample: dict) -> dict[str, str | None]:
     }
 
 
+def build_indicators(report: dict[str, Any], captured: list[tuple[dict[str, str], dict[str, Any]]], generated_at: datetime) -> dict[str, Any]:
+    """Build both complementary cross-venue directions for each fully captured sports event."""
+    samples = {(pair["event_id"], pair["team"]): (pair, sample) for pair, sample in captured if sample.get("status") == "complete"}
+    matches = {match["kalshi"]["event_id"]: match for match in report.get("matches", [])}
+    records = []
+    for event_id in sorted({key[0] for key in samples}):
+        match = matches.get(event_id)
+        if match is None:
+            continue
+        teams = list(match.get("participants", []))
+        if len(teams) != 2 or any((event_id, team) not in samples for team in teams):
+            continue
+        by_team = {team: samples[(event_id, team)] for team in teams}
+        for kalshi_team, polymarket_team in ((teams[0], teams[1]), (teams[1], teams[0])):
+            kalshi_pair, kalshi_sample = by_team[kalshi_team]
+            polymarket_pair, polymarket_sample = by_team[polymarket_team]
+            first = leg_from_sample(kalshi_sample, venue="kalshi", outcome=kalshi_team, instrument_id=kalshi_pair["kalshi_contract_id"])
+            second = leg_from_sample(polymarket_sample, venue="polymarket", outcome=polymarket_team, instrument_id=polymarket_pair["polymarket_token_id"])
+            record = candidate_record(evaluate_candidate(first, second, now=generated_at, reserve_per_pair=Decimal("0.01")))
+            records.append({
+                "sport": match.get("sport"), "competition": match.get("competition"),
+                "event_id": event_id, "participants": teams, "start_utc": match.get("start_utc"),
+                "kalshi_url": match["kalshi"].get("source_url"), "polymarket_url": match["polymarket"].get("source_url"),
+                **record,
+            })
+    rank = {"BUFFERED_CANDIDATE": 0, "GROSS_ONLY": 1, "STALE_OR_SKEWED": 2, "NO_EDGE": 3, "NO_DEPTH": 4}
+    records.sort(key=lambda row: (rank.get(row["status"], 9), -float(row.get("provisional_edge_per_pair") or "-9"), row["event_id"]))
+    return {
+        "schema_version": 1, "generated_at": generated_at.isoformat().replace("+00:00", "Z"),
+        "scope": "Sports-only read-only executable price-dislocation indicators; no trading or account actions.",
+        "method": {
+            "directions": "Kalshi team YES plus opposing Polymarket outcome token",
+            "quantity": "maximum common depth whose marginal combined ask plus reserve remains below $1; otherwise top-level common depth",
+            "reserve_per_pair": "0.01", "fees": "excluded_unverified",
+            "freshness_limits": {"quote_age_ms": 90000, "cross_leg_receipt_skew_ms": 800},
+            "settlement": "REVIEW; exceptional settlement equivalence not proven",
+        },
+        "counts": {status: sum(row["status"] == status for row in records) for status in rank},
+        "records": records,
+    }
+
+
 def main() -> None:
     root = Path("data/shadow/books")
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     report_path = Path("data/shadow/latest.json") if Path("data/shadow/latest.json").exists() else Path("data/reports/live-mlb-matches.json")
     report = load_match_report(report_path)
     index_records = []
+    captured = []
 
     for pair in selected_pairs(report):
         kalshi_id = pair["kalshi_contract_id"]
         output = root / f"{stamp}-{kalshi_id}.json"
         sample = sample_pair(kalshi_id, pair["polymarket_token_id"], output)
+        captured.append((pair, sample))
         index_records.append(
             {
                 **pair,
@@ -87,6 +134,8 @@ def main() -> None:
     )
     summary = summarize(sorted(root.glob("*.json")))
     atomic_json(Path("data/shadow/book-summary.json"), summary)
+    generated_at = datetime.now(timezone.utc)
+    atomic_json(Path("data/shadow/latest-indicators.json"), build_indicators(report, captured, generated_at))
     print(json.dumps(summary, sort_keys=True))
 
 
