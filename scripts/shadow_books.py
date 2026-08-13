@@ -82,15 +82,16 @@ def build_indicators(report: dict[str, Any], captured: list[tuple[dict[str, str]
                 "kalshi_url": match["kalshi"].get("source_url"), "polymarket_url": match["polymarket"].get("source_url"),
                 **record,
             })
-    rank = {"BUFFERED_CANDIDATE": 0, "GROSS_ONLY": 1, "STALE_OR_SKEWED": 2, "NO_EDGE": 3, "NO_DEPTH": 4}
-    records.sort(key=lambda row: (rank.get(row["status"], 9), -float(row.get("provisional_edge_per_pair") or "-9"), row["event_id"]))
+    rank = {"OBSERVED_RESERVED_GAP": 0, "OBSERVED_RAW_GAP": 1, "UNAVAILABLE_FRESHNESS": 2, "NO_RAW_GAP": 3, "NO_DEPTH": 4}
+    records.sort(key=lambda row: (rank.get(row["status"], 9), -float(row.get("gap_after_assumed_reserve_per_pair") or "-9"), row["event_id"]))
     return {
         "schema_version": 1, "generated_at": generated_at.isoformat().replace("+00:00", "Z"),
-        "scope": "Sports-only read-only executable price-dislocation indicators; no trading or account actions.",
+        "scope": "Sports-only non-actionable normal-settlement complement-cost observations; no trading or account actions.",
         "method": {
             "directions": "Kalshi team YES plus opposing Polymarket outcome token",
-            "quantity": "maximum common depth whose marginal combined ask plus reserve remains below $1; otherwise top-level common depth",
-            "reserve_per_pair": "0.01", "fees": "excluded_unverified",
+            "quantity": "captured common depth capped at 1000 pairs; reserved-gap depth uses marginal combined asks",
+            "reserve_per_pair": "0.01", "fees": "unverified_excluded",
+            "pricing_eligible": False, "actionability": "NON_ACTIONABLE",
             "freshness_limits": {"quote_age_ms": 90000, "cross_leg_receipt_skew_ms": 800},
             "settlement": "REVIEW; exceptional settlement equivalence not proven",
         },
