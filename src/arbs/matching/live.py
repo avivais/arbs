@@ -15,6 +15,7 @@ from zoneinfo import ZoneInfo
 from arbs.adapters import KalshiPublicClient, PolymarketPublicClient
 
 MLB_KALSHI_SERIES = "KXMLBGAME"
+MLB_KALSHI_SERIES_SLUG = "professional-baseball-game"
 MLB_POLYMARKET_TAG = 100381
 START_TOLERANCE_SECONDS = 15 * 60
 
@@ -134,8 +135,11 @@ def normalize_kalshi(markets: Iterable[dict[str, Any]]) -> list[VenueEvent]:
             "no_bid": item.get("no_bid_dollars"), "no_ask": item.get("no_ask_dollars"),
         } for item in sorted(contracts, key=lambda x: str(x["ticker"])))
         rules = "\n".join(filter(None, [sample.get("rules_primary"), sample.get("rules_secondary")]))
-        result.append(VenueEvent("kalshi", event_id, participants, start, str(sample["title"]),
-                                 f"https://kalshi.com/markets/{event_id.lower()}", compact, rules))
+        result.append(VenueEvent(
+            "kalshi", event_id, participants, start, str(sample["title"]),
+            f"https://kalshi.com/markets/{MLB_KALSHI_SERIES.lower()}/{MLB_KALSHI_SERIES_SLUG}/{event_id.lower()}",
+            compact, rules,
+        ))
     return result
 
 

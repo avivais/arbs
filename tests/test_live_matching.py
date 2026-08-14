@@ -42,6 +42,10 @@ class LiveMatchingTests(unittest.TestCase):
         self.assertEqual(len(kalshi), 1)
         self.assertEqual(len(poly), 1)
         self.assertEqual(kalshi[0].participants, ("BOS", "TOR"))
+        self.assertEqual(
+            kalshi[0].source_url,
+            "https://kalshi.com/markets/kxmlbgame/professional-baseball-game/kxmlbgame-26aug121907bostor",
+        )
         matches = match_events(kalshi, poly)
         self.assertEqual(len(matches), 1)
         self.assertEqual(matches[0].decision, "REVIEW")
