@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import os
 from datetime import datetime, timezone
 from decimal import Decimal
 from pathlib import Path
@@ -108,7 +109,10 @@ def main() -> None:
     index_records = []
     captured = []
 
-    for pair in selected_pairs(report):
+    pair_limit = int(os.environ.get("ARBS_SHADOW_PAIR_LIMIT", "10"))
+    if pair_limit <= 0:
+        raise ValueError("ARBS_SHADOW_PAIR_LIMIT must be positive")
+    for pair in selected_pairs(report, limit=pair_limit):
         kalshi_id = pair["kalshi_contract_id"]
         output = root / f"{stamp}-{kalshi_id}.json"
         sample = sample_pair(kalshi_id, pair["polymarket_token_id"], output)
