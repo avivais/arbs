@@ -1,17 +1,17 @@
 # Arbs — Kalshi ↔ Polymarket Sports Arbitrage — Rolling Plan
 
-> **Canonical source:** [`docs/rolling-plan.json`](rolling-plan.json) · **Last verified:** 2026-08-13
+> **Canonical source:** [`docs/rolling-plan.json`](rolling-plan.json) · **Last verified:** 2026-08-14
 > Edit the JSON first, run `python3 scripts/render_rolling_plan.py`, validate, and commit all generated views together.
 
 ## Live status
 
-- **Progress:** 46/58 tasks source-verified complete (79%)
+- **Progress:** 47/58 tasks source-verified complete (81%)
 - **Current focus:** P5-07 — sustained read-only shadow validation: accumulate representative elapsed-window movement, resolution, false-positive, uptime and modeled-result evidence.
 - **Next action:** `P5-07: continue scheduled immutable collection, add subsequent-book movement and settled-resolution audit, and do not advance go/no-go until representative evidence exists.`
 
 | Done | In progress | Next | Blocked | Deferred |
 |---:|---:|---:|---:|---:|
-| 46 | 1 | 1 | 3 | 7 |
+| 47 | 1 | 0 | 3 | 7 |
 
 ## Mission
 
@@ -188,7 +188,7 @@ Turn semantic matches into freshness- and depth-aware executable opportunity rec
   - **Evidence:** Versioned FeeModel includes effective date, rounding, minimum, settlement and withdrawal assumptions.
 - [x] **P4-05 — Measure and set freshness thresholds** `[Done]`
   - **Acceptance:** Quote-age and pair-skew limits derive from observed latency/movement distributions; stale/suspended books are excluded.
-  - **Evidence:** `docs/freshness-policy.md and config/freshness/mlb-books-2026-08-12-v1.json derive a conservative 800ms pair-skew limit from the original 220-observation checkpoint; the 2026-08-13 checkpoint has 740 successful samples, p99 859.74ms and the same 20.34s fail-closed outlier, so the stricter existing limit remains unchanged pending a new reviewed policy version.`
+  - **Evidence:** `docs/freshness-policy.md and config/freshness/mlb-books-2026-08-12-v1.json derive a conservative 800ms pair-skew limit from the original 220-observation checkpoint; the 2026-08-14 elapsed checkpoint has 5,650 successful samples over 33.59h, p99 526.06ms and the same 20.34s fail-closed outlier, so the stricter existing limit remains unchanged pending a new reviewed policy version.`
 - [x] **P4-06 — Implement conservative opportunity engine** `[Done]`
   - **Acceptance:** Both venue directions compute payout minus depth cost, fees, settlement assumptions, and configurable safety buffer; negative/uncertain cases do not signal.
   - **Evidence:** `Conservative engine gates semantic eligibility, age/skew/depth, fees and safety buffer; negative/uncertain cases do not qualify.`
@@ -201,7 +201,7 @@ Turn semantic matches into freshness- and depth-aware executable opportunity rec
 
 ### P5 — Review surface, operations, and shadow validation
 
-**Status:** Next · **Progress:** 5/8
+**Status:** Next · **Progress:** 6/8
 
 Make every decision inspectable and measure real-world reliability before any execution work.
 
@@ -220,15 +220,15 @@ Make every decision inspectable and measure real-world reliability before any ex
 - [x] **P5-05 — Create alert policy and deduplication** `[Done]`
   - **Acceptance:** Only fresh qualifying opportunities alert; updates/deduplication/rate limits prevent spam; every alert links to audit evidence.
   - **Evidence:** `src/arbs/alerts.py enforces fresh signal expiry, evidence-hash dedup and cooldown; alert records carry audit URLs.`
-- [ ] **P5-06 — Audit post-resolution agreement** `[Next]`
+- [x] **P5-06 — Audit post-resolution agreement** `[Done]`
   - **Acceptance:** Both venue resolutions are compared to canonical outcomes; every divergence is investigated and feeds policy/fixture updates.
-  - **Evidence:** `src/arbs/resolution_audit.py and scripts/audit_resolutions.py now fetch and hash public venue evidence, select one moneyline, require final status plus an unambiguous winner, and fail closed. Live verification of 45 matched events found 0 comparable final pairs, 0 divergences, and no fetch failures; data/reports/resolution-audit.json remains AWAITING_BOTH_VENUE_FINALS.`
+  - **Evidence:** `src/arbs/resolution_audit.py and scripts/audit_resolutions.py retain deduplicated historical matches after catalog rollover, fetch and hash public venue evidence, recognize Kalshi finalized status, select one Polymarket moneyline, require unambiguous winners, and fail closed. Live 2026-08-14 audit covered 68 historical matches from 569 validated reports: 21 comparable final pairs, 21 agreements and 0 divergences; data/reports/resolution-audit.json is READY_FOR_REVIEW and remains pricing-ineligible.`
 - [ ] **P5-07 — Complete sustained shadow run** `[In progress]`
   - **Acceptance:** At least several hundred reviewed events and a representative operating window record theoretical fills, subsequent movement, resolutions, false positives, uptime, and net results after modeled costs.
-  - **Evidence:** `data/reports/shadow-validation-checkpoint.json records 740 successful paired-book observations across 16 pairs over 34,716 seconds (9.64h), with 724 subsequent transitions and 185 top-quote changes; all 45 current semantic matches remain REVIEW/pricing-disabled. This is durable partial movement/latency evidence, but not yet a representative operating window or several hundred reviewed events; settled resolutions, false-positive review, uptime, and modeled net results remain.`
+  - **Evidence:** `data/reports/shadow-validation-checkpoint.json records 5,650 successful paired-book observations across 44 pairs over 120,922 seconds (33.59h), with 5,606 subsequent transitions and 1,142 top-quote changes; data/reports/resolution-audit.json adds 21/21 final-outcome agreements across 68 retained historical matches. All semantic matches remain REVIEW/pricing-disabled. This is durable partial latency, movement and resolution evidence, but not yet a representative window or several hundred independently reviewed events; false-positive review, explicit uptime and modeled net results remain.`
 - [ ] **P5-08 — Pass go/no-go review for execution design** `[Blocked]`
   - **Acceptance:** A signed evidence summary demonstrates matching precision, data reliability, modeled profitability, failure behavior, and unresolved risks; otherwise remain read-only.
-  - **Evidence:** `Blocked: P3-08 lacks independent labels, P5-06 has no comparable final pairs, and P5-07 lacks a representative window, several hundred reviewed events, uptime/false-positive review and modeled net results. No signed go/no-go summary exists.`
+  - **Evidence:** `Blocked: P3-08 lacks a sufficiently sized independently reviewed corpus and P5-07 still lacks a representative window, several hundred independently reviewed events, explicit uptime/false-positive review and modeled net results. P5-06 now has 21/21 final agreements, but no signed go/no-go summary exists.`
 
 ### P6 — Execution and controlled rollout
 
@@ -284,6 +284,7 @@ Design trading as an isolated, explicitly approved subsystem after shadow gates 
 - **2026-08-12** — Created evidence-backed rolling plan; marked repository foundation complete, raw discovery in progress, and execution deferred.
 - **2026-08-12** — Corrected the stale union-capture request assertion; all eight baseline tests now pass; advanced active work to representative production corpus capture.
 - **2026-08-12** — Captured and published a bounded live MLB checkpoint: 33 unique cross-venue event-identity matches from 76 Kalshi markets and 173 Polymarket events; all remain REVIEW and pricing-ineligible due to material rule differences.
+- **2026-08-14** — Extended shadow evidence to 33.59 hours and 5,650 paired-book observations; fixed catalog-rollover/finalized-status gaps in the historical resolution audit and verified 21/21 comparable final-outcome agreements with zero divergences.
 
 ---
 

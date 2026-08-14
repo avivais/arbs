@@ -1,19 +1,19 @@
 {
   "evidence_window": {
-    "elapsed_seconds": 34715.655785,
+    "elapsed_seconds": 120921.996195,
     "first": "2026-08-12T14:27:31.787143+00:00",
-    "last": "2026-08-13T00:06:07.442928+00:00"
+    "last": "2026-08-14T00:02:53.783338+00:00"
   },
   "gate_status": "PARTIAL_EVIDENCE_ONLY",
-  "generated_at": "2026-08-13T03:06:16.234912+03:00",
+  "generated_at": "2026-08-14T03:03:04.510887+03:00",
   "movement": {
-    "changed_transition_count": 724,
+    "changed_transition_count": 5605,
     "failure_count": 0,
-    "pair_count": 16,
+    "pair_count": 44,
     "schema_version": 1,
-    "successful_samples": 740,
-    "top_quote_changed_transition_count": 185,
-    "transition_count": 724
+    "successful_samples": 5650,
+    "top_quote_changed_transition_count": 1142,
+    "transition_count": 5606
   },
   "schema_version": 1,
   "semantic_eligibility": "ALL_REVIEW_PRICING_DISABLED",
@@ -21,28 +21,28 @@
     "failure_count": 0,
     "receipt_skew_ms": {
       "max": 20340.0,
-      "p50": 129.0,
-      "p95": 452.2999999999997,
-      "p99": 859.7400000000005
+      "p50": 112.0,
+      "p95": 260.5500000000002,
+      "p99": 526.0600000000013
     },
     "request_elapsed_ms": {
       "max": 20295.054,
-      "p50": 323.505,
-      "p95": 488.8331999999999,
-      "p99": 731.1614900000001
+      "p50": 318.118,
+      "p95": 425.62379999999996,
+      "p99": 573.1394100000001
     },
-    "sample_count": 740,
+    "sample_count": 5650,
     "schema_version": 1,
     "source_age_ms": {
-      "max": 100350.264,
-      "p50": 1658.5745,
-      "p95": 18433.405,
-      "p99": 54951.83996000008,
-      "sample_count": 540
+      "max": 948761.585,
+      "p50": 4510.0075,
+      "p95": 70832.8805000001,
+      "p99": 209330.65890000097,
+      "sample_count": 5450
     },
     "suggested_limits": {
-      "pair_skew_ms": 900,
-      "source_age_ms": 55000
+      "pair_skew_ms": 600,
+      "source_age_ms": 210000
     },
     "threshold_status": "READY_FOR_REVIEW"
   }

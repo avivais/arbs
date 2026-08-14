@@ -3,7 +3,7 @@
   "plan_id": "arbs-rolling-plan",
   "project": "Arbs — Kalshi ↔ Polymarket Sports Arbitrage",
   "status": "active",
-  "last_verified": "2026-08-13",
+  "last_verified": "2026-08-14",
   "status_values": [
     "done",
     "in_progress",
@@ -495,7 +495,7 @@
           "status": "done",
           "acceptance": "Quote-age and pair-skew limits derive from observed latency/movement distributions; stale/suspended books are excluded.",
           "evidence": [
-            "docs/freshness-policy.md and config/freshness/mlb-books-2026-08-12-v1.json derive a conservative 800ms pair-skew limit from the original 220-observation checkpoint; the 2026-08-13 checkpoint has 740 successful samples, p99 859.74ms and the same 20.34s fail-closed outlier, so the stricter existing limit remains unchanged pending a new reviewed policy version."
+            "docs/freshness-policy.md and config/freshness/mlb-books-2026-08-12-v1.json derive a conservative 800ms pair-skew limit from the original 220-observation checkpoint; the 2026-08-14 elapsed checkpoint has 5,650 successful samples over 33.59h, p99 526.06ms and the same 20.34s fail-closed outlier, so the stricter existing limit remains unchanged pending a new reviewed policy version."
           ]
         },
         {
@@ -581,10 +581,10 @@
         {
           "id": "P5-06",
           "title": "Audit post-resolution agreement",
-          "status": "next",
+          "status": "done",
           "acceptance": "Both venue resolutions are compared to canonical outcomes; every divergence is investigated and feeds policy/fixture updates.",
           "evidence": [
-            "src/arbs/resolution_audit.py and scripts/audit_resolutions.py now fetch and hash public venue evidence, select one moneyline, require final status plus an unambiguous winner, and fail closed. Live verification of 45 matched events found 0 comparable final pairs, 0 divergences, and no fetch failures; data/reports/resolution-audit.json remains AWAITING_BOTH_VENUE_FINALS."
+            "src/arbs/resolution_audit.py and scripts/audit_resolutions.py retain deduplicated historical matches after catalog rollover, fetch and hash public venue evidence, recognize Kalshi finalized status, select one Polymarket moneyline, require unambiguous winners, and fail closed. Live 2026-08-14 audit covered 68 historical matches from 569 validated reports: 21 comparable final pairs, 21 agreements and 0 divergences; data/reports/resolution-audit.json is READY_FOR_REVIEW and remains pricing-ineligible."
           ]
         },
         {
@@ -593,7 +593,7 @@
           "status": "in_progress",
           "acceptance": "At least several hundred reviewed events and a representative operating window record theoretical fills, subsequent movement, resolutions, false positives, uptime, and net results after modeled costs.",
           "evidence": [
-            "data/reports/shadow-validation-checkpoint.json records 740 successful paired-book observations across 16 pairs over 34,716 seconds (9.64h), with 724 subsequent transitions and 185 top-quote changes; all 45 current semantic matches remain REVIEW/pricing-disabled. This is durable partial movement/latency evidence, but not yet a representative operating window or several hundred reviewed events; settled resolutions, false-positive review, uptime, and modeled net results remain."
+            "data/reports/shadow-validation-checkpoint.json records 5,650 successful paired-book observations across 44 pairs over 120,922 seconds (33.59h), with 5,606 subsequent transitions and 1,142 top-quote changes; data/reports/resolution-audit.json adds 21/21 final-outcome agreements across 68 retained historical matches. All semantic matches remain REVIEW/pricing-disabled. This is durable partial latency, movement and resolution evidence, but not yet a representative window or several hundred independently reviewed events; false-positive review, explicit uptime and modeled net results remain."
           ]
         },
         {
@@ -602,7 +602,7 @@
           "status": "blocked",
           "acceptance": "A signed evidence summary demonstrates matching precision, data reliability, modeled profitability, failure behavior, and unresolved risks; otherwise remain read-only.",
           "evidence": [
-            "Blocked: P3-08 lacks independent labels, P5-06 has no comparable final pairs, and P5-07 lacks a representative window, several hundred reviewed events, uptime/false-positive review and modeled net results. No signed go/no-go summary exists."
+            "Blocked: P3-08 lacks a sufficiently sized independently reviewed corpus and P5-07 still lacks a representative window, several hundred independently reviewed events, explicit uptime/false-positive review and modeled net results. P5-06 now has 21/21 final agreements, but no signed go/no-go summary exists."
           ]
         }
       ]
@@ -738,8 +738,12 @@
     {
       "date": "2026-08-12",
       "change": "Captured and published a bounded live MLB checkpoint: 33 unique cross-venue event-identity matches from 76 Kalshi markets and 173 Polymarket events; all remain REVIEW and pricing-ineligible due to material rule differences."
+    },
+    {
+      "date": "2026-08-14",
+      "change": "Extended shadow evidence to 33.59 hours and 5,650 paired-book observations; fixed catalog-rollover/finalized-status gaps in the historical resolution audit and verified 21/21 comparable final-outcome agreements with zero divergences."
     }
   ],
-  "next_task": "P5-07: continue immutable collection beyond the initial 9.64-hour/740-sample checkpoint and rerun fail-closed resolution audit; P3-08, P5-06 and P5-08 remain evidence-gated.",
-  "updated_at": "2026-08-13"
+  "next_task": "P5-07: continue immutable collection beyond the 33.59-hour/5,650-sample checkpoint and accumulate independent labels, uptime, false-positive and modeled-result evidence; P3-08 and P5-08 remain evidence-gated.",
+  "updated_at": "2026-08-14"
 }

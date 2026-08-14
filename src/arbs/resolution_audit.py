@@ -20,6 +20,24 @@ def _poly_moneyline(event: dict[str, Any]) -> dict[str, Any] | None:
     return rows[0] if len(rows) == 1 else None
 
 
+def unique_historical_matches(reports: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    """Retain one source-linked row per cross-venue event across rolling reports.
+
+    Resolution evidence becomes available after an event leaves the live catalog, so
+    auditing only the newest discovery report would discard the events most likely
+    to be final. Later representations win deterministically.
+    """
+    matches: dict[tuple[str, str], dict[str, Any]] = {}
+    for report in reports:
+        for match in report.get("matches", []):
+            key = (
+                str(match["kalshi"]["event_id"]),
+                str(match["polymarket"]["event_id"]),
+            )
+            matches[key] = match
+    return [matches[key] for key in sorted(matches)]
+
+
 def audit_match(
     match: dict[str, Any],
     kalshi_get: Callable[[str], Any] | None = None,
@@ -37,7 +55,11 @@ def audit_match(
         c["selected_team"] for c, payload in zip(k_contracts, k_payloads)
         if str(payload.get("result", "")).lower() == "yes"
     ]
-    k_final = all(str(x.get("status", "")).lower() in {"settled", "closed"} and x.get("result") for x in k_payloads)
+    k_final = all(
+        str(x.get("status", "")).lower() in {"settled", "closed", "finalized"}
+        and x.get("result")
+        for x in k_payloads
+    )
 
     p_outcome = None
     p_final = False
