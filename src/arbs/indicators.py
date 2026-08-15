@@ -66,4 +66,18 @@ def decimal_text(value:Decimal)->str:return format(value,"f")
 
 def candidate_record(c:Candidate)->dict[str,Any]:
  q=c.quantity
- return {"status":c.status,"indicator_type":"NORMAL_SETTLEMENT_COMPLEMENT_COST","assumed_scenario":"GAME_COMPLETES_AND_BOTH_VENUES_GRADE_THE_SAME_WINNER","pricing_eligible":False,"actionability":"NON_ACTIONABLE","settlement_status":"REVIEW","fee_status":"UNVERIFIED_EXCLUDED","fee_total":None,"net_edge":None,"reason_codes":["SETTLEMENT_EQUIVALENCE_NOT_PROVEN","CANCELLATION_POSTPONEMENT_RULES_DIFFER"],"quantity":decimal_text(q),"quantity_cap":"1000","legs":[{"venue":x.venue,"outcome":x.outcome,"instrument_id":x.instrument_id,"best_ask":decimal_text(x.asks[0].price) if x.asks else None,"vwap":decimal_text(cost/q) if q else None,"received_at":x.received_at.isoformat().replace("+00:00","Z"),"source_time_status":x.source_time_status,"source_age_at_receipt_ms":decimal_text(x.source_age_at_receipt_ms) if x.source_age_at_receipt_ms is not None else None} for x,cost in ((c.first,c.first_cost),(c.second,c.second_cost))],"combined_vwap":decimal_text(c.total_cost/q) if q else None,"normal_settlement_raw_gap_per_pair":decimal_text(c.raw_gap/q) if q else None,"normal_settlement_raw_gap_total":decimal_text(c.raw_gap),"assumed_execution_reserve_per_pair":decimal_text(c.reserve/q) if q else None,"assumed_execution_reserve_total":decimal_text(c.reserve),"gap_after_assumed_reserve_per_pair":decimal_text(c.gap_after_reserve/q) if q else None,"gap_after_assumed_reserve_total":decimal_text(c.gap_after_reserve),"quote_age_ms_at_generation":c.quote_age_ms,"cross_leg_receipt_skew_ms":c.pair_skew_ms}
+ legs=[]
+ for x,cost in ((c.first,c.first_cost),(c.second,c.second_cost)):
+  legs.append({
+   "venue":x.venue,
+   "outcome":x.outcome,
+   "instrument_id":x.instrument_id,
+   "best_ask":decimal_text(x.asks[0].price) if x.asks else None,
+   "best_ask_quantity":decimal_text(x.asks[0].quantity) if x.asks else None,
+   "ask_levels":[{"price":decimal_text(level.price),"quantity":decimal_text(level.quantity)} for level in x.asks],
+   "vwap":decimal_text(cost/q) if q else None,
+   "received_at":x.received_at.isoformat().replace("+00:00","Z"),
+   "source_time_status":x.source_time_status,
+   "source_age_at_receipt_ms":decimal_text(x.source_age_at_receipt_ms) if x.source_age_at_receipt_ms is not None else None,
+  })
+ return {"status":c.status,"indicator_type":"NORMAL_SETTLEMENT_COMPLEMENT_COST","assumed_scenario":"GAME_COMPLETES_AND_BOTH_VENUES_GRADE_THE_SAME_WINNER","pricing_eligible":False,"actionability":"NON_ACTIONABLE","settlement_status":"REVIEW","fee_status":"UNVERIFIED_EXCLUDED","fee_total":None,"net_edge":None,"reason_codes":["SETTLEMENT_EQUIVALENCE_NOT_PROVEN","CANCELLATION_POSTPONEMENT_RULES_DIFFER"],"quantity":decimal_text(q),"quantity_cap":"1000","legs":legs,"combined_vwap":decimal_text(c.total_cost/q) if q else None,"normal_settlement_raw_gap_per_pair":decimal_text(c.raw_gap/q) if q else None,"normal_settlement_raw_gap_total":decimal_text(c.raw_gap),"assumed_execution_reserve_per_pair":decimal_text(c.reserve/q) if q else None,"assumed_execution_reserve_total":decimal_text(c.reserve),"gap_after_assumed_reserve_per_pair":decimal_text(c.gap_after_reserve/q) if q else None,"gap_after_assumed_reserve_total":decimal_text(c.gap_after_reserve),"quote_age_ms_at_generation":c.quote_age_ms,"cross_leg_receipt_skew_ms":c.pair_skew_ms}

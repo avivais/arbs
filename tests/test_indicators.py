@@ -74,6 +74,8 @@ class IndicatorTests(unittest.TestCase):
         self.assertEqual(row["actionability"], "NON_ACTIONABLE")
         self.assertIsNone(row["net_edge"])
         self.assertNotIn("profit", " ".join(row.keys()))
+        self.assertEqual(row["legs"][0]["best_ask_quantity"], "1")
+        self.assertEqual(row["legs"][0]["ask_levels"], [{"price": "0.4", "quantity": "1"}])
 
 
 if __name__ == "__main__":
