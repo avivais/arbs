@@ -1,12 +1,12 @@
 {
-  "agreement_count": 25,
+  "agreement_count": 43,
   "audits": [
     {
       "agreement": true,
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "a951c2a1ab8463838fa2c528ffd5f5463041f7a77dc1699d6675dd08fbd8249e",
-        "polymarket": "b4379ed3974fef3d7065784532ced28d1a07b3f1a4e56c82b3ba8b7be1ffd08e"
+        "polymarket": "4fc34d2b658e86f33e7bb881c4dc586c7ac38ab8a5dfe2c9cd0a82e12af7b413"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG121340BALMIN",
       "kalshi_outcome": "MIN",
@@ -25,7 +25,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "8659e4b725e2bc0a0563f0598d664245a39caa0e21333646100029f03752c366",
-        "polymarket": "600fa300122653366c7e6a2df2da091c0a8f64baa80359afa777e725efc97152"
+        "polymarket": "24baf1966894b20923156c2ff531c605fb5d1e2b87d1025f187353e347f692e2"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG121415PHISTL",
       "kalshi_outcome": "STL",
@@ -44,7 +44,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "7b1cc8a9cd5408aad88d99dc639c3a59253eedcc4263b51465668a157f391469",
-        "polymarket": "c4cbac4da2d7a37333c25324002098bea2c6ef100504749702f2b96664b9b109"
+        "polymarket": "e6121bbff7e7a71e5e9a7c1d03b20fcd4f12152d1d5d3005975d7a9851971398"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG121505TBATH",
       "kalshi_outcome": "TB",
@@ -63,7 +63,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "2ef9eedc8eeed815d39b555712783626e2027add9cb832f11ad258a67509610e",
-        "polymarket": "b6c0f393281d5c498c37f088af6f0c298195017e9d863b1c50589de6503e37f0"
+        "polymarket": "c67fdd794a410d232e4f1d2a8a1f18bf797dc1fe85fe9ac2aed9ee907b4361b9"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG121540COLAZ",
       "kalshi_outcome": "COL",
@@ -82,7 +82,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "70fd2a2ab69d9c8365dfdcd5774d5103b60c4f7c778aecaf2969209085bcf46e",
-        "polymarket": "d21bf1bd047266a78ed108ae2e90d4e8f303662b1422959422e9c7bb29a7905c"
+        "polymarket": "974aee959c80923bee019f84f33aeabea69ea3a1a858bea74e34647fdd875661"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG121545HOUSF",
       "kalshi_outcome": "HOU",
@@ -101,7 +101,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "f8443348bf8298375d553ded3eb32f9d89e148a455cdb3080d3623bc1f98c866",
-        "polymarket": "191ddef54d9b5e00fb9d9b001e9cebc25c17799c40e4b37112a0db66b8614063"
+        "polymarket": "b680b897541a156d6395d91b26d9bc149325d28b893ed37905158b33496a1ce3"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG121610MILSD",
       "kalshi_outcome": "SD",
@@ -120,7 +120,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "13f3d60785ee9b924b62bd419cdcb9bc49a63944d0eec86082964c5c80ad37d0",
-        "polymarket": "b6e4376293a49fac11c3d3f6e430ea4640e4d857bc1e897556bc38aea7959678"
+        "polymarket": "88325175241fab8860f3f291fe9040a7f680a30fb219f2299194009604bdd0ba"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG121840CLEDET",
       "kalshi_outcome": "CLE",
@@ -139,7 +139,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "967cd451e7bf9f24f8d00c296ed858f687b1d157563998724c0a251afd04f195",
-        "polymarket": "f9eb45e260aea660f85778e502c23dbf060bd5b8344dee8b78d7d8f5ce4d9de8"
+        "polymarket": "ccab7b1f3b53d0ceeee82753f1ba33feed853bd51fb67fbcc3e8967fe6e9400f"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG121840PITMIA",
       "kalshi_outcome": "MIA",
@@ -158,7 +158,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "426e7e65d6f787b476d77180c2e8c1f68a6326825615d21fee47bd76e906c4dc",
-        "polymarket": "e1708a114143a5b1cb48101bad4acd51cb165e283a2ca846dc2a440befbde4c8"
+        "polymarket": "6c807d4103f47151d92b371b819282a9406e078e1ddbf176380591d9a7bd0464"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG121845CHCWSH",
       "kalshi_outcome": "CHC",
@@ -177,7 +177,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "c717b2ad035c7986b4804d56b95b9f6cac5776290205063a282a34094af4f18b",
-        "polymarket": "dc655e7eec2439f4a93123b3dddd31c317be02862f237927edf435942ad5f9cc"
+        "polymarket": "4ded9ac94cf6c2f15831b466a4882037ce73530588e77836fa99616662c12898"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG121905SEANYY",
       "kalshi_outcome": "NYY",
@@ -196,7 +196,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "9b99ee090c891e7cba4cbbb30a147d85b3cc7b7606433d98bf0ec765821f19b2",
-        "polymarket": "c855ba4eac479c9d29243adee8f8067227ee6a06a993a2733b096dab1cf78d88"
+        "polymarket": "b492c3b00da5e50bc57cdcb4c4233c412db9a37dc6684e220447ebd5aeb599ae"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG121907BOSTOR",
       "kalshi_outcome": "TOR",
@@ -215,7 +215,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "9d4597e3047c4c0edd498efb06cd04d29612e8f2c28f5d39c1c447f4e4f432a7",
-        "polymarket": "aa21b79958adaa243c2eedd8ca6d08d1aec25b7598c7c6fff6a08f7f69473408"
+        "polymarket": "b65d1748a735c63cf47243fccaa8b996d273dcd2e714dff54fb2687dfcd9b88a"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG121915NYMATL",
       "kalshi_outcome": "ATL",
@@ -234,7 +234,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "35ed3d4e6ff0236c409b8c958a2d5171d6d6c120d38660857f1a98f51f4f6b50",
-        "polymarket": "553fe0d137b24f6319564b42a269cb43fff3b6b66cffda486d1161c4249fe480"
+        "polymarket": "a666c9ba3a07b104d3628700c1bcf235746d50bf933920e106e3ad792e343ef0"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG121940CINCWS",
       "kalshi_outcome": "CWS",
@@ -253,7 +253,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "5dfee26c6cd4bfb4720c133967b99b5795530fdcbe35455b6b62edea6e32eb91",
-        "polymarket": "cfe96d8a086b553ee35a8fadcc2b4a53445f4efc8be0f5eed7abb1b04f84f320"
+        "polymarket": "2cd2d9658642d259c89e083d0f6cef36c526aba2bb4c2c593a2ca4a795c0952b"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG122210KCLAD",
       "kalshi_outcome": "LAD",
@@ -272,7 +272,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "b02029dcde32a6a0b4397164308c1d2eab36840cd5da09c2c08986c5b2131816",
-        "polymarket": "6f447f3c29859f8b0d38dfd9c746ff984f31902ebe4f0d9cefc84c02ff9bf51b"
+        "polymarket": "c0053ee84090dfa099b9be2f6aa843eba473a24eca5ca473be7f53661d3f8fd1"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG122210TEXLAA",
       "kalshi_outcome": "LAA",
@@ -291,7 +291,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "b11ffdd4f638c694be403ccd8205c12b8f71927191f6ab1734caa4d77c6b14f9",
-        "polymarket": "4be37efde8747ea7b6b32d88c398ed47d3f67e12d2e0a980c2305a8f5f92dd60"
+        "polymarket": "1639c63670d46a5efc86de1da34dc00df5838ac018bf220a5a96f80bb9a16bcb"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG131310CLEDET",
       "kalshi_outcome": "DET",
@@ -310,7 +310,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "6762f5d05a35510a4ae5ad97621f84fc9086ddcf1ace854f8812ce7b439cf14f",
-        "polymarket": "9fff80d6ed97bf51122455bdb8c5fac76f9ae104559b211847d002789a050df0"
+        "polymarket": "d3148a8e632b6e9e42fd4569c9392e9175ca3f5fbb33cdfb611b7a885f077667"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG131310PITMIA",
       "kalshi_outcome": "PIT",
@@ -329,7 +329,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "84e63beed2bb4b6d117251026234c62649c938e05d57a8b2f63fed15d53061c2",
-        "polymarket": "4d029deeb733345ca12573509fe31606cef1508b738489058237f6b66d4f984a"
+        "polymarket": "81ad43efd1d747b43c13d7b428b186e0f37afccea9f215e2a73fa45e2eac3335"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG131335SEANYY",
       "kalshi_outcome": "SEA",
@@ -348,7 +348,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "932196ed5d9f10ced252d460e6b9bfcfca6fff101a4607cec14c653696760186",
-        "polymarket": "a85d189821fdf98a3418145fb5e674a403e4b6fcfc7b0cd919ef29110aeb618d"
+        "polymarket": "8a9b879329e11c2f85167f67c6220eb334d76fa32d1640fd5be871f0fdb851d5"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG131410CINCWS",
       "kalshi_outcome": "CIN",
@@ -367,7 +367,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "cb2e7f53cc766c4a7b51b1a8c193adef80149a92eba253818324de4ae4554829",
-        "polymarket": "401a685e4eabcecfa80fec4382f1a6c8cea4d1f9a628734ea701a6c4691e2ac2"
+        "polymarket": "3475ce3ca539c805544fc4e131e4ebb0bb03234257b0b8b4d77591b097d00ed9"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG131507BOSTOR",
       "kalshi_outcome": "BOS",
@@ -386,7 +386,7 @@
       "comparable": true,
       "evidence_sha256": {
         "kalshi": "84305c285a97dcd5385bf8eae63ab39767c4ca4375f66b8e5628d2282deb2bff",
-        "polymarket": "09ecff5f66b69e596278e2cc678c94ef007d52adceea659dbd2f90f30b52c058"
+        "polymarket": "7cfd52bdba31f2a041880a38ea5b802d05974f159badf65868e7bd96e6c10119"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG131605CHCWSH",
       "kalshi_outcome": "WSH",
@@ -404,8 +404,8 @@
       "agreement": true,
       "comparable": true,
       "evidence_sha256": {
-        "kalshi": "6ee8788bb57b0b43acb800653192c7052d4fce8bbd9acf722469f87eb3a6d338",
-        "polymarket": "ed2ee6656f2566cd2e2d0a5633862b8d0adf69d25a02ddfb00841ef163bda792"
+        "kalshi": "0ae8488df6af9efb0ddafcc337853236b39a58811dc7c9428f1bffddb765b9e9",
+        "polymarket": "e61650dd9a8ad22db9bb7eaeeacc6cf7720809a5427f9fa273dd7169936b1355"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG131930PHIMIN",
       "kalshi_outcome": "PHI",
@@ -423,8 +423,8 @@
       "agreement": true,
       "comparable": true,
       "evidence_sha256": {
-        "kalshi": "954ce1c888ea07a238b714449d116a26e1cd0b12b811f7a86fd0222da1fc659d",
-        "polymarket": "08344e842a39c4bcd53505f3533dd0c005a2a9789e7f1ddc65421c9a9f0bb4ac"
+        "kalshi": "fe0633db099132e97fead04ee3567aec29debf3c9289b4cf175c55d22bb995f5",
+        "polymarket": "fda754940662101de251f0f51bf788f95336e1b0fa2bd55b3bed018c08fa69ac"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG132207TEXLAA",
       "kalshi_outcome": "LAA",
@@ -442,8 +442,8 @@
       "agreement": true,
       "comparable": true,
       "evidence_sha256": {
-        "kalshi": "58d0464a9a23b9615c41cb8ea28b29319e8246b9a0237a582e8c4349b1ec1981",
-        "polymarket": "18b85888484577696be4907118f34e6cc0df185405163977f31275588a562b4a"
+        "kalshi": "3957494654b67f042f146f1fe2432a3767800ba140ab70b843e3de56a583e5a1",
+        "polymarket": "91f5c2783b736bd27fbf963546ceb8fa9724a12e8ba8e155814c88cacdfc6fc7"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG132210MILLAD",
       "kalshi_outcome": "MIL",
@@ -461,8 +461,8 @@
       "agreement": true,
       "comparable": true,
       "evidence_sha256": {
-        "kalshi": "b49e89c6aa492be1379506092f11a76c4d79084cc26b77f68df56ccc3d442eb2",
-        "polymarket": "f0281d596b05eed0188a12780686513826cc20c90597f1700b2659808ebc57a1"
+        "kalshi": "be3f39cca4d08b7442cea4e6dfdb5120fcd78cfa5850df847f93c9f18a5f9b75",
+        "polymarket": "28026385cb8829f8282ec67c7398fb51ca1cb5e03f3ac6bed2320c97b328b048"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG141420STLCHC",
       "kalshi_outcome": "CHC",
@@ -477,353 +477,353 @@
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "82bd01d639c318d03cf22b44e49d62ebccac1161f3f3700071de5e158c541477",
-        "polymarket": "315852b9e23d7a8fd96b98e94a3e2f958f6f03d5fe73d931c06de85af4f6c0db"
+        "kalshi": "acdb70aa0afe0048b07e315fb551ff7474cc2cf832c0eadb319048296740634b",
+        "polymarket": "9ec46c8c49eb9033c3ad0410807ed5a85afc52b6a3bde837400d48c3a1569422"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG141810MIACIN",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "CIN",
+      "kalshi_status": "FINAL",
       "participants": [
         "CIN",
         "MIA"
       ],
       "polymarket_event_id": "815581",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "CIN",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "035f5af2d97a36db901d1da51c992c33ba5521e6ce0ecddb71a372de212a35a6",
-        "polymarket": "6a2783ef66c4d186b84013dce6c06b995b2b17f5cbd6e3e9a273e23d31c10089"
+        "kalshi": "bd3d29c4f61aecf0232a34118b98a8d7387057d908adb3c2502b87f60530363d",
+        "polymarket": "00256193889ff35cca9ef9281e5dd14794cb720a95e869f103d0a0f905b91102"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG141840BOSPIT",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "PIT",
+      "kalshi_status": "FINAL",
       "participants": [
         "BOS",
         "PIT"
       ],
       "polymarket_event_id": "815583",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "PIT",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "cc2fc3d7c79c97c4ca342212a2083b2632be3c109b3cf8aa875f96411cd7d355",
-        "polymarket": "c4d95f94ea1823c8f2b8b0ef211926438f66ec8f02e23ce46b3987ef812e051c"
+        "kalshi": "2d960edb433df6150f1484fb01a8ce0e43050b3ff47a895bd2e0a8d0cbb48c13",
+        "polymarket": "f1aab58dab5c53643a016c3b6e06d187b6c08aa7f1a2f25c256d2ac461be0f6d"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG141840CWSDET",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "CWS",
+      "kalshi_status": "FINAL",
       "participants": [
         "CWS",
         "DET"
       ],
       "polymarket_event_id": "815582",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "CWS",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "e4b6dc334d56fc283c79ef66b0842878951e24a348cc58e480e24abf7e170ed2",
-        "polymarket": "891ef437377e13d1e9a953ef6b193c28c8a67b048b321531655d21cdae0bae14"
+        "kalshi": "e72eb94601035c579ab8322dad56c9d2a430fdbd6fd888f18b2c1329d1030722",
+        "polymarket": "8bb126eac8961c87e1852f82ce9ffbb0e2a67953d8d2288ed0dacb781d1651f8"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG141910BALTB",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "BAL",
+      "kalshi_status": "FINAL",
       "participants": [
         "BAL",
         "TB"
       ],
       "polymarket_event_id": "815586",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "BAL",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "3bcd3b1763a84c9b5a1642a6534b56dea6b21f537782283979697abc0e84ff1d",
-        "polymarket": "add6d8cf6a34bf8ffdbdf2c8fa98785ccc559650f468824fea187df5ca8f76c3"
+        "kalshi": "00d8e5a143793b5630f68ad20497ef2bb67b6a57083820f15d2e0127d32c9708",
+        "polymarket": "2be136ce99b233e757703313a0c00d4409b87a738da8f5a4806d0f1393ebdfdb"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG141910SDCLE",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "SD",
+      "kalshi_status": "FINAL",
       "participants": [
         "CLE",
         "SD"
       ],
       "polymarket_event_id": "815584",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "SD",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "58d61c291fadf6f40456c74db74042d0159035c2b140dcc4ac0d284af179d809",
-        "polymarket": "9795543a4d894613e886df5c3e6cbe5848509c4a7ceb0245981555c428b25385"
+        "kalshi": "8a235735ea1b832378a0d0eaa679920103a68c0945ee646a7bba38529b676c82",
+        "polymarket": "0ec59f8e2076e7873cc2094031c81876b74a93ce4b90e2cf207b9e5a6998b60f"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG141910WSHNYM",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "NYM",
+      "kalshi_status": "FINAL",
       "participants": [
         "NYM",
         "WSH"
       ],
       "polymarket_event_id": "815585",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "NYM",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "a41ad2adbec351ab6ec42d42d87b2ea7ad6f260e4eb5001779658432c73fb769",
-        "polymarket": "06c384c056ee87636375ec3f1e13e85538755933cc780082f45d971e51ae1ce2"
+        "kalshi": "0d8bfc1b0997780dcc2e8eb4af52a3c0159e1329a2989d467793551dacb346b2",
+        "polymarket": "9f55f651d19449e91eac00d6fa3bb3166ffa401200c65782e6ef503c8a5a9424"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG141915AZATL",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "ARI",
+      "kalshi_status": "FINAL",
       "participants": [
         "ARI",
         "ATL"
       ],
       "polymarket_event_id": "815587",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "ARI",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "9f2a515181f3d629924c9bf84fc3afbf3438470aec832ae3ee754f2b573e1f85",
-        "polymarket": "f8494e3a2a8950898c4b6848163552e97f8518c02629d75a9dfbb985dbd3bd78"
+        "kalshi": "4bbb4a06c7ffc3fd29512275090f4c4fe8823f8951ae079e3f99a333fe262437",
+        "polymarket": "287493a4d5efef6b005e0335d896a0dad0333d5787fb0dbe456cf8491a3b54e7"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG141915NYYTOR",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "TOR",
+      "kalshi_status": "FINAL",
       "participants": [
         "NYY",
         "TOR"
       ],
       "polymarket_event_id": "815588",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "TOR",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "555e5b782308cde7359cc6aae57b4c2e1f1c6c5a756ec629f115b68b5d9a5ed0",
-        "polymarket": "2125488f0571357692e9439ae7b99a3ff063d84a3fb7a4ad5dd94905ad895aba"
+        "kalshi": "511c8b9dadb7fccb5074d772e6d2af183299e544106cd82930a6fb874f1dc3a9",
+        "polymarket": "ce5e079e6a8c7d62288df8c327efaa75e943a9c3cb35f50447a565ef29b11483"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG142010SEAHOU",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "HOU",
+      "kalshi_status": "FINAL",
       "participants": [
         "HOU",
         "SEA"
       ],
       "polymarket_event_id": "815589",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "HOU",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "aa8f65deb3339a1a9e7db27eca80e07152c41bc3d815449fed909e9fbb5b360c",
-        "polymarket": "5302de7aaf3659fd4c72e5a5408436771d1af2d10d29ac66b4c499657c553f02"
+        "kalshi": "f1fedfef3e99fcb7cb1d1dde9c5e5d95c32e7f7baddcb88cae4cde7fd5e07ab4",
+        "polymarket": "953f6b71756f99f495c01613729787a71da9ab5dff11a0ec5011695858cff001"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG142138KCLAA",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "KC",
+      "kalshi_status": "FINAL",
       "participants": [
         "KC",
         "LAA"
       ],
       "polymarket_event_id": "815590",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "KC",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "b8267c4a8bf9b2fdd5ea5003b055fb972e11c415a11a859fe085fd010f31073c",
-        "polymarket": "123372317b64908168b0dbf50846eda6c5581e4fea829cfe53a17b6d3c4a8c35"
+        "kalshi": "be019149918f95d6ed6dfd50734c4df1a0f26c09a0b8d73807fcf992673412fc",
+        "polymarket": "0f7381e2f346bbcf0b9a7cf63ae175fc6d9bd0025a1a0fcae66b32261e4da791"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG142140TEXATH",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "ATH",
+      "kalshi_status": "FINAL",
       "participants": [
         "ATH",
         "TEX"
       ],
       "polymarket_event_id": "815591",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "ATH",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "64efc882510d94aa212cb3961037cb32346cef1155916714153f17902d63cf32",
-        "polymarket": "de213ef95eff27b41f7148e71db6442f6b08c3cdfafc39d589d9866cee6293f6"
+        "kalshi": "3d77e40aaab770aebd61bbf9df5068cfbd4232d8f94a307a49157b56f96ea396",
+        "polymarket": "5a76e23f7892d9be5c041b0278d59689f65a0a6eca21b5fccea73d7ae3442947"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG142210MILLAD",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "LAD",
+      "kalshi_status": "FINAL",
       "participants": [
         "LAD",
         "MIL"
       ],
       "polymarket_event_id": "815592",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "LAD",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "49e4b56232f6af145f30dc196f4b16bfeff85e1ea86cce0ec787aa9cadd9107e",
-        "polymarket": "5d73001ab3b32a12660bfa19dea1c66e41e6cc43e544ff15a13708d12075e11e"
+        "kalshi": "c97ffd1ae15bb00d8ab28d427b4d6c489da94aacc65dadf00d322620b280802e",
+        "polymarket": "731d5eefdff7f19cdc49015f4cb255372c1c506dfaf14156840a887f86439f2b"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG142215COLSF",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "COL",
+      "kalshi_status": "FINAL",
       "participants": [
         "COL",
         "SF"
       ],
       "polymarket_event_id": "815593",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "COL",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "5b2233a50d1beea3b222e97143d2481fe45b067a8df61c65569a59a6dd09511c",
-        "polymarket": "54a93d2f90d756b0e41f7f5fecbc9a4896092f6c7ad960f19472198237b772b9"
+        "kalshi": "e579eeed2136b4b9c3a87c81229b10d3c05878c9300ef01c86588840f32b4a81",
+        "polymarket": "4808b32ef08c568f8cfb99adb3e487ee558576ca7b2b9249cf7ffd1fcd130ca8"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG151310CWSDET",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "CWS",
+      "kalshi_status": "FINAL",
       "participants": [
         "CWS",
         "DET"
       ],
       "polymarket_event_id": "821308",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "CWS",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "1ac77424a7c97b10551c8196145256fa5c07ea73ac700285216fb7b3971d8669",
-        "polymarket": "b7710b9850938a8de59cd4526f8402e3a8ae0f3edf216d149e74d6122288fe61"
+        "kalshi": "bd4c2e03e69e198efb08416be5ffce14b08f096d7cfc37fa2489b24f93befaca",
+        "polymarket": "9f5ecaaef03d19e42e8680860f0964cc2e782187c212018dfce00869f53900ad"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG151420STLCHC",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "STL",
+      "kalshi_status": "FINAL",
       "participants": [
         "CHC",
         "STL"
       ],
       "polymarket_event_id": "821309",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "STL",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "78f2596776dc7f2edcfb0bcbdd7c1cd68718f1fc33432a04cd2b45d7b9f32668",
-        "polymarket": "b95d85cfb7b5ae9ccf7cbeae4ee9a5995aa8d7fb406fc87b9a02d9e2fa34d98b"
+        "kalshi": "b618a9e192dfd09aca717ed071945d13b4e393938447171866e9bb578462eb40",
+        "polymarket": "f754f6c5f8ca5b8c1f15cdaf22057b219f4cd00c2b19ca7415d03b271b659a70"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG151507NYYTOR",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "TOR",
+      "kalshi_status": "FINAL",
       "participants": [
         "NYY",
         "TOR"
       ],
       "polymarket_event_id": "821310",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "TOR",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "a6309027634247fb03ca6b89b080c1b86e9c56eb67b0a395e1d7ffeaf3fc04a1",
-        "polymarket": "89e0dde864a3645c30abd836c036121ac14f10443d0cee4d4e66fc439b44620a"
+        "kalshi": "dcfd0b35e37933166182fca302f5568ec72a9efb3401a2c168dffaf7a04bb6fe",
+        "polymarket": "e88d622db0bb8bb768b25a6d7f724fffeb294e187321658c46adc4fdb4452e7d"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG151605COLSF",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "SF",
+      "kalshi_status": "FINAL",
       "participants": [
         "COL",
         "SF"
       ],
       "polymarket_event_id": "821311",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "SF",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
-      "agreement": null,
-      "comparable": false,
+      "agreement": true,
+      "comparable": true,
       "evidence_sha256": {
-        "kalshi": "7adf38937ce4004f0355aa080fa18a640cceecb65c92aaaa8b1a7910201fc91d",
-        "polymarket": "18f92e638c29894ba9ba6874350cef6e0873a9a63b9a0d4e7b6f22a0ed4ab598"
+        "kalshi": "9501cdb6ce4b0462401c6c302edf9d9b3d60d50787f6e92b50eaffab5071c17d",
+        "polymarket": "2f5b1cc83c7989181d1d56e1e8a65ca9a2b182bf59b0620dc3f5eaf91161ffa6"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG151610WSHNYM",
-      "kalshi_outcome": null,
-      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "kalshi_outcome": "NYM",
+      "kalshi_status": "FINAL",
       "participants": [
         "NYM",
         "WSH"
       ],
       "polymarket_event_id": "821312",
-      "polymarket_outcome": null,
-      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "polymarket_outcome": "NYM",
+      "polymarket_status": "FINAL",
       "pricing_eligible": false
     },
     {
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "d3e4a1281c6362718ded65dd1322e083fdbd3c4c3f8e0f4429ba7c3496826877",
-        "polymarket": "926fe5aedf844eebe930854804506f747e5704ab994352fb8191dd638e51d075"
+        "kalshi": "9f4467c961a73e3d2d2167e986dd6677935777dcc569658fd2b164517ad629f4",
+        "polymarket": "15e1dfbfd4da3c7d001cb9337beb1095c7258b74b36c61ba6ddb325a02b908e6"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG151810BALTB",
       "kalshi_outcome": null,
@@ -841,8 +841,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "4a953ccd83146f7cec6ee4959c07f5e30ed31307cb5a11897806179ed8e6eb1f",
-        "polymarket": "814bf6e2c534c31d83df14584c039a463c1afec71e955add595ffc6e20ed2b11"
+        "kalshi": "942ed84e49f7ef5ea413d6090c9fcc7d718bfce6e96171e704fe5b01745f98d1",
+        "polymarket": "9f5978c9c752ca5032f05b22fdece85ee63f56c1c065ba78d4cd1e34787eb635"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG151840MIACIN",
       "kalshi_outcome": null,
@@ -860,8 +860,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "2e277a4b2762c5eb28726ccb40502e75c42a1f3ff1fbc0ca2866bf494e8ad548",
-        "polymarket": "f476c1e5cbf867a3fa0f4e242a0ffbe66b8acb48bd128c68a48cb7ae40d1c781"
+        "kalshi": "11690421fc706a25140b8859eccc75c7d30dbceec74bc6cfa66589a5c5b8a03d",
+        "polymarket": "5ef4bf435e90d3b0cc2ffb981f059d0e9fb757764de5b12c628957887a9bdb37"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG151910PHIMIN",
       "kalshi_outcome": null,
@@ -879,8 +879,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "14ac42db88262373b3e36cabd85c30345051c6fd9d0337f6a2c0fee6c7873ff3",
-        "polymarket": "56d5b3eb18d79228d43dabc8bacb4f1f1fea46d89a0e0c1701897577b39e85ed"
+        "kalshi": "ac0ad80f8054b220cc0c8305b043dfba0794fb4df00a4ff40d0238deb3483a8e",
+        "polymarket": "ce0c2ec8dca3b631f716e373bf3c3e294415690be8bc70e7bd93dbf4e78e3ce2"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG151910SDCLE",
       "kalshi_outcome": null,
@@ -898,8 +898,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "101007036e321413cb37f94f39aaf964d79be23f18cf555b3da167afe83792f0",
-        "polymarket": "4bfec74ba451e400fe6236bd70b161740946954c1f50de604b55265c8a4dd0e6"
+        "kalshi": "514671ba14b350915a963d361626d7d1467fbda2d80cb21b091f1ed8343b999d",
+        "polymarket": "932dffbca733a8ee37c9139de60fec12f1fbc817881a5c4c5d3c86cffc7684c9"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG151910SEAHOU",
       "kalshi_outcome": null,
@@ -917,8 +917,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "14992159e2b9a8e6144b2d4b5b11c77c211a4d868fb3c269c62d8ee970cffc5f",
-        "polymarket": "ea7d7f384d6aa1fef433c9e674803787140b472a4ca96630580f00bc415e2cfe"
+        "kalshi": "f1614fbfc688c01e70bff7010583fe0125819cc990ad4dd4318a77e99da7094d",
+        "polymarket": "273e4225acaf9119c43386322da0d25bd2784e2bbc54afed0fe32f5a1b89eb09"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG151915AZATL",
       "kalshi_outcome": null,
@@ -936,8 +936,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "2421cd8a9c4b891814875c5f4eb33fd9116ea790550ec291de10a3bfa7207a72",
-        "polymarket": "2c58806e598bdb35ab8ba64630bc91b530de7ac0d23fbc82ad87c7a4348080b5"
+        "kalshi": "5198da0fff8d08517f132857bb257c39b81bab1043caf4b343f21d0cb0c4f2c0",
+        "polymarket": "ab7ac0dcfe73641148c17cb7f5ec94f89fe734bfaff7a6a37f8723bb63bf09ce"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG151915BOSPIT",
       "kalshi_outcome": null,
@@ -955,8 +955,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "2bc6148bca85e0856e96a7a14088ac9523b7da244b206aeb8bf381772de8885b",
-        "polymarket": "fe816e3b1af33d9ec9cd08bff82a65256aa5c6e5f3525fd5903eceb74860f33d"
+        "kalshi": "497cefc1cc0fd35636e0096e48395622186e36864409159203e61aa950ed7e38",
+        "polymarket": "7508af719ac281bb2557316bfd25ea0129d0d62ae95e1b10981b5d0838948aad"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG151915MILLAD",
       "kalshi_outcome": null,
@@ -974,8 +974,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "753f67e526e7c3f749b6a54e57f67a5ae7430ec8895cdba2c3850321666e09cb",
-        "polymarket": "82540b9c0a9cc3a0a5cdf3ac03bf7c8ff52317c246366159d1f4a06e04eb273c"
+        "kalshi": "12ff9736f430854ec4ab9a0abf584d4555234a875d230d22c2017443d1831da2",
+        "polymarket": "07e7bf0ae4fa2b9706c0ceacff705ba7649dbe4c5559a187569748293515862c"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG152138KCLAA",
       "kalshi_outcome": null,
@@ -993,8 +993,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "28c5636dbcd586cdaa1849f451189d06692e437fc4b9d41fd5df131b370923f2",
-        "polymarket": "8ffcd0d1a594e3d64f9aa90239e48e2c0eb66f42ccc835a568c6d9cd35d3fbf3"
+        "kalshi": "73f0677095b74297a5004075335e484a4c5c829dec177cb61c9991a5bb779b39",
+        "polymarket": "afccdbd196bfd8aa370b91209b1937d48273454c2fc620a4e5206e8c243ca581"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG152140TEXATH",
       "kalshi_outcome": null,
@@ -1012,8 +1012,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "b740834fb7cfaffc22b2343a7dcde25822b38d97fcf9da9e284086bc7ba68f0a",
-        "polymarket": "bb63aeb206aa27a693122f7aa9261b94aea5031921dba19c640e2155279ad31a"
+        "kalshi": "2e59138219d8602b5091aed3ce3174cabe5043eaf8d8a968aa9c4d2033655ef8",
+        "polymarket": "fdf07cd859e3d723bfa7727fc7c03b516f72ef22086d2dadc463d363e38042a2"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG161215BALTB",
       "kalshi_outcome": null,
@@ -1031,8 +1031,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "6b6b00e42ed9f8c49bb744f505a615d4cc3d47814a32f05f8043d7a43c9eee9e",
-        "polymarket": "663a1448c6f8c3cfa081df388e38574179e7bac379731a86cf040228da6ba1db"
+        "kalshi": "50731b00d38eab0baf47c72b5079ea3d88b617a3806e9b9bdc7017529c6f81c7",
+        "polymarket": "d377ae9634db3225c1ef8b0be50358a948b9f39fb6ae6a7d2aff3d3f6d190b0e"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG161335AZATL",
       "kalshi_outcome": null,
@@ -1050,8 +1050,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "c213c2c551e00befc61bfd981293c6106f591253657111c218d6f313618a16d1",
-        "polymarket": "ee6a1d5499667bb0d6407768b84fc92a4b94864267220f4ea486f8eec294fafb"
+        "kalshi": "874823eb77c5050d218c0fdfed5f42798f0319d00cf46133d62f5c4e9f6e50e1",
+        "polymarket": "35eaf408046302fe81d74f5d5680dc8c4c8e9d57fec20382037c9d9091530fba"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG161335BOSPIT",
       "kalshi_outcome": null,
@@ -1069,8 +1069,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "55d260973323932abb72ed91b662a2b81fa9b8cc225717eaa59638e820ba3c6f",
-        "polymarket": "1b639ca93e18bd2c74ccaa8847d4b7e544d18e30cf10b692c9ae9ca965e25916"
+        "kalshi": "f55cd95c5d4dfc30db50e9e899351cc2834744d49557f100abd41830dd45552c",
+        "polymarket": "7c641ddfee5b456af84f2b55e121d9c5bbf6ec01af7f5ba4ad2d04f1a213762f"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG161337NYYTOR",
       "kalshi_outcome": null,
@@ -1088,8 +1088,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "febe0fcb8b9af2e43ddfb351c4ac28b7d2b36178fbb30f7e8b48302026e8dc85",
-        "polymarket": "e22acee708a292a65b32593d4f68275c05147ca3ef000fe33cae0947300b41e4"
+        "kalshi": "226d1eba1bb3ada78800d2ea411593e42f8527a6e1d75ff91a138826a2f937c9",
+        "polymarket": "c2ab66584696ee77d44dae1f053fdce265b6dc1e4e8d2af674ed89afaf5ac5c0"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG161340CWSDET",
       "kalshi_outcome": null,
@@ -1107,8 +1107,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "7268dff8a34e92290bedf0965c9fae9fa502519335fb6bb6acecaa6d6f6bedb0",
-        "polymarket": "6547d46076acab081fe23726692347b2e710f1775beca53b74305bc1525d6786"
+        "kalshi": "35479bf6993d30bb72bf48b64918399d1e97280ef0564961bb577eb2cda1d6c8",
+        "polymarket": "f56a9dd74f5c5c751c0e18d7506d25fe89c3ef514df95bc331a20eb344f989c3"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG161340MIACIN",
       "kalshi_outcome": null,
@@ -1126,8 +1126,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "b6fa7ba20f787fa5da545eb85af7e2994f447010d649b39378f020a05906b41f",
-        "polymarket": "5e5097b3aa16ed7b6b9532d5eac1169a6d8104fe9fe58f0eb9d9001bca9ee69e"
+        "kalshi": "d1a2bb477b62f9132b6cfaf1646ff2e796e2b1978df6b268e0ffb417bb0060fb",
+        "polymarket": "86c306ad7ea7619209895ac4486dc6d2cba3833fae3266b94bd27e2c9653afa0"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG161340SDCLE",
       "kalshi_outcome": null,
@@ -1145,8 +1145,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "f69faeefdf368f26b461c1caaa4e231753a2e6e38b6bbe7b7a9be2974707aa47",
-        "polymarket": "b44ad2b07dc53f8405304cc5d0c60dd1f62f623871eea128bdd2ac15f0e37a34"
+        "kalshi": "2887aa29c4fbcb39cbea19d5b9573fe0d53da4efa9536d87e951c7472c28401c",
+        "polymarket": "a3913c8ce714058c31fc15b21c7ec1b2138dff78c28c9ca702fc490a8f770c2f"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG161340WSHNYM",
       "kalshi_outcome": null,
@@ -1164,8 +1164,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "98e40847f40d25d9e1ff70d51564698f7548cc7128e4a8901bdafffc86b38f91",
-        "polymarket": "d29ef3953457a7fb0a69646f16f34d155fc07114be9a373f52c80830922549b9"
+        "kalshi": "6460059400271fc0c4fdf2ead160a47d227dccdb2870ee1d73c64042e7eb11cd",
+        "polymarket": "22fa1d0ddfc364ba92dc2bfc50e8f3671a52d90ddacc5259e5f92ac70788a41c"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG161410PHIMIN",
       "kalshi_outcome": null,
@@ -1183,8 +1183,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "ed1de54023dc5295e488632f70e7b478ad0e54207afdb9c80c2991e96f28a637",
-        "polymarket": "a0b0d7e1ba1676da8583d1c69cea0a975f4d6ff2210b4591c354f620382464af"
+        "kalshi": "2e9737e820d523b11d4faaee7bfffab51bfe755af3c1b15d20ac77f41df81f0a",
+        "polymarket": "db3de266d06a1eeed364197f6ea8184ddf7169282858eea7a7a61cd7265e06c2"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG161515STLCHC",
       "kalshi_outcome": null,
@@ -1202,8 +1202,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "217c1135debcb17479afb63f31f317c7704812529784f1566d6225a1c205d9d0",
-        "polymarket": "81e7085eec682ab592002112322db156164cae12bba53e084f48fdf50e7cef8c"
+        "kalshi": "0cffd14a0fa17fd1e3dede6f8ca5f0d81f1fd6be187533d5a2283fe00700ff2f",
+        "polymarket": "abe41f3ae3db5c4f3f479f17f0f606f733a58e433595fd79420f4a11fac68d69"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG161605COLSF",
       "kalshi_outcome": null,
@@ -1221,8 +1221,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "740000d82a7881ae9c9361ba6782631277c180c1f4702a7737599e2303726e77",
-        "polymarket": "29cba71eb38abe7b7ab1b941430ff26da16c5c81c47f9df1f75ffb649fbe55a4"
+        "kalshi": "5107fdaef20b73abbdad50a5fcb26293a3446983bbc13719b39615351b79a9cc",
+        "polymarket": "226d02a07ab0b61194a5e41be2bc1c5553dd0a8d0007b7837fdc525db8cbd2de"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG161605TEXATH",
       "kalshi_outcome": null,
@@ -1240,8 +1240,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "9f88603b754b665a38fe08fe5e4f4dab01a30be58e34167315e6de19c4c80478",
-        "polymarket": "0f6a28a19c97ee36d00e36880277348452f4e1e8e6e85cd5c715e55f6b03ade0"
+        "kalshi": "5e4b01df3b351ace372ccc40e0daeb079534477150dfa37b1980b72e98bd8012",
+        "polymarket": "66c8a92d9c1b51c991e60f33806f87433cf991cbb67ab7a7942687d9660175fa"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG161607KCLAA",
       "kalshi_outcome": null,
@@ -1259,8 +1259,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "0710805be079b0bae02d31c4fb2287465c2d211ab350cf54fb50a450ddddf56f",
-        "polymarket": "3eea001d4ca11343ead02fb0ff1c0d902956ad019529185e99249cd9cb12b282"
+        "kalshi": "3565a9a1be6765a645bc2b7acd160b12696297671d631e8132a53fb7ec8263fe",
+        "polymarket": "c9f68855b62c154fbddae989d2f2681f843faec8a9c7d51bc1accbe35e36ee36"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG161610MILLAD",
       "kalshi_outcome": null,
@@ -1278,8 +1278,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "2c0021152e10ea54600f5fd0805c6dbae777115ef65328f5029f338fde310306",
-        "polymarket": "5e9c44191b82c2f4b415cf4f80ecb635e4535a8137ad7a0f18bb395e42167250"
+        "kalshi": "932afbe2791f93ba7ecff714217091d697d9bbfa21560deae7899240e311c6bc",
+        "polymarket": "d2f9ce90b34d3a1fee64d33938eb839468a86edaf47cb768310ba1678d0ac498"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG161920SEAHOU",
       "kalshi_outcome": null,
@@ -1297,8 +1297,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "8a309e182288c6be1ea97ad115969c3e547bd54e04c0d58b7e0a2f39178ddc72",
-        "polymarket": "7d69e1bab3966a282140f25421ef93f5ce1b327d1c7ed6698bd4ab3d38ca2c6a"
+        "kalshi": "3dd6ff24f363f123baa5523f08fda12dd4a78978f7d5d164a92a5021e2a2e79a",
+        "polymarket": "d7f96b364eece2e8256b606a6d7c5d7fdfa722d46fd37be8214e36bf4d2d7e2e"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG171340STLCING1",
       "kalshi_outcome": null,
@@ -1316,8 +1316,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "b2101e7dcd18d812d2ddf86f2e90232b3719418a7c3a185dda195286e2851201",
-        "polymarket": "19c146a58cf723fac63b6ee5780fb49b08e7152f9431c93e72f462c5d6c2fa24"
+        "kalshi": "0a57893628c80f743634472cbefd040d00cdc637e4329cdb2141980ee8e73f11",
+        "polymarket": "aae176ec7be8c1b06804599c82d4a9b92e063e66e180a27b4a537160b0b13e5b"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG171805BALTB",
       "kalshi_outcome": null,
@@ -1335,8 +1335,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "ead0fc6db220cc2cdfaa203ded7ab08201ff6b2603a01f5ce7d0e26ecba2e424",
-        "polymarket": "3f615f726ad1537c3b53325ec39d01f4c0e0cfdaac780ca2dbf928de73a3c30d"
+        "kalshi": "17f03e7c9f62c33f116a3d499234603c94045806d94097b98a453025faae3956",
+        "polymarket": "47fd09f4b3904e628b95b93a1642dbc15f473abee25545ee54ef6240d036bc1c"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG171840MIAPHI",
       "kalshi_outcome": null,
@@ -1354,8 +1354,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "dbbfa0673e31c2f0771d83c472ba01d9ac3483da7a6fd2f87773e9bdd9f88655",
-        "polymarket": "a98bd58a1287385ab5c94200478197726b162bde403ca8534e8a624d7568a9ed"
+        "kalshi": "2bb81a00a2ecc4511043f422e12385ccb3777c33378cc752ec560d1108e6c4dc",
+        "polymarket": "57f26ef928f87fb18420aff3752b9d3b7cdaa445f0cb11b2ae8f19fcfce37526"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG171840STLCING2",
       "kalshi_outcome": null,
@@ -1373,8 +1373,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "c56cda671277113ad3da52a10287e987a5adf82c932b206aa9c0fc129a2dbc3f",
-        "polymarket": "a44f9126917de13aed86a9a5e50c39d6726f72b2cfd3ee9d0e5d7f8783d93609"
+        "kalshi": "78dda38033dc5670772632d5540e32a93ce6a57b3c2ae8b24e0b8d5ff18a5c43",
+        "polymarket": "05168ed195d43c8ba800b17e4e57be4f2915014397219a91288ecfc9beecfc6a"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG171905DETPIT",
       "kalshi_outcome": null,
@@ -1392,8 +1392,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "278e8a0cb83427c01c1dcd0e54b33bd66010c2e7725aafd201e856470ef7b991",
-        "polymarket": "7469fea9fcecee2032b659eedec479cb25e8563f5f08d33550763b1257979049"
+        "kalshi": "8b132c1f9d472e15378d8d06813f25876a20b40b8ea850d852b0c74b336fc9d5",
+        "polymarket": "c75250851b22d3ec09db7699a9c3d35918b1681d87ebeca80829312a913a882b"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG171910AZBOS",
       "kalshi_outcome": null,
@@ -1411,8 +1411,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "6094ea224fa346af0b33d3d59e5dae0633f80bde2d9a238b917371d6cc7822b0",
-        "polymarket": "cf3f95db8fdf3285cd26867178580ef718afe57ea30783920e98ce33d81d475b"
+        "kalshi": "28d343e4e839aaabec953a23c27396ceb52bf921be5ed14a3f7e561ed32b03fa",
+        "polymarket": "e2c453be3375cc433e9dbf6427e7af7454cc4375851c6dc2ff52c88270dd6d8a"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG171910SDNYM",
       "kalshi_outcome": null,
@@ -1430,8 +1430,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "f283e4f444242cbfdd0c7d0121081513fb1d64a1fa437202494b541b591ae0ea",
-        "polymarket": "609532dbff4e4a1b91c164a2d30da44bae9a117174099c211e0380a1935054f7"
+        "kalshi": "bbc4f4c12423f3213c6ff7ff49abeafba0c2a2688edf1cca5cb426ccc11517bf",
+        "polymarket": "2b63b4b66a645a3302067cd430e24d65fd6e11174d2879c2c1d46c25fdee3abc"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG171940ATHKC",
       "kalshi_outcome": null,
@@ -1449,8 +1449,8 @@
       "agreement": null,
       "comparable": false,
       "evidence_sha256": {
-        "kalshi": "e738198cfb65a345446e3ad3fd0a21b576a5672d811c75523a1645c6240428c5",
-        "polymarket": "790f6d0cb3632361f4da698db8a35d4da6f03e3d8298c3b11035a3c16f1754af"
+        "kalshi": "b5b1b0ed665c1e08a13f223c2af98dc4f6aad7561f733a6fd59806d26e4c4bcf",
+        "polymarket": "c483e523cc16d429a223d8c2c7f6ff71450081203128a17b5ee402462cf99d1b"
       },
       "kalshi_event_id": "KXMLBGAME-26AUG171940ATLMIN",
       "kalshi_outcome": null,
@@ -1463,14 +1463,261 @@
       "polymarket_outcome": null,
       "polymarket_status": "PENDING_OR_UNKNOWN",
       "pricing_eligible": false
+    },
+    {
+      "agreement": null,
+      "comparable": false,
+      "evidence_sha256": {
+        "kalshi": "cd898c488b4fe7669029bb39fd9b8192d09711ddb544aa5337f698b06d0d8a2d",
+        "polymarket": "ff318d62b3f4c2fb83e6d781d4fb9f78674e2526dab81ca5cc9535aea76ec310"
+      },
+      "kalshi_event_id": "KXMLBGAME-26AUG172005CWSCHC",
+      "kalshi_outcome": null,
+      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "participants": [
+        "CHC",
+        "CWS"
+      ],
+      "polymarket_event_id": "833253",
+      "polymarket_outcome": null,
+      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "pricing_eligible": false
+    },
+    {
+      "agreement": null,
+      "comparable": false,
+      "evidence_sha256": {
+        "kalshi": "b50281d82d5de6271a832ec034a006d2a4917b9225c8e29518d1a788761e1ced",
+        "polymarket": "b8b00011f66d80571396beb9e659664d57192c267ff7621e4898b86ba2ff0f08"
+      },
+      "kalshi_event_id": "KXMLBGAME-26AUG172040LADCOL",
+      "kalshi_outcome": null,
+      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "participants": [
+        "COL",
+        "LAD"
+      ],
+      "polymarket_event_id": "833254",
+      "polymarket_outcome": null,
+      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "pricing_eligible": false
+    },
+    {
+      "agreement": null,
+      "comparable": false,
+      "evidence_sha256": {
+        "kalshi": "7ecfce838c5f639bc1cbacb2682e9e19b0ce3364dd1a502f5d7264935b3fe241",
+        "polymarket": "9466142157b6c4ba7815ea2dca98215997ca140edc05572a143636f983561040"
+      },
+      "kalshi_event_id": "KXMLBGAME-26AUG181835NYYBAL",
+      "kalshi_outcome": null,
+      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "participants": [
+        "BAL",
+        "NYY"
+      ],
+      "polymarket_event_id": "838488",
+      "polymarket_outcome": null,
+      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "pricing_eligible": false
+    },
+    {
+      "agreement": null,
+      "comparable": false,
+      "evidence_sha256": {
+        "kalshi": "8099e06e8145cff5582fc7f5ffb203c16fb2659b42d813daecbcb5251c64f3f6",
+        "polymarket": "b5d711e012307b18f1268ee82d730b1c7de39241da4f7e167076d47f81458d1f"
+      },
+      "kalshi_event_id": "KXMLBGAME-26AUG181840DETPIT",
+      "kalshi_outcome": null,
+      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "participants": [
+        "DET",
+        "PIT"
+      ],
+      "polymarket_event_id": "838492",
+      "polymarket_outcome": null,
+      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "pricing_eligible": false
+    },
+    {
+      "agreement": null,
+      "comparable": false,
+      "evidence_sha256": {
+        "kalshi": "e5e9316d9bbf65a48b325a66f2bec9fa9de46db61e62773d856f52a63e790031",
+        "polymarket": "c4aa8b39e7048a4c62169935aef75af05f03f0f8705fc53b14fa3fcbead23ee8"
+      },
+      "kalshi_event_id": "KXMLBGAME-26AUG181840MIAPHI",
+      "kalshi_outcome": null,
+      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "participants": [
+        "MIA",
+        "PHI"
+      ],
+      "polymarket_event_id": "838491",
+      "polymarket_outcome": null,
+      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "pricing_eligible": false
+    },
+    {
+      "agreement": null,
+      "comparable": false,
+      "evidence_sha256": {
+        "kalshi": "10aa3a762d6e64c7c353eeda06e28c7fbc68e2aa0b0c1897a0fd3bd827dc6694",
+        "polymarket": "0d5d7300014920e48009cb1a5ed5de0426465b1b29a561dcad946dcff6cd0b8d"
+      },
+      "kalshi_event_id": "KXMLBGAME-26AUG181840SFCLE",
+      "kalshi_outcome": null,
+      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "participants": [
+        "CLE",
+        "SF"
+      ],
+      "polymarket_event_id": "838490",
+      "polymarket_outcome": null,
+      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "pricing_eligible": false
+    },
+    {
+      "agreement": null,
+      "comparable": false,
+      "evidence_sha256": {
+        "kalshi": "fe3acf54f328a806d8935d963aafcc1b5ec0e0b1ac929a597f75cc4bb0bceb7c",
+        "polymarket": "7b1a8cce8798cc0b3b2d018d7ceedb68b20697895aeafb6c2f92d62dbf070914"
+      },
+      "kalshi_event_id": "KXMLBGAME-26AUG181840STLCIN",
+      "kalshi_outcome": null,
+      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "participants": [
+        "CIN",
+        "STL"
+      ],
+      "polymarket_event_id": "838489",
+      "polymarket_outcome": null,
+      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "pricing_eligible": false
+    },
+    {
+      "agreement": null,
+      "comparable": false,
+      "evidence_sha256": {
+        "kalshi": "93f77b17208451ac6447e37cc595935f695f26bce0ae52041cb0712aa270b4a3",
+        "polymarket": "2f30e932cca8cb1a63ff4315298aed4b96cac411cc5eae85c031e8a77dbaf70e"
+      },
+      "kalshi_event_id": "KXMLBGAME-26AUG181840TORTB",
+      "kalshi_outcome": null,
+      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "participants": [
+        "TB",
+        "TOR"
+      ],
+      "polymarket_event_id": "838493",
+      "polymarket_outcome": null,
+      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "pricing_eligible": false
+    },
+    {
+      "agreement": null,
+      "comparable": false,
+      "evidence_sha256": {
+        "kalshi": "38c54ec9e9e29de2ae2b962bfaa0782add19650d1f18f2035446af9f0899c98d",
+        "polymarket": "989abe82b7ed3fc0db5f4c3e8d8bb96192eb87f34773a02d5631c45eefe967da"
+      },
+      "kalshi_event_id": "KXMLBGAME-26AUG181910AZBOS",
+      "kalshi_outcome": null,
+      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "participants": [
+        "ARI",
+        "BOS"
+      ],
+      "polymarket_event_id": "838495",
+      "polymarket_outcome": null,
+      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "pricing_eligible": false
+    },
+    {
+      "agreement": null,
+      "comparable": false,
+      "evidence_sha256": {
+        "kalshi": "c51c038e5b2816d5fc278c7845521bacff6f5d8ab0b7a97aa4faf27e3e25d961",
+        "polymarket": "cc0d1b15f79cdec42229bab6c2bc8d7e1f97037c65b38a70e15498622cad3d2b"
+      },
+      "kalshi_event_id": "KXMLBGAME-26AUG181910SDNYM",
+      "kalshi_outcome": null,
+      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "participants": [
+        "NYM",
+        "SD"
+      ],
+      "polymarket_event_id": "838496",
+      "polymarket_outcome": null,
+      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "pricing_eligible": false
+    },
+    {
+      "agreement": null,
+      "comparable": false,
+      "evidence_sha256": {
+        "kalshi": "ca489560f7185e13dbae1fcdff82260848e29e3fcfe3728552cb5266b5f9f45e",
+        "polymarket": "694da9eccb4682a95b15fe697a0a62437b01f3f799f77b55a089f1a027bfaf98"
+      },
+      "kalshi_event_id": "KXMLBGAME-26AUG181940ATHKC",
+      "kalshi_outcome": null,
+      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "participants": [
+        "ATH",
+        "KC"
+      ],
+      "polymarket_event_id": "838497",
+      "polymarket_outcome": null,
+      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "pricing_eligible": false
+    },
+    {
+      "agreement": null,
+      "comparable": false,
+      "evidence_sha256": {
+        "kalshi": "f31fb83adb072e9469126ac9a1c24495eb4374623148a82910e0db6a6e35856b",
+        "polymarket": "3a59ec7ab7f36023a2a1e3cac4f5cd119f39a293f5d26eef322b39498b0255e2"
+      },
+      "kalshi_event_id": "KXMLBGAME-26AUG181940ATLMIN",
+      "kalshi_outcome": null,
+      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "participants": [
+        "ATL",
+        "MIN"
+      ],
+      "polymarket_event_id": "838499",
+      "polymarket_outcome": null,
+      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "pricing_eligible": false
+    },
+    {
+      "agreement": null,
+      "comparable": false,
+      "evidence_sha256": {
+        "kalshi": "def6d649c7e917ff75fe92517891912775ef38becb972db5d718d8a17faa1017",
+        "polymarket": "fb6efe5e52d00e239ba1bb2fc973440f8430c1411f66b95eb657f23a89b314e6"
+      },
+      "kalshi_event_id": "KXMLBGAME-26AUG181940SEAMIL",
+      "kalshi_outcome": null,
+      "kalshi_status": "PENDING_OR_UNKNOWN",
+      "participants": [
+        "MIL",
+        "SEA"
+      ],
+      "polymarket_event_id": "838498",
+      "polymarket_outcome": null,
+      "polymarket_status": "PENDING_OR_UNKNOWN",
+      "pricing_eligible": false
     }
   ],
-  "comparable_count": 25,
+  "comparable_count": 43,
   "divergence_count": 0,
   "gate_status": "READY_FOR_REVIEW",
-  "generated_at": "2026-08-15T00:03:30.068249Z",
-  "match_count": 77,
+  "generated_at": "2026-08-16T00:08:37.128941Z",
+  "match_count": 90,
   "pricing_eligible": false,
-  "report_count": 934,
+  "report_count": 1141,
   "schema_version": 1
 }

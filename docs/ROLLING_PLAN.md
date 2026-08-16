@@ -1,6 +1,6 @@
 # Arbs — Kalshi ↔ Polymarket Sports Arbitrage — Rolling Plan
 
-> **Canonical source:** [`docs/rolling-plan.json`](rolling-plan.json) · **Last verified:** 2026-08-15
+> **Canonical source:** [`docs/rolling-plan.json`](rolling-plan.json) · **Last verified:** 2026-08-16
 > Edit the JSON first, run `python3 scripts/render_rolling_plan.py`, validate, and commit all generated views together.
 
 ## Live status
@@ -188,7 +188,7 @@ Turn semantic matches into freshness- and depth-aware executable opportunity rec
   - **Evidence:** Versioned FeeModel includes effective date, rounding, minimum, settlement and withdrawal assumptions.
 - [x] **P4-05 — Measure and set freshness thresholds** `[Done]`
   - **Acceptance:** Quote-age and pair-skew limits derive from observed latency/movement distributions; stale/suspended books are excluded.
-  - **Evidence:** `docs/freshness-policy.md and config/freshness/mlb-books-2026-08-12-v1.json derive a conservative 800ms pair-skew limit from the original 220-observation checkpoint; the 2026-08-15 elapsed checkpoint has 21,650 successful samples across 146 pairs over 57.57h, p99 452.51ms and a 20.37s fail-closed outlier, so the stricter existing limit remains unchanged pending a new reviewed policy version.`
+  - **Evidence:** `docs/freshness-policy.md and config/freshness/mlb-books-2026-08-12-v1.json derive a conservative 800ms pair-skew limit from the original 220-observation checkpoint; the 2026-08-16 elapsed checkpoint has 39,162 successful samples across 172 pairs over 81.58h, p99 423.39ms and a 30.40s fail-closed outlier, so the stricter existing limit remains unchanged pending a new reviewed policy version.`
 - [x] **P4-06 — Implement conservative opportunity engine** `[Done]`
   - **Acceptance:** Both venue directions compute payout minus depth cost, fees, settlement assumptions, and configurable safety buffer; negative/uncertain cases do not signal.
   - **Evidence:** `Conservative engine gates semantic eligibility, age/skew/depth, fees and safety buffer; negative/uncertain cases do not qualify.`
@@ -222,13 +222,13 @@ Make every decision inspectable and measure real-world reliability before any ex
   - **Evidence:** `src/arbs/alerts.py enforces fresh signal expiry, evidence-hash dedup and cooldown; alert records carry audit URLs.`
 - [x] **P5-06 — Audit post-resolution agreement** `[Done]`
   - **Acceptance:** Both venue resolutions are compared to canonical outcomes; every divergence is investigated and feeds policy/fixture updates.
-  - **Evidence:** `src/arbs/resolution_audit.py and scripts/audit_resolutions.py retain deduplicated historical matches after catalog rollover, fetch and hash public venue evidence, recognize Kalshi finalized status, select one Polymarket moneyline, require unambiguous winners, and fail closed. Live 2026-08-15 audit covered 77 historical matches from 934 validated reports: 25 comparable final pairs, 25 agreements and 0 divergences; data/reports/resolution-audit.json is READY_FOR_REVIEW and remains pricing-ineligible.`
+  - **Evidence:** `src/arbs/resolution_audit.py and scripts/audit_resolutions.py retain deduplicated historical matches after catalog rollover, fetch and hash public venue evidence, recognize Kalshi finalized status, select one Polymarket moneyline, require unambiguous winners, and fail closed. Live 2026-08-16 audit covered 90 historical matches from 1,141 validated reports: 43 comparable final pairs, 43 agreements and 0 divergences; data/reports/resolution-audit.json is READY_FOR_REVIEW and remains pricing-ineligible.`
 - [ ] **P5-07 — Complete sustained shadow run** `[In progress]`
   - **Acceptance:** At least several hundred reviewed events and a representative operating window record theoretical fills, subsequent movement, resolutions, false positives, uptime, and net results after modeled costs.
-  - **Evidence:** `data/reports/shadow-validation-checkpoint.json records 21,650 successful paired-book observations across 146 pairs over 207,249 seconds (57.57h), with 21,504 subsequent transitions and 3,332 top-quote changes; data/reports/resolution-audit.json adds 25/25 final-outcome agreements across 77 retained historical matches. New fail-closed operational tooling measures 933 valid scan artifacts, 583/701 occupied five-minute slots (83.17%) and a 9,211.95s largest observed gap, explicitly scoped as artifact coverage rather than host/process uptime; it confirms 77/77 unique pairs remain REVIEW, zero are pricing-eligible, and modeled net results are not computable. This is durable partial latency, movement, resolution and collection-continuity evidence, but not yet a representative window or several hundred independently reviewed events; independent false-positive review and eligible modeled net results remain unavailable.`
+  - **Evidence:** `data/reports/shadow-validation-checkpoint.json records 39,162 successful paired-book observations across 172 pairs over 293,682 seconds (81.58h), with 38,990 subsequent transitions and 6,153 top-quote changes; data/reports/resolution-audit.json adds 43/43 final-outcome agreements across 90 retained historical matches. Fail-closed operational tooling measures 1,140 valid scan artifacts, 790/989 occupied five-minute slots (79.88%) and a 9,211.95s largest observed gap, explicitly scoped as artifact coverage rather than host/process uptime; it confirms 90/90 unique pairs remain REVIEW, zero are pricing-eligible, and modeled net results are not computable. This is durable partial latency, movement, resolution and collection-continuity evidence, but not yet a representative window or several hundred independently reviewed events; independent false-positive review and eligible modeled net results remain unavailable.`
 - [ ] **P5-08 — Pass go/no-go review for execution design** `[Blocked]`
   - **Acceptance:** A signed evidence summary demonstrates matching precision, data reliability, modeled profitability, failure behavior, and unresolved risks; otherwise remain read-only.
-  - **Evidence:** `Blocked: P3-08 lacks a sufficiently sized independently reviewed corpus and P5-07 still lacks a representative window, several hundred independently reviewed events, host/process uptime, false-positive review and eligible modeled net results. Artifact coverage is only 583/701 observed five-minute slots with a 9,211.95s maximum gap; all 77 unique pairs remain REVIEW/pricing-disabled. P5-06 now has 25/25 final agreements, but no signed go/no-go summary exists.`
+  - **Evidence:** `Blocked: P3-08 lacks a sufficiently sized independently reviewed corpus and P5-07 still lacks a representative window, several hundred independently reviewed events, host/process uptime, false-positive review and eligible modeled net results. Artifact coverage is only 790/989 observed five-minute slots with a 9,211.95s maximum gap; all 90 unique pairs remain REVIEW/pricing-disabled. P5-06 now has 43/43 final agreements, but no signed go/no-go summary exists.`
 
 ### P6 — Execution and controlled rollout
 
@@ -286,6 +286,7 @@ Design trading as an isolated, explicitly approved subsystem after shadow gates 
 - **2026-08-12** — Captured and published a bounded live MLB checkpoint: 33 unique cross-venue event-identity matches from 76 Kalshi markets and 173 Polymarket events; all remain REVIEW and pricing-ineligible due to material rule differences.
 - **2026-08-14** — Extended shadow evidence to 33.59 hours and 5,650 paired-book observations; fixed catalog-rollover/finalized-status gaps in the historical resolution audit and verified 21/21 comparable final-outcome agreements with zero divergences.
 - **2026-08-15** — Extended shadow evidence to 57.57 hours and 21,650 paired-book observations across 146 pairs; measured fail-closed scan-artifact coverage and semantic eligibility/modeling blockers; verified 25/25 comparable final-outcome agreements with zero divergences.
+- **2026-08-16** — Extended shadow evidence to 81.58 hours and 39,162 paired-book observations across 172 pairs; measured 6,153 top-quote changes and verified 43/43 comparable final-outcome agreements with zero divergences while preserving REVIEW/pricing-disabled gates.
 
 ---
 
