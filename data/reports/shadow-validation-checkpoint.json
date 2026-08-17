@@ -1,74 +1,74 @@
 {
   "evidence_window": {
-    "elapsed_seconds": 293682.32716,
+    "elapsed_seconds": 379924.185388,
     "first": "2026-08-12T14:27:31.787143+00:00",
-    "last": "2026-08-16T00:02:14.114303+00:00"
+    "last": "2026-08-16T23:59:35.972531+00:00"
   },
   "gate_status": "PARTIAL_EVIDENCE_ONLY",
-  "generated_at": "2026-08-16T03:07:02.332205+03:00",
+  "generated_at": "2026-08-17T03:03:40.757803+03:00",
   "movement": {
-    "changed_transition_count": 38764,
-    "failure_count": 0,
-    "pair_count": 172,
+    "changed_transition_count": 55660,
+    "failure_count": 2,
+    "pair_count": 204,
     "schema_version": 1,
-    "successful_samples": 39162,
-    "top_quote_changed_transition_count": 6153,
-    "transition_count": 38990
+    "successful_samples": 56094,
+    "top_quote_changed_transition_count": 9684,
+    "transition_count": 55890
   },
   "operations": {
     "artifact_cadence": {
       "claim_scope": "ARTIFACT_COVERAGE_NOT_HOST_OR_PROCESS_UPTIME",
-      "elapsed_seconds": 296559.48627,
-      "expected_slots_between_first_and_last": 989,
+      "elapsed_seconds": 382817.296879,
+      "expected_slots_between_first_and_last": 1277,
       "first": "2026-08-12T13:38:33.792778+00:00",
       "invalid_report_count": 0,
       "largest_observed_gap_seconds": 9211.952351,
-      "last": "2026-08-16T00:01:13.279048+00:00",
-      "observed_slot_coverage": 0.7987866531850354,
-      "occupied_schedule_slots": 790,
+      "last": "2026-08-16T23:58:51.089657+00:00",
+      "observed_slot_coverage": 0.7768206734534064,
+      "occupied_schedule_slots": 992,
       "schedule_seconds": 300,
-      "successful_report_reads": 1140,
-      "valid_unique_reports": 1140
+      "successful_report_reads": 1342,
+      "valid_unique_reports": 1342
     },
     "decision_audit": {
       "decision_counts": {
-        "REVIEW": 90
+        "REVIEW": 106
       },
       "modeled_net_result_status": "NOT_COMPUTABLE_NO_PRICING_ELIGIBLE_PAIRS",
       "pricing_eligible_pairs": 0,
       "theoretical_fill_count": 0,
-      "unique_event_pairs": 90
+      "unique_event_pairs": 106
     },
     "schema_version": 1
   },
   "schema_version": 1,
   "semantic_eligibility": "ALL_REVIEW_PRICING_DISABLED",
   "timing": {
-    "failure_count": 0,
+    "failure_count": 2,
     "receipt_skew_ms": {
       "max": 30398.0,
-      "p50": 103.0,
-      "p95": 217.0,
-      "p99": 423.3899999999994
+      "p50": 104.0,
+      "p95": 224.0,
+      "p99": 448.0
     },
     "request_elapsed_ms": {
       "max": 30361.485,
-      "p50": 315.382,
-      "p95": 396.77329999999984,
-      "p99": 517.0429100000003
+      "p50": 313.5955,
+      "p95": 398.4566,
+      "p99": 521.4854200000026
     },
-    "sample_count": 39162,
+    "sample_count": 56094,
     "schema_version": 1,
     "source_age_ms": {
       "max": 1300457.667,
-      "p50": 9773.0165,
-      "p95": 224297.1385499997,
-      "p99": 426833.8402999999,
-      "sample_count": 38962
+      "p50": 9890.5195,
+      "p95": 218255.37584999995,
+      "p99": 390129.93032999994,
+      "sample_count": 55894
     },
     "suggested_limits": {
       "pair_skew_ms": 500,
-      "source_age_ms": 427000
+      "source_age_ms": 391000
     },
     "threshold_status": "READY_FOR_REVIEW"
   }
