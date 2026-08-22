@@ -3,7 +3,7 @@
   "plan_id": "arbs-rolling-plan",
   "project": "Arbs — Kalshi ↔ Polymarket Sports Arbitrage",
   "status": "active",
-  "last_verified": "2026-08-20",
+  "last_verified": "2026-08-22",
   "status_values": [
     "done",
     "in_progress",
@@ -20,7 +20,7 @@
   },
   "mission": "Build a deterministic, auditable, read-only-first system that discovers equivalent sports contracts on Kalshi and Polymarket, computes executable cross-venue opportunities conservatively, and graduates to trading only after measured safety gates and explicit owner approval.",
   "current_focus": "P5-07 — sustained read-only shadow validation: accumulate representative elapsed-window movement, resolution, false-positive, uptime and modeled-result evidence.",
-  "next_action": "P5-07: continue scheduled immutable collection beyond the 177.70-hour checkpoint, add independent corpus review and host/process uptime evidence, and do not advance go/no-go until representative evidence exists.",
+  "next_action": "P5-07: continue scheduled immutable collection beyond the 225.56-hour checkpoint, add independent corpus review and host/process uptime evidence, and do not advance go/no-go until representative evidence exists.",
   "operating_rules": [
     "Precision before recall: an uncertain pair is REVIEW or UNSUPPORTED, never EXACT.",
     "Raw source payloads and hashes remain immutable and replayable.",
@@ -495,7 +495,7 @@
           "status": "done",
           "acceptance": "Quote-age and pair-skew limits derive from observed latency/movement distributions; stale/suspended books are excluded.",
           "evidence": [
-            "docs/freshness-policy.md and config/freshness/mlb-books-2026-08-12-v1.json derive a conservative 800ms pair-skew limit from the original 220-observation checkpoint; the 2026-08-20 elapsed checkpoint has 102,823 successful samples across 258 pairs over 177.70h, p99 567ms and a 30.57s fail-closed outlier, so the existing reviewed limit remains unchanged pending a new policy version."
+            "docs/freshness-policy.md and config/freshness/mlb-books-2026-08-12-v1.json derive a conservative 800ms pair-skew limit from the original 220-observation checkpoint; the 2026-08-22 elapsed checkpoint has 117,630 successful samples across 258 pairs over 225.56h, p99 618ms and a 30.57s fail-closed outlier, so the existing reviewed limit remains unchanged pending a new policy version."
           ]
         },
         {
@@ -584,7 +584,7 @@
           "status": "done",
           "acceptance": "Both venue resolutions are compared to canonical outcomes; every divergence is investigated and feeds policy/fixture updates.",
           "evidence": [
-            "src/arbs/resolution_audit.py and scripts/audit_resolutions.py retain deduplicated historical matches after catalog rollover, fetch and hash public venue evidence, recognize Kalshi finalized status, select one Polymarket moneyline, require unambiguous winners, and fail closed. Live 2026-08-20 audit covered 133 historical matches from 1,917 validated reports: 99 comparable final pairs, 99 agreements and 0 divergences; data/reports/resolution-audit.json is READY_FOR_REVIEW and remains pricing-ineligible."
+            "src/arbs/resolution_audit.py and scripts/audit_resolutions.py retain deduplicated historical matches after catalog rollover, fetch and hash public venue evidence, recognize Kalshi finalized status, select one Polymarket moneyline, require unambiguous winners, and fail closed. Live 2026-08-22 audit covered 133 historical matches from 2,298 validated reports: 119 comparable final pairs, 119 agreements and 0 divergences; data/reports/resolution-audit.json is READY_FOR_REVIEW and remains pricing-ineligible."
           ]
         },
         {
@@ -593,7 +593,7 @@
           "status": "in_progress",
           "acceptance": "At least several hundred reviewed events and a representative operating window record theoretical fills, subsequent movement, resolutions, false positives, uptime, and net results after modeled costs.",
           "evidence": [
-            "data/reports/shadow-validation-checkpoint.json records 102,823 successful paired-book observations across 258 pairs over 639,717 seconds (177.70h), with 102,565 subsequent transitions, 16,534 top-quote changes and 3 fail-closed samples; data/reports/resolution-audit.json adds 99/99 final-outcome agreements across 133 retained historical matches. Fail-closed operational tooling measures 1,916 valid scan artifacts, 1,566/2,143 occupied five-minute slots (73.08%) and a 9,211.95s largest observed gap, explicitly scoped as artifact coverage rather than host/process uptime; it confirms 133/133 unique pairs remain REVIEW, zero are pricing-eligible, and modeled net results are not computable. This is durable partial latency, movement, resolution and collection-continuity evidence, but not yet a representative window or several hundred independently reviewed events; independent false-positive review and eligible modeled net results remain unavailable."
+            "data/reports/shadow-validation-checkpoint.json records 117,630 successful paired-book observations across 258 pairs over 812,006 seconds (225.56h), with 117,372 subsequent transitions, 18,607 top-quote changes and 8 fail-closed samples; data/reports/resolution-audit.json adds 119/119 final-outcome agreements across 133 retained historical matches. Fail-closed operational tooling measures 2,297 valid scan artifacts, 1,947/2,717 occupied five-minute slots (71.66%) and a 9,211.95s largest observed gap, explicitly scoped as artifact coverage rather than host/process uptime; it confirms 133/133 unique pairs remain REVIEW, zero are pricing-eligible, and modeled net results are not computable. This is durable partial latency, movement, resolution and collection-continuity evidence, but not yet a representative window or several hundred independently reviewed events; independent false-positive review and eligible modeled net results remain unavailable."
           ]
         },
         {
@@ -602,7 +602,7 @@
           "status": "blocked",
           "acceptance": "A signed evidence summary demonstrates matching precision, data reliability, modeled profitability, failure behavior, and unresolved risks; otherwise remain read-only.",
           "evidence": [
-            "Blocked: P3-08 lacks a sufficiently sized independently reviewed corpus and P5-07 still lacks a representative window, several hundred independently reviewed events, host/process uptime, false-positive review and eligible modeled net results. Artifact coverage is only 1,566/2,143 observed five-minute slots with a 9,211.95s maximum gap; all 133 unique pairs remain REVIEW/pricing-disabled. P5-06 now has 99/99 final agreements, but no signed go/no-go summary exists."
+            "Blocked: P3-08 lacks a sufficiently sized independently reviewed corpus and P5-07 still lacks a representative window, several hundred independently reviewed events, host/process uptime, false-positive review and eligible modeled net results. Artifact coverage is only 1,947/2,717 observed five-minute slots with a 9,211.95s maximum gap; all 133 unique pairs remain REVIEW/pricing-disabled. P5-06 now has 119/119 final agreements, but no signed go/no-go summary exists."
           ]
         }
       ]
@@ -766,8 +766,12 @@
     {
       "date": "2026-08-20",
       "change": "Extended shadow evidence to 177.70 hours and 102,823 paired-book observations across 258 pairs; measured 16,534 top-quote changes and verified 99/99 comparable final-outcome agreements with zero divergences while preserving REVIEW/pricing-disabled gates."
+    },
+    {
+      "date": "2026-08-22",
+      "change": "Extended shadow evidence to 225.56 hours and 117,630 paired-book observations across 258 pairs; measured 18,607 top-quote changes and verified 119/119 comparable final-outcome agreements with zero divergences while preserving REVIEW/pricing-disabled gates."
     }
   ],
-  "next_task": "P5-07: continue immutable collection beyond the 177.70-hour/102,823-sample checkpoint and accumulate independent labels, host/process uptime, false-positive and eligible modeled-result evidence; P3-08 and P5-08 remain evidence-gated.",
-  "updated_at": "2026-08-20"
+  "next_task": "P5-07: continue immutable collection beyond the 225.56-hour/117,630-sample checkpoint and accumulate independent labels, host/process uptime, false-positive and eligible modeled-result evidence; P3-08 and P5-08 remain evidence-gated.",
+  "updated_at": "2026-08-22"
 }
