@@ -5,7 +5,7 @@
     "last": "2026-08-22T05:30:11.824304+00:00"
   },
   "gate_status": "PARTIAL_EVIDENCE_ONLY",
-  "generated_at": "2026-08-23T03:05:25.196318+03:00",
+  "generated_at": "2026-08-24T03:14:08.183172+03:00",
   "movement": {
     "changed_transition_count": 117601,
     "failure_count": 8,
@@ -18,17 +18,17 @@
   "operations": {
     "artifact_cadence": {
       "claim_scope": "ARTIFACT_COVERAGE_NOT_HOST_OR_PROCESS_UPTIME",
-      "elapsed_seconds": 901237.308798,
-      "expected_slots_between_first_and_last": 3005,
+      "elapsed_seconds": 988122.344089,
+      "expected_slots_between_first_and_last": 3294,
       "first": "2026-08-12T13:38:33.792778+00:00",
       "invalid_report_count": 0,
       "largest_observed_gap_seconds": 9211.952351,
-      "last": "2026-08-22T23:59:11.101576+00:00",
-      "observed_slot_coverage": 0.7131447587354409,
-      "occupied_schedule_slots": 2143,
+      "last": "2026-08-24T00:07:16.136867+00:00",
+      "observed_slot_coverage": 0.7106860959319976,
+      "occupied_schedule_slots": 2341,
       "schedule_seconds": 300,
-      "successful_report_reads": 2493,
-      "valid_unique_reports": 2493
+      "successful_report_reads": 2691,
+      "valid_unique_reports": 2691
     },
     "decision_audit": {
       "decision_counts": {
