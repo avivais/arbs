@@ -53,6 +53,20 @@ class LiveMatchingTests(unittest.TestCase):
         self.assertEqual(matches[0].start_delta_seconds, 0)
         self.assertIn("MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN", matches[0].review_reasons)
 
+    def test_normalizes_outcome_level_kalshi_titles_from_exact_contract_set(self):
+        for market in self.kalshi:
+            market["title"] = f"{market['yes_sub_title']} wins"
+        normalized = normalize_kalshi(self.kalshi)
+        self.assertEqual(len(normalized), 1)
+        self.assertEqual(normalized[0].participants, ("BOS", "TOR"))
+
+    def test_rejects_incomplete_or_unknown_kalshi_contract_set(self):
+        self.kalshi[0]["title"] = "Boston wins"
+        self.kalshi[1]["title"] = "Toronto wins"
+        self.assertEqual(normalize_kalshi(self.kalshi[:1]), [])
+        self.kalshi[1]["yes_sub_title"] = "Mystery Team"
+        self.assertEqual(normalize_kalshi(self.kalshi), [])
+
     def test_rejects_start_outside_tolerance(self):
         self.poly[0]["markets"][0]["gameStartTime"] = "2026-08-13 00:00:00+00"
         self.assertEqual(match_events(normalize_kalshi(self.kalshi), normalize_polymarket(self.poly)), [])

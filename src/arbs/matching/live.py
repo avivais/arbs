@@ -125,10 +125,23 @@ def normalize_kalshi(markets: Iterable[dict[str, Any]]) -> list[VenueEvent]:
     result: list[VenueEvent] = []
     for event_id, contracts in grouped.items():
         sample = contracts[0]
-        participants, start = _participants(str(sample.get("title", ""))), _kalshi_start(sample)
-        selected = {_canonical_team(str(item.get("yes_sub_title", ""))) for item in contracts}
-        if not event_id or not participants or not start or set(participants) != selected:
+        # Kalshi changed the open-market title from an event-level
+        # "Team A vs Team B Winner?" string to one title per outcome (for
+        # example, "New York M wins"). The event_ticker still groups the two
+        # binary contracts and yes_sub_title still exposes each participant.
+        # Derive identity only from the complete, exactly aliased outcome set;
+        # never infer an opponent from the ticker or free text.
+        start = _kalshi_start(sample)
+        selected = tuple(
+            sorted(
+                team
+                for item in contracts
+                if (team := _canonical_team(str(item.get("yes_sub_title", "")))) is not None
+            )
+        )
+        if not event_id or len(contracts) != 2 or len(selected) != 2 or len(set(selected)) != 2 or not start:
             continue
+        participants = selected
         compact = tuple({
             "id": str(item["ticker"]), "selected_team": _canonical_team(str(item["yes_sub_title"])),
             "yes_bid": item.get("yes_bid_dollars"), "yes_ask": item.get("yes_ask_dollars"),

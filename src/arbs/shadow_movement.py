@@ -16,25 +16,68 @@ def _top(payload:dict[str,Any],venue:str)->tuple[Decimal|None,Decimal|None]:
  return bid,ask
 
 
-def report(paths:list[Path])->dict[str,Any]:
- series:dict[str,list[dict[str,Any]]]={}
- failures=0
- for path in paths:
-  x=json.loads(path.read_text())
-  if x.get('status')!='complete':failures+=1;continue
-  series.setdefault(x['pair_id'],[]).append(x)
- transitions=[]
- for pair_id,items in series.items():
-  items.sort(key=lambda x:x['started_at'])
-  for before,after in zip(items,items[1:]):
-   row={'pair_id':pair_id,'before':before['started_at'],'after':after['started_at'],'venues':{}}
-   for venue in ('kalshi','polymarket'):
-    b=_top(before[venue]['payload'],venue);a=_top(after[venue]['payload'],venue)
-    row['venues'][venue]={'bid_before':str(b[0]) if b[0] is not None else None,'bid_after':str(a[0]) if a[0] is not None else None,
-                          'ask_before':str(b[1]) if b[1] is not None else None,'ask_after':str(a[1]) if a[1] is not None else None,
-                          'payload_changed':before[venue]['payload_sha256']!=after[venue]['payload_sha256']}
-   transitions.append(row)
- return {'schema_version':1,'pair_count':len(series),'successful_samples':sum(len(x) for x in series.values()),'failure_count':failures,
-         'transition_count':len(transitions),'changed_transition_count':sum(any(v['payload_changed'] for v in x['venues'].values()) for x in transitions),
-         'top_quote_changed_transition_count':sum(any(v['bid_before']!=v['bid_after'] or v['ask_before']!=v['ask_after'] for v in x['venues'].values()) for x in transitions),
-         'transitions':transitions}
+def report(paths: list[Path], *, include_transitions: bool = True) -> dict[str, Any]:
+    """Summarize movement in one pass, retaining at most one payload per pair.
+
+    Shadow filenames begin with a sortable UTC capture timestamp. Sorting here makes
+    callers deterministic and avoids retaining the full multi-day payload corpus in
+    memory. Checkpoint generation does not need transition detail and can disable it.
+    """
+    previous: dict[str, dict[str, Any]] = {}
+    pair_counts: dict[str, int] = {}
+    failures = 0
+    transition_count = 0
+    changed_transition_count = 0
+    top_quote_changed_transition_count = 0
+    transitions: list[dict[str, Any]] = []
+    for path in sorted(paths):
+        current = json.loads(path.read_text())
+        if current.get("status") != "complete":
+            failures += 1
+            continue
+        pair_id = current["pair_id"]
+        pair_counts[pair_id] = pair_counts.get(pair_id, 0) + 1
+        before = previous.get(pair_id)
+        previous[pair_id] = current
+        if before is None:
+            continue
+        row = {
+            "pair_id": pair_id,
+            "before": before["started_at"],
+            "after": current["started_at"],
+            "venues": {},
+        }
+        transition_count += 1
+        payload_changed = False
+        top_quote_changed = False
+        for venue in ("kalshi", "polymarket"):
+            old_top = _top(before[venue]["payload"], venue)
+            new_top = _top(current[venue]["payload"], venue)
+            venue_changed = before[venue]["payload_sha256"] != current[venue]["payload_sha256"]
+            venue_row = {
+                "bid_before": str(old_top[0]) if old_top[0] is not None else None,
+                "bid_after": str(new_top[0]) if new_top[0] is not None else None,
+                "ask_before": str(old_top[1]) if old_top[1] is not None else None,
+                "ask_after": str(new_top[1]) if new_top[1] is not None else None,
+                "payload_changed": venue_changed,
+            }
+            row["venues"][venue] = venue_row
+            payload_changed = payload_changed or venue_changed
+            top_quote_changed = top_quote_changed or (
+                venue_row["bid_before"] != venue_row["bid_after"]
+                or venue_row["ask_before"] != venue_row["ask_after"]
+            )
+        changed_transition_count += int(payload_changed)
+        top_quote_changed_transition_count += int(top_quote_changed)
+        if include_transitions:
+            transitions.append(row)
+    return {
+        "schema_version": 1,
+        "pair_count": len(pair_counts),
+        "successful_samples": sum(pair_counts.values()),
+        "failure_count": failures,
+        "transition_count": transition_count,
+        "changed_transition_count": changed_transition_count,
+        "top_quote_changed_transition_count": top_quote_changed_transition_count,
+        "transitions": transitions,
+    }

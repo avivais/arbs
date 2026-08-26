@@ -22,7 +22,7 @@ args = parser.parse_args()
 book_paths = sorted(args.books.glob("*.json"))
 report_paths = sorted(args.reports.glob("20*.json"))
 timing = summarize(book_paths)
-movement = report(book_paths)
+movement = report(book_paths, include_transitions=False)
 operations = operational_evidence(report_paths)
 times = []
 for path in book_paths:

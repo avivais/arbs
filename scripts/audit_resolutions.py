@@ -8,7 +8,10 @@ from arbs.resolution_audit import audit_report, unique_historical_matches
 p=argparse.ArgumentParser();p.add_argument('--input',type=Path,default=Path('data/shadow/latest.json'));p.add_argument('--history',type=Path,default=Path('data/shadow'));p.add_argument('--output',type=Path,default=Path('data/reports/resolution-audit.json'))
 a=p.parse_args()
 paths=sorted(a.history.glob('20*.json')) if a.history.exists() else []
-if a.input.exists() and a.input not in paths: paths.append(a.input)
+# latest.json is an alias copied from the newest immutable timestamped report. Do
+# not count that alias as an additional observed report when history is present.
+is_history_alias = a.input == a.history / 'latest.json' and bool(paths)
+if a.input.exists() and a.input not in paths and not is_history_alias: paths.append(a.input)
 reports=[]
 for path in paths:
  try: reports.append(load_match_report(path))
