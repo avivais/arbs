@@ -24,4 +24,12 @@ class ResolutionAuditTests(unittest.TestCase):
   p={'markets':[{'sportsMarketType':'moneyline','closed':False,'umaResolutionStatus':'proposed','outcomes':'["A", "B"]','outcomePrices':'["0.1", "0.9"]'}]}
   row=audit_match(MATCH,lambda x:k[x],lambda _:p);self.assertFalse(row['comparable']);self.assertIsNone(row['agreement'])
 
+ def test_source_identifier_date_conflict_is_not_compared(self):
+  match={**MATCH,'participants':['BOS','NYY'],'kalshi':{**MATCH['kalshi'],'event_id':'KXMLBGAME-26AUG291305BOSNYYG1'},'polymarket':{**MATCH['polymarket'],'source_url':'https://polymarket.com/event/mlb-bos-nyy-2026-06-06'}}
+  def unexpected(_:str):
+   self.fail('resolution fetch must not run for identity-review pairs')
+  row=audit_match(match,unexpected,unexpected)
+  self.assertFalse(row['comparable']);self.assertIsNone(row['agreement'])
+  self.assertEqual(row['identity_cross_check'],'REVIEW_DATE_IDENTIFIER_CONFLICT')
+
 if __name__=='__main__':unittest.main()

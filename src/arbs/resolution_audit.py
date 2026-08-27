@@ -8,6 +8,7 @@ from typing import Any, Callable
 
 from arbs.adapters.kalshi import KalshiPublicClient
 from arbs.adapters.polymarket import PolymarketPublicClient
+from arbs.source_identifier_audit import audit_match as audit_source_identifiers
 
 
 def _hash(value: Any) -> str:
@@ -44,6 +45,27 @@ def audit_match(
     polymarket_get: Callable[[str], Any] | None = None,
 ) -> dict[str, Any]:
     """Compare only authoritative final venue outcomes; pending/ambiguous data stays UNKNOWN."""
+    # Historical reports with source identifiers receive an independent identity
+    # cross-check before any outcome comparison. A date/participant conflict may
+    # represent a reschedule, but without independent review it cannot establish
+    # post-resolution agreement and therefore remains fail-closed.
+    if match.get("polymarket", {}).get("source_url"):
+        identity = audit_source_identifiers(match)
+        if identity["status"] != "IDENTIFIERS_CORROBORATE_EVENT":
+            return {
+                "kalshi_event_id": match["kalshi"]["event_id"],
+                "polymarket_event_id": str(match["polymarket"]["event_id"]),
+                "participants": match["participants"],
+                "kalshi_status": "NOT_FETCHED_IDENTITY_REVIEW",
+                "polymarket_status": "NOT_FETCHED_IDENTITY_REVIEW",
+                "kalshi_outcome": None,
+                "polymarket_outcome": None,
+                "comparable": False,
+                "agreement": None,
+                "pricing_eligible": False,
+                "identity_cross_check": identity["status"],
+                "identity_evidence_sha256": identity["evidence_sha256"],
+            }
     kalshi_get = kalshi_get or (lambda ticker: KalshiPublicClient().get_market(ticker).data)
     polymarket_get = polymarket_get or (lambda event_id: PolymarketPublicClient().get_event(event_id).data)
     k_contracts = match["kalshi"]["contracts"]

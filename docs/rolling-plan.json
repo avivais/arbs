@@ -3,7 +3,7 @@
   "plan_id": "arbs-rolling-plan",
   "project": "Arbs — Kalshi ↔ Polymarket Sports Arbitrage",
   "status": "active",
-  "last_verified": "2026-08-26",
+  "last_verified": "2026-08-27",
   "status_values": [
     "done",
     "in_progress",
@@ -20,7 +20,7 @@
   },
   "mission": "Build a deterministic, auditable, read-only-first system that discovers equivalent sports contracts on Kalshi and Polymarket, computes executable cross-venue opportunities conservatively, and graduates to trading only after measured safety gates and explicit owner approval.",
   "current_focus": "P5-07 — sustained read-only shadow validation: accumulate representative elapsed-window movement, resolution, false-positive, uptime and modeled-result evidence.",
-  "next_action": "P5-07: continue scheduled immutable collection beyond the 322.50-hour scan-artifact window and 321.69-hour paired-book window, add independent corpus review and host/process uptime evidence, and do not advance go/no-go until representative evidence exists.",
+  "next_action": "P5-07: continue scheduled immutable collection beyond the 346.36-hour scan-artifact window and 345.56-hour paired-book window, independently review the three source-identifier date conflicts and the broader corpus, add host/process uptime evidence, and do not advance go/no-go until representative evidence exists.",
   "operating_rules": [
     "Precision before recall: an uncertain pair is REVIEW or UNSUPPORTED, never EXACT.",
     "Raw source payloads and hashes remain immutable and replayable.",
@@ -442,7 +442,7 @@
           "status": "blocked",
           "acceptance": "Zero known false-positive EXACT decisions and at least 99% precision on a sufficiently sized independently reviewed labeled corpus; recall is reported, not optimized at precision's expense.",
           "evidence": [
-            "Requires a sufficiently sized independently reviewed labeled corpus; executable cases and the replay corpus verify deterministic decisions, but no independent reviewer has labeled a sufficiently sized corpus for the 99% precision gate."
+            "Requires a sufficiently sized independently reviewed labeled corpus; executable cases and the replay corpus verify deterministic decisions, but no independent reviewer has labeled a sufficiently sized corpus for the 99% precision gate. data/reports/source-identifier-audit.json adds an implementation-independent automated cross-check of 208 retained REVIEW pairs: identifiers corroborate 205 and expose three date conflicts requiring independent review. The report explicitly cannot satisfy the independent-label gate and enables no pricing."
           ]
         }
       ]
@@ -495,7 +495,7 @@
           "status": "done",
           "acceptance": "Quote-age and pair-skew limits derive from observed latency/movement distributions; stale/suspended books are excluded.",
           "evidence": [
-            "docs/freshness-policy.md and config/freshness/mlb-books-2026-08-12-v1.json derive a conservative 800ms pair-skew limit from the original 220-observation checkpoint; the 2026-08-26 elapsed checkpoint has 131,486 successful samples across 372 pairs over 321.69h, p99 646ms and a 30.57s fail-closed outlier, so the existing reviewed limit remains unchanged pending a new policy version."
+            "docs/freshness-policy.md and config/freshness/mlb-books-2026-08-12-v1.json derive a conservative 800ms pair-skew limit from the original 220-observation checkpoint; the 2026-08-27 elapsed checkpoint has 145,361 successful samples across 408 pairs over 345.56h, p99 631.4ms and a 30.57s fail-closed outlier. Polymarket source-age p99 rose to 1,544.71s and remains measurement-only, so the existing reviewed limits are not loosened or expanded pending a new policy version."
           ]
         },
         {
@@ -584,7 +584,7 @@
           "status": "done",
           "acceptance": "Both venue resolutions are compared to canonical outcomes; every divergence is investigated and feeds policy/fixture updates.",
           "evidence": [
-            "src/arbs/resolution_audit.py and scripts/audit_resolutions.py retain deduplicated historical matches after catalog rollover, fetch and hash public venue evidence, recognize Kalshi finalized status, select one Polymarket moneyline, require unambiguous winners, and fail closed. Live 2026-08-26 audit covered 190 historical matches from 3,056 validated reports: 143 are comparable finals with 143 agreements and 0 divergences, while 47 not-yet-comparable matches remain fail-closed; data/reports/resolution-audit.json is READY_FOR_REVIEW and remains pricing-ineligible."
+            "src/arbs/resolution_audit.py and scripts/audit_resolutions.py retain deduplicated historical matches after catalog rollover, cross-check source identifiers before fetching outcomes, hash public venue evidence, recognize Kalshi finalized status, select one Polymarket moneyline, require unambiguous winners, and fail closed. Live 2026-08-27 audit covered 208 historical matches from 3,229 validated reports: 162 are comparable finals with 162 agreements and 0 divergences, while 46 pending, unknown or identifier-conflicted matches remain fail-closed; data/reports/resolution-audit.json is READY_FOR_REVIEW and remains pricing-ineligible."
           ]
         },
         {
@@ -593,7 +593,7 @@
           "status": "in_progress",
           "acceptance": "At least several hundred reviewed events and a representative operating window record theoretical fills, subsequent movement, resolutions, false positives, uptime, and net results after modeled costs.",
           "evidence": [
-            "data/reports/shadow-validation-checkpoint.json records 131,486 successful paired-book observations across 372 pairs over 1,158,102 seconds (321.69h), with 131,114 subsequent transitions, 21,528 top-quote changes and 10 fail-closed samples; paired-book collection is again advancing after the prior 2026-08-22 gap. data/reports/resolution-audit.json covers 190 retained historical matches, with 143/143 comparable final-outcome agreements, 0 divergences and 47 pending/non-comparable matches kept fail-closed. Operational tooling measures 3,055 valid scan artifacts over 1,160,992 seconds (322.50h), 2,704/3,870 occupied five-minute slots (69.87%) and a 9,211.95s largest observed gap, explicitly scoped as artifact coverage rather than host/process uptime; it confirms all 190 unique event pairs remain REVIEW, zero are pricing-eligible, and modeled net results are not computable. This is durable partial latency, movement, resolution and collection-continuity evidence, but not yet a representative window or several hundred independently reviewed events; independent false-positive review, host/process uptime and eligible modeled net results remain unavailable."
+            "data/reports/shadow-validation-checkpoint.json records 145,361 successful paired-book observations across 408 pairs over 1,244,033 seconds (345.56h), with 144,953 subsequent transitions, 24,349 top-quote changes and 11 fail-closed samples. data/reports/resolution-audit.json covers 208 retained historical matches, with 162/162 comparable final-outcome agreements, 0 divergences and 46 pending, unknown or identifier-conflicted matches kept fail-closed. Operational tooling measures 3,227 valid scan artifacts over 1,246,903 seconds (346.36h), 2,876/4,157 occupied five-minute slots (69.18%) and a 9,211.95s largest observed gap, explicitly scoped as artifact coverage rather than host/process uptime; it confirms all 208 unique event pairs remain REVIEW, zero are pricing-eligible, and modeled net results are not computable. An independent parser implementation cross-checks source identifiers for all 208 pairs, corroborating 205 while quarantining three date conflicts; the resolution audit now excludes those conflicts, and this automated evidence is explicitly not independent review. This is durable partial latency, movement, resolution, parser-decision and collection-continuity evidence, but not yet a representative window or several hundred independently reviewed events; independent false-positive review, host/process uptime and eligible modeled net results remain unavailable."
           ]
         },
         {
@@ -602,7 +602,7 @@
           "status": "blocked",
           "acceptance": "A signed evidence summary demonstrates matching precision, data reliability, modeled profitability, failure behavior, and unresolved risks; otherwise remain read-only.",
           "evidence": [
-            "Blocked: P3-08 lacks a sufficiently sized independently reviewed corpus and P5-07 still lacks a representative window, several hundred independently reviewed events, host/process uptime, false-positive review and eligible modeled net results. Artifact coverage is only 2,704/3,870 observed five-minute slots with a 9,211.95s maximum gap; all 190 unique event pairs remain REVIEW/pricing-disabled. P5-06 has 143/143 comparable final agreements with 47 retained matches pending comparison, but no signed go/no-go summary exists."
+            "Blocked: P3-08 lacks a sufficiently sized independently reviewed corpus and P5-07 still lacks a representative window, several hundred independently reviewed events, host/process uptime, false-positive review and eligible modeled net results. Artifact coverage is only 2,876/4,157 observed five-minute slots with a 9,211.95s maximum gap; all 208 unique event pairs remain REVIEW/pricing-disabled, and three source-identifier date conflicts require independent review. P5-06 has 162/162 comparable final agreements with 46 retained matches pending, unknown or identity-conflicted, but no signed go/no-go summary exists."
           ]
         }
       ]
@@ -782,8 +782,12 @@
     {
       "date": "2026-08-26",
       "change": "Adapted the fail-closed Kalshi parser to the observed outcome-level title schema, restored paired-book accumulation, and extended evidence to 321.69 paired-book hours/131,486 samples across 372 pairs and 322.50 scan-artifact hours; verified 143/143 comparable final agreements with zero divergences while preserving REVIEW/pricing-disabled gates."
+    },
+    {
+      "date": "2026-08-27",
+      "change": "Extended evidence to 345.56 paired-book hours/145,361 samples across 408 pairs and 346.36 scan-artifact hours; verified 162/162 identity-corroborated comparable final agreements and independently cross-checked source identifiers for 208 REVIEW pairs, quarantining three date conflicts from resolution comparison without advancing independent-review or pricing gates."
     }
   ],
-  "next_task": "P5-07: continue immutable collection beyond the 322.50-hour scan-artifact and 321.69-hour paired-book checkpoints, and accumulate independent labels, host/process uptime, false-positive and eligible modeled-result evidence; P3-08 and P5-08 remain evidence-gated.",
-  "updated_at": "2026-08-26"
+  "next_task": "P5-07: continue immutable collection beyond the 346.36-hour scan-artifact and 345.56-hour paired-book checkpoints; independently review three source-identifier date conflicts and the broader corpus, and accumulate host/process uptime, false-positive and eligible modeled-result evidence; P3-08 and P5-08 remain evidence-gated.",
+  "updated_at": "2026-08-27"
 }
