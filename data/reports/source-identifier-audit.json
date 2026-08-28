@@ -5823,19 +5823,495 @@
         "TEX"
       ],
       "status": "IDENTIFIERS_CORROBORATE_EVENT"
+    },
+    {
+      "evidence_sha256": "fa1b3883e49b24e54403ceb6737d82206c6434280ced3af705782720c610c3fc",
+      "kalshi_event_id": "KXMLBGAME-26AUG292205AZSFG2",
+      "kalshi_identifier": {
+        "date": "2026-08-29",
+        "game_number": 2,
+        "participants": [
+          "ARI",
+          "SF"
+        ]
+      },
+      "matcher_decision": "REVIEW",
+      "polymarket_event_id": "895506",
+      "polymarket_identifier": {
+        "date": "2026-08-29",
+        "participants": [
+          "ARI",
+          "SF"
+        ]
+      },
+      "polymarket_source_url": "https://polymarket.com/event/mlb-ari-sf-2026-08-29",
+      "pricing_eligible": false,
+      "reported_participants": [
+        "ARI",
+        "SF"
+      ],
+      "status": "IDENTIFIERS_CORROBORATE_EVENT"
+    },
+    {
+      "evidence_sha256": "88ca69117305d2fdc1a97d0e8e968e424a050c32202fdd738514300836c08b4b",
+      "kalshi_event_id": "KXMLBGAME-26AUG292205BALATH",
+      "kalshi_identifier": {
+        "date": "2026-08-29",
+        "game_number": null,
+        "participants": [
+          "ATH",
+          "BAL"
+        ]
+      },
+      "matcher_decision": "REVIEW",
+      "polymarket_event_id": "895505",
+      "polymarket_identifier": {
+        "date": "2026-08-29",
+        "participants": [
+          "ATH",
+          "BAL"
+        ]
+      },
+      "polymarket_source_url": "https://polymarket.com/event/mlb-bal-oak-2026-08-29",
+      "pricing_eligible": false,
+      "reported_participants": [
+        "ATH",
+        "BAL"
+      ],
+      "status": "IDENTIFIERS_CORROBORATE_EVENT"
+    },
+    {
+      "evidence_sha256": "5496e06929762000612aaad2ffb83345f7e690dde8f7bd6ab833b2668e8519c9",
+      "kalshi_event_id": "KXMLBGAME-26AUG292207PHILAA",
+      "kalshi_identifier": {
+        "date": "2026-08-29",
+        "game_number": null,
+        "participants": [
+          "LAA",
+          "PHI"
+        ]
+      },
+      "matcher_decision": "REVIEW",
+      "polymarket_event_id": "895507",
+      "polymarket_identifier": {
+        "date": "2026-08-29",
+        "participants": [
+          "LAA",
+          "PHI"
+        ]
+      },
+      "polymarket_source_url": "https://polymarket.com/event/mlb-phi-laa-2026-08-29",
+      "pricing_eligible": false,
+      "reported_participants": [
+        "LAA",
+        "PHI"
+      ],
+      "status": "IDENTIFIERS_CORROBORATE_EVENT"
+    },
+    {
+      "evidence_sha256": "134f6215a47a33cb688ae79d2db9cfe6f1142cd737b687010c83966ff6622218",
+      "kalshi_event_id": "KXMLBGAME-26AUG301215MIAWSH",
+      "kalshi_identifier": {
+        "date": "2026-08-30",
+        "game_number": null,
+        "participants": [
+          "MIA",
+          "WSH"
+        ]
+      },
+      "matcher_decision": "REVIEW",
+      "polymarket_event_id": "904114",
+      "polymarket_identifier": {
+        "date": "2026-08-30",
+        "participants": [
+          "MIA",
+          "WSH"
+        ]
+      },
+      "polymarket_source_url": "https://polymarket.com/event/mlb-mia-wsh-2026-08-30",
+      "pricing_eligible": false,
+      "reported_participants": [
+        "MIA",
+        "WSH"
+      ],
+      "status": "IDENTIFIERS_CORROBORATE_EVENT"
+    },
+    {
+      "evidence_sha256": "153d2c1f8be0f8c400ac8e7597e495e536f1fcd711b354f5cd4a9d3e894348d3",
+      "kalshi_event_id": "KXMLBGAME-26AUG301335BOSNYY",
+      "kalshi_identifier": {
+        "date": "2026-08-30",
+        "game_number": null,
+        "participants": [
+          "BOS",
+          "NYY"
+        ]
+      },
+      "matcher_decision": "REVIEW",
+      "polymarket_event_id": "904116",
+      "polymarket_identifier": {
+        "date": "2026-08-30",
+        "participants": [
+          "BOS",
+          "NYY"
+        ]
+      },
+      "polymarket_source_url": "https://polymarket.com/event/mlb-bos-nyy-2026-08-30",
+      "pricing_eligible": false,
+      "reported_participants": [
+        "BOS",
+        "NYY"
+      ],
+      "status": "IDENTIFIERS_CORROBORATE_EVENT"
+    },
+    {
+      "evidence_sha256": "61d711f33cb32e91890231dba244a43db833d0950862752d5109125b6c9237f6",
+      "kalshi_event_id": "KXMLBGAME-26AUG301335COLATL",
+      "kalshi_identifier": {
+        "date": "2026-08-30",
+        "game_number": null,
+        "participants": [
+          "ATL",
+          "COL"
+        ]
+      },
+      "matcher_decision": "REVIEW",
+      "polymarket_event_id": "904115",
+      "polymarket_identifier": {
+        "date": "2026-08-30",
+        "participants": [
+          "ATL",
+          "COL"
+        ]
+      },
+      "polymarket_source_url": "https://polymarket.com/event/mlb-col-atl-2026-08-30",
+      "pricing_eligible": false,
+      "reported_participants": [
+        "ATL",
+        "COL"
+      ],
+      "status": "IDENTIFIERS_CORROBORATE_EVENT"
+    },
+    {
+      "evidence_sha256": "6c70ef2dac67611829f72f11eec6c5e1f79f41ea5c23b612d55ef5e536dae441",
+      "kalshi_event_id": "KXMLBGAME-26AUG301337SEATOR",
+      "kalshi_identifier": {
+        "date": "2026-08-30",
+        "game_number": null,
+        "participants": [
+          "SEA",
+          "TOR"
+        ]
+      },
+      "matcher_decision": "REVIEW",
+      "polymarket_event_id": "904117",
+      "polymarket_identifier": {
+        "date": "2026-08-30",
+        "participants": [
+          "SEA",
+          "TOR"
+        ]
+      },
+      "polymarket_source_url": "https://polymarket.com/event/mlb-sea-tor-2026-08-30",
+      "pricing_eligible": false,
+      "reported_participants": [
+        "SEA",
+        "TOR"
+      ],
+      "status": "IDENTIFIERS_CORROBORATE_EVENT"
+    },
+    {
+      "evidence_sha256": "480bc7cb944c987a49684608575b1bbe25a3238964e6b54df87b090e23d00504",
+      "kalshi_event_id": "KXMLBGAME-26AUG301340KCCLE",
+      "kalshi_identifier": {
+        "date": "2026-08-30",
+        "game_number": null,
+        "participants": [
+          "CLE",
+          "KC"
+        ]
+      },
+      "matcher_decision": "REVIEW",
+      "polymarket_event_id": "904118",
+      "polymarket_identifier": {
+        "date": "2026-08-30",
+        "participants": [
+          "CLE",
+          "KC"
+        ]
+      },
+      "polymarket_source_url": "https://polymarket.com/event/mlb-kc-cle-2026-08-30",
+      "pricing_eligible": false,
+      "reported_participants": [
+        "CLE",
+        "KC"
+      ],
+      "status": "IDENTIFIERS_CORROBORATE_EVENT"
+    },
+    {
+      "evidence_sha256": "969ef946e18b4e1f988f45dea6a78c0145335ed7d08c21151aac2cd35d70aa56",
+      "kalshi_event_id": "KXMLBGAME-26AUG301340LADDET",
+      "kalshi_identifier": {
+        "date": "2026-08-30",
+        "game_number": null,
+        "participants": [
+          "DET",
+          "LAD"
+        ]
+      },
+      "matcher_decision": "REVIEW",
+      "polymarket_event_id": "904119",
+      "polymarket_identifier": {
+        "date": "2026-08-30",
+        "participants": [
+          "DET",
+          "LAD"
+        ]
+      },
+      "polymarket_source_url": "https://polymarket.com/event/mlb-lad-det-2026-08-30",
+      "pricing_eligible": false,
+      "reported_participants": [
+        "DET",
+        "LAD"
+      ],
+      "status": "IDENTIFIERS_CORROBORATE_EVENT"
+    },
+    {
+      "evidence_sha256": "8c5ce08fab8f445a73b76eada38009d4d5a8d841f6bcbe644ab87c0bbb8aa60b",
+      "kalshi_event_id": "KXMLBGAME-26AUG301340SDTB",
+      "kalshi_identifier": {
+        "date": "2026-08-30",
+        "game_number": null,
+        "participants": [
+          "SD",
+          "TB"
+        ]
+      },
+      "matcher_decision": "REVIEW",
+      "polymarket_event_id": "904120",
+      "polymarket_identifier": {
+        "date": "2026-08-30",
+        "participants": [
+          "SD",
+          "TB"
+        ]
+      },
+      "polymarket_source_url": "https://polymarket.com/event/mlb-sd-tb-2026-08-30",
+      "pricing_eligible": false,
+      "reported_participants": [
+        "SD",
+        "TB"
+      ],
+      "status": "IDENTIFIERS_CORROBORATE_EVENT"
+    },
+    {
+      "evidence_sha256": "2a4c2de4f5699281b140fdb0fc3cd121d0db11f4997847ce65924fcfb3e1521e",
+      "kalshi_event_id": "KXMLBGAME-26AUG301410CWSMIN",
+      "kalshi_identifier": {
+        "date": "2026-08-30",
+        "game_number": null,
+        "participants": [
+          "CWS",
+          "MIN"
+        ]
+      },
+      "matcher_decision": "REVIEW",
+      "polymarket_event_id": "904122",
+      "polymarket_identifier": {
+        "date": "2026-08-30",
+        "participants": [
+          "CWS",
+          "MIN"
+        ]
+      },
+      "polymarket_source_url": "https://polymarket.com/event/mlb-cws-min-2026-08-30",
+      "pricing_eligible": false,
+      "reported_participants": [
+        "CWS",
+        "MIN"
+      ],
+      "status": "IDENTIFIERS_CORROBORATE_EVENT"
+    },
+    {
+      "evidence_sha256": "efb40382abcf9cf3e54477db17afea807aada88221b5f15ab6189d9084c60e73",
+      "kalshi_event_id": "KXMLBGAME-26AUG301410TEXMIL",
+      "kalshi_identifier": {
+        "date": "2026-08-30",
+        "game_number": null,
+        "participants": [
+          "MIL",
+          "TEX"
+        ]
+      },
+      "matcher_decision": "REVIEW",
+      "polymarket_event_id": "904121",
+      "polymarket_identifier": {
+        "date": "2026-08-30",
+        "participants": [
+          "MIL",
+          "TEX"
+        ]
+      },
+      "polymarket_source_url": "https://polymarket.com/event/mlb-tex-mil-2026-08-30",
+      "pricing_eligible": false,
+      "reported_participants": [
+        "MIL",
+        "TEX"
+      ],
+      "status": "IDENTIFIERS_CORROBORATE_EVENT"
+    },
+    {
+      "evidence_sha256": "37f90fc53b3a47d02c0ba36d5f46f3e9b8cb7d00541459d8cc0120a8559a15d5",
+      "kalshi_event_id": "KXMLBGAME-26AUG301415PITSTL",
+      "kalshi_identifier": {
+        "date": "2026-08-30",
+        "game_number": null,
+        "participants": [
+          "PIT",
+          "STL"
+        ]
+      },
+      "matcher_decision": "REVIEW",
+      "polymarket_event_id": "904123",
+      "polymarket_identifier": {
+        "date": "2026-08-30",
+        "participants": [
+          "PIT",
+          "STL"
+        ]
+      },
+      "polymarket_source_url": "https://polymarket.com/event/mlb-pit-stl-2026-08-30",
+      "pricing_eligible": false,
+      "reported_participants": [
+        "PIT",
+        "STL"
+      ],
+      "status": "IDENTIFIERS_CORROBORATE_EVENT"
+    },
+    {
+      "evidence_sha256": "7838d828eec5c107e8f1c1d0281d7721a7ac28c8007cbcf6c14f3e17b848bb40",
+      "kalshi_event_id": "KXMLBGAME-26AUG301510HOUNYM",
+      "kalshi_identifier": {
+        "date": "2026-08-30",
+        "game_number": null,
+        "participants": [
+          "HOU",
+          "NYM"
+        ]
+      },
+      "matcher_decision": "REVIEW",
+      "polymarket_event_id": "904124",
+      "polymarket_identifier": {
+        "date": "2026-08-30",
+        "participants": [
+          "HOU",
+          "NYM"
+        ]
+      },
+      "polymarket_source_url": "https://polymarket.com/event/mlb-hou-nym-2026-08-30",
+      "pricing_eligible": false,
+      "reported_participants": [
+        "HOU",
+        "NYM"
+      ],
+      "status": "IDENTIFIERS_CORROBORATE_EVENT"
+    },
+    {
+      "evidence_sha256": "4168049ee9a24d93f6387b4b033e23b33f092d72361966e18f31e95eca6fc6f2",
+      "kalshi_event_id": "KXMLBGAME-26AUG301605BALATH",
+      "kalshi_identifier": {
+        "date": "2026-08-30",
+        "game_number": null,
+        "participants": [
+          "ATH",
+          "BAL"
+        ]
+      },
+      "matcher_decision": "REVIEW",
+      "polymarket_event_id": "904125",
+      "polymarket_identifier": {
+        "date": "2026-08-30",
+        "participants": [
+          "ATH",
+          "BAL"
+        ]
+      },
+      "polymarket_source_url": "https://polymarket.com/event/mlb-bal-oak-2026-08-30",
+      "pricing_eligible": false,
+      "reported_participants": [
+        "ATH",
+        "BAL"
+      ],
+      "status": "IDENTIFIERS_CORROBORATE_EVENT"
+    },
+    {
+      "evidence_sha256": "a75bdf3cf20a7ca65da4f9887c5e36186da99b58d48733c4f46f09ccef402560",
+      "kalshi_event_id": "KXMLBGAME-26AUG301607PHILAA",
+      "kalshi_identifier": {
+        "date": "2026-08-30",
+        "game_number": null,
+        "participants": [
+          "LAA",
+          "PHI"
+        ]
+      },
+      "matcher_decision": "REVIEW",
+      "polymarket_event_id": "904126",
+      "polymarket_identifier": {
+        "date": "2026-08-30",
+        "participants": [
+          "LAA",
+          "PHI"
+        ]
+      },
+      "polymarket_source_url": "https://polymarket.com/event/mlb-phi-laa-2026-08-30",
+      "pricing_eligible": false,
+      "reported_participants": [
+        "LAA",
+        "PHI"
+      ],
+      "status": "IDENTIFIERS_CORROBORATE_EVENT"
+    },
+    {
+      "evidence_sha256": "e7abafe4b6d38e874a7f23ba00b682c1c4e20c6a790c0feb53319b4c2483682f",
+      "kalshi_event_id": "KXMLBGAME-26AUG301920CINCHC",
+      "kalshi_identifier": {
+        "date": "2026-08-30",
+        "game_number": null,
+        "participants": [
+          "CHC",
+          "CIN"
+        ]
+      },
+      "matcher_decision": "REVIEW",
+      "polymarket_event_id": "904127",
+      "polymarket_identifier": {
+        "date": "2026-08-30",
+        "participants": [
+          "CHC",
+          "CIN"
+        ]
+      },
+      "polymarket_source_url": "https://polymarket.com/event/mlb-cin-chc-2026-08-30",
+      "pricing_eligible": false,
+      "reported_participants": [
+        "CHC",
+        "CIN"
+      ],
+      "status": "IDENTIFIERS_CORROBORATE_EVENT"
     }
   ],
-  "generated_at": "2026-08-27T00:18:03.274918Z",
+  "generated_at": "2026-08-28T00:09:57.706005Z",
   "independent_label_gate_status": "NOT_SATISFIED_AUTOMATED_CHECK_IS_NOT_INDEPENDENT_REVIEW",
   "invalid_report_count": 0,
-  "match_count": 208,
+  "match_count": 225,
   "method": "AUTOMATED_INDEPENDENT_SOURCE_IDENTIFIER_CROSS_CHECK",
   "pricing_eligible": false,
-  "report_count": 3228,
+  "report_count": 3397,
   "schema_version": 1,
   "scope": "PARSER_AND_EVENT_IDENTITY_CORROBORATION_ONLY",
   "status_counts": {
-    "IDENTIFIERS_CORROBORATE_EVENT": 205,
+    "IDENTIFIERS_CORROBORATE_EVENT": 222,
     "REVIEW_DATE_IDENTIFIER_CONFLICT": 3
   }
 }

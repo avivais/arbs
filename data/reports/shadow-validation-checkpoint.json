@@ -1,43 +1,43 @@
 {
   "evidence_window": {
-    "elapsed_seconds": 1244033.321503,
+    "elapsed_seconds": 1330401.646329,
     "first": "2026-08-12T14:27:31.787143+00:00",
-    "last": "2026-08-27T00:01:25.108646+00:00"
+    "last": "2026-08-28T00:00:53.433472+00:00"
   },
   "gate_status": "PARTIAL_EVIDENCE_ONLY",
-  "generated_at": "2026-08-27T03:09:50.038291+03:00",
+  "generated_at": "2026-08-28T03:09:31.025625+03:00",
   "movement": {
-    "changed_transition_count": 144030,
+    "changed_transition_count": 157818,
     "failure_count": 11,
-    "pair_count": 408,
+    "pair_count": 442,
     "schema_version": 1,
-    "successful_samples": 145361,
-    "top_quote_changed_transition_count": 24349,
-    "transition_count": 144953
+    "successful_samples": 159341,
+    "top_quote_changed_transition_count": 27484,
+    "transition_count": 158899
   },
   "operations": {
     "artifact_cadence": {
       "claim_scope": "ARTIFACT_COVERAGE_NOT_HOST_OR_PROCESS_UPTIME",
-      "elapsed_seconds": 1246902.825961,
-      "expected_slots_between_first_and_last": 4157,
+      "elapsed_seconds": 1333273.126426,
+      "expected_slots_between_first_and_last": 4445,
       "first": "2026-08-12T13:38:33.792778+00:00",
       "invalid_report_count": 0,
       "largest_observed_gap_seconds": 9211.952351,
-      "last": "2026-08-27T00:00:16.618739+00:00",
-      "observed_slot_coverage": 0.6918450805869617,
-      "occupied_schedule_slots": 2876,
+      "last": "2026-08-27T23:59:46.919204+00:00",
+      "observed_slot_coverage": 0.6850393700787402,
+      "occupied_schedule_slots": 3045,
       "schedule_seconds": 300,
-      "successful_report_reads": 3227,
-      "valid_unique_reports": 3227
+      "successful_report_reads": 3396,
+      "valid_unique_reports": 3396
     },
     "decision_audit": {
       "decision_counts": {
-        "REVIEW": 208
+        "REVIEW": 225
       },
       "modeled_net_result_status": "NOT_COMPUTABLE_NO_PRICING_ELIGIBLE_PAIRS",
       "pricing_eligible_pairs": 0,
       "theoretical_fill_count": 0,
-      "unique_event_pairs": 208
+      "unique_event_pairs": 225
     },
     "schema_version": 1
   },
@@ -48,27 +48,27 @@
     "receipt_skew_ms": {
       "max": 30567.0,
       "p50": 112.0,
-      "p95": 308.0,
-      "p99": 631.3999999999942
+      "p95": 304.0,
+      "p99": 624.0
     },
     "request_elapsed_ms": {
       "max": 30456.87,
-      "p50": 318.1245,
-      "p95": 439.257,
-      "p99": 618.4166799999981
+      "p50": 318.199,
+      "p95": 437.3704500000001,
+      "p99": 614.32216
     },
-    "sample_count": 145361,
+    "sample_count": 159341,
     "schema_version": 1,
     "source_age_ms": {
       "max": 9955436.181,
-      "p50": 15419.397,
-      "p95": 286337.02724999917,
-      "p99": 1544710.664739999,
-      "sample_count": 145152
+      "p50": 16646.304,
+      "p95": 292760.882,
+      "p99": 1414985.4401000016,
+      "sample_count": 159131
     },
     "suggested_limits": {
       "pair_skew_ms": 700,
-      "source_age_ms": 1545000
+      "source_age_ms": 1415000
     },
     "threshold_status": "READY_FOR_REVIEW"
   }
