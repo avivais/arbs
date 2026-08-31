@@ -58,13 +58,18 @@ class IndicatorTests(unittest.TestCase):
         first = self.leg("kalshi", "A", [("0.4", "1")], now)
         second = self.leg("polymarket", "B", [("0.5", "1")], now)
         self.assertEqual(evaluate_candidate(first, second, now=now).status, "OBSERVED_RESERVED_GAP")
-    def test_future_receipt_and_stale_source_fail_closed(self):
+    def test_future_receipt_and_explicit_source_age_limit_fail_closed(self):
         now = datetime.now(timezone.utc)
         future = IndicatorLeg("kalshi", "A", "k", (Level(Decimal("0.4"), Decimal("1")),), now + timedelta(seconds=3))
         normal = self.leg("polymarket", "B", [("0.5", "1")], now)
         self.assertEqual(evaluate_candidate(future, normal, now=now).status, "UNAVAILABLE_FRESHNESS")
         stale_source = IndicatorLeg("polymarket", "B", "p", (Level(Decimal("0.5"), Decimal("1")),), now, "available", Decimal("90001"))
-        self.assertEqual(evaluate_candidate(self.leg("kalshi", "A", [("0.4", "1")], now), stale_source, now=now).status, "UNAVAILABLE_FRESHNESS")
+        first = self.leg("kalshi", "A", [("0.4", "1")], now)
+        self.assertEqual(evaluate_candidate(first, stale_source, now=now).status, "OBSERVED_RESERVED_GAP")
+        self.assertEqual(
+            evaluate_candidate(first, stale_source, now=now, max_source_age_ms=90000).status,
+            "UNAVAILABLE_FRESHNESS",
+        )
 
     def test_record_is_explicitly_non_actionable_and_has_no_net_edge(self):
         from arbs.indicators import candidate_record

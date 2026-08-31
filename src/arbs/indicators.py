@@ -49,10 +49,21 @@ def _candidate_quantity(a:IndicatorLeg,b:IndicatorLeg,reserve:Decimal)->Decimal:
    j+=1; right=b.asks[j].quantity if j<len(b.asks) else Decimal(0)
  return q
 
-def evaluate_candidate(first:IndicatorLeg,second:IndicatorLeg,*,now:datetime,reserve_per_pair:Decimal=Decimal("0.01"),max_quote_age_ms:int=90000,max_cross_leg_skew_ms:int=800,max_source_age_ms:int=90000,future_tolerance_ms:int=2000,quantity_cap:Decimal=Decimal("1000"))->Candidate:
+def evaluate_candidate(first:IndicatorLeg,second:IndicatorLeg,*,now:datetime,reserve_per_pair:Decimal=Decimal("0.01"),max_quote_age_ms:int=90000,max_cross_leg_skew_ms:int=800,max_source_age_ms:int|None=None,future_tolerance_ms:int=2000,quantity_cap:Decimal=Decimal("1000"))->Candidate:
  if now.tzinfo is None: raise ValueError("now must be timezone-aware")
  ages=tuple(int((now.astimezone(timezone.utc)-x.received_at).total_seconds()*1000) for x in (first,second)); age=max(ages); skew=abs(int((first.received_at-second.received_at).total_seconds()*1000))
- invalid_source=any(x.source_time_status in {"invalid","future"} or (x.source_time_status=="available" and (x.source_age_at_receipt_ms is None or x.source_age_at_receipt_ms < -future_tolerance_ms or x.source_age_at_receipt_ms > max_source_age_ms)) for x in (first,second))
+ invalid_source=any(
+  x.source_time_status in {"invalid","future"}
+  or (
+   x.source_time_status=="available"
+   and (
+    x.source_age_at_receipt_ms is None
+    or x.source_age_at_receipt_ms < -future_tolerance_ms
+    or (max_source_age_ms is not None and x.source_age_at_receipt_ms > max_source_age_ms)
+   )
+  )
+  for x in (first,second)
+ )
  unavailable=any(x < -future_tolerance_ms for x in ages) or invalid_source or age>max_quote_age_ms or skew>max_cross_leg_skew_ms
  zero=Decimal(0)
  if not first.asks or not second.asks: return Candidate("NO_DEPTH",zero,first,second,zero,zero,zero,zero,zero,zero,skew,age)

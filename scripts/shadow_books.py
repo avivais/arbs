@@ -137,10 +137,19 @@ def main() -> None:
             "records": index_records,
         },
     )
-    summary = summarize(sorted(root.glob("*.json")))
-    atomic_json(Path("data/shadow/book-summary.json"), summary)
+    # Publish the alert input before the cumulative historical summary.  The
+    # summary scans hundreds of thousands of retained files and can take
+    # minutes; putting it first made otherwise fresh books stale before the
+    # alert evaluator could see them.
     generated_at = datetime.now(timezone.utc)
     atomic_json(Path("data/shadow/latest-indicators.json"), build_indicators(report, captured, generated_at))
+    summary_path = Path("data/shadow/book-summary.json")
+    rebuild_summary = os.environ.get("ARBS_REBUILD_BOOK_SUMMARY") == "1" or not summary_path.exists()
+    if rebuild_summary:
+        summary = summarize(sorted(root.glob("*.json")))
+        atomic_json(summary_path, summary)
+    else:
+        summary = json.loads(summary_path.read_text(encoding="utf-8"))
     print(json.dumps(summary, sort_keys=True))
 
 
