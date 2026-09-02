@@ -1,43 +1,43 @@
 {
   "evidence_window": {
-    "elapsed_seconds": 1677117.737257,
+    "elapsed_seconds": 1763884.253782,
     "first": "2026-08-12T14:27:31.787143+00:00",
-    "last": "2026-09-01T00:19:29.524400+00:00"
+    "last": "2026-09-02T00:25:36.040925+00:00"
   },
   "gate_status": "PARTIAL_EVIDENCE_ONLY",
-  "generated_at": "2026-09-01T03:34:21.676149+03:00",
+  "generated_at": "2026-09-02T03:38:26.652593+03:00",
   "movement": {
-    "changed_transition_count": 214482,
+    "changed_transition_count": 233336,
     "failure_count": 13,
-    "pair_count": 538,
+    "pair_count": 562,
     "schema_version": 1,
-    "successful_samples": 217634,
-    "top_quote_changed_transition_count": 37858,
-    "transition_count": 217096
+    "successful_samples": 236727,
+    "top_quote_changed_transition_count": 40358,
+    "transition_count": 236165
   },
   "operations": {
     "artifact_cadence": {
       "claim_scope": "ARTIFACT_COVERAGE_NOT_HOST_OR_PROCESS_UPTIME",
-      "elapsed_seconds": 1680008.589597,
-      "expected_slots_between_first_and_last": 5601,
+      "elapsed_seconds": 1766722.216041,
+      "expected_slots_between_first_and_last": 5890,
       "first": "2026-08-12T13:38:33.792778+00:00",
       "invalid_report_count": 0,
       "largest_observed_gap_seconds": 9211.952351,
-      "last": "2026-09-01T00:18:42.382375+00:00",
-      "observed_slot_coverage": 0.6639885734690234,
-      "occupied_schedule_slots": 3719,
+      "last": "2026-09-02T00:23:56.008819+00:00",
+      "observed_slot_coverage": 0.6713073005093378,
+      "occupied_schedule_slots": 3954,
       "schedule_seconds": 300,
-      "successful_report_reads": 4071,
-      "valid_unique_reports": 4071
+      "successful_report_reads": 4306,
+      "valid_unique_reports": 4306
     },
     "decision_audit": {
       "decision_counts": {
-        "REVIEW": 273
+        "REVIEW": 285
       },
       "modeled_net_result_status": "NOT_COMPUTABLE_NO_PRICING_ELIGIBLE_PAIRS",
       "pricing_eligible_pairs": 0,
       "theoretical_fill_count": 0,
-      "unique_event_pairs": 273
+      "unique_event_pairs": 285
     },
     "schema_version": 1
   },
@@ -48,27 +48,27 @@
     "receipt_skew_ms": {
       "max": 30787.0,
       "p50": 112.0,
-      "p95": 294.0,
-      "p99": 602.0
+      "p95": 290.0,
+      "p99": 590.0
     },
     "request_elapsed_ms": {
       "max": 30580.679,
-      "p50": 318.782,
-      "p95": 431.84829999999994,
-      "p99": 602.9669200000003
+      "p50": 318.8185,
+      "p95": 429.2933999999999,
+      "p99": 598.2762799999994
     },
-    "sample_count": 217634,
+    "sample_count": 236727,
     "schema_version": 1,
     "source_age_ms": {
       "max": 12186252.854,
-      "p50": 20627.458,
-      "p95": 354553.456199999,
-      "p99": 3477080.4147998895,
-      "sample_count": 217424
+      "p50": 21394.06,
+      "p95": 368139.1395999996,
+      "p99": 3321503.001399998,
+      "sample_count": 236517
     },
     "suggested_limits": {
-      "pair_skew_ms": 700,
-      "source_age_ms": 3478000
+      "pair_skew_ms": 600,
+      "source_age_ms": 3322000
     },
     "threshold_status": "READY_FOR_REVIEW"
   }
