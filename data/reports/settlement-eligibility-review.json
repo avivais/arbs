@@ -1,0 +1,559 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-06T05:51:01.614336+00:00",
+  "review_type": "PARENT_AGENT_SOURCE_REVIEW_NOT_OWNER_OR_LEGAL_SIGN_OFF",
+  "scope_snapshot": "data/shadow/20260906T045510Z.json",
+  "snapshot_sha256": "f031acf5eb1791348b1ee050ef0d9e8dba89dd7f4eb938db0b20b9ee5772ec10",
+  "source_fetch_count": 124,
+  "http_200_count": 124,
+  "matched_event_count": 41,
+  "non_equivalent_count": 41,
+  "eligible_subset": [],
+  "verdict": "NO_GO_CROSS_VENUE_MLB_GUARANTEED_PAYOUT",
+  "source_archive": "review-evidence/settlement-source-corpus.json.gz",
+  "source_archive_sha256": "9c150750bd409cb2617203a136597cca35bffc1e6364271f7edcd3e1ce14d469",
+  "binding_terms_url": "https://assets.kalshi.com/contract_terms/MLBGAME.pdf",
+  "binding_terms_file": "review-evidence/MLBGAME.pdf",
+  "binding_terms_sha256": "c08ab9be0b9c9869be07e75674a84def8e0f017d4bb301da3898b25c33fd892b",
+  "fee_evidence": {
+    "kalshi_series_fee_type": "quadratic_with_maker_fees",
+    "kalshi_series_multiplier": 0.5,
+    "warning": "Series metadata is not a historical/per-event all-cost fee model; inspect event overrides. No eligible net-result population."
+  },
+  "records": [
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP061210MILCIN",
+      "polymarket_event_id": "941708",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Milwaukee vs Cincinnati professional baseball game originally scheduled for Sep 6, 2026 at 12:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Milwaukee Brewers and Cincinnati Reds, scheduled for September 6 at 12:10PM ET:\n\nThis market will resolve to \"Milwaukee Brewers\" if the Milwaukee Brewers win the game.\n\nThis market will resolve to \"Cincinnati Reds\" if the Cincinnati Reds win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061210MILCIN-CIN",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061210MILCIN-MIL",
+        "https://gamma-api.polymarket.com/events?slug=mlb-mil-cin-2026-09-06"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP061310ATLPHI",
+      "polymarket_event_id": "941709",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Atlanta vs Philadelphia professional baseball game originally scheduled for Sep 6, 2026 at 1:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Atlanta Braves and Philadelphia Phillies, scheduled for September 6 at 1:10PM ET:\n\nThis market will resolve to \"Atlanta Braves\" if the Atlanta Braves win the game.\n\nThis market will resolve to \"Philadelphia Phillies\" if the Philadelphia Phillies win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061310ATLPHI-ATL",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061310ATLPHI-PHI",
+        "https://gamma-api.polymarket.com/events?slug=mlb-atl-phi-2026-09-06"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP061335BOSBAL",
+      "polymarket_event_id": "941710",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Boston vs Baltimore professional baseball game originally scheduled for Sep 6, 2026 at 1:35 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Boston Red Sox and Baltimore Orioles, scheduled for September 6 at 1:35PM ET:\n\nThis market will resolve to \"Boston Red Sox\" if the Boston Red Sox win the game.\n\nThis market will resolve to \"Baltimore Orioles\" if the Baltimore Orioles win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061335BOSBAL-BAL",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061335BOSBAL-BOS",
+        "https://gamma-api.polymarket.com/events?slug=mlb-bos-bal-2026-09-06"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP061335LAAPIT",
+      "polymarket_event_id": "941711",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Los Angeles A vs Pittsburgh professional baseball game originally scheduled for Sep 6, 2026 at 1:35 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Los Angeles Angels and Pittsburgh Pirates, scheduled for September 6 at 1:35PM ET:\n\nThis market will resolve to \"Los Angeles Angels\" if the Los Angeles Angels win the game.\n\nThis market will resolve to \"Pittsburgh Pirates\" if the Pittsburgh Pirates win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061335LAAPIT-LAA",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061335LAAPIT-PIT",
+        "https://gamma-api.polymarket.com/events?slug=mlb-laa-pit-2026-09-06"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP061340CHCMIA",
+      "polymarket_event_id": "941713",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Chicago C vs Miami professional baseball game originally scheduled for Sep 6, 2026 at 1:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Chicago Cubs and Miami Marlins, scheduled for September 6 at 1:40PM ET:\n\nThis market will resolve to \"Chicago Cubs\" if the Chicago Cubs win the game.\n\nThis market will resolve to \"Miami Marlins\" if the Miami Marlins win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061340CHCMIA-CHC",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061340CHCMIA-MIA",
+        "https://gamma-api.polymarket.com/events?slug=mlb-chc-mia-2026-09-06"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP061340DETCLE",
+      "polymarket_event_id": "941712",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Detroit vs Cleveland professional baseball game originally scheduled for Sep 6, 2026 at 1:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Detroit Tigers and Cleveland Guardians, scheduled for September 6 at 1:40PM ET:\n\nThis market will resolve to \"Detroit Tigers\" if the Detroit Tigers win the game.\n\nThis market will resolve to \"Cleveland Guardians\" if the Cleveland Guardians win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061340DETCLE-CLE",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061340DETCLE-DET",
+        "https://gamma-api.polymarket.com/events?slug=mlb-det-cle-2026-09-06"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP061340SFNYM",
+      "polymarket_event_id": "941714",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the San Francisco vs New York M professional baseball game originally scheduled for Sep 6, 2026 at 1:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the San Francisco Giants and New York Mets, scheduled for September 6 at 1:40PM ET:\n\nThis market will resolve to \"San Francisco Giants\" if the San Francisco Giants win the game.\n\nThis market will resolve to \"New York Mets\" if the New York Mets win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061340SFNYM-NYM",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061340SFNYM-SF",
+        "https://gamma-api.polymarket.com/events?slug=mlb-sf-nym-2026-09-06"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP061410AZHOU",
+      "polymarket_event_id": "941715",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Arizona vs Houston professional baseball game originally scheduled for Sep 6, 2026 at 2:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Arizona Diamondbacks and Houston Astros, scheduled for September 6 at 2:10PM ET:\n\nThis market will resolve to \"Arizona Diamondbacks\" if the Arizona Diamondbacks win the game.\n\nThis market will resolve to \"Houston Astros\" if the Houston Astros win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061410AZHOU-AZ",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061410AZHOU-HOU",
+        "https://gamma-api.polymarket.com/events?slug=mlb-ari-hou-2026-09-06"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP061410TORKC",
+      "polymarket_event_id": "941716",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Toronto vs Kansas City professional baseball game originally scheduled for Sep 6, 2026 at 2:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Toronto Blue Jays and Kansas City Royals, scheduled for September 6 at 2:10PM ET:\n\nThis market will resolve to \"Toronto Blue Jays\" if the Toronto Blue Jays win the game.\n\nThis market will resolve to \"Kansas City Royals\" if the Kansas City Royals win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061410TORKC-KC",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061410TORKC-TOR",
+        "https://gamma-api.polymarket.com/events?slug=mlb-tor-kc-2026-09-06"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP061435TBTEX",
+      "polymarket_event_id": "941717",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Tampa Bay vs Texas professional baseball game originally scheduled for Sep 6, 2026 at 2:35 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Tampa Bay Rays and Texas Rangers, scheduled for September 6 at 2:35PM ET:\n\nThis market will resolve to \"Tampa Bay Rays\" if the Tampa Bay Rays win the game.\n\nThis market will resolve to \"Texas Rangers\" if the Texas Rangers win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061435TBTEX-TB",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061435TBTEX-TEX",
+        "https://gamma-api.polymarket.com/events?slug=mlb-tb-tex-2026-09-06"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP061510STLCOL",
+      "polymarket_event_id": "941718",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the St. Louis vs Colorado professional baseball game originally scheduled for Sep 6, 2026 at 3:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the St. Louis Cardinals and Colorado Rockies, scheduled for September 6 at 3:10PM ET:\n\nThis market will resolve to \"St. Louis Cardinals\" if the St. Louis Cardinals win the game.\n\nThis market will resolve to \"Colorado Rockies\" if the Colorado Rockies win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061510STLCOL-COL",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061510STLCOL-STL",
+        "https://gamma-api.polymarket.com/events?slug=mlb-stl-col-2026-09-06"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP061610ATHSEA",
+      "polymarket_event_id": "941720",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the A's vs Seattle professional baseball game originally scheduled for Sep 6, 2026 at 4:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Athletics and Seattle Mariners, scheduled for September 6 at 4:10PM ET:\n\nThis market will resolve to \"Athletics\" if the Athletics win the game.\n\nThis market will resolve to \"Seattle Mariners\" if the Seattle Mariners win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061610ATHSEA-ATH",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061610ATHSEA-SEA",
+        "https://gamma-api.polymarket.com/events?slug=mlb-oak-sea-2026-09-06"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP061610NYYSD",
+      "polymarket_event_id": "941719",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the New York Y vs San Diego professional baseball game originally scheduled for Sep 6, 2026 at 4:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the New York Yankees and San Diego Padres, scheduled for September 6 at 4:10PM ET:\n\nThis market will resolve to \"New York Yankees\" if the New York Yankees win the game.\n\nThis market will resolve to \"San Diego Padres\" if the San Diego Padres win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061610NYYSD-NYY",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061610NYYSD-SD",
+        "https://gamma-api.polymarket.com/events?slug=mlb-nyy-sd-2026-09-06"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP061820MINCWS",
+      "polymarket_event_id": "941721",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Minnesota vs Chicago WS professional baseball game originally scheduled for Sep 6, 2026 at 6:20 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Minnesota Twins and Chicago White Sox, scheduled for September 6 at 6:20PM ET:\n\nThis market will resolve to \"Minnesota Twins\" if the Minnesota Twins win the game.\n\nThis market will resolve to \"Chicago White Sox\" if the Chicago White Sox win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061820MINCWS-CWS",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP061820MINCWS-MIN",
+        "https://gamma-api.polymarket.com/events?slug=mlb-min-cws-2026-09-06"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP062210WSHLAD",
+      "polymarket_event_id": "941722",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Washington vs Los Angeles D professional baseball game originally scheduled for Sep 6, 2026 at 10:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Washington Nationals and Los Angeles Dodgers, scheduled for September 6 at 10:10PM ET:\n\nThis market will resolve to \"Washington Nationals\" if the Washington Nationals win the game.\n\nThis market will resolve to \"Los Angeles Dodgers\" if the Los Angeles Dodgers win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP062210WSHLAD-LAD",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP062210WSHLAD-WSH",
+        "https://gamma-api.polymarket.com/events?slug=mlb-wsh-lad-2026-09-06"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP071305ATLPHI",
+      "polymarket_event_id": "947630",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Atlanta vs Philadelphia professional baseball game originally scheduled for Sep 7, 2026 at 1:05 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Atlanta Braves and Philadelphia Phillies, scheduled for September 7 at 1:05PM ET:\n\nThis market will resolve to \"Atlanta Braves\" if the Atlanta Braves win the game.\n\nThis market will resolve to \"Philadelphia Phillies\" if the Philadelphia Phillies win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP071305ATLPHI-ATL",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP071305ATLPHI-PHI",
+        "https://gamma-api.polymarket.com/events?slug=mlb-atl-phi-2026-09-07"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP071310NYMMIA",
+      "polymarket_event_id": "947631",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the New York M vs Miami professional baseball game originally scheduled for Sep 7, 2026 at 1:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the New York Mets and Miami Marlins, scheduled for September 7 at 1:10PM ET:\n\nThis market will resolve to \"New York Mets\" if the New York Mets win the game.\n\nThis market will resolve to \"Miami Marlins\" if the Miami Marlins win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP071310NYMMIA-MIA",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP071310NYMMIA-NYM",
+        "https://gamma-api.polymarket.com/events?slug=mlb-nym-mia-2026-09-07"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP071335CLEBAL",
+      "polymarket_event_id": "947632",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Cleveland vs Baltimore professional baseball game originally scheduled for Sep 7, 2026 at 1:35 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Cleveland Guardians and Baltimore Orioles, scheduled for September 7 at 1:35PM ET:\n\nThis market will resolve to \"Cleveland Guardians\" if the Cleveland Guardians win the game.\n\nThis market will resolve to \"Baltimore Orioles\" if the Baltimore Orioles win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP071335CLEBAL-BAL",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP071335CLEBAL-CLE",
+        "https://gamma-api.polymarket.com/events?slug=mlb-cle-bal-2026-09-07"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP071335LAABOS",
+      "polymarket_event_id": "947633",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Los Angeles A vs Boston professional baseball game originally scheduled for Sep 7, 2026 at 1:35 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Los Angeles Angels and Boston Red Sox, scheduled for September 7 at 1:35PM ET:\n\nThis market will resolve to \"Los Angeles Angels\" if the Los Angeles Angels win the game.\n\nThis market will resolve to \"Boston Red Sox\" if the Boston Red Sox win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP071335LAABOS-BOS",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP071335LAABOS-LAA",
+        "https://gamma-api.polymarket.com/events?slug=mlb-laa-bos-2026-09-07"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP071410AZKC",
+      "polymarket_event_id": "947634",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Arizona vs Kansas City professional baseball game originally scheduled for Sep 7, 2026 at 2:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Arizona Diamondbacks and Kansas City Royals, scheduled for September 7 at 2:10PM ET:\n\nThis market will resolve to \"Arizona Diamondbacks\" if the Arizona Diamondbacks win the game.\n\nThis market will resolve to \"Kansas City Royals\" if the Kansas City Royals win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP071410AZKC-AZ",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP071410AZKC-KC",
+        "https://gamma-api.polymarket.com/events?slug=mlb-ari-kc-2026-09-07"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP071410CHCMIL",
+      "polymarket_event_id": "947635",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Chicago C vs Milwaukee professional baseball game originally scheduled for Sep 7, 2026 at 2:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Chicago Cubs and Milwaukee Brewers, scheduled for September 7 at 2:10PM ET:\n\nThis market will resolve to \"Chicago Cubs\" if the Chicago Cubs win the game.\n\nThis market will resolve to \"Milwaukee Brewers\" if the Milwaukee Brewers win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP071410CHCMIL-CHC",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP071410CHCMIL-MIL",
+        "https://gamma-api.polymarket.com/events?slug=mlb-chc-mil-2026-09-07"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP071510MINDET",
+      "polymarket_event_id": "947636",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Minnesota vs Detroit professional baseball game originally scheduled for Sep 7, 2026 at 3:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Minnesota Twins and Detroit Tigers, scheduled for September 7 at 3:10PM ET:\n\nThis market will resolve to \"Minnesota Twins\" if the Minnesota Twins win the game.\n\nThis market will resolve to \"Detroit Tigers\" if the Detroit Tigers win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP071510MINDET-DET",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP071510MINDET-MIN",
+        "https://gamma-api.polymarket.com/events?slug=mlb-min-det-2026-09-07"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP071710WSHSD",
+      "polymarket_event_id": "947637",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Washington vs San Diego professional baseball game originally scheduled for Sep 7, 2026 at 5:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Washington Nationals and San Diego Padres, scheduled for September 7 at 5:10PM ET:\n\nThis market will resolve to \"Washington Nationals\" if the Washington Nationals win the game.\n\nThis market will resolve to \"San Diego Padres\" if the San Diego Padres win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP071710WSHSD-SD",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP071710WSHSD-WSH",
+        "https://gamma-api.polymarket.com/events?slug=mlb-wsh-sd-2026-09-07"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP072010STLSF",
+      "polymarket_event_id": "947638",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the St. Louis vs San Francisco professional baseball game originally scheduled for Sep 7, 2026 at 8:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the St. Louis Cardinals and San Francisco Giants, scheduled for September 7 at 8:10PM ET:\n\nThis market will resolve to \"St. Louis Cardinals\" if the St. Louis Cardinals win the game.\n\nThis market will resolve to \"San Francisco Giants\" if the San Francisco Giants win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP072010STLSF-SF",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP072010STLSF-STL",
+        "https://gamma-api.polymarket.com/events?slug=mlb-stl-sf-2026-09-07"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP072110CINLAD",
+      "polymarket_event_id": "947639",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Cincinnati vs Los Angeles D professional baseball game originally scheduled for Sep 7, 2026 at 9:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Cincinnati Reds and Los Angeles Dodgers, scheduled for September 7 at 9:10PM ET:\n\nThis market will resolve to \"Cincinnati Reds\" if the Cincinnati Reds win the game.\n\nThis market will resolve to \"Los Angeles Dodgers\" if the Los Angeles Dodgers win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP072110CINLAD-CIN",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP072110CINLAD-LAD",
+        "https://gamma-api.polymarket.com/events?slug=mlb-cin-lad-2026-09-07"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP072205TORATH",
+      "polymarket_event_id": "947640",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Toronto vs A's professional baseball game originally scheduled for Sep 7, 2026 at 10:05 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Toronto Blue Jays and Athletics, scheduled for September 7 at 10:05PM ET:\n\nThis market will resolve to \"Toronto Blue Jays\" if the Toronto Blue Jays win the game.\n\nThis market will resolve to \"Athletics\" if the Athletics win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP072205TORATH-ATH",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP072205TORATH-TOR",
+        "https://gamma-api.polymarket.com/events?slug=mlb-tor-oak-2026-09-07"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP081835CLEBAL",
+      "polymarket_event_id": "953417",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Cleveland vs Baltimore professional baseball game originally scheduled for Sep 8, 2026 at 6:35 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Cleveland Guardians and Baltimore Orioles, scheduled for September 8 at 6:35PM ET:\n\nThis market will resolve to \"Cleveland Guardians\" if the Cleveland Guardians win the game.\n\nThis market will resolve to \"Baltimore Orioles\" if the Baltimore Orioles win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081835CLEBAL-BAL",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081835CLEBAL-CLE",
+        "https://gamma-api.polymarket.com/events?slug=mlb-cle-bal-2026-09-08"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP081840MINDET",
+      "polymarket_event_id": "953418",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Minnesota vs Detroit professional baseball game originally scheduled for Sep 8, 2026 at 6:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Minnesota Twins and Detroit Tigers, scheduled for September 8 at 6:40PM ET:\n\nThis market will resolve to \"Minnesota Twins\" if the Minnesota Twins win the game.\n\nThis market will resolve to \"Detroit Tigers\" if the Detroit Tigers win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081840MINDET-DET",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081840MINDET-MIN",
+        "https://gamma-api.polymarket.com/events?slug=mlb-min-det-2026-09-08"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP081840HOUPHI",
+      "polymarket_event_id": "953420",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Houston vs Philadelphia professional baseball game originally scheduled for Sep 8, 2026 at 6:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Houston Astros and Philadelphia Phillies, scheduled for September 8 at 6:40PM ET:\n\nThis market will resolve to \"Houston Astros\" if the Houston Astros win the game.\n\nThis market will resolve to \"Philadelphia Phillies\" if the Philadelphia Phillies win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081840HOUPHI-HOU",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081840HOUPHI-PHI",
+        "https://gamma-api.polymarket.com/events?slug=mlb-hou-phi-2026-09-08"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP081840NYMMIA",
+      "polymarket_event_id": "953419",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the New York M vs Miami professional baseball game originally scheduled for Sep 8, 2026 at 6:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the New York Mets and Miami Marlins, scheduled for September 8 at 6:40PM ET:\n\nThis market will resolve to \"New York Mets\" if the New York Mets win the game.\n\nThis market will resolve to \"Miami Marlins\" if the Miami Marlins win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081840NYMMIA-MIA",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081840NYMMIA-NYM",
+        "https://gamma-api.polymarket.com/events?slug=mlb-nym-mia-2026-09-08"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP081845LAABOS",
+      "polymarket_event_id": "953421",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Los Angeles A vs Boston professional baseball game originally scheduled for Sep 8, 2026 at 6:45 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Los Angeles Angels and Boston Red Sox, scheduled for September 8 at 6:45PM ET:\n\nThis market will resolve to \"Los Angeles Angels\" if the Los Angeles Angels win the game.\n\nThis market will resolve to \"Boston Red Sox\" if the Boston Red Sox win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081845LAABOS-BOS",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081845LAABOS-LAA",
+        "https://gamma-api.polymarket.com/events?slug=mlb-laa-bos-2026-09-08"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP081905COLNYY",
+      "polymarket_event_id": "953422",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Colorado vs New York Y professional baseball game originally scheduled for Sep 8, 2026 at 7:05 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Colorado Rockies and New York Yankees, scheduled for September 8 at 7:05PM ET:\n\nThis market will resolve to \"Colorado Rockies\" if the Colorado Rockies win the game.\n\nThis market will resolve to \"New York Yankees\" if the New York Yankees win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081905COLNYY-COL",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081905COLNYY-NYY",
+        "https://gamma-api.polymarket.com/events?slug=mlb-col-nyy-2026-09-08"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP081915TBATL",
+      "polymarket_event_id": "953423",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Tampa Bay vs Atlanta professional baseball game originally scheduled for Sep 8, 2026 at 7:15 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Tampa Bay Rays and Atlanta Braves, scheduled for September 8 at 7:15PM ET:\n\nThis market will resolve to \"Tampa Bay Rays\" if the Tampa Bay Rays win the game.\n\nThis market will resolve to \"Atlanta Braves\" if the Atlanta Braves win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081915TBATL-ATL",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081915TBATL-TB",
+        "https://gamma-api.polymarket.com/events?slug=mlb-tb-atl-2026-09-08"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP081940AZKC",
+      "polymarket_event_id": "953425",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Arizona vs Kansas City professional baseball game originally scheduled for Sep 8, 2026 at 7:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Arizona Diamondbacks and Kansas City Royals, scheduled for September 8 at 7:40PM ET:\n\nThis market will resolve to \"Arizona Diamondbacks\" if the Arizona Diamondbacks win the game.\n\nThis market will resolve to \"Kansas City Royals\" if the Kansas City Royals win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081940AZKC-AZ",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081940AZKC-KC",
+        "https://gamma-api.polymarket.com/events?slug=mlb-ari-kc-2026-09-08"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP081940CHCMIL",
+      "polymarket_event_id": "953426",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Chicago C vs Milwaukee professional baseball game originally scheduled for Sep 8, 2026 at 7:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Chicago Cubs and Milwaukee Brewers, scheduled for September 8 at 7:40PM ET:\n\nThis market will resolve to \"Chicago Cubs\" if the Chicago Cubs win the game.\n\nThis market will resolve to \"Milwaukee Brewers\" if the Milwaukee Brewers win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081940CHCMIL-CHC",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081940CHCMIL-MIL",
+        "https://gamma-api.polymarket.com/events?slug=mlb-chc-mil-2026-09-08"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP081940PITCWS",
+      "polymarket_event_id": "953424",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Pittsburgh vs Chicago WS professional baseball game originally scheduled for Sep 8, 2026 at 7:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Pittsburgh Pirates and Chicago White Sox, scheduled for September 8 at 7:40PM ET:\n\nThis market will resolve to \"Pittsburgh Pirates\" if the Pittsburgh Pirates win the game.\n\nThis market will resolve to \"Chicago White Sox\" if the Chicago White Sox win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081940PITCWS-CWS",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP081940PITCWS-PIT",
+        "https://gamma-api.polymarket.com/events?slug=mlb-pit-cws-2026-09-08"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP082140TORATH",
+      "polymarket_event_id": "953427",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Toronto vs A's professional baseball game originally scheduled for Sep 8, 2026 at 9:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Toronto Blue Jays and Athletics, scheduled for September 8 at 9:40PM ET:\n\nThis market will resolve to \"Toronto Blue Jays\" if the Toronto Blue Jays win the game.\n\nThis market will resolve to \"Athletics\" if the Athletics win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP082140TORATH-ATH",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP082140TORATH-TOR",
+        "https://gamma-api.polymarket.com/events?slug=mlb-tor-oak-2026-09-08"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP082140WSHSD",
+      "polymarket_event_id": "953428",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Washington vs San Diego professional baseball game originally scheduled for Sep 8, 2026 at 9:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Washington Nationals and San Diego Padres, scheduled for September 8 at 9:40PM ET:\n\nThis market will resolve to \"Washington Nationals\" if the Washington Nationals win the game.\n\nThis market will resolve to \"San Diego Padres\" if the San Diego Padres win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP082140WSHSD-SD",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP082140WSHSD-WSH",
+        "https://gamma-api.polymarket.com/events?slug=mlb-wsh-sd-2026-09-08"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP082140TEXSEA",
+      "polymarket_event_id": "953429",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Texas vs Seattle professional baseball game originally scheduled for Sep 8, 2026 at 9:40 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Texas Rangers and Seattle Mariners, scheduled for September 8 at 9:40PM ET:\n\nThis market will resolve to \"Texas Rangers\" if the Texas Rangers win the game.\n\nThis market will resolve to \"Seattle Mariners\" if the Seattle Mariners win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP082140TEXSEA-SEA",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP082140TEXSEA-TEX",
+        "https://gamma-api.polymarket.com/events?slug=mlb-tex-sea-2026-09-08"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP082145STLSF",
+      "polymarket_event_id": "953430",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the St. Louis vs San Francisco professional baseball game originally scheduled for Sep 8, 2026 at 9:45 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the St. Louis Cardinals and San Francisco Giants, scheduled for September 8 at 9:45PM ET:\n\nThis market will resolve to \"St. Louis Cardinals\" if the St. Louis Cardinals win the game.\n\nThis market will resolve to \"San Francisco Giants\" if the San Francisco Giants win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP082145STLSF-SF",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP082145STLSF-STL",
+        "https://gamma-api.polymarket.com/events?slug=mlb-stl-sf-2026-09-08"
+      ],
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP082210CINLAD",
+      "polymarket_event_id": "953431",
+      "verdict": "NON_EQUIVALENT_EXCEPTIONAL_RULES",
+      "kalshi_rule_excerpt": "The following market refers to the Cincinnati vs Los Angeles D professional baseball game originally scheduled for Sep 8, 2026 at 10:10 PM EDT. If this game is postponed or delayed, the market will remain open and close after the rescheduled game has finished (within two days). If the game is cancelled or rescheduled to over two days away, the market will resolve to a fair price in accordance with the rules.\n\nKalshi is not affiliated, associated, authorized, endorsed by, or in any way officially connected with the Governing League. All trademarks, logos, and brand names are the property of their respective owners.",
+      "polymarket_rule_excerpt": "In the upcoming MLB game between the Cincinnati Reds and Los Angeles Dodgers, scheduled for September 8 at 10:10PM ET:\n\nThis market will resolve to \"Cincinnati Reds\" if the Cincinnati Reds win the game.\n\nThis market will resolve to \"Los Angeles Dodgers\" if the Los Angeles Dodgers win the game.\n\nIf the game is postponed, this market will remain open until the game has been completed. If the game is canceled entirely, with no make-up game, or ends in a tie, this market will resolve 50-50.\n\nThe primary resolution source for this market is the official final statistics of the event as recognized by the governing body or event organizers. However, if the governing body or event organizers have not published final match statistics within 24 hours after the event's conclusion, a consensus of credible reporting may be used instead.",
+      "source_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP082210CINLAD-CIN",
+        "https://api.elections.kalshi.com/trade-api/v2/markets/KXMLBGAME-26SEP082210CINLAD-LAD",
+        "https://gamma-api.polymarket.com/events?slug=mlb-cin-lad-2026-09-08"
+      ],
+      "pricing_eligible": false
+    }
+  ],
+  "pricing_eligible": false
+}

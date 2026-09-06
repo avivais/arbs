@@ -7,6 +7,9 @@ mkdir -p data/shadow
 exec 9>data/arbs.lock
 flock -n 9 || exit 0
 stamp=$(date -u +%Y%m%dT%H%M%SZ)
+python3 scripts/record_scan_health.py --run-id "$stamp" --phase started
+# Retain an explicit completion/failure marker. SIGKILL leaves STARTED, not success.
+trap 'rc=$?; python3 scripts/record_scan_health.py --run-id "$stamp" --phase finished --exit-code "$rc"; exit "$rc"' EXIT
 tmp="data/shadow/.${stamp}.tmp"
 PYTHONPATH=src python3 -m arbs.match_live --output "$tmp" >/dev/null
 python3 - "$tmp" <<'PY'

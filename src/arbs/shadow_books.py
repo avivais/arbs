@@ -26,21 +26,32 @@ def _quantile(values:list[float],q:float)->float|None:
  return ordered[lo] if lo==hi else ordered[lo]+(ordered[hi]-ordered[lo])*(position-lo)
 
 
-def summarize(paths:list[Path])->dict[str,Any]:
- samples=[];failures=0
+def summarize(paths:list[Path], *, include_window:bool=False)->dict[str,Any]:
+ sample_count=0;failures=0;skews=[];latency=[];source_ages=[]
+ first=None;last=None
  for path in paths:
   value=json.loads(path.read_text())
-  if value.get('status')=='complete':samples.append(value)
-  else:failures+=1
- skews=[float(x['receipt_skew_ms']) for x in samples]
- latency=[float(x[v]['request_elapsed_ms']) for x in samples for v in ('kalshi','polymarket')]
- source_ages=[float(x[v]['source_age_at_receipt_ms']) for x in samples for v in ('kalshi','polymarket')
-              if x[v].get('source_time_status')=='available' and x[v].get('source_age_at_receipt_ms') is not None]
- suggested_skew=math.ceil((_quantile(skews,.99) or 0)/100)*100 if len(samples)>=100 else None
+  if value.get('status')!='complete':failures+=1;continue
+  if include_window:
+   when=datetime.fromisoformat(value['started_at'].replace('Z','+00:00'))
+   first=when if first is None else min(first,when)
+   last=when if last is None else max(last,when)
+  # Retain only the scalar distribution inputs. Keeping every nested order-book
+  # payload made elapsed-window checkpoint generation grow with the full corpus
+  # and eventually exhaust memory.
+  sample_count+=1;skews.append(float(value['receipt_skew_ms']))
+  latency.extend(float(value[v]['request_elapsed_ms']) for v in ('kalshi','polymarket'))
+  source_ages.extend(float(value[v]['source_age_at_receipt_ms']) for v in ('kalshi','polymarket')
+                     if value[v].get('source_time_status')=='available' and value[v].get('source_age_at_receipt_ms') is not None)
+ suggested_skew=math.ceil((_quantile(skews,.99) or 0)/100)*100 if sample_count>=100 else None
  suggested_age=math.ceil((_quantile(source_ages,.99) or 0)/1000)*1000 if len(source_ages)>=100 else None
- return {"schema_version":1,"sample_count":len(samples),"failure_count":failures,
+ result={"schema_version":1,"sample_count":sample_count,"failure_count":failures,
          "receipt_skew_ms":{"p50":_quantile(skews,.5),"p95":_quantile(skews,.95),"p99":_quantile(skews,.99),"max":max(skews) if skews else None},
          "request_elapsed_ms":{"p50":_quantile(latency,.5),"p95":_quantile(latency,.95),"p99":_quantile(latency,.99),"max":max(latency) if latency else None},
          "source_age_ms":{"sample_count":len(source_ages),"p50":_quantile(source_ages,.5),"p95":_quantile(source_ages,.95),"p99":_quantile(source_ages,.99),"max":max(source_ages) if source_ages else None},
          "suggested_limits":{"pair_skew_ms":suggested_skew,"source_age_ms":suggested_age},
-         "threshold_status":"INSUFFICIENT_ELAPSED_EVIDENCE" if len(samples)<100 else "READY_FOR_REVIEW"}
+         "threshold_status":"INSUFFICIENT_ELAPSED_EVIDENCE" if sample_count<100 else "READY_FOR_REVIEW"}
+ if include_window:
+  result['evidence_window']={'first':first.isoformat() if first else None,'last':last.isoformat() if last else None,
+                             'elapsed_seconds':(last-first).total_seconds() if first is not None and last is not None else 0}
+ return result

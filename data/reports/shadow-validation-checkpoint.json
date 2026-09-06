@@ -1,74 +1,88 @@
 {
   "evidence_window": {
-    "elapsed_seconds": 1763884.253782,
+    "elapsed_seconds": 2125704.996539,
     "first": "2026-08-12T14:27:31.787143+00:00",
-    "last": "2026-09-02T00:25:36.040925+00:00"
+    "last": "2026-09-06T04:55:56.783682+00:00"
   },
   "gate_status": "PARTIAL_EVIDENCE_ONLY",
-  "generated_at": "2026-09-02T03:38:26.652593+03:00",
+  "generated_at": "2026-09-06T05:09:58.855050+00:00",
+  "input_snapshot": {
+    "books": {
+      "file_count": 311240,
+      "metadata_sha256": "a5f846a6309169ec2cec285935e8a2e54577311859a9fdbae7544b28754f2c76"
+    },
+    "cutoff": "2026-09-06T05:00:21.837350+00:00",
+    "digest_scope": "SORTED_FILENAME_SIZE_MTIME_NS_NOT_CONTENT",
+    "replay_requires": "IMMUTABLE_INPUTS_WITH_PRESERVED_MTIME",
+    "reports": {
+      "file_count": 5150,
+      "metadata_sha256": "3b3cbe0f8ce02773b3505e5cbf8ea1bd2e02daa120b4e0b73b59ea32777b4b13"
+    },
+    "selection": "publication_mtime_ns_lte_cutoff"
+  },
   "movement": {
-    "changed_transition_count": 233336,
-    "failure_count": 13,
-    "pair_count": 562,
+    "changed_transition_count": 305197,
+    "failure_count": 15,
+    "pair_count": 688,
     "schema_version": 1,
-    "successful_samples": 236727,
-    "top_quote_changed_transition_count": 40358,
-    "transition_count": 236165
+    "successful_samples": 311225,
+    "top_quote_changed_transition_count": 53598,
+    "transition_count": 310537
   },
   "operations": {
     "artifact_cadence": {
       "claim_scope": "ARTIFACT_COVERAGE_NOT_HOST_OR_PROCESS_UPTIME",
-      "elapsed_seconds": 1766722.216041,
-      "expected_slots_between_first_and_last": 5890,
+      "elapsed_seconds": 2128602.719036,
+      "expected_slots_between_first_and_last": 7096,
       "first": "2026-08-12T13:38:33.792778+00:00",
       "invalid_report_count": 0,
-      "largest_observed_gap_seconds": 9211.952351,
-      "last": "2026-09-02T00:23:56.008819+00:00",
-      "observed_slot_coverage": 0.6713073005093378,
-      "occupied_schedule_slots": 3954,
+      "largest_observed_gap_seconds": 9942.976145,
+      "last": "2026-09-06T04:55:16.511814+00:00",
+      "observed_slot_coverage": 0.6761555806087937,
+      "occupied_schedule_slots": 4798,
       "schedule_seconds": 300,
-      "successful_report_reads": 4306,
-      "valid_unique_reports": 4306
+      "successful_report_reads": 5150,
+      "valid_unique_reports": 5150
     },
     "decision_audit": {
       "decision_counts": {
-        "REVIEW": 285
+        "REVIEW": 348
       },
       "modeled_net_result_status": "NOT_COMPUTABLE_NO_PRICING_ELIGIBLE_PAIRS",
       "pricing_eligible_pairs": 0,
       "theoretical_fill_count": 0,
-      "unique_event_pairs": 285
+      "unique_event_pairs": 348
     },
     "schema_version": 1
   },
   "schema_version": 1,
   "semantic_eligibility": "ALL_REVIEW_PRICING_DISABLED",
   "timing": {
-    "failure_count": 13,
+    "failure_count": 15,
     "receipt_skew_ms": {
       "max": 30787.0,
-      "p50": 112.0,
-      "p95": 290.0,
-      "p99": 590.0
+      "p50": 110.0,
+      "p95": 268.0,
+      "p99": 545.0
     },
     "request_elapsed_ms": {
       "max": 30580.679,
-      "p50": 318.8185,
-      "p95": 429.2933999999999,
-      "p99": 598.2762799999994
+      "p50": 318.534,
+      "p95": 417.79754999999994,
+      "p99": 576.2955600000006
     },
-    "sample_count": 236727,
+    "sample_count": 311225,
     "schema_version": 1,
     "source_age_ms": {
       "max": 12186252.854,
-      "p50": 21394.06,
-      "p95": 368139.1395999996,
-      "p99": 3321503.001399998,
-      "sample_count": 236517
+      "p50": 23429.184,
+      "p95": 430088.7622000002,
+      "p99": 4121435.063119998,
+      "sample_count": 310997
     },
     "suggested_limits": {
       "pair_skew_ms": 600,
-      "source_age_ms": 3322000
+      "source_age_ms": 4122000
     },
     "threshold_status": "READY_FOR_REVIEW"
   }

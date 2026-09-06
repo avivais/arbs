@@ -1,0 +1,803 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-09-06T05:51:01.614336+00:00",
+  "reviewer": "parent agent directly checking saved public-source captures; child collection timed out before report",
+  "method": "EXPLICIT_MLB_TEAM_MAP_AND_EXACT_TOKEN_IDENTITIES_NO_MATCHER_IMPORT",
+  "selection": "26 purposeful cases from September 3 automated 294-pair audit: all five conflicts, every twentieth normal audit row, and doubleheader/team-alias strata; earliest stored match for each. Nonrandom and not blind.",
+  "sample_count": 26,
+  "corroborated_count": 26,
+  "unresolved_count": 0,
+  "human_independent_precision_gate": "NOT_SATISFIED",
+  "exact_decisions_in_sample": 0,
+  "precision_claim": "No estimate of population EXACT precision or recall; 26 REVIEW cases are insufficient and not human-independent labels.",
+  "source_archive": "review-evidence/matching-source-corpus.json.gz",
+  "source_archive_sha256": "45060a437f2b1b8280ced0c6a953a4e310091161aa37db932c62b1d381e70779",
+  "records": [
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG171340STLCING1",
+      "polymarket_event_id": "498285",
+      "participants": [
+        "CIN",
+        "STL"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true,
+        "makeup_original_date": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": true,
+      "mlb_game_pk": 824514,
+      "rescheduled_from_date": "2026-05-24",
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG171340STLCING1?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=498285",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-17"
+      },
+      "source_archive_index": 0,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG201410ATLCWS",
+      "polymarket_event_id": "562086",
+      "participants": [
+        "ATL",
+        "CWS"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true,
+        "makeup_original_date": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": true,
+      "mlb_game_pk": 824589,
+      "rescheduled_from_date": "2026-06-11",
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG201410ATLCWS?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=562086",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-20"
+      },
+      "source_archive_index": 1,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG291305BOSNYYG1",
+      "polymarket_event_id": "544680",
+      "participants": [
+        "BOS",
+        "NYY"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true,
+        "makeup_original_date": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": true,
+      "mlb_game_pk": 823539,
+      "rescheduled_from_date": "2026-06-06",
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG291305BOSNYYG1?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=544680",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-29"
+      },
+      "source_archive_index": 2,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG311805SFATL",
+      "polymarket_event_id": "587239",
+      "participants": [
+        "ATL",
+        "SF"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true,
+        "makeup_original_date": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": true,
+      "mlb_game_pk": 824911,
+      "rescheduled_from_date": "2026-06-18",
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG311805SFATL?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=587239",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-31"
+      },
+      "source_archive_index": 3,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP041410DETCLEG1",
+      "polymarket_event_id": "572660",
+      "participants": [
+        "CLE",
+        "DET"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true,
+        "makeup_original_date": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": true,
+      "mlb_game_pk": 824424,
+      "rescheduled_from_date": "2026-06-14",
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26SEP041410DETCLEG1?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=572660",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-09-04"
+      },
+      "source_archive_index": 4,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG121340BALMIN",
+      "polymarket_event_id": "805955",
+      "participants": [
+        "BAL",
+        "MIN"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 823672,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG121340BALMIN?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=805955",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-12"
+      },
+      "source_archive_index": 5,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG131605CHCWSH",
+      "polymarket_event_id": "810755",
+      "participants": [
+        "CHC",
+        "WSH"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 822696,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG131605CHCWSH?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=810755",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-13"
+      },
+      "source_archive_index": 6,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG151507NYYTOR",
+      "polymarket_event_id": "821310",
+      "participants": [
+        "NYY",
+        "TOR"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 822775,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG151507NYYTOR?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=821310",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-15"
+      },
+      "source_archive_index": 7,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG161340WSHNYM",
+      "polymarket_event_id": "827609",
+      "participants": [
+        "NYM",
+        "WSH"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 823590,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG161340WSHNYM?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=827609",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-16"
+      },
+      "source_archive_index": 8,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG181840MIAPHI",
+      "polymarket_event_id": "838491",
+      "participants": [
+        "MIA",
+        "PHI"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 823423,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG181840MIAPHI?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=838491",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-18"
+      },
+      "source_archive_index": 9,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG191840SFCLE",
+      "polymarket_event_id": "843688",
+      "participants": [
+        "CLE",
+        "SF"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 824394,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG191840SFCLE?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=843688",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-19"
+      },
+      "source_archive_index": 10,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG211910WSHMIA",
+      "polymarket_event_id": "853399",
+      "participants": [
+        "MIA",
+        "WSH"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 823830,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG211910WSHMIA?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=853399",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-21"
+      },
+      "source_archive_index": 11,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG242145CINSF",
+      "polymarket_event_id": "870636",
+      "participants": [
+        "CIN",
+        "SF"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 823183,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG242145CINSF?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=870636",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-24"
+      },
+      "source_archive_index": 12,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG261610PHISEA",
+      "polymarket_event_id": "880622",
+      "participants": [
+        "PHI",
+        "SEA"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 823096,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG261610PHISEA?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=880622",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-26"
+      },
+      "source_archive_index": 13,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG281845MIAWSH",
+      "polymarket_event_id": "889862",
+      "participants": [
+        "MIA",
+        "WSH"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 822691,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG281845MIAWSH?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=889862",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-28"
+      },
+      "source_archive_index": 14,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG291610HOUNYM",
+      "polymarket_event_id": "895501",
+      "participants": [
+        "HOU",
+        "NYM"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 823582,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG291610HOUNYM?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=895501",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-29"
+      },
+      "source_archive_index": 15,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG301607PHILAA",
+      "polymarket_event_id": "904126",
+      "participants": [
+        "LAA",
+        "PHI"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 823987,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG301607PHILAA?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=904126",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-30"
+      },
+      "source_archive_index": 16,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP011940MIAKC",
+      "polymarket_event_id": "915662",
+      "participants": [
+        "KC",
+        "MIA"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 824070,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26SEP011940MIAKC?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=915662",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-09-01"
+      },
+      "source_archive_index": 17,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP022010CWSHOU",
+      "polymarket_event_id": "920968",
+      "participants": [
+        "CWS",
+        "HOU"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 824147,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26SEP022010CWSHOU?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=920968",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-09-02"
+      },
+      "source_archive_index": 18,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26SEP042005TBTEX",
+      "polymarket_event_id": "930711",
+      "participants": [
+        "TB",
+        "TEX"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 822852,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26SEP042005TBTEX?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=930711",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-09-04"
+      },
+      "source_archive_index": 19,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG171840STLCING2",
+      "polymarket_event_id": "833246",
+      "participants": [
+        "CIN",
+        "STL"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 824478,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG171840STLCING2?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=833246",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-17"
+      },
+      "source_archive_index": 20,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG121505TBATH",
+      "polymarket_event_id": "805959",
+      "participants": [
+        "ATH",
+        "TB"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 824967,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG121505TBATH?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=805959",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-12"
+      },
+      "source_archive_index": 21,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG121540COLAZ",
+      "polymarket_event_id": "805961",
+      "participants": [
+        "ARI",
+        "COL"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 825047,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG121540COLAZ?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=805961",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-12"
+      },
+      "source_archive_index": 22,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG121845CHCWSH",
+      "polymarket_event_id": "805966",
+      "participants": [
+        "CHC",
+        "WSH"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 822698,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG121845CHCWSH?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=805966",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-12"
+      },
+      "source_archive_index": 23,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG121915NYMATL",
+      "polymarket_event_id": "805969",
+      "participants": [
+        "ATL",
+        "NYM"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 824883,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG121915NYMATL?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=805969",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-12"
+      },
+      "source_archive_index": 24,
+      "pricing_eligible": false
+    },
+    {
+      "kalshi_event_id": "KXMLBGAME-26AUG122210KCLAD",
+      "polymarket_event_id": "805972",
+      "participants": [
+        "KC",
+        "LAD"
+      ],
+      "checks": {
+        "unique_mlb_fixture": true,
+        "kalshi_id": true,
+        "poly_id": true,
+        "single_moneyline": true,
+        "poly_participants": true,
+        "token_team_identity": true,
+        "poly_start_matches_mlb": true,
+        "kalshi_contract_ids": true,
+        "historical_source_integrity": true
+      },
+      "label": "CORROBORATED_EVENT_IDENTITY",
+      "date_conflict": false,
+      "mlb_game_pk": 823916,
+      "rescheduled_from_date": null,
+      "sources": {
+        "kalshi": "https://api.elections.kalshi.com/trade-api/v2/events/KXMLBGAME-26AUG122210KCLAD?with_nested_markets=true",
+        "polymarket": "https://gamma-api.polymarket.com/events?id=805972",
+        "mlb": "https://statsapi.mlb.com/api/v1/schedule?sportId=1&date=2026-08-12"
+      },
+      "source_archive_index": 25,
+      "pricing_eligible": false
+    }
+  ],
+  "pricing_eligible": false
+}

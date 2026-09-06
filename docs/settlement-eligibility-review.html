@@ -1,0 +1,92 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Exceptional-settlement eligibility review — 6 September 2026</title><style>body{margin:0;background:#101827;color:#e6edf7;font:16px/1.65 system-ui,sans-serif}main{max-width:1000px;margin:auto;padding:36px 22px}h1{font-size:clamp(26px,5vw,40px);line-height:1.2}h2{margin-top:2em;color:#91d8d0}a{color:#8fc7ff;overflow-wrap:anywhere}code{overflow-wrap:anywhere;font-size:.88em}table{display:block;overflow-x:auto;border-collapse:collapse;width:100%;margin:22px 0}td,th{padding:12px;text-align:left;border:1px solid #344257;min-width:110px}th{background:#1f2d42}p,li{overflow-wrap:anywhere}nav{display:flex;gap:20px;flex-wrap:wrap}strong{color:white}footer{margin-top:40px;border-top:1px solid #344257;padding-top:18px;color:#a9b6c9}@media print{body{background:white;color:black}h2,strong{color:black}a{color:#135}main{max-width:none}table{display:table;font-size:11px}}</style></head><body><main><nav><a href="validation-verdict.html">Verdict</a><a href="matching-independent-review.html">Identity review</a><a href="settlement-eligibility-review.html">Settlement review</a><a href="rolling-plan.html">Project plan</a></nav><h1>Exceptional-settlement eligibility review — 6 September 2026</h1>
+<h2>Verdict: NO-GO for guaranteed cross-venue MLB payout</h2>
+<p><strong>41/41 event pairs in the <code>20260906T045510Z</code> snapshot have materially different exceptional-settlement rules. Eligible subset: empty.</strong> This is a technical agent review, not owner/legal sign-off. All production pairs remain REVIEW.</p>
+<p>The source collection contains <strong>124 HTTP-200 responses</strong>: 82 Kalshi contracts, 41 Polymarket events and the Kalshi series metadata. I inspected the saved original responses, replayed the per-pair checks, and independently fetched the series-linked binding PDF. Its SHA-256 matches the preserved copy: <code>c08ab9be0b9c9869be07e75674a84def8e0f017d4bb301da3898b25c33fd892b</code>.</p>
+<h2>Sources and scope</h2>
+<ul>
+<li><a href="https://api.elections.kalshi.com/trade-api/v2/series/KXMLBGAME">Kalshi series</a> links the <a href="https://assets.kalshi.com/contract_terms/MLBGAME.pdf">binding contract terms</a>.</li>
+<li>Every contract/event URL, complete rule excerpt, retrieval time and captured response is preserved in <a href="../data/reports/settlement-eligibility-review.json">review JSON</a> and its compressed source archive.</li>
+<li><a href="../data/reports/review-evidence/MLBGAME.pdf">Preserved PDF</a>.</li>
+<li>Replay: <code>python3 scripts/replay_validation_reviews.py</code>. All dated inputs are committed, including the historical reports; replay needs neither live APIs nor the rolling retention directory. The script generates the JSON reviews and matching narrative. This settlement narrative records interpretation of the PDF, beyond the phrase checks.</li>
+</ul>
+<p>The current terms cannot be silently backdated to historical trades. No assertion is made about past fair-price payouts or actual exceptional settlements.</p>
+<h2>Contract differences</h2>
+<table>
+<thead>
+<tr>
+<th>Scenario</th>
+<th>Kalshi linked terms</th>
+<th>Polymarket captured moneyline description</th>
+<th>Assessment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal completed game</td>
+<td>Official winner; extra innings included</td>
+<td>Winning named team</td>
+<td>Ordinary result agreement observed, not an all-state guarantee</td>
+</tr>
+<tr>
+<td>Postponed, started within 48 hours</td>
+<td>Remains open for official final</td>
+<td>Remains open until completed</td>
+<td>Potential agreement, subject to other terms</td>
+</tr>
+<tr>
+<td>Not started within 48 hours</td>
+<td>Last fair market price determined by exchange</td>
+<td>Remains open until completed</td>
+<td>Material payout/horizon mismatch</td>
+</tr>
+<tr>
+<td>Cancelled with no makeup</td>
+<td>Fair-price treatment under exceptional rules</td>
+<td>50–50</td>
+<td>Fair price is not guaranteed to equal 50 cents</td>
+</tr>
+<tr>
+<td>Suspended and not resumed within 48 hours</td>
+<td>Last fair market price</td>
+<td>No equally explicit 48-hour bound in captured description</td>
+<td>Equivalence not established</td>
+</tr>
+<tr>
+<td>Tie, two team strikes and no tie strike</td>
+<td>50 cents each</td>
+<td>50–50</td>
+<td>This isolated case can agree; it does not cure other mismatches</td>
+</tr>
+<tr>
+<td>Pre-start forfeit</td>
+<td>Last fair market price</td>
+<td>No equivalent explicit clause in captured description</td>
+<td>Unresolved; no normal-result assumption</td>
+</tr>
+<tr>
+<td>Home/away reversal or delayed venue change</td>
+<td>Can trigger fair price</td>
+<td>No equivalent explicit clause in captured description</td>
+<td>Unresolved</td>
+</tr>
+<tr>
+<td>Disqualification/corrected result</td>
+<td>Specific timing and exchange-review rules</td>
+<td>Equivalent detailed treatment not established</td>
+<td>Unresolved</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Important precision:</strong> Kalshi's API summary says the rescheduled game has finished “within two days.” The linked binding PDF distinguishes <strong>started within 48 hours</strong> for postponements and <strong>resumed within 48 hours</strong> for suspensions. Do not turn the API summary into a finish-time rule. Both formulations still fail to establish equivalence with Polymarket's open-ended postponement description.</p>
+<h2>Payout counterexamples</h2>
+<p>For one Kalshi YES on team A plus one Polymarket winner token on team B, let entry cost be <code>c</code>, aggregate fees/costs be <code>f</code>, and Kalshi's exceptional fair-price payout be <code>q</code>.</p>
+<ul>
+<li>Normal A/B winner: combined payout can be 1, giving <code>1 − c − f</code>.</li>
+<li>Cancellation/no makeup: combined payout is <code>q + 0.5</code>, giving <code>q + 0.5 − c − f</code>, not a guaranteed dollar.</li>
+<li>Delay beyond Kalshi's horizon, followed by team A winning: Kalshi can already have paid <code>q</code>, while the opposing Polymarket token pays zero. Net is <code>q − c − f</code>.</li>
+</ul>
+<p><strong>Illustrative stress case, not a real quote or settlement:</strong> <code>q = 0.50</code> and <code>c = 0.97</code> in the delayed-A-win case gives <strong>−0.47 before fees</strong>, despite a normal-case three-cent gross gap. The actual fair price is unknown; the point is that the rules do not guarantee the normal combined payout.</p>
+<p>No fees or fill model can turn a missing payout guarantee into one. Kalshi series fee metadata was captured, but event overrides and historical fee versions still matter. There are zero eligible cases on which to claim all-cost modeled profitability.</p>
+<h2>What is closed and what is not</h2>
+<p>The immediate question is answered: <strong>we do not merely lack more ordinary finals; we have evidence of materially different exceptional terms across the entire reviewed current set.</strong> More ordinary finals alone cannot promote this set.</p>
+<p>Independent labeled precision, prospective reliability, fee/fill completeness and any owner sign-off remain separate gates. The timed-out delegated reviews are not represented as completed independent approval; I finished this review directly from their preserved collection plus my own source verification.</p><footer>Read-only technical evidence · no trading or eligibility promotion · <a href="settlement-eligibility-review.md">Markdown source</a></footer></main></body></html>

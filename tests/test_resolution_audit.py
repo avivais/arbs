@@ -13,15 +13,15 @@ class ResolutionAuditTests(unittest.TestCase):
   self.assertEqual(rows[1]['participants'],['A','B','latest-evidence'])
  def test_final_agreement(self):
   k={'ka':{'market':{'status':'settled','result':'yes'}},'kb':{'market':{'status':'settled','result':'no'}}}
-  p={'markets':[{'sportsMarketType':'moneyline','closed':True,'umaResolutionStatus':'resolved','outcomes':'["A", "B"]','outcomePrices':'["1", "0"]'}]}
+  p={'markets':[{'sportsMarketType':'moneyline','closed':True,'umaResolutionStatus':'resolved','clobTokenIds':'["pa", "pb"]','outcomes':'["A", "B"]','outcomePrices':'["1", "0"]'}]}
   row=audit_match(MATCH,lambda x:k[x],lambda _:p);self.assertTrue(row['comparable']);self.assertTrue(row['agreement']);self.assertFalse(row['pricing_eligible'])
  def test_kalshi_finalized_is_final(self):
   k={'ka':{'market':{'status':'finalized','result':'yes'}},'kb':{'market':{'status':'finalized','result':'no'}}}
-  p={'markets':[{'sportsMarketType':'moneyline','closed':True,'umaResolutionStatus':'resolved','outcomes':'["A", "B"]','outcomePrices':'["1", "0"]'}]}
+  p={'markets':[{'sportsMarketType':'moneyline','closed':True,'umaResolutionStatus':'resolved','clobTokenIds':'["pa", "pb"]','outcomes':'["A", "B"]','outcomePrices':'["1", "0"]'}]}
   row=audit_match(MATCH,lambda x:k[x],lambda _:p);self.assertTrue(row['comparable']);self.assertEqual(row['kalshi_status'],'FINAL')
  def test_pending_never_compares(self):
   k={'ka':{'market':{'status':'inactive','result':''}},'kb':{'market':{'status':'inactive','result':''}}}
-  p={'markets':[{'sportsMarketType':'moneyline','closed':False,'umaResolutionStatus':'proposed','outcomes':'["A", "B"]','outcomePrices':'["0.1", "0.9"]'}]}
+  p={'markets':[{'sportsMarketType':'moneyline','closed':False,'umaResolutionStatus':'proposed','clobTokenIds':'["pa", "pb"]','outcomes':'["A", "B"]','outcomePrices':'["0.1", "0.9"]'}]}
   row=audit_match(MATCH,lambda x:k[x],lambda _:p);self.assertFalse(row['comparable']);self.assertIsNone(row['agreement'])
 
  def test_source_identifier_date_conflict_is_not_compared(self):
@@ -31,5 +31,17 @@ class ResolutionAuditTests(unittest.TestCase):
   row=audit_match(match,unexpected,unexpected)
   self.assertFalse(row['comparable']);self.assertIsNone(row['agreement'])
   self.assertEqual(row['identity_cross_check'],'REVIEW_DATE_IDENTIFIER_CONFLICT')
+
+ def test_resolution_uses_tokens_not_contract_order(self):
+  import copy
+  match=copy.deepcopy(MATCH);match['polymarket']['contracts'].reverse()
+  k={'ka':{'market':{'status':'settled','result':'yes'}},'kb':{'market':{'status':'settled','result':'no'}}}
+  market={'sportsMarketType':'moneyline','closed':True,'umaResolutionStatus':'resolved','clobTokenIds':'["pa", "pb"]','outcomes':'["A", "B"]','outcomePrices':'["1", "0"]'}
+  row=audit_match(match,lambda x:k[x],lambda _:{'markets':[market]})
+  self.assertTrue(row['agreement']);self.assertEqual(row['polymarket_outcome'],'A')
+  for tokens in ('[]','["px", "pb"]','["pa", "pa"]'):
+   with self.subTest(tokens=tokens):
+    row=audit_match(match,lambda x:k[x],lambda _:{'markets':[{**market,'clobTokenIds':tokens}]})
+    self.assertFalse(row['comparable']);self.assertIsNone(row['agreement'])
 
 if __name__=='__main__':unittest.main()

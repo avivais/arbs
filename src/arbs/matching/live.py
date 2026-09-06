@@ -175,8 +175,12 @@ def normalize_polymarket(events: Iterable[dict[str, Any]]) -> list[VenueEvent]:
             tokens = json.loads(market.get("clobTokenIds", "[]"))
         except (TypeError, json.JSONDecodeError):
             continue
+        if not all(isinstance(values, list) and len(values) == 2 for values in (outcomes, prices, tokens)):
+            continue
+        if not all(isinstance(token, str) and token.strip() for token in tokens) or len(set(tokens)) != 2:
+            continue
         canonical_outcomes = tuple(_canonical_team(str(x)) for x in outcomes)
-        if set(canonical_outcomes) != set(participants) or len(tokens) != 2:
+        if set(canonical_outcomes) != set(participants):
             continue
         contracts = tuple({"token_id": str(tokens[i]), "selected_team": canonical_outcomes[i],
                            "indicative_price": str(prices[i]), "best_bid": market.get("bestBid") if i == 0 else None,
@@ -195,19 +199,29 @@ def normalize_polymarket(events: Iterable[dict[str, Any]]) -> list[VenueEvent]:
 
 
 def match_events(kalshi: Iterable[VenueEvent], polymarket: Iterable[VenueEvent]) -> list[MatchEvidence]:
+    k_events = list(kalshi)
     poly_by_participants: dict[tuple[str, str], list[VenueEvent]] = {}
     for event in polymarket:
         poly_by_participants.setdefault(event.participants, []).append(event)
     matches: list[MatchEvidence] = []
-    for k_event in kalshi:
+    for k_event in k_events:
         candidates = []
         for p_event in poly_by_participants.get(k_event.participants, []):
-            delta = abs(int((k_event.start_utc - p_event.start_utc).total_seconds()))
+            delta = abs((k_event.start_utc - p_event.start_utc).total_seconds())
             if delta <= START_TOLERANCE_SECONDS:
                 candidates.append((delta, p_event))
         if len(candidates) != 1:
             continue
         delta, p_event = candidates[0]
+        # Uniqueness is bidirectional: two Kalshi fixtures must not reuse one
+        # Polymarket fixture merely because each has one forward candidate.
+        reverse_candidates = [event for event in k_events
+                              if event.participants == p_event.participants
+                              and abs((event.start_utc - p_event.start_utc).total_seconds())
+                              <= START_TOLERANCE_SECONDS]
+        if len(reverse_candidates) != 1:
+            continue
+        delta = int(delta)  # Compact evidence only; never truncate before the gate.
         # Event identity is deterministic. Full payout equivalence remains REVIEW because
         # venue cancellation/postponement/fair-price behavior is materially different.
         reasons = ("MATERIAL_RULE_EQUIVALENCE_NOT_PROVEN", "VENUE_CANCELLATION_OR_POSTPONEMENT_RULES_DIFFER")
@@ -229,14 +243,16 @@ def match_events(kalshi: Iterable[VenueEvent], polymarket: Iterable[VenueEvent])
     return sorted(matches, key=lambda item: (item.start_utc, item.participants))
 
 
-def fetch_all_polymarket_events(client: PolymarketPublicClient, *, max_pages: int = 10) -> list[dict[str, Any]]:
+def fetch_all_polymarket_events(client: PolymarketPublicClient, *, max_pages: int = 50) -> list[dict[str, Any]]:
     events: list[dict[str, Any]] = []
     cursor: Optional[str] = None
     seen: set[str] = set()
     # Keep each public response comfortably below the bounded HTTP client's 10 MB cap.
-    # Gamma event payloads grew beyond that bound at limit=100 as nested markets expanded.
+    # Gamma's nested active-event payload grew beyond the cap at limits 50 and 25 in
+    # production on 2026-09-03. Reduce the page size rather than weakening that gate;
+    # the larger page bound preserves the same 500-event bounded traversal.
     for _ in range(max_pages):
-        response = client.list_sports_events(MLB_POLYMARKET_TAG, limit=50, after_cursor=cursor)
+        response = client.list_sports_events(MLB_POLYMARKET_TAG, limit=10, after_cursor=cursor)
         payload = response.data
         page = payload.get("events", []) if isinstance(payload, dict) else []
         events.extend(page)

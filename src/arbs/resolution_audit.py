@@ -90,13 +90,17 @@ def audit_match(
         prices = json.loads(p_market.get("outcomePrices", "[]"))
         p_final = bool(p_market.get("closed")) and p_market.get("umaResolutionStatus") == "resolved"
         winners = [outcomes[i] for i, price in enumerate(prices) if str(price) == "1"] if len(outcomes) == len(prices) else []
-        if p_final and len(winners) == 1:
-            selected = {x["selected_team"]: x for x in match["polymarket"]["contracts"]}
-            p_outcome = next((team for team, row in selected.items() if row.get("outcome") == winners[0]), None)
-            if p_outcome is None:
-                # Live reports currently retain team and token, while the event retains outcome order.
-                teams = [x["selected_team"] for x in match["polymarket"]["contracts"]]
-                p_outcome = teams[outcomes.index(winners[0])] if len(teams) == len(outcomes) else None
+        tokens = json.loads(p_market.get("clobTokenIds", "[]"))
+        contracts = match["polymarket"]["contracts"]
+        # Match authoritative token identity, never stored array position. Venue
+        # order can change between capture and resolution (or between adapters).
+        if (p_final and len(winners) == 1 and len(tokens) == len(outcomes) == 2
+                and len(set(tokens)) == 2 and sorted(map(str, prices)) == ["0", "1"]
+                and len(contracts) == 2
+                and {str(c.get("token_id")) for c in contracts} == set(map(str, tokens))):
+            winner_token = str(tokens[outcomes.index(winners[0])])
+            p_outcome = next(c["selected_team"] for c in contracts
+                             if str(c.get("token_id")) == winner_token)
 
     k_outcome = k_winners[0] if k_final and len(k_winners) == 1 else None
     comparable = k_outcome is not None and p_outcome is not None
