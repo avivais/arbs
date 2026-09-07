@@ -3,7 +3,7 @@
   "plan_id": "arbs-rolling-plan",
   "project": "Arbs — Kalshi ↔ Polymarket Sports Arbitrage",
   "status": "active",
-  "last_verified": "2026-09-06",
+  "last_verified": "2026-09-07",
   "status_values": [
     "done",
     "in_progress",
@@ -18,9 +18,9 @@
     "generator": "scripts/render_rolling_plan.py",
     "rule": "Edit the canonical JSON first, regenerate both views, validate, and commit all three together. Browser-local checkboxes are personal working notes and never alter shared status."
   },
-  "mission": "Build a deterministic, auditable, read-only-first system that discovers equivalent sports contracts on Kalshi and Polymarket, computes executable cross-venue opportunities conservatively, and graduates to trading only after measured safety gates and explicit owner approval.",
-  "current_focus": "P5-07 — read-only validation and contract-scope decision; NO-GO for proven cross-venue MLB arbitrage/execution design.",
-  "next_action": "P5-07: keep read-only raw-gap monitoring and deterministic daily evidence refresh. Current MLB pairs remain REVIEW: require payout-equivalent contract terms, sufficiently independent labels, prospective reliability and eligible all-cost results before reconsidering the NO-GO. Do not collect ordinary finals indefinitely as a substitute for equivalent rules.",
+  "mission": "Build an auditable, read-only system that discovers economically equivalent contracts across Kalshi and Polymarket in sports, economics, politics, crypto and other categories, uses AI for proposals rather than approval, and computes executable after-cost price gaps only after deterministic settlement and reliability gates. No automated trading.",
+  "current_focus": "P7: broad read-only discovery and source-bound AI-assisted review are deployed. Find genuinely payout-equivalent contract families; keep pricing fail-closed and existing MLB monitoring untouched.",
+  "next_action": "P7-06: Use the rotating economics/politics/crypto/sports/other queue and AI discrepancy evidence to identify a fully equivalent family; do not auto-approve proposals or collect ordinary MLB finals indefinitely.",
   "operating_rules": [
     "Precision before recall: an uncertain pair is REVIEW or UNSUPPORTED, never EXACT.",
     "Raw source payloads and hashes remain immutable and replayable.",
@@ -597,11 +597,12 @@
         {
           "id": "P5-07",
           "title": "Complete sustained shadow run",
-          "status": "in_progress",
+          "status": "blocked",
           "acceptance": "At least several hundred reviewed events and a representative operating window record theoretical fills, subsequent movement, resolutions, false positives, uptime, and net results after modeled costs.",
           "evidence": [
             "data/reports/shadow-validation-checkpoint.json freezes 2026-09-06T05:00:21.837350+00:00: 311,225 successful paired-book samples across 688 outcome-book pairs, 590.47 hours, 53,598 top-quote changes. Artifact coverage 4,798/7,096 (67.62%), maximum gap 2.76 hours; not service uptime. 348 REVIEW event pairs, zero pricing eligible. The separate token-ID-safe resolution refresh has 302/302 agreements and 0 divergences; five date-conflicted pairs remain quarantined. Official MLB schedules corroborate all five as makeup fixtures, but date corroboration does not prove payout equivalence. Prospective host/scan lifecycle telemetry now exists; historical uptime, independent labeled precision and eligible modeled net results are not established. 26/26 purposive identity cases were corroborated in the completed parent-agent review; 41/41 current pairs have materially different exceptional settlement. 100 tests pass. These are not human-independent precision or owner approval. See docs/validation-verdict.html, docs/matching-independent-review.html, docs/settlement-eligibility-review.html and docs/operations-runbook.md."
-          ]
+          ],
+          "blocker": "MLB exceptional settlement remains non-equivalent. Existing read-only monitors continue unchanged; discovery effort now broadens through P7 rather than waiting indefinitely for more ordinary finals."
         },
         {
           "id": "P5-08",
@@ -685,6 +686,79 @@
           "status": "deferred",
           "acceptance": "Each increase requires sustained reconciliation, realized profitability, incident-free operation, and owner sign-off; limits remain reversible.",
           "evidence": []
+        }
+      ]
+    },
+    {
+      "id": "P7",
+      "name": "Broad cross-venue discovery and AI-assisted matching",
+      "objective": "Discover economically equivalent contracts beyond MLB, then admit pricing only after settlement and all-cost gates.",
+      "status": "in_progress",
+      "tasks": [
+        {
+          "id": "P7-01",
+          "title": "Deploy bounded multi-category catalogs",
+          "status": "done",
+          "acceptance": "Real Kalshi and Polymarket keyset capture, rotating persisted cursors, errors/coverage, 24-hour bounded cache and source evidence.",
+          "evidence": [
+            "src/arbs/discovery_catalog.py",
+            "tests/test_discovery_catalog.py",
+            "data/reports/broad-discovery-deployment.json"
+          ]
+        },
+        {
+          "id": "P7-02",
+          "title": "Deploy conservative cross-venue candidate retrieval",
+          "status": "done",
+          "acceptance": "Category-balanced candidate queue; no title similarity or missing material terms can enable pricing.",
+          "evidence": [
+            "src/arbs/candidate_discovery.py",
+            "tests/test_broad_discovery.py"
+          ]
+        },
+        {
+          "id": "P7-03",
+          "title": "Run source-bound AI-assisted semantic review",
+          "status": "done",
+          "acceptance": "Actual schema-constrained model execution, verbatim source evidence, changed-source invalidation and no AI approval path.",
+          "evidence": [
+            "scripts/broad_ai_worker.py",
+            "src/arbs/discovery_review.py",
+            "config/discovery-ai-schema.json",
+            "data/reports/broad-discovery-deployment.json"
+          ]
+        },
+        {
+          "id": "P7-04",
+          "title": "Exercise fail-closed pricing bridge",
+          "status": "done",
+          "acceptance": "No live approvals by default; injected synthetic books exercise existing Decimal/depth pricing, fees, orientations and freshness without placing orders.",
+          "evidence": [
+            "src/arbs/broad_pricing.py",
+            "tests/test_broad_discovery.py",
+            "docs/broad-discovery.md"
+          ]
+        },
+        {
+          "id": "P7-05",
+          "title": "Operate scheduled discovery, AI review and health reporting",
+          "status": "done",
+          "acceptance": "Catalog every 30m, AI every 2h, transition-only watchdog; real successful runs and public artifact route verified.",
+          "evidence": [
+            "scripts/broad_discovery.py",
+            "scripts/broad_discovery_health.py",
+            "docs/broad-discovery.md",
+            "data/reports/broad-discovery-deployment.json"
+          ]
+        },
+        {
+          "id": "P7-06",
+          "title": "Establish a genuinely payout-equivalent broad contract family",
+          "status": "in_progress",
+          "acceptance": "Identify equivalent event/source/deadline/exception/revision semantics, reviewed live venue fees and books, both leg directions and independent precision evidence before enabling broad net-profit reporting.",
+          "evidence": [
+            "docs/broad-discovery.md"
+          ]
         }
       ]
     }
@@ -809,8 +883,12 @@
     {
       "date": "2026-09-06",
       "change": "data/reports/shadow-validation-checkpoint.json freezes 2026-09-06T05:00:21.837350+00:00: 311,225 successful paired-book samples across 688 outcome-book pairs, 590.47 hours, 53,598 top-quote changes. Artifact coverage 4,798/7,096 (67.62%), maximum gap 2.76 hours; not service uptime. 348 REVIEW event pairs, zero pricing eligible. The separate token-ID-safe resolution refresh has 302/302 agreements and 0 divergences; five date-conflicted pairs remain quarantined. Official MLB schedules corroborate all five as makeup fixtures, but date corroboration does not prove payout equivalence. Prospective host/scan lifecycle telemetry now exists; historical uptime, independent labeled precision and eligible modeled net results are not established. 26/26 purposive identity cases were corroborated in the completed parent-agent review; 41/41 current pairs have materially different exceptional settlement. 100 tests pass. These are not human-independent precision or owner approval. See docs/validation-verdict.html, docs/matching-independent-review.html, docs/settlement-eligibility-review.html and docs/operations-runbook.md. Repaired model-drift-blocked evaluator without inference; bounded unit tests and atomic full checkpoint rebuild verified; public preview restored."
+    },
+    {
+      "date": "2026-09-07",
+      "change": "Broad catalog and bounded source-bound AI review deployed, with real public data, successful scheduled executions, explicit non-exhaustive coverage and zero pricing-eligible pairs. Caddy artifact-only publication added without broadening private workspace permissions. See data/reports/broad-discovery-deployment.json and docs/broad-discovery.md. Existing MLB monitor and trading gates unchanged."
     }
   ],
-  "next_task": "P5-07: keep read-only raw-gap monitoring and deterministic daily evidence refresh. Current MLB pairs remain REVIEW: require payout-equivalent contract terms, sufficiently independent labels, prospective reliability and eligible all-cost results before reconsidering the NO-GO. Do not collect ordinary finals indefinitely as a substitute for equivalent rules.",
-  "updated_at": "2026-09-06"
+  "next_task": "P7-06: validate settlement equivalence, reviewed fees and executable books for a broad contract family before enabling live net-profit reporting.",
+  "updated_at": "2026-09-07"
 }

@@ -1,0 +1,134 @@
+{
+  "captured_at": "2026-09-07T07:10:01.449419+00:00",
+  "catalog_generated_at": "2026-09-07T06:45:54.094151Z",
+  "report_generated_at": "2026-09-07T06:46:09.465137+00:00",
+  "summary": {
+    "cached_markets": 9026,
+    "cache_max_age_hours": 24,
+    "cached_categories": {
+      "other": 1765,
+      "economics": 1779,
+      "crypto": 868,
+      "sports": 1797,
+      "politics": 2817
+    },
+    "candidate_pairs": 150,
+    "ai_reviewed_current": 23,
+    "statuses": {
+      "REJECT": 23,
+      "REVIEW": 127
+    },
+    "pricing_eligible": 0,
+    "priced_pairs": 0,
+    "qualifying": 0
+  },
+  "coverage": {
+    "kalshi": {
+      "endpoint": "https://api.elections.kalshi.com/trade-api/v2/events",
+      "requested_market_limit": 1000,
+      "max_pages": 10,
+      "page_size_events": 100,
+      "start_position": "CgYI8MG72AYSFktYV05CQUFMTERFRkVOU0UtMVNUMjY",
+      "next_position": "CgYI4Ijv1QYSF0tYTkNBQUZUT1BBUFJBTkstMjZXNFQ1",
+      "pages_fetched": 10,
+      "events_fetched": 1000,
+      "raw_markets_seen": 13644,
+      "inactive_markets_skipped": 386,
+      "invalid_markets": 0,
+      "duplicates": 0,
+      "errors": [],
+      "page_urls": [
+        "https://api.elections.kalshi.com/trade-api/v2/events?limit=100&status=open&with_nested_markets=true&cursor=CgYI8MG72AYSFktYV05CQUFMTERFRkVOU0UtMVNUMjY",
+        "https://api.elections.kalshi.com/trade-api/v2/events?limit=100&status=open&with_nested_markets=true&cursor=CgYI8O-b2AYSD0tYUENFQ09SRS0yNk9DVA",
+        "https://api.elections.kalshi.com/trade-api/v2/events?limit=100&status=open&with_nested_markets=true&cursor=CgYI8JzC1wYSGUtYQUxCVU1TVFJFQU1TLUZPUjI2Tk9WMDU",
+        "https://api.elections.kalshi.com/trade-api/v2/events?limit=100&status=open&with_nested_markets=true&cursor=CgYI8O2n1wYSE0tYU1RBVEVMRUctRkxIT1VTMjY",
+        "https://api.elections.kalshi.com/trade-api/v2/events?limit=100&status=open&with_nested_markets=true&cursor=CgYI8Ked1wYSGEtYTkVYVFRFQU1OSEwtMjZQTEFJTkU5Mg",
+        "https://api.elections.kalshi.com/trade-api/v2/events?limit=100&status=open&with_nested_markets=true&cursor=CgYI4NyC1wYSF0tYTkNBQUZUT1BBUFJBTkstMjZXOFQ1",
+        "https://api.elections.kalshi.com/trade-api/v2/events?limit=100&status=open&with_nested_markets=true&cursor=CgYI4LjD1gYSEktYTEVBREVSTUxCUlVOUy0yNg",
+        "https://api.elections.kalshi.com/trade-api/v2/events?limit=100&status=open&with_nested_markets=true&cursor=CgYI4M-z1gYSFUtYQ09MTEVHRUdBTUVEQVktMjZXNg",
+        "https://api.elections.kalshi.com/trade-api/v2/events?limit=100&status=open&with_nested_markets=true&cursor=CgYI6N6o1wYSE0tYUkdPVkNPVU5ULTI2SlVMMDg",
+        "https://api.elections.kalshi.com/trade-api/v2/events?limit=100&status=open&with_nested_markets=true&cursor=CgYIhNj81QYSFEtYUE9LRU1PTi0yNlNFUENIQUVY"
+      ],
+      "end_of_catalog_reached": false,
+      "total_venue_markets": null,
+      "complete_catalog": false,
+      "scope": "active/open events; active nonclosed nested markets; rotating bounded pages",
+      "sampling": "round-robin source categories within fetched pages; unsampled rows not retained",
+      "pagination_caveat": "Live listings can change between pages/runs; offset/cursor traversal is not a frozen snapshot.",
+      "unique_active_markets_seen": 13258,
+      "markets_returned": 1000,
+      "sampled_out": 12258,
+      "category_counts": {
+        "economics": 216,
+        "politics": 216,
+        "crypto": 138,
+        "sports": 215,
+        "other": 215
+      },
+      "missing_categories": [],
+      "rules_missing": 0,
+      "status": "ok"
+    },
+    "polymarket": {
+      "endpoint": "https://gamma-api.polymarket.com/events/keyset",
+      "requested_market_limit": 1000,
+      "max_pages": 10,
+      "page_size_events": 100,
+      "start_position": "6HZ7IF64fD9fzZMxuu-2ftASQ7aBCgsrOB6CCR6tvwN7InYiOjEsImsiOiJldmVudHMiLCJvaCI6IjRmNTNjZGExOGMyYmFhMGMwMzU0YmI1ZjlhM2VjYmU1ZWQxMmFiNGQ4ZTExYmE4NzNjMmYxMTE2MTIwMmI5NDUiLCJrZXlzIjpbeyJ0Ijoic3RyaW5nIiwidiI6IjE5MTY0OSJ9XX0",
+      "next_position": "BrXytnZmhybI3yNkouvNj7dkRjyIESSwnLbUoQAumCB7InYiOjEsImsiOiJldmVudHMiLCJvaCI6IjRmNTNjZGExOGMyYmFhMGMwMzU0YmI1ZjlhM2VjYmU1ZWQxMmFiNGQ4ZTExYmE4NzNjMmYxMTE2MTIwMmI5NDUiLCJrZXlzIjpbeyJ0Ijoic3RyaW5nIiwidiI6IjUwODMzNSJ9XX0",
+      "pages_fetched": 10,
+      "events_fetched": 1000,
+      "raw_markets_seen": 11646,
+      "inactive_markets_skipped": 7016,
+      "invalid_markets": 0,
+      "duplicates": 0,
+      "errors": [],
+      "page_urls": [
+        "https://gamma-api.polymarket.com/events/keyset?limit=100&active=true&closed=false&after_cursor=6HZ7IF64fD9fzZMxuu-2ftASQ7aBCgsrOB6CCR6tvwN7InYiOjEsImsiOiJldmVudHMiLCJvaCI6IjRmNTNjZGExOGMyYmFhMGMwMzU0YmI1ZjlhM2VjYmU1ZWQxMmFiNGQ4ZTExYmE4NzNjMmYxMTE2MTIwMmI5NDUiLCJrZXlzIjpbeyJ0Ijoic3RyaW5nIiwidiI6IjE5MTY0OSJ9XX0",
+        "https://gamma-api.polymarket.com/events/keyset?limit=100&active=true&closed=false&after_cursor=OzYxZObrywTIxOOYWRTwt-gQuSAMZH8luUgSD2bSuLh7InYiOjEsImsiOiJldmVudHMiLCJvaCI6IjRmNTNjZGExOGMyYmFhMGMwMzU0YmI1ZjlhM2VjYmU1ZWQxMmFiNGQ4ZTExYmE4NzNjMmYxMTE2MTIwMmI5NDUiLCJrZXlzIjpbeyJ0Ijoic3RyaW5nIiwidiI6IjIwMTQ5MyJ9XX0",
+        "https://gamma-api.polymarket.com/events/keyset?limit=100&active=true&closed=false&after_cursor=M7WDf5bcJLsnKXTpMXkh4CihEZD4q0gon8-XHa0g_e17InYiOjEsImsiOiJldmVudHMiLCJvaCI6IjRmNTNjZGExOGMyYmFhMGMwMzU0YmI1ZjlhM2VjYmU1ZWQxMmFiNGQ4ZTExYmE4NzNjMmYxMTE2MTIwMmI5NDUiLCJrZXlzIjpbeyJ0Ijoic3RyaW5nIiwidiI6IjIzMzE0MCJ9XX0",
+        "https://gamma-api.polymarket.com/events/keyset?limit=100&active=true&closed=false&after_cursor=V3uP5w75glLlpxT7IZme7LYLYFZWOHbhzgPfQ_D5vSp7InYiOjEsImsiOiJldmVudHMiLCJvaCI6IjRmNTNjZGExOGMyYmFhMGMwMzU0YmI1ZjlhM2VjYmU1ZWQxMmFiNGQ4ZTExYmE4NzNjMmYxMTE2MTIwMmI5NDUiLCJrZXlzIjpbeyJ0Ijoic3RyaW5nIiwidiI6IjI4MTE0NSJ9XX0",
+        "https://gamma-api.polymarket.com/events/keyset?limit=100&active=true&closed=false&after_cursor=b9lAqMc3cl1tFiC6zoJMik4jhmmn_IG_z9Knhziz5ol7InYiOjEsImsiOiJldmVudHMiLCJvaCI6IjRmNTNjZGExOGMyYmFhMGMwMzU0YmI1ZjlhM2VjYmU1ZWQxMmFiNGQ4ZTExYmE4NzNjMmYxMTE2MTIwMmI5NDUiLCJrZXlzIjpbeyJ0Ijoic3RyaW5nIiwidiI6IjMzOTc5OSJ9XX0",
+        "https://gamma-api.polymarket.com/events/keyset?limit=100&active=true&closed=false&after_cursor=46SnHCdHB_4XDEvcP4h-NwXI0CwhNDc3tHovqliP4eV7InYiOjEsImsiOiJldmVudHMiLCJvaCI6IjRmNTNjZGExOGMyYmFhMGMwMzU0YmI1ZjlhM2VjYmU1ZWQxMmFiNGQ4ZTExYmE4NzNjMmYxMTE2MTIwMmI5NDUiLCJrZXlzIjpbeyJ0Ijoic3RyaW5nIiwidiI6IjM4OTg4NyJ9XX0",
+        "https://gamma-api.polymarket.com/events/keyset?limit=100&active=true&closed=false&after_cursor=zGv36DB_shmJz2g9gp0VX_QM88V0AcE1N3N7Qoz5jLx7InYiOjEsImsiOiJldmVudHMiLCJvaCI6IjRmNTNjZGExOGMyYmFhMGMwMzU0YmI1ZjlhM2VjYmU1ZWQxMmFiNGQ4ZTExYmE4NzNjMmYxMTE2MTIwMmI5NDUiLCJrZXlzIjpbeyJ0Ijoic3RyaW5nIiwidiI6IjQxMjIzMSJ9XX0",
+        "https://gamma-api.polymarket.com/events/keyset?limit=100&active=true&closed=false&after_cursor=DqShv9cfg5lnWpgC5xjNIDhtvjaGF74xflcrC2EiPUd7InYiOjEsImsiOiJldmVudHMiLCJvaCI6IjRmNTNjZGExOGMyYmFhMGMwMzU0YmI1ZjlhM2VjYmU1ZWQxMmFiNGQ4ZTExYmE4NzNjMmYxMTE2MTIwMmI5NDUiLCJrZXlzIjpbeyJ0Ijoic3RyaW5nIiwidiI6IjQzNTA5OSJ9XX0",
+        "https://gamma-api.polymarket.com/events/keyset?limit=100&active=true&closed=false&after_cursor=bl9lkv7CjyPkM083ZAR5_bdxw0x98eH3FWEbqNpveMR7InYiOjEsImsiOiJldmVudHMiLCJvaCI6IjRmNTNjZGExOGMyYmFhMGMwMzU0YmI1ZjlhM2VjYmU1ZWQxMmFiNGQ4ZTExYmE4NzNjMmYxMTE2MTIwMmI5NDUiLCJrZXlzIjpbeyJ0Ijoic3RyaW5nIiwidiI6IjQ3NDM4OSJ9XX0",
+        "https://gamma-api.polymarket.com/events/keyset?limit=100&active=true&closed=false&after_cursor=8kd1JfM81UxipodxQe2D0q0PKUlfbdcRztwBLrb8T097InYiOjEsImsiOiJldmVudHMiLCJvaCI6IjRmNTNjZGExOGMyYmFhMGMwMzU0YmI1ZjlhM2VjYmU1ZWQxMmFiNGQ4ZTExYmE4NzNjMmYxMTE2MTIwMmI5NDUiLCJrZXlzIjpbeyJ0Ijoic3RyaW5nIiwidiI6IjQ5NjQ5NiJ9XX0"
+      ],
+      "end_of_catalog_reached": false,
+      "total_venue_markets": null,
+      "complete_catalog": false,
+      "scope": "active/open events; active nonclosed nested markets; rotating bounded pages",
+      "sampling": "round-robin source categories within fetched pages; unsampled rows not retained",
+      "pagination_caveat": "Live listings can change between pages/runs; offset/cursor traversal is not a frozen snapshot.",
+      "unique_active_markets_seen": 4630,
+      "markets_returned": 1000,
+      "sampled_out": 3630,
+      "category_counts": {
+        "economics": 200,
+        "politics": 200,
+        "crypto": 200,
+        "sports": 200,
+        "other": 200
+      },
+      "missing_categories": [],
+      "rules_missing": 0,
+      "status": "ok"
+    }
+  },
+  "read_only": true,
+  "live_broad_pricing_enabled": false,
+  "worker": {
+    "last_success": "2026-09-07T06:29:39.009981+00:00",
+    "reviewed_count": 10,
+    "engine": "codex-cli",
+    "read_only": true
+  },
+  "ai_annotations_total": 30,
+  "jobs": {
+    "catalog": "0c3993b2f1f2",
+    "ai_review": "ce9ae7ee7b70",
+    "health": "7ffafd28d115"
+  },
+  "public_url": "https://203157714.clawbud.ai/arbs/docs/discovery.html"
+}

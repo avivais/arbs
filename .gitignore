@@ -5,6 +5,8 @@ __pycache__/
 *.egg-info/
 data/raw/*.jsonl
 data/shadow/
+data/discovery/
+docs/discovery.html
 data/*.db
 data/*.lock
 !data/raw/.gitkeep
