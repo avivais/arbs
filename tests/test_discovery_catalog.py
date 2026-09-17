@@ -81,6 +81,53 @@ class CatalogTests(unittest.TestCase):
         self.assertEqual(coverage["next_position"], "")
         self.assertTrue(coverage["end_of_catalog_reached"])
 
+    def test_poly_optional_terminal_cursor_retains_final_markets(self):
+        for events in ([], [poly_event()]):
+            for cursor in ({}, {"next_cursor": None}, {"next_cursor": ""}):
+                with self.subTest(events=len(events), cursor=cursor):
+                    calls = []
+                    def fetch(url):
+                        calls.append(url)
+                        return {"events": events, **cursor}
+                    rows, coverage = collect_venue("polymarket", position="last", fetch=fetch)
+                    self.assertEqual(len(calls), 1)
+                    self.assertEqual(len(rows), len(events))
+                    self.assertEqual(coverage["status"], "ok")
+                    self.assertEqual(coverage["next_position"], "")
+                    self.assertTrue(coverage["end_of_catalog_reached"])
+                    self.assertFalse(coverage["complete_catalog"])
+
+    def test_poly_invalid_cursor_and_payload_still_fail_closed(self):
+        payloads = [{"events": [], "next_cursor": v} for v in (42, False, [], {})]
+        payloads += [{}, {"events": None}, {"events": [{}]}]
+        for payload in payloads:
+            with self.subTest(payload=payload):
+                rows, coverage = collect_venue("polymarket", position="old", fetch=lambda _: payload)
+                self.assertEqual(rows, [])
+                self.assertEqual(coverage["status"], "partial_error")
+                self.assertEqual(coverage["next_position"], "old")
+                self.assertFalse(coverage["end_of_catalog_reached"])
+
+    def test_poly_omitted_cursor_restarts_next_capture(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "latest.json"
+            def fetch(url):
+                return {"events": [], "cursor": ""} if "kalshi" in url else {"events": [poly_event()]}
+            first = discover(str(path), max_pages=1, fetch=fetch)
+            self.assertEqual(first["coverage"]["polymarket"]["next_position"], "")
+            urls = []
+            def again(url):
+                urls.append(url)
+                return fetch(url)
+            discover(str(path), max_pages=1, fetch=again)
+            self.assertNotIn("after_cursor", urls[1])
+
+    def test_poly_nonadvancing_cursor_remains_error(self):
+        _, coverage = collect_venue("polymarket", position="same",
+            fetch=lambda _: {"events": [], "next_cursor": "same"})
+        self.assertEqual(coverage["errors"][0]["type"], "PaginationError")
+        self.assertEqual(coverage["next_position"], "same")
+
     def test_malformed_and_duplicate_rows(self):
         event = poly_event()
         event["markets"] += [event["markets"][0], dict(event["markets"][0], id="bad", outcomes="broken"), None]

@@ -1,0 +1,15 @@
+{
+  "wrapper": "/root/.hermes/scripts/arbs-broad-capture.sh",
+  "exit_code": 0,
+  "execution": "manual exact production wrapper, not scheduler-triggered",
+  "files": {
+    "catalog-latest.json": {
+      "sha256_uncompressed": "6da55a6d8074c80a9bfdab1ea9ac4e22dcf6ccf4470d688c6b24ffb8cce6b409",
+      "sha256_archive": "15ecdfec229bfa6e5bdf3ad7bfc2bc1b4dd720dd9a7a92bf7ae015e84ef96b11"
+    },
+    "report-latest.json": {
+      "sha256_uncompressed": "cc04e89f6540775ae628c2cb8fbe6d6ff06f4e239aa66813eafbcdc0ae5585de",
+      "sha256_archive": "27087454c809a4b144eab56ab86d60bbfcd4ba863b60b1b822dc4fc367c7d8cd"
+    }
+  }
+}

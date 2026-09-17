@@ -55,6 +55,8 @@ Snapshots are written atomically to `data/raw/sports-<UTC timestamp>.jsonl`. Eac
 
 ## Quality gate
 
+Install the declared test extra in a virtual environment (`python3 -m pip install -e '.[test]'`).
+
 Run the canonical offline verification command:
 
 ```bash
@@ -78,6 +80,13 @@ Operational and safety documentation:
 - [Data retention/redaction](docs/data-retention.md)
 - [Operations/shadow runbook](docs/operations-runbook.md)
 - [Deferred execution security design](docs/execution-security-design.md)
+
+## Fee-aware validation
+
+[Fee-aware implementation and evidence](docs/fee-aware-validation.md) documents the
+versioned nonlinear fee model and bounded, offline real-quote path replay. Unknown
+fee applicability/effective dates, other costs and settlement semantics remain
+REVIEW. This does not enable live net-profit alerts or trading.
 
 ## Tests
 

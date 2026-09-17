@@ -77,6 +77,16 @@ The correct product status is **a functioning read-only cross-venue price-gap mo
 
 Final quality gate: **100 tests passed**; 58-task plan validation passed; replay checked 33 published matches and 38 raw-replay matches. Offline review replay reproduced 26 corroborated identities and 41 non-equivalent settlement pairs from the preserved source archives. Public report and dashboard access were exercised after repair. No trading or production eligibility was enabled.
 
+## 17 September implementation follow-up
+
+The fee-aware next phase is implemented and replayed in
+[fee-aware-validation.md](fee-aware-validation.md), with retained live fee sources,
+conditional maker/taker/partial-fill stresses and machine-readable evidence.
+The result remains **INSUFFICIENT EVIDENCE** for current fee-adjusted opportunities;
+the MLB exceptional-settlement **NO-GO** above is unchanged. Generic historical
+fee-model completion is not proof of a current applicable schedule. No owner
+approval, independent sign-off or live pricing eligibility was created.
+
 ## Evidence links
 
 - [Canonical rolling plan](rolling-plan.html)

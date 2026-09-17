@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 export PYTHONPATH=src
-python3 -m unittest discover -s tests -v
+python3 -m pytest -q tests
 python3 -m compileall -q src tests scripts
 python3 scripts/render_rolling_plan.py --check
 PYTHONPATH=src python3 - <<'PY'

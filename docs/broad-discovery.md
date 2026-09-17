@@ -1,5 +1,26 @@
 # Broad cross-venue discovery
 
+## Current operations — 17 September 2026
+
+The broad collector's omitted-terminal-cursor bug is fixed and the exact production
+capture wrapper has been exercised successfully (exit 0). Its verified
+`2026-09-17T05:58:56.381273Z` generation sampled 1,000 Kalshi and 333 Polymarket
+markets with no request errors; the bounded cache produced 150 REVIEW proposals,
+zero eligible/priced pairs. This is fresh bounded metadata, not exhaustive or
+executable market coverage.
+
+The scheduled AI worker is **not healthy**: its installed Codex authentication is
+expired/reused (HTTP 401). No account/provider change or new AI call was attempted.
+An authorized operator must restore authentication before AI review can resume.
+Schedule definitions below describe intended cadence, not current AI success.
+See [recovery report](broad-recovery-2026-09-17.md).
+
+[Fee-aware validation](fee-aware-validation.md) now includes versioned nonlinear
+fees, retained authoritative source captures and a real captured-book path replay.
+It remains INSUFFICIENT EVIDENCE: numerical Kalshi binding schedule access is HTTP
+429, effective dates/other costs are unknown, and settlement gates remain closed.
+No broad net-profit reporting or trading was enabled.
+
 ## Live scope
 
 [Live report](https://203157714.clawbud.ai/arbs/docs/discovery.html) · [Evidence JSON](https://203157714.clawbud.ai/arbs/data/discovery/report-latest.json)

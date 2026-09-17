@@ -156,8 +156,11 @@ def collect_venue(venue, *, limit=1000, max_pages=10, page_size=100,
                 raise ValueError("malformed events response")
             if venue == "kalshi" and ("cursor" not in payload or not isinstance(payload["cursor"], str)):
                 raise ValueError("missing/invalid pagination cursor")
-            if venue == "polymarket" and ("next_cursor" not in payload or payload["next_cursor"] is not None and not isinstance(payload["next_cursor"], str)):
-                raise ValueError("missing/invalid keyset cursor")
+            # Gamma's EventsKeysetListResponse schema makes next_cursor optional:
+            # the terminal page omits it (including nonempty final pages).
+            # Keep rejecting invalid values; a missing cursor is not a fetch error.
+            if venue == "polymarket" and payload.get("next_cursor") is not None and not isinstance(payload["next_cursor"], str):
+                raise ValueError("invalid keyset cursor")
         except Exception as exc:
             coverage["errors"].append({"url": url, "type": type(exc).__name__, "message": str(exc)[:500]})
             break  # retain last successful cursor, so the failed page is retried next run

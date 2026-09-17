@@ -1,17 +1,17 @@
 # Arbs — Kalshi ↔ Polymarket Sports Arbitrage — Rolling Plan
 
-> **Canonical source:** [`docs/rolling-plan.json`](rolling-plan.json) · **Last verified:** 2026-09-07
+> **Canonical source:** [`docs/rolling-plan.json`](rolling-plan.json) · **Last verified:** 2026-09-17
 > Edit the JSON first, run `python3 scripts/render_rolling_plan.py`, validate, and commit all generated views together.
 
 ## Live status
 
-- **Progress:** 52/64 tasks source-verified complete (81%)
-- **Current focus:** P7: broad read-only discovery and source-bound AI-assisted review are deployed. Find genuinely payout-equivalent contract families; keep pricing fail-closed and existing MLB monitoring untouched.
-- **Next action:** `P7-06: Use the rotating economics/politics/crypto/sports/other queue and AI discrepancy evidence to identify a fully equivalent family; do not auto-approve proposals or collect ordinary MLB finals indefinitely.`
+- **Progress:** 51/64 tasks source-verified complete (79%)
+- **Current focus:** Implemented fee-aware read-only replay and repaired broad collector pagination. Current numerical Kalshi schedule/effective dates and Codex AI authentication remain blocked; no live eligibility promotion.
+- **Next action:** `P7-06: Resolve fee-source/effective-date and semantic evidence gaps for an equivalent broad family; restore AI only after authorized operator authentication. See docs/fee-aware-validation.md.`
 
 | Done | In progress | Next | Blocked | Deferred |
 |---:|---:|---:|---:|---:|
-| 52 | 1 | 0 | 4 | 7 |
+| 51 | 1 | 0 | 5 | 7 |
 
 ## Mission
 
@@ -170,7 +170,7 @@ Produce high-precision, evidence-rich cross-venue equivalence decisions.
 
 ### P4 — Order books and conservative opportunity pricing
 
-**Status:** Next · **Progress:** 8/8
+**Status:** Next · **Progress:** 7/8
 
 Turn semantic matches into freshness- and depth-aware executable opportunity records without trading.
 
@@ -183,9 +183,9 @@ Turn semantic matches into freshness- and depth-aware executable opportunity rec
 - [x] **P4-03 — Implement depth walking and common-fill quantity** `[Done]`
   - **Acceptance:** VWAP and maximum common executable quantity are calculated across levels with deterministic rounding tests.
   - **Evidence:** Depth walking computes exact Decimal VWAP and maximum common quantity; multi-level tests pass.
-- [x] **P4-04 — Implement versioned venue fee models** `[Done]`
+- [ ] **P4-04 — Implement versioned venue fee models** `[Blocked]`
   - **Acceptance:** Fee schedules, rounding, settlement/withdrawal assumptions, and effective dates are configurable and evidenced.
-  - **Evidence:** Versioned FeeModel includes effective date, rounding, minimum, settlement and withdrawal assumptions.
+  - **Evidence:** `2026-09-17: Reopened evidenced-current-schedule acceptance: prior generic notional FeeModel was not a verified current venue schedule. Nonlinear versioned fee/path replay implemented; live Polymarket token feeSchedule and Kalshi maker-fee type, multiplier and rounding sources retained. Kalshi numerical binding PDF HTTP 429, effective dates, other costs and settlement equivalence remain unresolved. docs/fee-aware-validation.md; data/fee-validation/2026-09-17/replay.json. No live pricing promotion.`
 - [x] **P4-05 — Measure and set freshness thresholds** `[Done]`
   - **Acceptance:** Quote-age and pair-skew limits derive from observed latency/movement distributions; stale/suspended books are excluded.
   - **Evidence:** `docs/freshness-policy.md and config/freshness/mlb-books-2026-08-12-v1.json derive a conservative 800ms pair-skew limit from the original 220-observation checkpoint; the 2026-09-02 elapsed checkpoint has 236,727 successful samples across 562 pairs over 489.97h, p99 590ms and a retained 30.79s fail-closed outlier. Polymarket source-age p99 is 3,321.50s and remains measurement-only, so the existing reviewed limits are not loosened or expanded pending a new policy version.`
@@ -281,7 +281,7 @@ Discover economically equivalent contracts beyond MLB, then admit pricing only a
   - **Evidence:** `scripts/broad_discovery.py`; `scripts/broad_discovery_health.py`; `docs/broad-discovery.md`; `data/reports/broad-discovery-deployment.json`
 - [ ] **P7-06 — Establish a genuinely payout-equivalent broad contract family** `[In progress]`
   - **Acceptance:** Identify equivalent event/source/deadline/exception/revision semantics, reviewed live venue fees and books, both leg directions and independent precision evidence before enabling broad net-profit reporting.
-  - **Evidence:** `docs/broad-discovery.md`
+  - **Evidence:** `docs/broad-discovery.md`; `docs/fee-aware-validation.md; data/fee-validation/2026-09-17/replay.json: fee-aware implementation delivered, 72 path records/54 conditional calculations, zero eligibility; effective-date, numerical Kalshi source, other-cost and settlement gaps remain. docs/broad-recovery-2026-09-17.md: collector repaired; AI auth blocked.`
 
 ## Decisions
 
@@ -308,6 +308,7 @@ Discover economically equivalent contracts beyond MLB, then admit pricing only a
 
 ## Change log
 
+- **2026-09-17** — Implemented nonlinear fail-closed fee model and bounded real-data replay: 12 of 78 directions, six paths each, 54 conditional calculations and 18 freshness-rejected paths; zero pricing-eligible results. Retained 46 hashed source responses (45 HTTP 200, binding Kalshi schedule HTTP 429); unknown effective dates remain unknown. Reopened P4-04 evidence acceptance. Fixed optional terminal Gamma cursor and verified exact production capture wrapper exit 0; AI remains blocked by expired/reused OAuth credentials, no account changes. See docs/fee-aware-validation.md and docs/broad-recovery-2026-09-17.md.
 - **2026-08-12** — Created evidence-backed rolling plan; marked repository foundation complete, raw discovery in progress, and execution deferred.
 - **2026-08-12** — Corrected the stale union-capture request assertion; all eight baseline tests now pass; advanced active work to representative production corpus capture.
 - **2026-08-12** — Captured and published a bounded live MLB checkpoint: 33 unique cross-venue event-identity matches from 76 Kalshi markets and 173 Polymarket events; all remain REVIEW and pricing-ineligible due to material rule differences.

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "0c3993b2f1f2",
+    "name": "Arbs broad cross-venue catalog discovery",
+    "script": "arbs-broad-capture.sh",
+    "no_agent": true,
+    "enabled": true,
+    "state": "scheduled",
+    "next_run_at": "2026-09-17T09:11:17.060176+03:00",
+    "last_run_at": "2026-09-17T08:41:17.060176+03:00",
+    "last_status": "error",
+    "last_error": "Script exited with code 2\nstdout:\n{\"cached_markets\": 10000, \"cache_max_age_hours\": 24, \"cached_categories\": {\"crypto\": 1630, \"sports\": 4754, \"other\": 1815, \"economics\": 1191, \"politics\": 610}, \"candidate_pairs\": 150, \"ai_reviewed_current\": 0, \"statuses\": {\"REVIEW\": 150}, \"pricing_eligible\": 0, \"priced_pairs\": 0, \"qualifying\": 0}"
+  },
+  {
+    "id": "ce9ae7ee7b70",
+    "name": "Arbs AI semantic proposal review",
+    "script": "arbs-broad-ai-run.sh",
+    "no_agent": true,
+    "enabled": true,
+    "state": "scheduled",
+    "next_run_at": "2026-09-17T10:15:16.314241+03:00",
+    "last_run_at": "2026-09-17T08:15:16.314241+03:00",
+    "last_status": "error",
+    "last_error": "Script exited with code 1\nstderr:\nTraceback (most recent call last):\n  File \"/root/.openclaw/workspace/repos/arbs/scripts/broad_ai_worker.py\", line 59, in <module>\n    main()\n  File \"/root/.openclaw/workspace/repos/arbs/scripts/broad_ai_worker.py\", line 46, in main\n    raise RuntimeError('Codex review failed; see private ai-worker-last.log')\nRuntimeError: Codex review failed; see private ai-worker-last.log"
+  }
+]
