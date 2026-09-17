@@ -9,11 +9,14 @@ markets with no request errors; the bounded cache produced 150 REVIEW proposals,
 zero eligible/priced pairs. This is fresh bounded metadata, not exhaustive or
 executable market coverage.
 
-The scheduled AI worker is **not healthy**: its installed Codex authentication is
-expired/reused (HTTP 401). No account/provider change or new AI call was attempted.
-An authorized operator must restore authentication before AI review can resume.
-Schedule definitions below describe intended cadence, not current AI success.
-See [recovery report](broad-recovery-2026-09-17.md).
+The initial recovery check found expired/reused Codex authentication (HTTP 401).
+After user-approved device reauthentication, the production worker wrapper completed
+a real batch at 2026-09-17T15:58:41Z: ten source-bound reviews were validated,
+persisted and published. All ten were REJECT (different propositions); no pricing
+eligibility was granted. The existing two-hour AI schedule remains enabled; this
+verification ran its actual wrapper directly, not a new scheduled invocation.
+See [recovery report](broad-recovery-2026-09-17.md) and the
+[unified dashboard verification](unified-dashboard.md).
 
 [Fee-aware validation](fee-aware-validation.md) now includes versioned nonlinear
 fees, retained authoritative source captures and a real captured-book path replay.
@@ -32,7 +35,7 @@ This is a **read-only discovery and AI-assisted review pipeline**, not an assert
 - **Every 30 minutes:** Kalshi open-event catalogs and Polymarket active/open-event keyset catalogs. Each bounded run fetches up to ten pages per venue, category-samples up to 1,000 markets per venue, and persists the next cursor. Cache: at most 10,000 markets received within 24 hours. Every report exposes per-venue request errors, category counts, and incomplete/rotating coverage. This is not exhaustive catalog coverage, market availability, liquidity, or uptime.
 - **Candidate retrieval:** weighted title/entity token overlap, bounded cross-venue comparisons, category balancing, stable pair IDs, original rules and source URLs. A maximum of 150 candidate pairs appears in each current report. Retrieval similarity is not a calibrated probability or settlement approval.
 - **Every two hours:** up to ten previously unreviewed current pairs are compared by the installed Codex AI runtime in read-only sandbox. Schema-constrained JSON must bind exact current semantic source fingerprints and contain verbatim evidence from both venues. The trusted validator rejects fabricated excerpts, changed sources, unknown/duplicate IDs, and attempted approvals. The model identifies different events, dates, thresholds, boundaries, sources, exception clauses and opposite outcome formulations; it can only label REVIEW or REJECT. A title match can still be rejected after reading the rules.
-- **Watchdog:** transition-only alerts for missing/error/stale catalogs (90 minutes) and missing/stale AI heartbeat (six hours). Healthy runs remain silent. A current heartbeat does not establish precision or venue uptime.
+- **Telegram alerts:** opportunity and broad-discovery health schedules were removed at the user's request on 17 September 2026. The health-check script remains available manually; it no longer sends scheduled Telegram notices. Collection and local AI-review/reporting schedules continue. A current heartbeat does not establish precision or venue uptime.
 - **Artifacts:** atomic latest catalog/report/annotations, seven-day compressed capture archives, bounded annotation/cache storage, and an artifact-only public directory. Private workspace permissions and unrelated web routes are not broadened.
 
 ## Pricing and semantic gate
@@ -64,7 +67,7 @@ The `--queue` output is public market data with untrusted source text. Review JS
 
 - `0c3993b2f1f2`: catalog, every 30 minutes, `~/.hermes/scripts/arbs-broad-capture.sh`, local output.
 - `ce9ae7ee7b70`: AI review, every two hours, `~/.hermes/scripts/arbs-broad-ai-run.sh`, local output. The scheduler is script-only, but this script explicitly invokes AI via Codex; it is not deterministic matching presented as AI.
-- Health uses `~/.hermes/scripts/arbs-broad-health.sh`; inspect the live scheduler inventory for its exact ID.
+- The former Telegram health and raw-gap alert schedules have been removed. Health can still be checked manually with `scripts/broad_discovery_health.py`.
 
 The initial Hermes nonstreaming child lane timed out. Direct Codex invocation was smoke-tested, then the complete schema-constrained review and trusted apply path succeeded. Polymarket offset pagination now returns 422 past its ceiling: the implementation uses `/events/keyset` and **`after_cursor`**, not `cursor` or `next_cursor` query parameters (those were observed to repeat the initial page). A nonadvancing cursor produces a visible error.
 
@@ -72,4 +75,8 @@ The initial Hermes nonstreaming child lane timed out. Direct Codex invocation wa
 
 Caddy serves only `/arbs/*` from `/srv/arbs-public`; the pipeline copies an explicit allowlist of non-secret artifacts there. The older workspace preview route can return 403 when OpenClaw restores private directory permissions; the new report does not depend on it. Caddy config was validated and reloaded without restarting unrelated applications. Scoped pre-change backup: `/root/arbs-pre-discovery-Caddyfile.backup`, mode 0600.
 
-To stop this new feature, pause/remove only its three scheduler entries. Existing MLB jobs must remain. To remove web publication, remove only the dedicated `/arbs/*` handler, validate and reload Caddy; do not blindly restore an old whole-host config after unrelated changes. Runtime discovery files may be retained for audit. Never make the raw workspace world-readable to repair preview access.
+To stop discovery itself, pause/remove only its catalog and AI-review scheduler entries; Telegram alert schedules are already removed. Existing quote collection must remain unless separately requested. To remove web publication, remove only the dedicated `/arbs/*` handler, validate and reload Caddy; do not blindly restore an old whole-host config after unrelated changes. Runtime discovery files may be retained for audit. Never make the raw workspace world-readable to repair preview access.
+
+## Unified live presentation
+
+[Unified dashboard](dashboard.html) combines all current categories in one feed, with searchable candidate reviews and actual captured quote observations clearly distinguished. [All dashboards and reports](reports.html) is the public directory. [Data semantics and matching details](unified-dashboard.md) explains the distinction between lexical candidate retrieval, AI review, validated equivalence and executable pricing. The legacy `live-dashboard.html` and `live-matches.html` URLs redirect to this single category-neutral view.

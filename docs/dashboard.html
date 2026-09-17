@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark"><title>Arbs · Unified opportunity monitor</title>
+<style>
+:root{--bg:#0a101b;--panel:#111d2c;--line:#293b50;--text:#edf4fc;--muted:#adbed0;--mint:#7ce6c4;--amber:#ffd18a;--red:#ff9da9}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top right,#163149,transparent 650px),var(--bg);color:var(--text);font:14px/1.5 system-ui,sans-serif}
+main{max-width:1320px;margin:auto;padding:20px max(20px,env(safe-area-inset-right)) 48px max(20px,env(safe-area-inset-left))}a{color:var(--mint);text-underline-offset:4px}
+nav,.eyebrow,.tags,.links{display:flex;gap:12px;flex-wrap:wrap}nav{padding:10px 0;border-bottom:1px solid var(--line)}h1{font-size:32px;letter-spacing:-.03em;line-height:1.1;margin:10px 0}h2{font-size:20px;margin:10px 0}h3{font-size:17px;line-height:1.4;margin:10px 0}p{margin:6px 0}.eyebrow{color:var(--mint);text-transform:uppercase;letter-spacing:.1em;font-size:10px;font-weight:800}.muted,small{color:var(--muted)}
+.notice{border:1px solid #695538;border-left:3px solid var(--amber);background:#28251e;padding:10px 14px;border-radius:10px;margin:12px 0}.notice details{border:0;margin:4px 0 0;padding:0}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.stat{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:10px 14px}.stat b{display:block;font-size:26px;line-height:1.2}.stat span{color:var(--muted);font-size:12px}
+.health{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0}.health p{margin:0;padding:6px 10px;border-left:2px solid var(--line);font-size:12px;overflow-wrap:anywhere}
+.advanced{grid-column:1/-1;margin:0;padding-top:6px}.advanced-fields{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.filters{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:12px}label{display:grid;gap:4px;font-size:12px;color:var(--muted)}input,select,button{font:inherit;color:var(--text);background:var(--bg);border:1px solid #48617a;border-radius:7px;padding:9px;min-width:0;width:100%}input,select{font-size:14px}button{cursor:pointer;width:auto}button:disabled{opacity:.45;cursor:default}a:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible,button:focus-visible{outline:2px solid var(--mint);outline-offset:3px}
+.feed{display:grid;gap:12px}.card{background:linear-gradient(120deg,#142337,var(--panel));border:1px solid var(--line);border-radius:12px;padding:16px;min-width:0;overflow-wrap:anywhere}.card.raw{border-left:3px solid var(--mint)}.card.stale{border-left:3px solid var(--amber)}.card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}.badge{display:inline-block;border:1px solid #48617a;padding:3px 8px;border-radius:5px;font-size:11px;font-weight:750;letter-spacing:.04em}.badge.raw{color:var(--mint);border-color:#3d8c78}.badge.stale,.badge.review{color:var(--amber)}.badge.reject{color:var(--red)}.cost{font-size:24px;font-weight:750;white-space:nowrap}
+.legs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:12px 0}.leg{padding:12px;background:#0b1624;border-radius:8px;min-width:0}.leg b{display:block}.instrument{font:12px/1.5 ui-monospace,monospace;overflow-wrap:anywhere;color:var(--muted);margin:6px 0}.links{font-size:13px;margin:10px 0}details{border-top:1px solid var(--line);margin-top:10px;padding-top:8px}summary{cursor:pointer;color:var(--mint)}.evidence{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px;color:var(--muted)}.empty{padding:30px;text-align:center;border:1px dashed var(--line);border-radius:12px}.legend{font-size:12px;margin:8px 0;color:var(--muted)}footer{margin-top:24px;font-size:12px;color:var(--muted)}#result-summary{margin:10px 0;font-size:12px}#heartbeat{font-size:12px}.header-row{display:flex;justify-content:space-between;align-items:center;gap:12px}#filter-help{margin:6px 0;font-size:12px}.pager{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:10px 0;font-size:12px}
+@media(max-width:900px){.filters{grid-template-columns:1fr 1fr}.filters>label:first-child{grid-column:1/-1}.stats{grid-template-columns:1fr 1fr}}
+@media(max-width:580px){main{padding:14px 12px 40px}.health,.legs{grid-template-columns:1fr}.health{gap:2px}.card{padding:12px}.card-top{flex-direction:column;gap:4px}.stat{padding:8px 10px}.stat b{font-size:24px}nav{font-size:12px;gap:10px}.header-row h2{font-size:17px}.header-row button{font-size:12px}.cost{font-size:22px}}
+</style></head>
+<body><main>
+<div class="eyebrow">Arbs / Public evidence / Read-only</div>
+<h1>Arbs · Live monitor</h1>
+<p class="muted">All categories · Kalshi ↔ Polymarket · Read-only</p>
+<nav aria-label="Reports"><a href="discovery.html">Discovery</a><a href="rolling-plan.html">Project status</a><a href="fee-aware-validation.html">Fee review</a><a href="reports.html">All reports</a></nav>
+<div class="notice"><strong>Research only. Fees excluded; net profit is not established.</strong><details><summary>Coverage, refresh &amp; settlement limits</summary><p>Captured priced books currently cover <strong>MLB only</strong>. Broader categories are discovery candidates, not executable opportunities. Coverage is not whole-market. RAW GAP means two captured asks total below 100¢ under normal, matching settlement only. Cancellation/postponement rules can differ. Every row remains non-actionable. Books are collected every 5 minutes and expire after 90 seconds; discovery runs every 30 minutes. Page polls do not create new quotes.</p></details></div>
+<section class="stats" aria-label="Evidence summary"><div class="stat"><b id="raw-count">0</b><span>Fresh raw gaps</span></div><div class="stat"><b id="fresh-count">0</b><span>Fresh quote directions</span></div><div class="stat"><b id="proposal-count">0</b><span>unverified discovery candidates</span></div><div class="stat"><b>0</b><span>Verified net opportunities</span></div></section>
+<div class="health" aria-live="polite"><p id="book-health">Books: loading…</p><p id="catalog-health">Discovery: loading…</p></div>
+<div class="header-row"><h2>Unified opportunities feed</h2><button id="refresh" type="button">Refresh evidence</button></div>
+<div class="filters">
+<label>Search titles, outcomes or IDs<input id="search" type="search" placeholder="Search across all categories"></label>
+<label>Category<select id="category"><option value="all">All categories</option></select></label>
+<label>Status<select id="status"><option value="all">All statuses</option><option>RAW GAP</option><option>NO RAW GAP</option><option>STALE</option><option>REVIEW</option><option>REJECT</option><option>NO BOOK</option></select></label>
+<details class="advanced"><summary>Price filter · fresh quotes only</summary><div class="advanced-fields">
+<label>Captured combined ask<select id="price-mode"><option value="all">No price filter</option><option value="lte">At or below threshold</option><option value="lt">Below threshold</option></select></label>
+<label>Threshold (¢)<input id="threshold" type="number" min="0.000001" max="200" step="0.1" value="99" inputmode="decimal" aria-describedby="filter-help"></label>
+</div>
+<p id="filter-help" class="muted">Price filters include only fresh captured quote pairs; unpriced candidates and stale books are excluded, never priced from metadata.</p>
+</details></div>
+<p id="result-summary" role="status">Loading evidence…</p><div class="pager"><button id="previous" type="button">← Previous</button><span id="page-label"></span><button id="next" type="button">Next →</button></div><section id="feed" class="feed" aria-label="All opportunity observations and candidates"></section>
+<noscript><div class="notice">JavaScript is required to fetch and validate current evidence. No live claims are available without it.</div></noscript>
+<footer><details class="legend"><summary>How to read statuses and prices</summary>RAW GAP / NO RAW GAP = captured ask comparison, not profit. STALE = unusable timing or retained failed feed. REVIEW / REJECT = semantic review. NO BOOK = no complete captured quote pair.<br>Unavailable = expected evidence missing. N/A = structurally not applicable. Catalog freshness uses 2 hours; quote freshness uses 90 seconds and ≤800ms receipt skew.</details><p>Same-origin evidence polls every 30 seconds; browser freshness is rechecked every second. Source-update age is measured, not an active age limit. Invalid/future source times fail closed. AI review does not authorize pricing.</p><p id="heartbeat">Optional AI worker heartbeat: loading…</p><a href="../data/discovery/report-latest.json">Discovery JSON</a> · <a href="../data/shadow/latest-indicators.json">Captured quote JSON</a></footer>
+</main>
+<script id="dashboard-model">
+'use strict';
+const DashboardModel = (() => {
+ const QUOTE_MS=90000, CATALOG_MS=7200000, SKEW_MS=800, SCALE=100000000n;
+ const array=x=>Array.isArray(x)?x:[];
+ const object=x=>x!==null&&typeof x==='object'&&!Array.isArray(x);
+ const numeric=x=>(typeof x==='number'||typeof x==='string'&&x.trim()!=='')&&Number.isFinite(Number(x))?Number(x):null;
+ // Fixed-point dollars: fail closed beyond 8 decimals instead of rounding a threshold boundary.
+ function fixed(x){if(typeof x!=='number'&&typeof x!=='string')return null;const s=String(x);if(!/^\d+(\.\d{1,8})?$/.test(s))return null;const [a,b='']=s.split('.');return BigInt(a)*SCALE+BigInt(b.padEnd(8,'0'));}
+ function timestamp(x){if(typeof x!=='string')return NaN;const m=x.match(/^(\d{4})-(\d{2})-(\d{2})T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d\d:\d\d)$/);if(!m)return NaN;const days=new Date(Date.UTC(Number(m[1]),Number(m[2]),0)).getUTCDate();return Number(m[2])>=1&&Number(m[2])<=12&&Number(m[3])>=1&&Number(m[3])<=days?Date.parse(x):NaN;}
+ function fresh(x,now,limit){const t=timestamp(x);return Number.isFinite(t)&&now>=t&&now-t<=limit;}
+ function safeURL(x){try{if(typeof x!=='string'||!x.startsWith('https://'))return null;const u=new URL(x);return u.protocol==='https:'&&!u.username&&!u.password?u.href:null;}catch{return null;}}
+ function quote(row,generated,now,failed=false){
+  const legs=array(row.legs).map(l=>object(l)?l:{}),prices=legs.map(l=>fixed(l.best_ask));
+  const captured=legs.length===2&&prices.every(p=>p!==null&&p>=0n&&p<=SCALE);
+  const total=captured?prices[0]+prices[1]:null;
+  const times=legs.map(l=>timestamp(l.received_at));
+  const skew=times.length===2?Math.abs(times[0]-times[1]):NaN;
+  const declaredSkew=numeric(row.cross_leg_receipt_skew_ms);
+  const depth=captured&&legs.every(l=>numeric(l.best_ask_quantity)>0);
+  const sourceOK=legs.every(l=>l.source_time_status==='not_exposed'||l.source_time_status==='available'&&numeric(l.source_age_at_receipt_ms)!==null&&numeric(l.source_age_at_receipt_ms)>=-2000);
+  const reasons=[];
+  if(failed)reasons.push('Book endpoint failed; retained last good snapshot');
+  if(!fresh(generated,now,QUOTE_MS))reasons.push('Snapshot timestamp stale, future or invalid');
+  if(!legs.every(l=>fresh(l.received_at,now,QUOTE_MS))||legs.length!==2)reasons.push('Leg receipt stale, future or invalid');
+  if(!Number.isFinite(skew)||skew>SKEW_MS||declaredSkew===null||declaredSkew<0||declaredSkew>SKEW_MS)reasons.push('Receipt skew unavailable or above 800ms');
+  if(!sourceOK)reasons.push('Source timestamp invalid, future or unavailable');
+  if(!['OBSERVED_RAW_GAP','OBSERVED_RESERVED_GAP','NO_RAW_GAP'].includes(row.status))reasons.push('Source status blocks fresh observation: '+String(row.status||'Unavailable'));
+  const valid=captured&&depth&&!reasons.length;
+  return {captured,total,skew,valid,reasons,status:!captured||!depth?'NO BOOK':!valid?'STALE':total<SCALE?'RAW GAP':'NO RAW GAP'};
+ }
+ function normalize(discovery,books,now,failures={}){
+  const proposals=array(discovery?.proposals).filter(object), records=array(books?.records).filter(object);
+  const rows=records.map((r,i)=>{const q=quote(r,books.generated_at,now,failures.books);return {key:'book:'+i,kind:'book',category:r.category||'sports',title:r.title||array(r.participants).join(' ↔ ')||r.event_id||'Event title unavailable',source:r,quote:q,status:q.status,tags:[q.status,'REVIEW'],catalogStale:false};});
+  for(const [i,p] of proposals.entries()){
+   const stale=!!failures.discovery||!fresh(discovery.catalog_generated_at||discovery.generated_at,now,CATALOG_MS)||!fresh(discovery.generated_at,now,CATALOG_MS);
+   const review=p.status==='REJECT'||p.ai_review?.verdict==='REJECT'?'REJECT':'REVIEW';
+   rows.push({key:'proposal:'+String(p.id||i),kind:'proposal',category:p.category||p.left?.category||'other',title:p.left?.title||p.right?.title||'Event title unavailable',source:p,quote:{captured:false,valid:false,total:null},status:stale?'STALE':review,tags:[...(stale?['STALE']:[]),review,'NO BOOK'],catalogStale:stale});
+  }
+  for(const r of rows)r.search=JSON.stringify([r.title,r.category,r.source.event_id,r.source.participants,r.source.legs?.map(l=>[l.instrument_id,l.outcome]),r.source.left?.title,r.source.right?.title,r.source.left?.id,r.source.right?.id,r.source.id]).toLowerCase();
+  return rows;
+ }
+ function filter(rows,f){const limit=fixed(f.threshold);return rows.filter(r=>(f.category==='all'||r.category===f.category)&&(f.status==='all'||r.tags.includes(f.status))&&(!f.search||r.search.includes(f.search.toLowerCase().trim()))&&(f.mode==='all'||limit!==null&&limit>0n&&limit<=200n*SCALE&&r.quote.valid&&(f.mode==='lt'?r.quote.total*100n<limit:r.quote.total*100n<=limit)));}
+ function stats(rows){return {raw:rows.filter(r=>r.quote.valid&&r.status==='RAW GAP').length,fresh:rows.filter(r=>r.quote.valid).length,proposals:rows.filter(r=>r.kind==='proposal').length};}
+ function validate(data,kind){if(!object(data)||kind==='books'&&(!Array.isArray(data.records)||!data.records.every(r=>object(r)&&(r.legs===undefined||Array.isArray(r.legs)&&r.legs.every(object))))||kind==='discovery'&&(!Array.isArray(data.proposals)||!data.proposals.every(object))||kind==='heartbeat'&&typeof data.last_success!=='string')throw Error('Invalid '+kind+' schema');return data;}
+ function settled(previous,value,error){return error?{data:previous?.data||null,error:String(error),checked:Date.now()}:{data:value,error:null,checked:Date.now()};}
+ return {QUOTE_MS,CATALOG_MS,SKEW_MS,array,numeric,fixed,timestamp,fresh,safeURL,quote,normalize,filter,stats,validate,settled};
+})();
+if(typeof module!=='undefined'&&module.exports)module.exports=DashboardModel;
+</script>
+<script id="dashboard-ui">
+'use strict';
+const M=DashboardModel,$=id=>document.getElementById(id);
+const ENDPOINTS={discovery:'../data/discovery/report-latest.json',books:'../data/shadow/latest-indicators.json',heartbeat:'../data/discovery/ai-worker-state.json'};
+const state={discovery:{data:null,error:null},books:{data:null,error:null},heartbeat:{data:null,error:null}};
+let busy=false,lastSignature='',lastRows=[],pageIndex=0;
+const PAGE_SIZE=20;
+const node=(tag,cls='',text='')=>{const n=document.createElement(tag);n.className=cls;n.textContent=text;return n;};
+const value=x=>x===null||x===undefined||x===''?'Unavailable':typeof x==='object'?JSON.stringify(x):String(x);
+const cents=x=>{const p=M.fixed(x);return p===null?'Unavailable':(Number(p)/1000000).toLocaleString(undefined,{maximumFractionDigits:6})+'¢';};
+const total=q=>q.total===null?'Unavailable':(Number(q.total)/1000000).toLocaleString(undefined,{maximumFractionDigits:6})+'¢';
+const age=(x,now)=>{const t=M.timestamp(x);return !Number.isFinite(t)?'invalid / unavailable timestamp':now<t?'future timestamp':Math.floor((now-t)/1000)+'s old';};
+function link(parent,label,url){const safe=M.safeURL(url);if(safe){const a=node('a','',label+' ↗');a.href=safe;a.target='_blank';a.rel='noopener noreferrer';parent.append(a);}else parent.append(node('span','muted',label+': direct link unavailable'));}
+function line(parent,label,x){parent.append(node('p','',label+': '+value(x)));}
+function detail(parent,label,text){const d=node('details');d.append(node('summary','',label),node('div','evidence',value(text)));parent.append(d);}
+function parseArray(x){if(Array.isArray(x))return x;try{const a=JSON.parse(x);return M.array(a);}catch{return [];}}
+function card(row,now){
+ const r=row.source,q=row.quote;let el=node('article','card '+(row.status==='RAW GAP'?'raw':row.status==='STALE'?'stale':''));el.dataset.key=row.key;
+ const top=node('div','card-top'),left=node('div'),tags=node('div','tags');
+ for(const t of [row.category,...row.tags])tags.append(node('span','badge '+(t==='RAW GAP'?'raw':t.toLowerCase()),t));
+ left.append(tags,node('h3','',row.title),node('small','',row.kind==='book'?'Captured book observation · settlement REVIEW · NON_ACTIONABLE':'Unverified discovery candidate · no captured book'));
+ if(row.kind==='proposal')left.append(node('p','muted','↔ '+value(r.right?.title)));
+ top.append(left);const cost=node('div');cost.append(node('div','cost',row.kind==='book'?total(q):'No book'),node('small','',row.kind==='book'?(q.valid?'Combined best asks':'Historical / unusable asks'):'Combined ask: Unavailable'));top.append(cost);el.append(top);
+ const links=node('div','links');
+ if(row.kind==='book'){link(links,'Kalshi',r.kalshi_url);link(links,'Polymarket',r.polymarket_url);}else{link(links,'Kalshi',r.left?.venue==='kalshi'?r.left.url:r.right?.url);link(links,'Polymarket',r.right?.venue==='polymarket'?r.right.url:r.left?.url);}el.append(links);
+ const shell=el;el=node('details');el.append(node('summary','',row.kind==='book'?'Quote legs, depth & settlement evidence':'Both markets, rules & AI review'));shell.append(el);
+ const legs=node('div','legs');
+ if(row.kind==='book'){
+  for(const l of M.array(r.legs)){
+   const b=node('section','leg');b.append(node('b','',value(l.venue)+' · '+(l.venue==='kalshi'?'YES':'opposing outcome / NO-equivalent')+' · '+value(l.outcome)),node('div','instrument','Instrument / token ID: '+value(l.instrument_id)));
+   line(b,'Captured best ask',cents(l.best_ask));line(b,'Top ask depth',value(l.best_ask_quantity)+' '+(l.venue==='kalshi'?'contracts':'tokens'));
+   line(b,'Received',value(l.received_at)+' · '+age(l.received_at,now));line(b,'Source time',value(l.source_time_status)+' · age at receipt '+(l.source_time_status==='not_exposed'?'N/A (not exposed)':value(l.source_age_at_receipt_ms)+'ms'));
+   detail(b,'Captured ask depth · price × quantity',M.array(l.ask_levels).map(a=>cents(a.price)+' × '+value(a.quantity)).join('\n')||'Unavailable');legs.append(b);
+  }
+  el.append(legs);line(el,'Pair receipt skew',Number.isFinite(q.skew)?q.skew+'ms (source reports '+value(r.cross_leg_receipt_skew_ms)+'ms)':'Unavailable');
+  line(el,'Capture generation',value(state.books.data?.generated_at)+' · '+age(state.books.data?.generated_at,now));
+  if(q.reasons.length)el.append(node('p','muted',q.reasons.join(' · ')));
+  detail(el,'Settlement & depth calculation', 'Settlement: '+value(r.settlement_status)+'\nReasons: '+M.array(r.reason_codes).join('; ')+'\nAssumed scenario: '+value(r.assumed_scenario)+'\nSampled common quantity: '+value(r.quantity)+' (cap '+value(r.quantity_cap)+')\nCombined depth VWAP: '+cents(r.combined_vwap)+'\nBest-ask sum above is not a VWAP or net return. Fees unverified/excluded; net edge not established. AI review: Unavailable.');
+ }else{
+  for(const side of ['left','right']){
+   const s=r[side]||{},b=node('section','leg');b.append(node('b','',value(s.venue)+' · '+value(s.title)),node('div','instrument','Market ID: '+value(s.id)));
+   const outcomes=parseArray(s.outcomes),tokens=parseArray(s.raw?.clobTokenIds);
+   line(b,'Catalog outcomes',outcomes.length?outcomes.join(' / '):'Unavailable');
+   line(b,'Proposed buy leg','Unavailable — orientation '+value(r.ai_review?.orientation||r.orientation)+'; no assumed complement');
+   line(b,'Token IDs',s.venue==='kalshi'?'N/A — YES/NO contract':tokens.length?tokens.map((t,i)=>(outcomes[i]||'Outcome unavailable')+': '+t).join('\n'):'Unavailable');
+   line(b,'Captured ask / depth','Unavailable / Unavailable');line(b,'Catalog receipt',value(s.received_at)+' · '+age(s.received_at,now));
+   detail(b,'Settlement rules / source excerpt',s.rules||s.source_excerpt||r.evidence?.[side]);legs.append(b);
+  }
+  el.append(legs,node('p','muted','Discovery metadata prices are never executable and never used by the combined-ask filter. Quote capture age / skew: N/A — no book pair.'));
+  line(el,'Retrieval score (not probability)',r.score);line(el,'Settlement differences',M.array(r.differences).join('; ')||'Unavailable');line(el,'Review reasons',M.array(r.rejection_reasons).join('; ')||'Unavailable');
+  if(row.catalogStale)el.append(node('p','muted','Catalog STALE — older than 2 hours, invalid/future timestamp, or failed discovery refresh. Not a quote freshness verdict.'));
+  const ai=r.ai_review;
+  detail(el,'AI review & evidence',ai?'Verdict: '+value(ai.verdict)+'\nReason: '+value(ai.reason)+'\nScore: '+value(ai.score)+'\nOrientation: '+value(ai.orientation)+'\nDifferences: '+M.array(ai.differences).join('; ')+'\nLeft excerpt: '+value(ai.left_excerpt)+'\nRight excerpt: '+value(ai.right_excerpt)+'\nReviewed: '+value(ai.reviewed_at)+'\nAI-assisted, not independent human validation; never pricing authorization.':'Unavailable — no evidence-bound AI review supplied for this proposal. Retrieval score is not an AI verdict.');
+  detail(el,'Verification fields',r.verification);
+ }
+ el.append(node('small','muted','Fees: unverified / excluded · Net: not established · Trading disabled'));return shell;
+}
+function filters(){return {category:$('category').value,status:$('status').value,search:$('search').value,mode:$('price-mode').value,threshold:$('threshold').value};}
+function render(force=false){
+ const now=Date.now(),rows=M.normalize(state.discovery.data,state.books.data,now,{books:!!state.books.error,discovery:!!state.discovery.error}),s=M.stats(rows);
+ $('raw-count').textContent=s.raw;$('fresh-count').textContent=s.fresh;$('proposal-count').textContent=s.proposals;
+ for(const [kind,id,limit] of [['books','book-health',M.QUOTE_MS],['discovery','catalog-health',M.CATALOG_MS]]){
+  const st=state[kind],date=kind==='discovery'?st.data?.catalog_generated_at||st.data?.generated_at:st.data?.generated_at;
+  $(id).textContent=(kind==='books'?'Books':'Discovery')+': '+(st.error?'FAILED — '+st.error+(st.data?' · retained, STALE':' · unavailable'):!st.data?'Loading…':M.fresh(date,now,limit)?'Within age limit':'STALE / invalid')+' · '+(st.data?age(date,now):'No evidence');$(id).title=value(date);
+ }
+ const hb=state.heartbeat;$('heartbeat').textContent='AI worker: '+(hb.error?'UNAVAILABLE / failed refresh · ':!hb.data?'loading · ':M.fresh(hb.data.last_success,now,21600000)?'Recent successful run · ':'STALE / no recent success · ')+(hb.data?value(hb.data.engine)+' · last success '+value(hb.data.last_success)+' · '+age(hb.data.last_success,now)+' · reviewed '+value(hb.data.reviewed_count):'No heartbeat evidence')+' · heartbeat does not prove these proposals were reviewed.';
+ const categories=[...new Set(rows.map(r=>r.category))].sort(),categorySignature=JSON.stringify(categories);
+ if($('category').dataset.signature!==categorySignature){const chosen=$('category').value;$('category').replaceChildren(new Option('All categories','all'),...categories.map(c=>new Option(c,c)));$('category').value=categories.includes(chosen)?chosen:'all';$('category').dataset.signature=categorySignature;}
+ const rank=r=>r.quote.valid?0:r.kind==='proposal'&&r.status==='REVIEW'?1:r.status==='REJECT'?3:2;
+ const f=filters(),shown=M.filter(rows,f).sort((a,b)=>rank(a)-rank(b));
+ pageIndex=Math.min(pageIndex,Math.max(0,Math.ceil(shown.length/PAGE_SIZE)-1));
+ const pageRows=shown.slice(pageIndex*PAGE_SIZE,(pageIndex+1)*PAGE_SIZE),sig=JSON.stringify([rows.map(r=>[r.key,r.status]),f,pageIndex,state.books.error,state.discovery.error]);
+ $('previous').disabled=pageIndex===0;$('next').disabled=(pageIndex+1)*PAGE_SIZE>=shown.length;
+ $('page-label').textContent=shown.length?'Page '+(pageIndex+1)+' / '+Math.ceil(shown.length/PAGE_SIZE):'No results';
+ const boundary=f.mode==='lt'?'below':'at or below';
+ $('result-summary').textContent=shown.length+' of '+rows.length+' rows match · '+pageRows.length+' on this page · '+s.fresh+' fresh priced directions';
+ $('filter-help').textContent=f.mode==='all'?'All evidence included. Price filters use fresh captured asks only, never metadata.':'Fresh captured asks '+boundary+' '+f.threshold+'¢ only. Unpriced and stale rows excluded. Valid threshold: >0 to 200¢.';
+ // Avoid disrupting open evidence/focus every second; redraw age labels at most every 30s.
+ if(!force&&sig===lastSignature)return;
+ const open=new Set([...document.querySelectorAll('#feed details[open]')].map(d=>d.closest('article').dataset.key+'|'+d.querySelector('summary').textContent));
+ const fragment=document.createDocumentFragment();for(const r of pageRows)fragment.append(card(r,now));
+ if(!shown.length)fragment.append(node('div','empty',rows.length?'No rows meet these filters. This is not a whole-market absence claim. Clear the price filter to see unpriced candidates.':'Evidence unavailable or no rows supplied. Automatic polling will retry; no opportunity claim is possible.'));
+ $('feed').replaceChildren(fragment);for(const d of document.querySelectorAll('#feed details'))d.open=open.has(d.closest('article').dataset.key+'|'+d.querySelector('summary').textContent);
+ lastSignature=sig;lastRows=rows;
+}
+async function fetchSource(kind){const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),12000);try{const response=await fetch(ENDPOINTS[kind],{cache:'no-store',credentials:'same-origin',signal:controller.signal});if(!response.ok)throw Error('HTTP '+response.status);state[kind]=M.settled(state[kind],M.validate(await response.json(),kind),null);}catch(e){state[kind]=M.settled(state[kind],null,e.message||'request failed');}finally{clearTimeout(timer);render(true);}}
+async function load(){if(busy)return;busy=true;$('refresh').disabled=true;await Promise.allSettled(Object.keys(ENDPOINTS).map(fetchSource));busy=false;$('refresh').disabled=false;}
+for(const id of ['search','category','status','price-mode','threshold'])$(id).addEventListener('input',()=>{pageIndex=0;render(true);});
+$('previous').addEventListener('click',()=>{pageIndex=Math.max(0,pageIndex-1);render(true);});
+$('next').addEventListener('click',()=>{pageIndex++;render(true);});
+$('refresh').addEventListener('click',load);document.addEventListener('visibilitychange',()=>{if(!document.hidden){render(true);load();}});
+load();setInterval(load,30000);setInterval(()=>render(),1000);
+</script></body></html>

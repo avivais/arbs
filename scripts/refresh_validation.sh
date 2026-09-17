@@ -33,3 +33,4 @@ tmp.write_text(json.dumps({'generation':stamp,**manifest},indent=2)+'\n')
 tmp.replace(latest)
 print(f'Evidence refreshed: {destination}; read-only eligibility unchanged.')
 PY
+python3 scripts/publish_dashboard.py

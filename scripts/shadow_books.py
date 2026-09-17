@@ -9,6 +9,7 @@ from pathlib import Path
 from typing import Any
 
 from arbs.indicators import candidate_record, evaluate_candidate, leg_from_sample
+from arbs.publication import publish_public
 from arbs.replay import load_match_report
 from arbs.shadow_books import sample_pair, summarize
 
@@ -143,6 +144,7 @@ def main() -> None:
     # alert evaluator could see them.
     generated_at = datetime.now(timezone.utc)
     atomic_json(Path("data/shadow/latest-indicators.json"), build_indicators(report, captured, generated_at))
+    publish_public(Path(__file__).resolve().parents[1], include_docs=False)
     summary_path = Path("data/shadow/book-summary.json")
     rebuild_summary = os.environ.get("ARBS_REBUILD_BOOK_SUMMARY") == "1" or not summary_path.exists()
     if rebuild_summary:

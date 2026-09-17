@@ -14,6 +14,7 @@ class ValidationRefreshTests(unittest.TestCase):
         (root/'scripts').mkdir()
         source = Path(__file__).resolve().parents[1]/'scripts/refresh_validation.sh'
         shutil.copyfile(source, root/'scripts/refresh_validation.sh')
+        (root/'scripts/publish_dashboard.py').write_text('from pathlib import Path\nassert Path("data/shadow/validation/latest.json").is_file()\nPath("publication-called").touch()\n')
         for name, value in [('build_shadow_checkpoint.py', {'semantic_eligibility':'ALL_REVIEW_PRICING_DISABLED', 'generated_at':'fixture'}), ('audit_resolutions.py', {'pricing_eligible':False, 'generated_at':'fixture'})]:
             (root/'scripts'/name).write_text('import json,sys\nfrom pathlib import Path\nPath(sys.argv[sys.argv.index("--output")+1]).write_text(json.dumps('+repr(value)+'))\n')
         return root
@@ -26,6 +27,7 @@ class ValidationRefreshTests(unittest.TestCase):
             root=self.setup_root(directory)
             result=self.run_wrapper(root)
             self.assertEqual(result.returncode,0,result.stderr)
+            self.assertTrue((root/'publication-called').is_file())
             directory=root/'data/shadow/validation'
             manifest=json.loads((directory/'latest.json').read_text())
             self.assertEqual(set(manifest['files']),{'checkpoint.json','resolutions.json'})
@@ -43,6 +45,7 @@ class ValidationRefreshTests(unittest.TestCase):
             (root/'scripts/audit_resolutions.py').write_text('raise SystemExit(9)\n')
             result=self.run_wrapper(root)
             self.assertEqual(result.returncode,9)
+            self.assertFalse((root/'publication-called').exists())
             self.assertEqual(latest.read_bytes(),before)
             self.assertEqual(list(latest.parent.glob('.stage.*')),[])
 

@@ -19,6 +19,7 @@ from arbs.discovery_catalog import atomic_json, discover, fetch_json
 from arbs.candidate_discovery import build_proposals
 from arbs.discovery_review import attach_reviews, fingerprint, validate_reviews
 from arbs.broad_pricing import evaluate_proposals
+from arbs.publication import publish_public
 
 DATA = ROOT / 'data/discovery'
 
@@ -66,10 +67,10 @@ def render(report):
 <h1>Arbs · Broad cross-venue discovery</h1><p>Economics · Crypto · Politics · Sports · Other events</p>'''
     page += '<p>Generated: ' + e(report['generated_at']) + ' · catalog: ' + e(report['catalog_generated_at']) + '</p>'
     page += '<p class="note"><b>Read-only research.</b> AI proposes and rejects; it cannot approve settlement equivalence. '
-    page += 'Zero priced pairs means no eligible coverage, not proof that the market has no opportunities. MLB monitoring is separate and unchanged.</p>'
+    page += 'Zero priced pairs means no eligible coverage, not proof that the market has no opportunities. All categories and available quote observations share the unified dashboard.</p>'
     page += '<pre>' + e(json.dumps(summary, indent=2)) + '</pre><h2>Latest bounded capture</h2><table><tr><th>Venue</th><th>Sampled markets</th><th>Categories</th><th>Fetch health</th></tr>' + coverage + '</table>'
     page += '<p>Rotating bounded pages; not a complete exchange census. Matching uses a capped 24-hour metadata cache, not executable quotes. Missing categories are not claimed covered.</p>'
-    page += '<p><a href="../data/discovery/report-latest.json">Full evidence JSON</a> · <a href="broad-discovery.md">Method and operations</a></p><h2>Candidate review queue</h2>'
+    page += '<p><a href="dashboard.html">Unified live dashboard</a> · <a href="reports.html">All reports</a> · <a href="../data/discovery/report-latest.json">Full evidence JSON</a> · <a href="broad-discovery.md">Method and operations</a></p><h2>Candidate review queue</h2>'
     page += ''.join(cards) + '</html>'
     write_text(ROOT / 'docs/discovery.html', page)
 
@@ -88,17 +89,8 @@ def publish(catalog, markets):
               'proposals': proposals, 'pricing': priced, 'read_only': True}
     atomic_json(DATA / 'report-latest.json', report, mode=0o644)
     render(report)
-    # Dedicated public root contains only explicitly allowlisted artifacts.
-    # It is independent of the private workspace's auto-reset 0700 mode.
-    public = Path('/srv/arbs-public')
-    if public.is_dir():
-        for relative in ('docs/discovery.html', 'docs/broad-discovery.md', 'docs/rolling-plan.html',
-                         'data/discovery/report-latest.json'):
-            source = ROOT / relative
-            if source.is_file():
-                target = public / relative
-                target.parent.mkdir(parents=True, exist_ok=True)
-                write_text(target, source.read_text())
+    # Dedicated allowlist shared with quote collection and report publication.
+    publish_public(ROOT)
     return report
 
 

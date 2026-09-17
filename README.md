@@ -1,6 +1,14 @@
 # arbs
 
-Read-only market discovery and eventual deterministic sports-contract matching between Kalshi and Polymarket.
+Read-only cross-category market discovery, evidence-bound candidate review and captured quote monitoring between Kalshi and Polymarket. No automated trading.
+
+## Unified live dashboard
+
+- [Unified dashboard](https://203157714.clawbud.ai/arbs/docs/dashboard.html) — all currently published categories, quote observations and review proposals in one feed.
+- [All dashboards and reports](https://203157714.clawbud.ai/arbs/docs/reports.html) — public directory, with live feeds distinguished from dated research.
+- [Scope, refresh and matching semantics](docs/unified-dashboard.md).
+
+Captured books currently cover the bounded MLB sample; other categories are unpriced discovery proposals. Similarity scores and raw price gaps are not verified arbitrage. Telegram opportunity and health alerts are off; read-only collection continues.
 
 ## Rolling delivery plan
 
@@ -8,7 +16,7 @@ The live project plan is maintained from one canonical source and published in t
 
 - [Human-readable rolling plan](docs/ROLLING_PLAN.md)
 - [Interactive rolling plan](docs/rolling-plan.html)
-- [Live matched-market dashboard](docs/live-dashboard.html) — read-only venue links and periodically refreshed public price fields
+- [Unified opportunity dashboard](docs/dashboard.html) — category-neutral feed, explicit quote freshness and evidence gates
 - Canonical implementation source: [`docs/rolling-plan.json`](docs/rolling-plan.json)
 
 Update `docs/rolling-plan.json` first, then regenerate and validate both views:
@@ -69,7 +77,7 @@ It executes unit and adversarial tests, bytecode compilation, rolling-plan/schem
 
 ```bash
 PYTHONPATH=src python3 -m arbs.match_live --require-match --output data/reports/live-mlb-matches.json
-python3 scripts/render_live_matches.py data/reports/live-mlb-matches.json docs/live-matches.html
+python3 scripts/render_live_matches.py data/reports/live-mlb-matches.json data/reports/historical-match-checkpoint.html
 ```
 
 Event identity, payout-rule equivalence, conservative pricing, and execution are separate gates. Current live MLB matches remain `REVIEW` and pricing-ineligible because postponement/cancellation semantics differ.
